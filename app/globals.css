@@ -9,13 +9,13 @@
 }
 
 body {
-  background-color: #040914; /* Default to your signature dark color */
+  background-color: #040914; /* Signature dark background default */
   color: #ffffff;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Light mode override for body */
+/* Light mode override only triggers when user toggles to light class */
 html:not(.dark) body {
   background-color: #f9f9fb;
   color: #111111;

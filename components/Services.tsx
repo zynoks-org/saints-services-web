@@ -115,7 +115,7 @@ export function Services() {
   const currentService = servicesList[currentIndex];
 
   return (
-    <section id="services" className="py-16 sm:py-24 bg-slate-100 dark:bg-[#080f22] text-slate-900 dark:text-white border-b border-slate-200 dark:border-white/10 overflow-hidden select-none font-sans relative transition-colors duration-300">
+    <section id="services" className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 overflow-hidden select-none font-sans relative transition-colors duration-300">
       
       {/* Soft Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f59e0b]/5 rounded-full blur-[140px] pointer-events-none" />
@@ -125,21 +125,19 @@ export function Services() {
         {/* SECTION HEADER */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
           <div>
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-lg bg-slate-900/10 dark:bg-[#040914]/70 border border-slate-900/10 dark:border-white/15 backdrop-blur-md text-[#f59e0b] mb-3 shadow-md transition-colors">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-widest mb-3 shadow-xs backdrop-blur-md transition-colors">
               <Shield className="w-3.5 h-3.5" /> 
-              <span className="text-[11px] font-bold uppercase tracking-widest font-mono text-slate-800 dark:text-[#f59e0b]">
-                CAPABILITIES // CORE_SERVICES
-              </span>
+              <span>CAPABILITIES // CORE_SERVICES</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight uppercase transition-colors">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] via-amber-500 to-amber-700 dark:via-amber-200 dark:to-white">Services</span>
+              Our <span className="text-[#f59e0b]">Services</span>
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 font-mono text-base sm:text-xl bg-slate-200/80 dark:bg-[#040914]/80 px-4 py-2 rounded-lg border border-slate-300 dark:border-white/15 backdrop-blur-md shadow-lg self-start sm:self-auto transition-colors">
+          <div className="flex items-center gap-2 font-mono text-base sm:text-xl bg-white dark:bg-slate-900 px-4 py-2 rounded-sm border border-slate-200 dark:border-slate-800 shadow-md self-start sm:self-auto transition-colors">
             <span className="font-black text-slate-900 dark:text-white">{currentService.num}</span>
-            <span className="text-slate-400 dark:text-slate-600 font-bold">/</span>
-            <span className="text-slate-600 dark:text-slate-400 font-bold">{currentService.total}</span>
+            <span className="text-slate-400 font-bold">/</span>
+            <span className="text-slate-500 dark:text-slate-400 font-bold">{currentService.total}</span>
           </div>
         </div>
 
@@ -149,7 +147,7 @@ export function Services() {
           {/* PREV BUTTON */}
           <button 
             onClick={handlePrev}
-            className="hidden lg:flex shrink-0 -ml-4 xl:-ml-8 mr-4 z-30 p-3.5 rounded-lg bg-white/90 dark:bg-[#040914]/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/15 backdrop-blur-md shadow-xl hover:bg-[#f59e0b] hover:text-[#040914] hover:border-[#f59e0b] dark:hover:bg-[#f59e0b] dark:hover:text-[#040914] dark:hover:border-[#f59e0b] transition-all active:scale-95 cursor-pointer"
+            className="hidden lg:flex shrink-0 -ml-4 xl:-ml-8 mr-4 z-30 p-3.5 rounded-sm bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-lg hover:bg-[#f59e0b] hover:text-slate-950 hover:border-[#f59e0b] transition-all active:scale-95 cursor-pointer"
             aria-label="Previous Service"
           >
             <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
@@ -177,22 +175,26 @@ export function Services() {
               {servicesList.map((service) => (
                 <div 
                   key={service.id} 
-                  className="w-full shrink-0 bg-white/95 dark:bg-[#040914]/90 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 items-stretch pointer-events-none transition-colors duration-300"
+                  className="w-full shrink-0 bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-sm overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 items-stretch pointer-events-none transition-colors duration-300 relative"
                 >
                   
+                  {/* Tactical Corner Brackets */}
+                  <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-[#f59e0b] pointer-events-none z-20" />
+                  <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-[#f59e0b] pointer-events-none z-20" />
+
                   {/* SERVICE IMAGE CANVAS */}
-                  <div className="lg:col-span-5 relative h-[280px] sm:h-[360px] lg:h-auto bg-slate-900 dark:bg-[#040914] border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-white/10 overflow-hidden">
+                  <div className="lg:col-span-5 relative h-[280px] sm:h-[360px] lg:h-auto bg-slate-900 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 overflow-hidden">
                     <Image 
                       src={service.img} 
                       alt={service.title} 
                       fill
-                      className="object-cover object-center pointer-events-none opacity-95 dark:opacity-90 transition-opacity"
+                      className="object-cover object-center pointer-events-none opacity-90 transition-opacity"
                     />
                     
                     {/* Vignette Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 dark:from-[#040914] via-transparent dark:via-[#040914]/20 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
-                    <div className="absolute top-4 left-4 bg-slate-900/90 dark:bg-[#040914]/90 backdrop-blur-md border border-white/15 px-3 py-1 rounded-md text-[10px] sm:text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest shadow-md">
+                    <div className="absolute top-4 left-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1 rounded-sm text-[10px] sm:text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest shadow-md">
                       {service.badge}
                     </div>
                   </div>
@@ -208,11 +210,11 @@ export function Services() {
                         {service.title}
                       </h3>
 
-                      <p className="text-xs sm:text-sm lg:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-medium mb-6 transition-colors">
+                      <p className="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium mb-6 transition-colors">
                         {service.description}
                       </p>
 
-                      <div className="space-y-2.5 border-t border-slate-200 dark:border-white/10 pt-5 mb-8 transition-colors">
+                      <div className="space-y-2.5 border-t border-slate-200 dark:border-slate-800 pt-5 mb-8 transition-colors">
                         {service.highlights.map((item, idx) => (
                           <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 transition-colors">
                             <CheckCircle2 className="w-4 h-4 text-[#f59e0b] shrink-0" />
@@ -226,14 +228,14 @@ export function Services() {
                       {/* Left-to-Right Gold Sweep Action Button */}
                       <Link 
                         href={`/services/${service.id}`} 
-                        className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-slate-900 dark:bg-[#040914]/80 text-white font-black px-7 py-4 rounded-lg text-xs sm:text-sm transition-all duration-300 border border-slate-800 dark:border-white/15 backdrop-blur-md overflow-hidden shadow-xl active:scale-95 uppercase tracking-wider cursor-pointer"
+                        className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-[#f59e0b] text-slate-950 font-black px-7 py-4 rounded-sm text-xs sm:text-sm transition-all duration-300 overflow-hidden shadow-md active:scale-95 uppercase tracking-wider cursor-pointer"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-amber-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
                         
-                        <span className="relative z-10 transition-colors duration-300 group-hover:text-[#040914]">
+                        <span className="relative z-10">
                           View Full Specifications
                         </span>
-                        <ArrowRight className="relative z-10 w-4 h-4 text-[#f59e0b] transition-all duration-300 group-hover:text-[#040914] group-hover:translate-x-1" />
+                        <ArrowRight className="relative z-10 w-4 h-4" />
                       </Link>
                     </div>
 
@@ -248,7 +250,7 @@ export function Services() {
           {/* NEXT BUTTON */}
           <button 
             onClick={handleNext}
-            className="hidden lg:flex shrink-0 -mr-4 xl:-mr-8 ml-4 z-30 p-3.5 rounded-lg bg-white/90 dark:bg-[#040914]/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/15 backdrop-blur-md shadow-xl hover:bg-[#f59e0b] hover:text-[#040914] hover:border-[#f59e0b] dark:hover:bg-[#f59e0b] dark:hover:text-[#040914] dark:hover:border-[#f59e0b] transition-all active:scale-95 cursor-pointer"
+            className="hidden lg:flex shrink-0 -mr-4 xl:-mr-8 ml-4 z-30 p-3.5 rounded-sm bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-lg hover:bg-[#f59e0b] hover:text-slate-950 hover:border-[#f59e0b] transition-all active:scale-95 cursor-pointer"
             aria-label="Next Service"
           >
             <ChevronRight className="w-5 h-5 stroke-[2.5]" />
@@ -263,10 +265,10 @@ export function Services() {
               key={idx}
               onClick={() => handleDotClick(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`h-2 rounded-md transition-all duration-300 cursor-pointer ${
+              className={`h-2 rounded-sm transition-all duration-300 cursor-pointer ${
                 currentIndex === idx 
                   ? 'w-10 bg-[#f59e0b] shadow-[0_0_12px_#f59e0b]' 
-                  : 'bg-slate-300 dark:bg-white/20 hover:bg-slate-400 dark:hover:bg-white/40 w-3'
+                  : 'bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600 w-3'
               }`}
             />
           ))}

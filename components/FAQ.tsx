@@ -30,15 +30,15 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-12 sm:py-20 bg-[#f8fafc] dark:bg-[#080f22] text-slate-900 dark:text-white border-b border-slate-200 dark:border-white/10 font-sans transition-colors duration-300">
+    <section className="py-12 sm:py-20 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 font-sans transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0b1329] dark:bg-[#040914]/80 text-[#f59e0b] border border-transparent dark:border-white/15 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 shadow-md transition-colors">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider mb-3 shadow-xs transition-colors">
             <HelpCircle className="w-3.5 h-3.5 text-[#f59e0b]" /> 
             <span>Common Questions</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black text-[#0b1329] dark:text-white tracking-tight transition-colors">
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase transition-colors">
             Frequently Asked Questions
           </h2>
         </div>
@@ -49,19 +49,19 @@ export function FAQ() {
             return (
               <div 
                 key={idx} 
-                className="bg-white dark:bg-[#040914]/90 border border-slate-200/90 dark:border-white/10 rounded-2xl overflow-hidden transition-all shadow-xs dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+                className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-sm overflow-hidden transition-all shadow-md"
               >
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-black text-[#0b1329] dark:text-white text-sm sm:text-base cursor-pointer transition-colors"
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-black text-slate-900 dark:text-white text-sm sm:text-base cursor-pointer transition-colors uppercase tracking-tight"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown className={`w-5 h-5 text-[#f59e0b] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed border-t border-slate-100 dark:border-white/10 pt-4 transition-colors">
+                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-4 transition-colors">
                     {faq.a}
                   </div>
                 )}

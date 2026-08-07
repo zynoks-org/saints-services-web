@@ -57,13 +57,13 @@ export function GetInTouch() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-[#f8fafc] text-slate-900 border-b border-slate-200 relative overflow-hidden font-sans">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden font-sans transition-colors duration-300">
       
       {/* Light Clean Grid Pattern */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-20 z-0"
+        className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20 z-0"
         style={{
-          backgroundImage: 'radial-gradient(rgba(11, 19, 41, 0.2) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(currentColor 1.2px, transparent 1.2px)',
           backgroundSize: '24px 24px'
         }}
       />
@@ -76,42 +76,42 @@ export function GetInTouch() {
           <div className="lg:col-span-6 space-y-8">
             
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0b1329] text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-widest shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-widest shadow-xs transition-colors">
                 <ShieldCheck className="w-4 h-4 text-[#f59e0b]" />
                 <span>DIRECT_DISPATCH // 24_7_SUPPORT</span>
               </div>
               
-              <h2 className="text-3xl sm:text-5xl font-black text-[#0b1329] uppercase tracking-tight">
+              <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight transition-colors">
                 Get in Touch Today
               </h2>
 
-              <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium leading-relaxed transition-colors">
                 Whether your security requirements are long-term or temporary, across single or multiple sites, we can tailor a rapid deployment solution just for your business.
               </p>
 
-              <p className="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed">
+              <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm font-medium leading-relaxed transition-colors">
                 Simply call us today on our control room line or complete our online form for a quick, no-obligation quotation within 2 hours.
               </p>
             </div>
 
-            {/* TRUST BADGES ROW (Clean White Cards, Minimal Borders) */}
+            {/* TRUST BADGES ROW */}
             <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="bg-white border border-slate-200/80 shadow-sm p-4 rounded-2xl text-center flex flex-col items-center justify-center">
+              <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-sm p-4 rounded-sm text-center flex flex-col items-center justify-center transition-colors">
                 <ShieldCheck className="w-6 h-6 text-[#f59e0b] mb-1.5" />
-                <span className="text-xs font-black text-[#0b1329] uppercase">Top Rated</span>
-                <span className="text-[10px] text-slate-500 font-mono">5-Star Vetted</span>
+                <span className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-tight">Top Rated</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">5-Star Vetted</span>
               </div>
 
-              <div className="bg-white border border-slate-200/80 shadow-sm p-4 rounded-2xl text-center flex flex-col items-center justify-center">
-                <Building2 className="w-6 h-6 text-emerald-600 mb-1.5" />
-                <span className="text-xs font-black text-[#0b1329] uppercase">98% Retention</span>
-                <span className="text-[10px] text-slate-500 font-mono">Enterprise Trust</span>
+              <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-sm p-4 rounded-sm text-center flex flex-col items-center justify-center transition-colors">
+                <Building2 className="w-6 h-6 text-emerald-500 dark:text-emerald-400 mb-1.5" />
+                <span className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-tight">98% Retention</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">Enterprise Trust</span>
               </div>
 
-              <div className="bg-white border border-slate-200/80 shadow-sm p-4 rounded-2xl text-center flex flex-col items-center justify-center">
-                <MapPin className="w-6 h-6 text-sky-600 mb-1.5" />
-                <span className="text-xs font-black text-[#0b1329] uppercase">UK Wide</span>
-                <span className="text-[10px] text-slate-500 font-mono">Nationwide</span>
+              <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-sm p-4 rounded-sm text-center flex flex-col items-center justify-center transition-colors">
+                <MapPin className="w-6 h-6 text-sky-500 dark:text-sky-400 mb-1.5" />
+                <span className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-tight">UK Wide</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">Nationwide</span>
               </div>
             </div>
 
@@ -119,102 +119,106 @@ export function GetInTouch() {
             <div className="space-y-3 pt-2">
               <a 
                 href="tel:07412733920" 
-                className="flex items-center gap-3.5 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-slate-300 transition-all group"
+                className="flex items-center gap-3.5 p-4 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-[#f59e0b] transition-all group"
               >
-                <div className="p-3 rounded-xl bg-[#0b1329] text-[#f59e0b] group-hover:scale-105 transition-transform">
+                <div className="p-3 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 group-hover:scale-105 transition-transform">
                   <PhoneCall className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono font-bold text-slate-400 uppercase">Control Room Hotline</div>
-                  <div className="text-base sm:text-lg font-black text-[#0b1329]">07412 733920</div>
+                  <div className="text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400 uppercase">Control Room Hotline</div>
+                  <div className="text-base sm:text-lg font-black text-slate-900 dark:text-white">07412 733920</div>
                 </div>
               </a>
 
               <a 
                 href="mailto:info@saintsservices.co.uk" 
-                className="flex items-center gap-3.5 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-slate-300 transition-all group"
+                className="flex items-center gap-3.5 p-4 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-sm hover:border-[#f59e0b] transition-all group"
               >
-                <div className="p-3 rounded-xl bg-[#0b1329] text-[#f59e0b] group-hover:scale-105 transition-transform">
+                <div className="p-3 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 group-hover:scale-105 transition-transform">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono font-bold text-slate-400 uppercase">Enquiries Email</div>
-                  <div className="text-sm sm:text-base font-black text-[#0b1329]">info@saintsservices.co.uk</div>
+                  <div className="text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400 uppercase">Enquiries Email</div>
+                  <div className="text-sm sm:text-base font-black text-slate-900 dark:text-white">info@saintsservices.co.uk</div>
                 </div>
               </a>
             </div>
 
           </div>
 
-          {/* RIGHT COLUMN: CLEAN WHITE QUOTE CARD */}
-          <div className="lg:col-span-6 relative">
+          {/* RIGHT COLUMN: QUOTE CARD */}
+          <div className="lg:col-span-6 relative px-2">
             
-            <div className="bg-white text-slate-900 p-6 sm:p-8 lg:p-10 rounded-3xl border border-slate-200/90 shadow-xl relative z-10">
+            {/* Tactical Corner Brackets */}
+            <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-12 h-12 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
+            <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-12 h-12 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
+
+            <div className="bg-white dark:bg-[#0b1329] text-slate-900 dark:text-white p-6 sm:p-8 lg:p-10 rounded-sm border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 transition-colors">
               
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                 <div>
                   <span className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-widest block">SECURE_DISPATCH_PORTAL</span>
-                  <h3 className="text-xl sm:text-2xl font-black text-[#0b1329] uppercase tracking-tight">Request a Quote</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Request a Quote</h3>
                 </div>
-                <div className="p-2.5 rounded-xl bg-slate-100 text-[#0b1329]">
+                <div className="p-2.5 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800">
                   <Lock className="w-4 h-4" />
                 </div>
               </div>
 
               {submitted ? (
-                <div className="bg-slate-50 text-slate-900 p-8 rounded-2xl text-center border border-slate-200 my-6">
+                <div className="bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white p-8 rounded-sm text-center border border-slate-200 dark:border-slate-800 my-6">
                   <CheckCircle2 className="w-12 h-12 text-[#f59e0b] mx-auto mb-3" />
                   <h4 className="text-xl font-black mb-1 uppercase tracking-tight">Request Dispatched</h4>
-                  <p className="text-slate-600 text-xs sm:text-sm font-medium">Our dispatch manager is reviewing your requirements and will contact you within 2 hours.</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium">Our dispatch manager is reviewing your requirements and will contact you within 2 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <label className="block text-[11px] font-mono font-bold text-slate-500 uppercase mb-1">First Name *</label>
+                      <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">First Name *</label>
                       <input 
                         type="text" 
                         name="firstName"
                         required 
                         placeholder="e.g. John" 
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#0b1329] focus:bg-white transition-colors" 
+                        className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" 
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-mono font-bold text-slate-500 uppercase mb-1">Phone Number *</label>
+                      <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Phone Number *</label>
                       <input 
                         type="tel" 
                         name="phone"
                         required 
                         placeholder="e.g. 07123 456789" 
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#0b1329] focus:bg-white transition-colors" 
+                        className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" 
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-500 uppercase mb-1">Email Address *</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Email Address *</label>
                     <input 
                       type="email" 
                       name="email"
                       required 
                       placeholder="john@company.co.uk" 
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#0b1329] focus:bg-white transition-colors" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" 
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-500 uppercase mb-1">Company / Venue Name</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Company / Venue Name</label>
                     <input 
                       type="text" 
                       name="company"
                       placeholder="e.g. Grand Venue Ltd" 
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#0b1329] focus:bg-white transition-colors" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" 
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-500 uppercase mb-1">Service Required *</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Service Required *</label>
                     <CustomServiceSelect 
                       value={selectedService} 
                       onChange={setSelectedService} 
@@ -222,22 +226,23 @@ export function GetInTouch() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-500 uppercase mb-1">Enquiry & Venue Details</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Enquiry & Venue Details</label>
                     <textarea 
                       name="enquiry"
                       rows={3} 
                       placeholder="Specify venue location, dates, shift hours, or unique requirements..." 
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-xs text-slate-900 focus:outline-none focus:border-[#0b1329] focus:bg-white transition-colors resize-none" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors resize-none" 
                     />
                   </div>
 
                   <button 
                     type="submit" 
                     disabled={loading}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#0b1329] hover:bg-slate-800 text-white font-extrabold py-4 rounded-xl text-xs sm:text-sm transition-all shadow-md active:scale-95 uppercase tracking-wider cursor-pointer mt-2"
+                    className="group relative overflow-hidden flex items-center justify-center gap-2 w-full bg-[#f59e0b] text-slate-950 font-black py-4 rounded-sm text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer mt-2"
                   >
-                    <span>{loading ? "Submitting Quote Request..." : "Submit Quote Request"}</span>
-                    <ArrowRight className="w-4 h-4 text-[#f59e0b]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                    <span className="relative z-10">{loading ? "Submitting Quote Request..." : "Submit Quote Request"}</span>
+                    <ArrowRight className="relative z-10 w-4 h-4" />
                   </button>
                 </form>
               )}

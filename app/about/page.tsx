@@ -19,7 +19,9 @@ import {
   ArrowRight,
   FileText,
   Lock,
-  Send
+  Send,
+  Building2,
+  PhoneCall
 } from 'lucide-react';
 
 export default function AboutPage() {
@@ -77,7 +79,7 @@ export default function AboutPage() {
       desc: "Every officer undergoes a rigorous 5-year background, credit, and employment check prior to stepping onto any client site."
     },
     {
-      title: "SIA Approved ACS Standards",
+      title: "SIA Approved Standards",
       desc: "Our management and field operations strictly adhere to Security Industry Authority codes of conduct and security protocols."
     },
     {
@@ -91,20 +93,20 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#070d1e] font-sans text-slate-300 flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#070d1e] font-sans text-slate-800 dark:text-slate-300 flex flex-col justify-between transition-colors duration-300">
       <Header />
 
-      <main>
+      <main className="grow">
         {/* ========================================== */}
         {/* 1. HERO HEADER WITH INLINE QUOTE FORM      */}
         {/* ========================================== */}
-        <section className="relative bg-[#0b1329] text-white py-12 sm:py-20 lg:py-24 border-b border-slate-800 overflow-hidden">
+        <section className="relative bg-slate-100 dark:bg-[#0b1329] text-slate-900 dark:text-white py-12 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800/80 overflow-hidden transition-colors duration-300">
           
           {/* Subtle Tactical Dot Grid Overlay */}
           <div 
-            className="absolute inset-0 pointer-events-none opacity-20"
+            className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20"
             style={{
-              backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.25) 1.2px, transparent 1.2px)',
+              backgroundImage: 'radial-gradient(currentColor 1.2px, transparent 1.2px)',
               backgroundSize: '24px 24px'
             }}
           />
@@ -115,9 +117,9 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-400 mb-6 sm:mb-8">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
               <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
               <span className="text-[#f59e0b]">ABOUT_US</span>
             </div>
 
@@ -125,17 +127,17 @@ export default function AboutPage() {
               
               {/* LEFT COLUMN: HERO COPY */}
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
                   <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
                   <span>Protection • Strength • Trust</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12] mb-4 sm:mb-6 uppercase">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-4 sm:mb-6 uppercase transition-colors">
                   Setting the Standard in <br className="hidden sm:inline" />
                   <span className="text-[#f59e0b]">UK Security & Facilities</span>
                 </h1>
 
-                <p className="text-sm sm:text-base lg:text-lg text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl">
+                <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl transition-colors">
                   Saints Services Ltd was founded to give UK commercial property owners, event organizers, and retail brands dependable, SIA-licensed protection and high-level facilities management.
                 </p>
 
@@ -143,15 +145,16 @@ export default function AboutPage() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <a 
                     href="#quote-form" 
-                    className="inline-flex items-center justify-center gap-2 bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-extrabold px-7 py-3.5 rounded-xl text-sm transition-all shadow-md active:scale-95 border border-amber-400 uppercase tracking-wider"
+                    className="group relative overflow-hidden inline-flex items-center justify-center gap-2 bg-[#f59e0b] text-slate-950 font-black px-7 py-3.5 rounded-md text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
                   >
-                    <span>Request Corporate Quote</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                    <span className="relative z-10">Request Corporate Quote</span>
+                    <ArrowRight className="relative z-10 w-4 h-4" />
                   </a>
 
                   <a 
                     href="tel:07412733920" 
-                    className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all border border-slate-700 shadow-md active:scale-95 uppercase tracking-wider"
+                    className="inline-flex items-center justify-center gap-2 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-extrabold px-6 py-3.5 rounded-md text-xs sm:text-sm transition-all border border-slate-300 dark:border-slate-800 shadow-md active:scale-95 uppercase tracking-wider"
                   >
                     <Clock className="w-4 h-4 text-[#f59e0b] shrink-0" />
                     <span>24/7 Desk (07412 733920)</span>
@@ -163,34 +166,34 @@ export default function AboutPage() {
               <div id="quote-form" className="lg:col-span-5 relative px-2 mt-6 lg:mt-0">
                 
                 {/* Tactical Corner Brackets */}
-                <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-16 h-16 border-t-2 border-l-2 border-[#f59e0b] rounded-tl-2xl z-20 pointer-events-none" />
-                <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-16 h-16 border-b-2 border-r-2 border-[#f59e0b] rounded-br-2xl z-20 pointer-events-none" />
+                <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-12 h-12 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
+                <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-12 h-12 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 
-                <div className="bg-[#0b1329] text-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800 shadow-2xl relative z-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-900 border border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
+                <div className="bg-white dark:bg-[#070d1e] text-slate-900 dark:text-white p-6 sm:p-8 rounded-md border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 transition-colors duration-300">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
                     <Lock className="w-3 h-3 text-[#f59e0b]" />
                     <span>DIRECT_DISPATCH // 2_HR_RESPONSE</span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-white mb-1 uppercase tracking-tight">Request a Quote</h3>
-                  <p className="text-slate-400 text-xs font-medium mb-6">Get an immediate corporate security quotation.</p>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-1 uppercase tracking-tight">Request a Quote</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-xs font-medium mb-6">Get an immediate corporate security quotation.</p>
 
                   {submitted ? (
-                    <div className="bg-slate-900 text-white p-6 rounded-2xl text-center border border-slate-800">
+                    <div className="bg-slate-50 dark:bg-[#0b1329] text-slate-900 dark:text-white p-6 rounded-md text-center border border-slate-200 dark:border-slate-800">
                       <CheckCircle2 className="w-10 h-10 text-[#f59e0b] mx-auto mb-2" />
-                      <h4 className="text-lg font-black mb-1">Request Dispatched</h4>
-                      <p className="text-slate-300 text-xs font-medium">Our dispatch manager will review your specs and contact you shortly.</p>
+                      <h4 className="text-lg font-black mb-1 uppercase tracking-tight">Request Dispatched</h4>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs font-medium">Our dispatch manager will review your specs and contact you shortly.</p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-3.5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="text" name="firstName" required placeholder="First name *" className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b]" />
-                        <input type="tel" name="phone" required placeholder="Phone number *" className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b]" />
+                        <input type="text" name="firstName" required placeholder="First name *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
+                        <input type="tel" name="phone" required placeholder="Phone number *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="email" name="email" required placeholder="Email Address *" className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b]" />
-                        <input type="text" name="company" placeholder="Company Name" className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b]" />
+                        <input type="email" name="email" required placeholder="Email Address *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
+                        <input type="text" name="company" placeholder="Company Name" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
                       </div>
                       
                       <CustomServiceSelect 
@@ -198,15 +201,16 @@ export default function AboutPage() {
                         onChange={setSelectedService} 
                       />
 
-                      <textarea name="enquiry" rows={3} placeholder="Your enquiry (e.g. venue location, dates, shift hours)..." className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b] resize-none" />
+                      <textarea name="enquiry" rows={3} placeholder="Your enquiry (e.g. venue location, dates, shift hours)..." className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] resize-none transition-colors" />
 
                       <button 
                         type="submit" 
                         disabled={loading}
-                        className="w-full bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-black py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md active:scale-95 cursor-pointer uppercase tracking-wider flex items-center justify-center gap-2"
+                        className="group relative overflow-hidden flex items-center justify-center gap-2 w-full bg-[#f59e0b] text-slate-950 font-black py-3.5 rounded-sm text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
                       >
-                        <span>{loading ? "Submitting Request..." : "Submit Request"}</span>
-                        <Send className="w-4 h-4" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                        <span className="relative z-10">{loading ? "Submitting Request..." : "Submit Request"}</span>
+                        <Send className="relative z-10 w-4 h-4" />
                       </button>
                     </form>
                   )}
@@ -222,14 +226,14 @@ export default function AboutPage() {
         {/* ========================================== */}
         {/* 2. CORE STATS BAR                          */}
         {/* ========================================== */}
-        <section className="py-10 sm:py-16 bg-[#070d1e] border-b border-slate-800">
+        <section className="py-10 sm:py-16 bg-slate-50 dark:bg-[#070d1e] border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {stats.map((stat, idx) => (
-                <div key={idx} className="bg-[#0b1329] border border-slate-800 p-5 sm:p-6 rounded-2xl shadow-xl text-left">
-                  <div className="text-2xl sm:text-4xl font-black text-white font-mono mb-1 tracking-tight">{stat.value}</div>
+                <div key={idx} className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 p-5 sm:p-6 rounded-md shadow-xl text-left transition-colors">
+                  <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white font-mono mb-1 tracking-tight">{stat.value}</div>
                   <div className="text-[11px] sm:text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-1">{stat.label}</div>
-                  <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium leading-tight">{stat.sub}</div>
+                  <div className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-tight">{stat.sub}</div>
                 </div>
               ))}
             </div>
@@ -239,31 +243,31 @@ export default function AboutPage() {
         {/* ========================================== */}
         {/* 3. OPERATIONAL PILLARS & VETTING           */}
         {/* ========================================== */}
-        <section className="py-16 sm:py-24 bg-white text-slate-900 border-b border-slate-200">
+        <section className="py-16 sm:py-24 bg-white dark:bg-[#0b1329] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="max-w-3xl mb-10 sm:mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#0b1329] text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-3">
                 <FileText className="w-3.5 h-3.5 text-[#f59e0b]" /> 
                 <span>VETTING_&_COMPLIANCE</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#0b1329] tracking-tight mb-3 sm:mb-4 uppercase">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-3 sm:mb-4 uppercase">
                 Built on Transparency & Security Assurance
               </h2>
-              <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium leading-relaxed">
                 We understand that deploying personnel onto your premises requires absolute trust. Here is how we maintain service quality across every shift.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
               {corePillars.map((pillar, idx) => (
-                <div key={idx} className="bg-[#f8fafc] border border-slate-200/90 p-6 sm:p-8 rounded-2xl sm:rounded-3xl flex items-start gap-4 sm:gap-5 shadow-2xs">
-                  <div className="p-3 bg-[#0b1329] text-[#f59e0b] rounded-xl shrink-0 mt-0.5">
+                <div key={idx} className="bg-slate-50 dark:bg-[#070d1e] border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-md flex items-start gap-4 sm:gap-5 shadow-sm transition-colors">
+                  <div className="p-3 bg-slate-200 dark:bg-slate-900 text-[#f59e0b] rounded-sm shrink-0 mt-0.5 border border-slate-300 dark:border-slate-800">
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-black text-[#0b1329] mb-1.5">{pillar.title}</h3>
-                    <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white mb-1.5 uppercase tracking-tight">{pillar.title}</h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm font-medium leading-relaxed">
                       {pillar.desc}
                     </p>
                   </div>

@@ -70,7 +70,7 @@ export function FaqEventSecurity() {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-[#070d1e] text-white border-b border-slate-800 relative overflow-hidden font-sans">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden font-sans transition-colors duration-300">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#f59e0b]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -79,14 +79,14 @@ export function FaqEventSecurity() {
         
         {/* HEADER */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-[#f59e0b] text-[11px] font-mono font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-3 shadow-xs transition-colors">
             <HelpCircle className="w-3.5 h-3.5 text-[#f59e0b]" />
             <span>EVENT_SECURITY // F.A.Q.</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2.5">
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight mb-2.5 uppercase">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-400 text-xs sm:text-sm font-medium max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium max-w-xl mx-auto leading-relaxed">
             Everything you need to know about our event security, crowd management, and festival safety solutions.
           </p>
         </div>
@@ -98,10 +98,10 @@ export function FaqEventSecurity() {
             return (
               <div 
                 key={index}
-                className={`border rounded-xl transition-all duration-200 overflow-hidden ${
+                className={`border rounded-sm transition-all duration-200 overflow-hidden ${
                   isOpen 
-                    ? 'bg-[#0b1329] border-[#f59e0b]/40 shadow-sm shadow-amber-500/5' 
-                    : 'bg-[#0b1329]/60 border-slate-800/80 hover:border-slate-700'
+                    ? 'bg-white dark:bg-[#0b1329] border-[#f59e0b] shadow-md' 
+                    : 'bg-white/80 dark:bg-[#0b1329]/60 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                 }`}
               >
                 <button
@@ -110,23 +110,23 @@ export function FaqEventSecurity() {
                   className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                 >
                   <div className="space-y-1">
-                    <span className="text-[10px] font-mono font-semibold text-[#f59e0b] uppercase tracking-wider block">
+                    <span className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-wider block">
                       {faq.category}
                     </span>
-                    <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">
+                    <h3 className="text-sm sm:text-base font-black text-slate-900 dark:text-white tracking-tight uppercase">
                       {faq.question}
                     </h3>
                   </div>
-                  <div className={`p-1.5 rounded-lg border shrink-0 transition-transform duration-200 ${
-                    isOpen ? 'bg-[#f59e0b] text-[#0b1329] border-[#f59e0b] rotate-180' : 'bg-slate-900 text-slate-400 border-slate-800'
+                  <div className={`p-1.5 rounded-sm border shrink-0 transition-transform duration-200 ${
+                    isOpen ? 'bg-[#f59e0b] text-slate-950 border-[#f59e0b] rotate-180' : 'bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800'
                   }`}>
                     <ChevronDown className="w-3.5 h-3.5" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 border-t border-slate-800/60 mt-1">
-                    <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed pt-3">
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 border-t border-slate-200 dark:border-slate-800 mt-1">
+                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed pt-3">
                       {faq.answer}
                     </p>
                   </div>
@@ -137,25 +137,26 @@ export function FaqEventSecurity() {
         </div>
 
         {/* CALLOUT BOX */}
-        <div className="bg-gradient-to-r from-slate-900 via-[#0b1329] to-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl text-center shadow-xl relative overflow-hidden">
+        <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-sm text-center shadow-xl relative overflow-hidden transition-colors">
           <ShieldCheck className="w-7 h-7 text-[#f59e0b] mx-auto mb-2" />
-          <h3 className="text-base sm:text-lg font-bold text-white tracking-tight mb-1">Have questions about your upcoming event?</h3>
-          <p className="text-slate-400 text-xs font-medium max-w-md mx-auto mb-5">
+          <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-tight mb-1 uppercase">Have questions about your upcoming event?</h3>
+          <p className="text-slate-500 dark:text-slate-400 text-xs font-medium max-w-md mx-auto mb-5">
             Our event security deployment team is available 24/7 to structure your operational plan.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a 
               href="#quote-form" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-bold px-5 py-2.5 rounded-xl text-xs transition-all shadow-md uppercase tracking-wider cursor-pointer"
+              className="group relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#f59e0b] text-slate-950 font-black px-5 py-2.5 rounded-sm text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
             >
-              <span>Request a Quote</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+              <span className="relative z-10">Request a Quote</span>
+              <ArrowRight className="relative z-10 w-3.5 h-3.5" />
             </a>
 
             <a 
               href="tel:07412733920" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-all border border-slate-700 uppercase tracking-wider cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-black px-5 py-2.5 rounded-sm text-xs transition-all border border-slate-300 dark:border-slate-800 uppercase tracking-wider cursor-pointer"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#f59e0b]" />
               <span>Call Control Room</span>

@@ -30,16 +30,16 @@ export function CustomServiceSelect({ value, onChange, placeholder = "Choose one
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b] flex items-center justify-between transition-colors cursor-pointer text-left shadow-inner"
+        className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] flex items-center justify-between transition-colors cursor-pointer text-left shadow-xs"
       >
-        <span className={value ? "text-white font-medium" : "text-slate-400"}>
+        <span className={value ? "text-slate-900 dark:text-white font-medium" : "text-slate-400 dark:text-slate-500"}>
           {value || placeholder}
         </span>
         <ChevronDown className={`w-4 h-4 text-[#f59e0b] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 right-0 top-full mt-2 bg-[#0b1329] border border-slate-800 rounded-xl shadow-2xl z-50 max-h-60 overflow-y-auto overscroll-contain divide-y divide-slate-800/50">
+        <div className="absolute left-0 right-0 top-full mt-1 bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-sm shadow-2xl z-50 max-h-60 overflow-y-auto overscroll-contain divide-y divide-slate-100 dark:divide-slate-800/50">
           {SERVICES_LIST.map((service) => (
             <button
               key={service}
@@ -51,7 +51,7 @@ export function CustomServiceSelect({ value, onChange, placeholder = "Choose one
               className={`w-full text-left px-4 py-2.5 text-xs transition-colors cursor-pointer flex items-center justify-between ${
                 value === service 
                   ? 'bg-[#f59e0b]/20 text-[#f59e0b] font-bold' 
-                  : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               <span>{service}</span>

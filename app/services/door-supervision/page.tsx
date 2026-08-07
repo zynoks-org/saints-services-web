@@ -21,7 +21,8 @@ import {
   CheckCircle2,
   Lock,
   Radio,
-  FileBadge
+  FileBadge,
+  Send
 } from 'lucide-react';
 
 export default function DoorSupervisionPage() {
@@ -67,14 +68,14 @@ export default function DoorSupervisionPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070d1e] font-sans text-slate-900 flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#070d1e] font-sans text-slate-800 dark:text-slate-300 flex flex-col justify-between transition-colors duration-300">
       <Header />
 
-      <main>
+      <main className="grow">
         {/* ========================================== */}
         {/* 1. HERO HEADER WITH HEAVY DARK TACTICAL STYLE */}
         {/* ========================================== */}
-        <section className="relative bg-[#0b1329] text-white py-12 sm:py-20 lg:py-24 border-b border-slate-800 overflow-hidden">
+        <section className="relative bg-slate-100 dark:bg-[#0b1329] text-slate-900 dark:text-white py-12 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800/80 overflow-hidden transition-colors duration-300">
           
           {/* DESKTOP BACKGROUND IMAGE WITH NAVY GRADIENT */}
           <div className="hidden lg:block absolute inset-y-0 right-0 w-2/3 pointer-events-none z-0">
@@ -84,20 +85,20 @@ export default function DoorSupervisionPage() {
                 alt="Saints Services Door Supervision Operations"
                 fill
                 priority
-                className="object-cover object-[80%_center] opacity-35 mix-blend-luminosity"
+                className="object-cover object-[80%_center] opacity-15 dark:opacity-35 mix-blend-luminosity"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0b1329] from-15% via-[#0b1329]/80 via-50% to-[#0b1329]/30 to-90%" />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b1329] via-[#0b1329]/60 to-transparent" />
-              <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#0b1329] via-[#0b1329]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-100 dark:from-[#0b1329] from-15% via-slate-100/80 dark:via-[#0b1329]/80 via-50% to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-100 dark:from-[#0b1329] via-slate-100/60 dark:via-[#0b1329]/60 to-transparent" />
+              <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-slate-100 dark:from-[#0b1329] via-slate-100/40 dark:via-[#0b1329]/40 to-transparent" />
             </div>
           </div>
 
           {/* Dot Grid Overlay */}
           <div 
-            className="absolute inset-0 pointer-events-none opacity-20 z-0"
+            className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20 z-0"
             style={{
-              backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.25) 1.2px, transparent 1.2px)',
+              backgroundImage: 'radial-gradient(currentColor 1.2px, transparent 1.2px)',
               backgroundSize: '24px 24px'
             }}
           />
@@ -108,11 +109,11 @@ export default function DoorSupervisionPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             {/* Breadcrumb Navigation */}
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-400 mb-6 sm:mb-8">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
               <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
               <Link href="/services" className="hover:text-[#f59e0b] transition-colors">SERVICES</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
               <span className="text-[#f59e0b]">DOOR_SUPERVISION</span>
             </div>
 
@@ -120,41 +121,42 @@ export default function DoorSupervisionPage() {
               
               {/* LEFT COLUMN: HERO COPY */}
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
                   <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
                   <span>SIA APPROVED // DOOR SUPERVISORS</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1] mb-4 sm:mb-6 uppercase">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4 sm:mb-6 uppercase transition-colors">
                   Door Supervision <br className="hidden sm:inline" />
                   <span className="text-[#f59e0b]">Services</span>
                 </h1>
 
-                <p className="text-sm sm:text-base lg:text-lg text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl">
+                <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl transition-colors">
                   Saints Services Ltd provides SIA-licensed door supervisors to commercial venues and licensed premises across the UK. With a 98% client retention rate, our trained security personnel maintain strict safety standards while acting as a welcoming, professional face for your brand.
                 </p>
 
-                {/* Rating & Action Buttons */}
+                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
                   <Link 
                     href="#quote-form" 
-                    className="inline-flex items-center justify-center gap-2 bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-extrabold px-7 py-3.5 rounded-xl text-sm transition-all shadow-md active:scale-95 border border-amber-400 uppercase tracking-wider"
+                    className="group relative overflow-hidden inline-flex items-center justify-center gap-2 bg-[#f59e0b] text-slate-950 font-black px-7 py-3.5 rounded-md text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
                   >
-                    <span>Request a Quote</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                    <span className="relative z-10">Request a Quote</span>
+                    <ArrowRight className="relative z-10 w-4 h-4" />
                   </Link>
 
                   <a 
                     href="tel:07412733920" 
-                    className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all border border-slate-700 shadow-md active:scale-95 uppercase tracking-wider"
+                    className="inline-flex items-center justify-center gap-2 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-extrabold px-6 py-3.5 rounded-md text-xs sm:text-sm transition-all border border-slate-300 dark:border-slate-800 shadow-md active:scale-95 uppercase tracking-wider"
                   >
                     <PhoneCall className="w-4 h-4 text-[#f59e0b]" />
                     <span>Talk to an Expert</span>
                   </a>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-400">
-                  <span className="text-white">5 STAR CLIENT REVIEWED</span>
+                <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
+                  <span className="text-slate-900 dark:text-white">5 STAR CLIENT REVIEWED</span>
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-[#f59e0b] text-[#f59e0b]" />
@@ -167,48 +169,50 @@ export default function DoorSupervisionPage() {
               <div id="quote-form" className="lg:col-span-5 relative px-2">
                 
                 {/* Tactical Corner Brackets */}
-                <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-16 h-16 border-t-2 border-l-2 border-[#f59e0b] rounded-tl-2xl z-20 pointer-events-none" />
-                <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-16 h-16 border-b-2 border-r-2 border-[#f59e0b] rounded-br-2xl z-20 pointer-events-none" />
+                <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-12 h-12 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
+                <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-12 h-12 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 
-                <div className="bg-[#0b1329] text-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800 shadow-2xl relative z-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-900 border border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
+                <div className="bg-white dark:bg-[#070d1e] text-slate-900 dark:text-white p-6 sm:p-8 rounded-md border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 transition-colors duration-300">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
                     <Lock className="w-3 h-3 text-[#f59e0b]" />
                     <span>FAST_DISPATCH // 2_HR_RESPONSE</span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-white mb-1 uppercase tracking-tight">Request a Quote</h3>
-                  <p className="text-slate-400 text-xs font-medium mb-6">
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-1 uppercase tracking-tight">Request a Quote</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-xs font-medium mb-6">
                     Get a bespoke operational quotation for your site within 2 hours.
                   </p>
 
                   {submitted ? (
-                    <div className="bg-slate-900 text-white p-6 rounded-2xl text-center border border-slate-800">
+                    <div className="bg-slate-50 dark:bg-[#0b1329] text-slate-900 dark:text-white p-6 rounded-md text-center border border-slate-200 dark:border-slate-800">
                       <CheckCircle2 className="w-10 h-10 text-[#f59e0b] mx-auto mb-2" />
-                      <h4 className="text-lg font-black mb-1">Request Dispatched</h4>
-                      <p className="text-slate-300 text-xs font-medium">Our dispatch manager will review your specs and get in touch shortly.</p>
+                      <h4 className="text-lg font-black mb-1 uppercase tracking-tight">Request Dispatched</h4>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs font-medium">Our dispatch manager will review your specs and get in touch shortly.</p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-3.5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="text" name="firstName" required placeholder="First name *" className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b]" />
-                        <input type="tel" name="phone" required placeholder="Phone number *" className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b]" />
+                        <input type="text" name="firstName" required placeholder="First name *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
+                        <input type="tel" name="phone" required placeholder="Phone number *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
                       </div>
 
-                      <input type="email" name="email" required placeholder="Email Address *" className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b]" />
+                      <input type="email" name="email" required placeholder="Email Address *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
                       
                       <CustomServiceSelect 
                         value={selectedService} 
                         onChange={setSelectedService} 
                       />
 
-                      <textarea name="enquiry" rows={3} placeholder="Your enquiry (e.g. venue location, dates, shift hours)..." className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-[#f59e0b] resize-none" />
+                      <textarea name="enquiry" rows={3} placeholder="Your enquiry (e.g. venue location, dates, shift hours)..." className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] resize-none transition-colors" />
 
                       <button 
                         type="submit" 
                         disabled={loading}
-                        className="w-full bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-black py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md active:scale-95 cursor-pointer uppercase tracking-wider"
+                        className="group relative overflow-hidden flex items-center justify-center gap-2 w-full bg-[#f59e0b] text-slate-950 font-black py-3.5 rounded-sm text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
                       >
-                        {loading ? "Submitting Request..." : "Submit Request"}
+                        <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                        <span className="relative z-10">{loading ? "Submitting Request..." : "Submit Request"}</span>
+                        <Send className="relative z-10 w-4 h-4" />
                       </button>
                     </form>
                   )}
@@ -224,59 +228,59 @@ export default function DoorSupervisionPage() {
         {/* ========================================== */}
         {/* 2. DETAILED SERVICE EXPLANATION & BENEFITS */}
         {/* ========================================== */}
-        <section className="py-16 sm:py-24 bg-white text-slate-900 border-b border-slate-200">
+        <section className="py-16 sm:py-24 bg-white dark:bg-[#0b1329] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               
               {/* LEFT: DETAILED TEXT */}
               <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#0b1329] text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest">
                   <FileBadge className="w-3.5 h-3.5 text-[#f59e0b]" />
                   <span>LICENSED_VENUE_SECURITY</span>
                 </div>
 
-                <h2 className="text-2xl sm:text-4xl font-black text-[#0b1329] tracking-tight uppercase leading-tight">
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase leading-tight">
                   Professional SIA Door Supervision for Licensed Premises
                 </h2>
 
-                <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
                   High-capacity licensed venues require security expertise beyond standard perimeter watching. When managing busy hospitality operations, corporate galas, or premium leisure establishments, your venue needs SIA-licensed door supervisors who excel in complex, high-footfall environments.
                 </p>
 
-                <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
                   Saints Services Ltd specializes in door supervision for businesses operating critical hospitality venues. We deploy SIA-licensed Door Supervisors trained in crowd management, conflict de-escalation, entry screening, and regulatory compliance to protect your premises across England, Scotland, and Wales.
                 </p>
 
-                <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
                   Our door supervisors serve as the primary point of contact for every visitor. They manage potential security threats before escalation occurs while preserving the welcoming atmosphere your brand demands. All personnel undergo continuous supervisory audits and hold valid Security Industry Authority licensing.
                 </p>
               </div>
 
               {/* RIGHT: BENEFIT HIGHLIGHT CARD */}
-              <div className="lg:col-span-5 bg-[#0b1329] text-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800 shadow-xl relative overflow-hidden">
+              <div className="lg:col-span-5 bg-white dark:bg-[#070d1e] text-slate-900 dark:text-white p-6 sm:p-8 rounded-md border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden transition-colors">
                 
                 {/* Tactical Glow */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#f59e0b]/10 blur-2xl rounded-full pointer-events-none" />
 
                 {/* Dark Metallic Callout Badge */}
-                <div className="bg-slate-900 border border-slate-800 text-white p-5 rounded-2xl mb-6 text-center">
+                <div className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white p-5 rounded-md mb-6 text-center">
                   <div className="flex items-center justify-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
                     <Radio className="w-3.5 h-3.5 animate-pulse" />
                     <span>STATUS // ACTIVE_UK_COVERAGE</span>
                   </div>
-                  <div className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white">Nationwide Dispatch</div>
+                  <div className="text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-white">Nationwide Dispatch</div>
                 </div>
 
-                <h3 className="text-lg font-black text-white mb-4 uppercase tracking-wider">
+                <h3 className="text-lg font-black text-slate-900 dark:text-white mb-4 uppercase tracking-wider">
                   Door Supervisor Business Benefits
                 </h3>
 
-                <p className="text-slate-400 text-xs font-medium leading-relaxed mb-6">
+                <p className="text-slate-500 dark:text-slate-400 text-xs font-medium leading-relaxed mb-6">
                   With years of experience protecting UK venues, Saints Services Ltd provides dependable door security tailored to your operational needs:
                 </p>
 
-                <div className="space-y-3.5 text-xs font-bold text-slate-200">
+                <div className="space-y-3.5 text-xs font-bold text-slate-800 dark:text-slate-200">
                   {[
                     "Bespoke Tailored Security Architecture",
                     "Highly Trained & Vetted SIA Personnel",
@@ -284,7 +288,7 @@ export default function DoorSupervisionPage() {
                     "Rapid Control Room Emergency Response",
                     "Transparent Competitive Hourly Billing"
                   ].map((benefit, i) => (
-                    <div key={i} className="flex items-center gap-3 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800">
+                    <div key={i} className="flex items-center gap-3 p-2.5 rounded-md bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-xs">
                       <CheckCircle2 className="w-4 h-4 text-[#f59e0b] shrink-0" />
                       <span>{benefit}</span>
                     </div>

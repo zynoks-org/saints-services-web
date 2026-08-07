@@ -17,11 +17,13 @@ import {
   Search,
   X,
   Plus,
-  Minus
+  Minus,
+  Radio,
+  Activity
 } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
 
-// CartoDB Dark Matter tile provider
+// CartoDB Dark Matter tile provider (Untouched Original Map Setup)
 const darkTileProvider = (x: number, y: number, z: number, dpr?: number) => {
   return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}${dpr && dpr >= 2 ? '@2x' : ''}.png`;
 };
@@ -210,15 +212,27 @@ export function LocationsCoverage() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-[#070d1e] text-white border-b border-slate-800 font-sans relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 font-sans relative overflow-hidden transition-colors duration-300">
       
-      {/* Background Ambient Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#f59e0b]/5 rounded-full blur-[150px] pointer-events-none" />
+      {/* TACTICAL BACKGROUND: GRID OVERLAY & SCANLINES */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.07] z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }}
+      />
+
+      {/* Background Ambient Gold Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-[#f59e0b]/10 dark:bg-[#f59e0b]/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* TOP BANNER / HEADER */}
-        <div className="bg-[#0b1329] border border-slate-800 rounded-3xl p-8 sm:p-12 mb-12 shadow-2xl relative overflow-hidden">
+        <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-8 sm:p-12 mb-12 shadow-2xl relative overflow-hidden transition-colors duration-300">
           
           <div className="absolute top-0 right-0 hidden sm:flex gap-1.5 opacity-80 pointer-events-none transform translate-x-4 -translate-y-2">
             {[...Array(4)].map((_, i) => (
@@ -232,64 +246,76 @@ export function LocationsCoverage() {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono font-bold text-slate-300 border-b border-slate-800 pb-6 mb-8 text-center">
-            <div className="flex items-center gap-1.5 text-amber-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono font-bold text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 pb-6 mb-8 text-center">
+            <div className="flex items-center gap-1.5 text-slate-900 dark:text-amber-400">
               <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
               <span>UK WIDE COVERAGE</span>
             </div>
-            <div className="flex items-center gap-1.5 text-amber-400">
+            <div className="flex items-center gap-1.5 text-slate-900 dark:text-amber-400">
               <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
               <span>98% RETENTION RATE</span>
             </div>
-            <div className="flex items-center gap-1.5 text-amber-400">
+            <div className="flex items-center gap-1.5 text-slate-900 dark:text-amber-400">
               <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
               <span>AVAILABLE 24/7/365</span>
             </div>
           </div>
 
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-none">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none">
               SAINTS SERVICES <br />
               <span className="text-[#f59e0b]">LOCATIONS</span>
             </h1>
-            <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed max-w-2xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed max-w-2xl mx-auto">
               Comprehensive Security Solutions Across the UK – Discover Saints Services Locations Near You, Providing Tailored Protection for Every Sector and Region.
             </p>
           </div>
 
         </div>
 
-        {/* INTERACTIVE PIGEON-MAPS CARD */}
-        <div className="mb-12 bg-[#0b1329] rounded-3xl shadow-2xl overflow-hidden border border-slate-800 p-3 sm:p-4 flex flex-col lg:flex-row gap-4">
+        {/* INTERACTIVE PIGEON-MAPS CARD (TACTICAL HUD STYLE) */}
+        <div className="relative mb-12 bg-white dark:bg-[#0b1329] rounded-md shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 p-3 sm:p-4 flex flex-col lg:flex-row gap-4 transition-colors duration-300">
           
-          {/* LEFT: Live Interactive Map */}
-          <div className="relative w-full lg:w-7/12 min-h-[480px] lg:min-h-[620px] bg-[#090f1d] rounded-2xl border-2 border-amber-500/60 shadow-[0_0_15px_rgba(245,158,11,0.15)] overflow-hidden">
+          {/* Corner Aim Reticle Brackets */}
+          <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
+          <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
+          <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
+          <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
+
+          {/* LEFT: Live Interactive Map (UNTOUCHED ORIGINAL MAP SETUP) */}
+          <div className="relative w-full lg:w-7/12 min-h-[480px] lg:min-h-[620px] bg-[#090f1d] rounded-sm border-2 border-amber-500/60 shadow-[0_0_15px_rgba(245,158,11,0.15)] overflow-hidden">
             
             {/* Header Badge */}
-            <div className="absolute top-4 left-4 z-30 flex items-center gap-2 text-[#f59e0b] font-mono text-[11px] font-bold tracking-widest uppercase bg-[#0b1329]/95 px-3.5 py-1.5 rounded-xl border border-amber-500/40 shadow-xl backdrop-blur-md pointer-events-none">
+            <div className="absolute top-4 left-4 z-30 flex items-center gap-2 text-[#f59e0b] font-mono text-[11px] font-bold tracking-widest uppercase bg-[#0b1329]/95 px-3.5 py-1.5 rounded-sm border border-amber-500/40 shadow-xl backdrop-blur-md pointer-events-none">
               <Crosshair className="w-4 h-4 animate-pulse text-[#f59e0b]" />
-              Interactive Deployment Map
+              Tactical Deployment Grid
+            </div>
+
+            {/* Status indicator pill */}
+            <div className="absolute top-4 right-4 z-30 hidden sm:flex items-center gap-2 bg-[#0b1329]/90 border border-slate-800 px-3 py-1.5 rounded-sm text-[10px] font-mono font-bold text-slate-300 backdrop-blur-md">
+              <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+              <span>DISPATCH_HUB_ONLINE</span>
             </div>
 
             {/* Custom + / - Zoom Controls */}
-            <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-1.5 bg-[#0b1329]/95 border border-amber-500/40 p-1.5 rounded-xl shadow-2xl backdrop-blur-md">
+            <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-1.5 bg-[#0b1329]/95 border border-amber-500/40 p-1.5 rounded-sm shadow-2xl backdrop-blur-md">
               <button
                 onClick={handleZoomIn}
                 aria-label="Zoom in"
-                className="p-2 rounded-lg bg-[#040814] hover:bg-slate-800 text-slate-300 hover:text-white transition-colors border border-slate-800 active:scale-95"
+                className="p-2 rounded-sm bg-[#040814] hover:bg-slate-800 text-slate-300 hover:text-white transition-colors border border-slate-800 active:scale-95 cursor-pointer"
               >
                 <Plus className="w-4 h-4 text-[#f59e0b]" />
               </button>
               <button
                 onClick={handleZoomOut}
                 aria-label="Zoom out"
-                className="p-2 rounded-lg bg-[#040814] hover:bg-slate-800 text-slate-300 hover:text-white transition-colors border border-slate-800 active:scale-95"
+                className="p-2 rounded-sm bg-[#040814] hover:bg-slate-800 text-slate-300 hover:text-white transition-colors border border-slate-800 active:scale-95 cursor-pointer"
               >
                 <Minus className="w-4 h-4 text-[#f59e0b]" />
               </button>
             </div>
 
-            {/* Map Canvas with Hydration Guard */}
+            {/* Map Canvas */}
             <div 
               className="w-full h-full [&_.pigeon-tiles]:filter [&_.pigeon-tiles]:brightness-150 [&_.pigeon-tiles]:contrast-125"
               onWheelCapture={(e) => {
@@ -349,7 +375,7 @@ export function LocationsCoverage() {
                       offset={[100, 130]}
                     >
                       <div className="relative z-[9999] pointer-events-none animate-in fade-in zoom-in-95 duration-150">
-                        <div className="w-52 bg-[#0b1329]/95 backdrop-blur-md rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-amber-500/60 p-3.5">
+                        <div className="w-52 bg-[#0b1329]/95 backdrop-blur-md rounded-sm shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-amber-500/60 p-3.5">
                           <div className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-0.5">{activeHoveredLoc.region}</div>
                           <div className="text-sm font-black text-white leading-tight mb-1">{activeHoveredLoc.name}</div>
                           <div className="text-[11px] text-slate-300 line-clamp-2 leading-tight">{activeHoveredLoc.introText}</div>
@@ -360,14 +386,14 @@ export function LocationsCoverage() {
                   )}
                 </Map>
               ) : (
-                <div className="w-full h-[620px] bg-[#090f1d] animate-pulse rounded-2xl" />
+                <div className="w-full h-[620px] bg-[#090f1d] animate-pulse rounded-sm" />
               )}
             </div>
           </div>
 
           {/* RIGHT: Region Controls & Location List Panel */}
-          <div className="w-full lg:w-5/12 flex flex-col max-h-[620px] bg-[#0b1329] rounded-2xl border border-slate-800">
-            <div className="p-4 sm:p-5 border-b border-slate-800 shrink-0 space-y-3.5">
+          <div className="w-full lg:w-5/12 flex flex-col max-h-[620px] bg-white dark:bg-[#0b1329] rounded-sm border border-slate-200 dark:border-slate-800 transition-colors">
+            <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 shrink-0 space-y-3.5">
               
               {/* Location Search Input */}
               <div className="relative">
@@ -377,12 +403,12 @@ export function LocationsCoverage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search city or location (e.g. London, Derby)..."
-                  className="w-full bg-[#040814] border border-slate-700/80 rounded-xl pl-10 pr-9 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#f59e0b] transition-colors"
+                  className="w-full bg-slate-50 dark:bg-[#040814] border border-slate-300 dark:border-slate-700/80 rounded-sm pl-10 pr-9 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-[#f59e0b] transition-colors"
                 />
                 {searchQuery && (
                   <button 
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-900 dark:hover:text-white cursor-pointer"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -391,7 +417,7 @@ export function LocationsCoverage() {
 
               {/* Region Filter Buttons */}
               <div>
-                <h2 className="text-xs font-bold text-slate-400 mb-2 flex items-center gap-1.5 uppercase tracking-wider font-mono">
+                <h2 className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1.5 uppercase tracking-wider font-mono">
                   <MapIcon className="w-3.5 h-3.5 text-[#f59e0b]" />
                   Filter Active Hubs
                 </h2>
@@ -400,10 +426,10 @@ export function LocationsCoverage() {
                     <button
                       key={region}
                       onClick={() => handleRegionChange(region)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
+                      className={`px-3 py-1.5 rounded-sm text-xs font-bold transition-all border cursor-pointer ${
                         selectedRegion === region 
-                          ? 'bg-[#f59e0b] text-[#0b1329] border-[#f59e0b] shadow-[0_0_12px_rgba(245,158,11,0.25)]' 
-                          : 'bg-[#040814] text-slate-400 border-slate-800 hover:border-slate-700 hover:text-white'
+                          ? 'bg-[#f59e0b] text-slate-950 border-[#f59e0b] shadow-[0_0_12px_rgba(245,158,11,0.25)]' 
+                          : 'bg-slate-50 dark:bg-[#040814] text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-900 dark:hover:text-white'
                       }`}
                     >
                       {region}
@@ -425,28 +451,28 @@ export function LocationsCoverage() {
                     setCenter([loc.coordinates.lat, loc.coordinates.lng]);
                   }}
                   onMouseLeave={() => setHoveredLocation(null)}
-                  className={`block p-3.5 rounded-xl border transition-all duration-200 ${
+                  className={`block p-3.5 rounded-sm border transition-all duration-200 ${
                     hoveredLocation === loc.slug 
-                      ? 'bg-slate-800/80 border-[#f59e0b] translate-x-1' 
-                      : 'bg-[#040814]/70 border-slate-800 hover:border-slate-700'
+                      ? 'bg-slate-100 dark:bg-slate-800/80 border-[#f59e0b] translate-x-1' 
+                      : 'bg-slate-50 dark:bg-[#040814]/70 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg transition-colors ${hoveredLocation === loc.slug ? 'bg-[#f59e0b]/20 text-[#f59e0b]' : 'bg-slate-800 text-slate-400'}`}>
+                      <div className={`p-2 rounded-sm transition-colors ${hoveredLocation === loc.slug ? 'bg-[#f59e0b]/20 text-[#f59e0b]' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}`}>
                         <Shield className="w-4 h-4" />
                       </div>
                       <div>
-                        <h3 className="text-white font-bold text-sm flex items-center gap-2">
+                        <h3 className="text-slate-900 dark:text-white font-bold text-sm flex items-center gap-2">
                           {loc.name} Security
                         </h3>
-                        <p className="text-slate-400 text-xs mt-0.5 flex items-center gap-1">
+                        <p className="text-slate-500 dark:text-slate-400 text-xs mt-0.5 flex items-center gap-1">
                           <MapPin className="w-3 h-3 text-[#f59e0b]" /> {loc.region}
                         </p>
                       </div>
                     </div>
                     
-                    <div className={`transition-transform duration-200 ${hoveredLocation === loc.slug ? 'text-[#f59e0b] translate-x-1' : 'text-slate-600'}`}>
+                    <div className={`transition-transform duration-200 ${hoveredLocation === loc.slug ? 'text-[#f59e0b] translate-x-1' : 'text-slate-400 dark:text-slate-600'}`}>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -455,7 +481,7 @@ export function LocationsCoverage() {
 
               {filteredLocations.length === 0 && (
                 <div className="text-center py-8">
-                  <p className="text-slate-400 text-xs font-medium">No active hubs matching &quot;{searchQuery}&quot;</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-xs font-medium">No active hubs matching &quot;{searchQuery}&quot;</p>
                 </div>
               )}
             </div>
@@ -463,24 +489,24 @@ export function LocationsCoverage() {
         </div>
 
         {/* INTRO CARD */}
-        <div className="bg-[#0b1329] border border-slate-800 rounded-3xl p-6 sm:p-10 mb-8 shadow-xl">
+        <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-10 mb-8 shadow-xl transition-colors">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-wider">
                 <MapPin className="w-3.5 h-3.5 text-[#f59e0b]" />
                 <span>NATIONWIDE_DISPATCH</span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight uppercase">
                 Our Locations
               </h2>
 
-              <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
                 Saints Services Ltd operates across the UK, delivering specialized security solutions tailored to meet the unique needs of each region. From the bustling streets of London to the industrial hubs in the West Midlands, explore our locations to find reliable, technology-driven security services in your area.
               </p>
             </div>
 
-            <div className="lg:col-span-5 relative h-56 sm:h-64 rounded-2xl overflow-hidden border border-slate-800">
+            <div className="lg:col-span-5 relative h-56 sm:h-64 rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md">
               <Image 
                 src="/images/security-services.jpg" 
                 alt="Saints Services UK Locations"
@@ -488,17 +514,17 @@ export function LocationsCoverage() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover object-center filter contrast-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 dark:from-[#0b1329]/80 via-transparent to-transparent" />
             </div>
           </div>
         </div>
 
         {/* REGIONAL LOCATIONS GRID */}
-        <div className="bg-[#0b1329]/80 border border-slate-800 rounded-3xl p-6 sm:p-8 mb-8 shadow-xl">
+        <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 mb-8 shadow-xl transition-colors">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
             {mainRegions.map((item, index) => (
               <div key={index} className="space-y-3">
-                <h3 className="text-sm sm:text-base font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-2">
+                <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white uppercase tracking-wider border-b border-slate-200 dark:border-slate-800 pb-2">
                   <Link 
                     href={`/locations/${item.slug}`}
                     className="hover:text-[#f59e0b] transition-colors"
@@ -506,14 +532,14 @@ export function LocationsCoverage() {
                     {item.region}
                   </Link>
                 </h3>
-                <ul className="space-y-1 text-xs text-slate-300 font-medium">
+                <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-300 font-medium">
                   {item.places.map((place, i) => (
                     <li key={i}>
                       <Link 
                         href={`/locations/${place.slug}`} 
                         className="flex items-center gap-1 hover:text-[#f59e0b] transition-colors py-0.5 group"
                       >
-                        <ChevronRight className="w-3 h-3 text-slate-600 group-hover:text-[#f59e0b] group-hover:translate-x-0.5 transition-all shrink-0" />
+                        <ChevronRight className="w-3 h-3 text-slate-400 dark:text-slate-600 group-hover:text-[#f59e0b] group-hover:translate-x-0.5 transition-all shrink-0" />
                         <span>{place.name}</span>
                       </Link>
                     </li>
@@ -525,12 +551,12 @@ export function LocationsCoverage() {
         </div>
 
         {/* LONDON BOROUGHS GRID */}
-        <div className="bg-[#0b1329]/80 border border-slate-800 rounded-3xl p-6 sm:p-8 mb-8 shadow-xl">
+        <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 mb-8 shadow-xl transition-colors">
           <div className="mb-6">
             <h3 className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
               GREATER_LONDON_COVERAGE
             </h3>
-            <h4 className="text-xl font-extrabold text-white uppercase tracking-tight">
+            <h4 className="text-xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tight">
               London Borough Focus
             </h4>
           </div>
@@ -538,7 +564,7 @@ export function LocationsCoverage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {londonBoroughs.map((zone, index) => (
               <div key={index} className="space-y-3">
-                <h5 className="text-sm font-bold text-slate-200 border-b border-slate-800 pb-2">
+                <h5 className="text-sm font-bold text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-800 pb-2">
                   <Link 
                     href={`/locations/${zone.slug}`}
                     className="hover:text-[#f59e0b] transition-colors"
@@ -546,14 +572,14 @@ export function LocationsCoverage() {
                     {zone.zone}
                   </Link>
                 </h5>
-                <ul className="space-y-1 text-xs text-slate-300 font-medium">
+                <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-300 font-medium">
                   {zone.districts.map((district, i) => (
                     <li key={i}>
                       <Link 
                         href={`/locations/${district.slug}`} 
                         className="flex items-center gap-1 hover:text-[#f59e0b] transition-colors py-0.5 group"
                       >
-                        <ChevronRight className="w-3 h-3 text-slate-600 group-hover:text-[#f59e0b] group-hover:translate-x-0.5 transition-all shrink-0" />
+                        <ChevronRight className="w-3 h-3 text-slate-400 dark:text-slate-600 group-hover:text-[#f59e0b] group-hover:translate-x-0.5 transition-all shrink-0" />
                         <span>{district.name}</span>
                       </Link>
                     </li>
@@ -565,12 +591,12 @@ export function LocationsCoverage() {
         </div>
 
         {/* SCOTLAND & WALES COVERAGE GRID */}
-        <div className="bg-[#0b1329]/80 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+        <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 shadow-xl transition-colors">
           <div className="mb-6">
             <h3 className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
               NATIONAL_DISPATCH_REGIONS
             </h3>
-            <h4 className="text-xl font-extrabold text-white uppercase tracking-tight">
+            <h4 className="text-xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tight">
               Scotland & Wales Coverage
             </h4>
           </div>
@@ -578,7 +604,7 @@ export function LocationsCoverage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {nationalDeploys.map((item, index) => (
               <div key={index} className="space-y-3">
-                <h5 className="text-base font-extrabold text-white uppercase tracking-wider border-b border-slate-800 pb-2 flex items-center justify-between">
+                <h5 className="text-base font-extrabold text-slate-900 dark:text-white uppercase tracking-wider border-b border-slate-200 dark:border-slate-800 pb-2 flex items-center justify-between">
                   <Link 
                     href={`/locations/${item.slug}`}
                     className="hover:text-[#f59e0b] transition-colors flex items-center gap-2"
@@ -587,10 +613,10 @@ export function LocationsCoverage() {
                     <ArrowRight className="w-4 h-4 text-[#f59e0b]" />
                   </Link>
                 </h5>
-                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-slate-300 font-medium">
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-slate-600 dark:text-slate-300 font-medium">
                   {item.places.map((placeName, i) => (
-                    <li key={i} className="flex items-center gap-1 py-0.5 text-slate-400 hover:text-slate-200 transition-colors cursor-default">
-                      <ChevronRight className="w-3 h-3 text-slate-600 shrink-0" />
+                    <li key={i} className="flex items-center gap-1 py-0.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors cursor-default">
+                      <ChevronRight className="w-3 h-3 text-slate-400 dark:text-slate-600 shrink-0" />
                       <span>{placeName}</span>
                     </li>
                   ))}
@@ -601,27 +627,28 @@ export function LocationsCoverage() {
         </div>
 
         {/* BOTTOM CALLOUT */}
-        <div className="mt-12 bg-gradient-to-r from-slate-900 via-[#0b1329] to-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl text-center shadow-xl relative overflow-hidden">
+        <div className="mt-12 bg-white dark:bg-gradient-to-r dark:from-slate-900 dark:via-[#0b1329] dark:to-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-md text-center shadow-xl relative overflow-hidden transition-colors">
           <ShieldCheck className="w-8 h-8 text-[#f59e0b] mx-auto mb-2" />
-          <h3 className="text-lg font-extrabold text-white uppercase tracking-tight mb-1">
+          <h3 className="text-lg font-extrabold text-slate-900 dark:text-white uppercase tracking-tight mb-1">
             Don&apos;t see your exact location listed?
           </h3>
-          <p className="text-slate-300 text-xs sm:text-sm font-medium max-w-lg mx-auto mb-5">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium max-w-lg mx-auto mb-5">
             We operate nationwide across all UK postcodes. Contact our central control room to confirm immediate guard dispatch in your town or county.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-black px-6 py-3 rounded-xl text-xs sm:text-sm transition-all shadow-md uppercase tracking-wider"
+              className="group relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#f59e0b] text-slate-950 font-black px-6 py-3 rounded-sm text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
             >
-              <span>Request Location Quote</span>
-              <ArrowRight className="w-4 h-4" />
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+              <span className="relative z-10">Request Location Quote</span>
+              <ArrowRight className="relative z-10 w-4 h-4" />
             </Link>
 
             <a 
               href="tel:07412733920" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-black px-6 py-3 rounded-xl text-xs sm:text-sm transition-all border border-slate-700 uppercase tracking-wider"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-black px-6 py-3 rounded-sm text-xs sm:text-sm transition-all border border-slate-300 dark:border-slate-700 uppercase tracking-wider shadow-md"
             >
               <PhoneCall className="w-4 h-4 text-[#f59e0b]" />
               <span>07412 733920</span>
@@ -637,13 +664,19 @@ export function LocationsCoverage() {
           width: 5px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-          background: #0b1329;
+          background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #cbd5e1;
+          border-radius: 4px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
           background: #1e293b;
-          border-radius: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #94a3b8;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: #334155;
         }
       `}} />

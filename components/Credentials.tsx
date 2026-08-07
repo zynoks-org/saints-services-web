@@ -94,13 +94,13 @@ export function Credentials() {
   const ActiveIcon = current.icon;
 
   return (
-    <section className="py-16 sm:py-24 bg-[#f8fafc] text-slate-900 border-b border-slate-200 relative overflow-hidden font-sans">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden font-sans transition-colors duration-300">
       
       {/* Light Clean Grid Pattern */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-20 z-0"
+        className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20 z-0"
         style={{
-          backgroundImage: 'radial-gradient(rgba(11, 19, 41, 0.2) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(currentColor 1.2px, transparent 1.2px)',
           backgroundSize: '24px 24px'
         }}
       />
@@ -109,25 +109,30 @@ export function Credentials() {
         
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0b1329] text-[#f59e0b] text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs backdrop-blur-md transition-colors">
             <BadgeCheck className="w-4 h-4 text-[#f59e0b]" />
             <span>Credentials & Compliance</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-[#0b1329] tracking-tight mb-4 uppercase">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4 uppercase transition-colors">
             Standards & Regulatory Framework
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium max-w-2xl mx-auto leading-relaxed transition-colors">
             Uncompromising professional standards, accredited training paths, and complete regulatory compliance across all security operations.
           </p>
         </div>
 
         {/* INTERACTIVE COMPLIANCE CONSOLE */}
-        <div className="bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
+        <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 lg:p-10 shadow-2xl relative transition-colors">
+          
+          {/* Tactical Corner Brackets */}
+          <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-[#f59e0b] pointer-events-none" />
+          <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-[#f59e0b] pointer-events-none" />
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* LEFT COLUMN: NAVIGATION TABS (5 COLS) */}
             <div className="lg:col-span-5 space-y-3">
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+              <div className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
                 Select Compliance Standard:
               </div>
 
@@ -139,19 +144,19 @@ export function Credentials() {
                     key={cred.id}
                     type="button"
                     onClick={() => setActiveId(cred.id)}
-                    className={`w-full text-left p-4 rounded-xl border transition-all cursor-pointer flex items-center justify-between gap-3 ${
+                    className={`w-full text-left p-4 rounded-sm border transition-all cursor-pointer flex items-center justify-between gap-3 ${
                       isSelected
-                        ? 'bg-[#0b1329] text-white border-[#0b1329] shadow-md scale-[1.01]'
-                        : 'bg-[#f8fafc] text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-100/80'
+                        ? 'bg-slate-900 dark:bg-slate-900 text-white border-slate-900 dark:border-[#f59e0b] shadow-md scale-[1.01]'
+                        : 'bg-slate-50 dark:bg-[#070d1e] text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900/50'
                     }`}
                   >
                     <div className="flex items-center gap-3.5">
-                      <div className={`p-2.5 rounded-lg shrink-0 ${isSelected ? 'bg-slate-800 text-[#f59e0b]' : 'bg-white text-[#0b1329] border border-slate-200'}`}>
+                      <div className={`p-2.5 rounded-sm shrink-0 border ${isSelected ? 'bg-slate-800 text-[#f59e0b] border-slate-700' : 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-slate-200 dark:border-slate-800'}`}>
                         <IconComponent className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-xs sm:text-sm font-extrabold leading-tight">{cred.title}</div>
-                        <div className={`text-[11px] font-medium mt-0.5 ${isSelected ? 'text-[#f59e0b]' : 'text-slate-500'}`}>
+                        <div className="text-xs sm:text-sm font-extrabold leading-tight uppercase tracking-tight">{cred.title}</div>
+                        <div className={`text-[11px] font-mono font-medium mt-0.5 ${isSelected ? 'text-[#f59e0b]' : 'text-slate-500 dark:text-slate-400'}`}>
                           {cred.category}
                         </div>
                       </div>
@@ -163,38 +168,38 @@ export function Credentials() {
             </div>
 
             {/* RIGHT COLUMN: DETAIL CARD (7 COLS) */}
-            <div className="lg:col-span-7 bg-[#0b1329] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl flex flex-col justify-between min-h-[440px]">
+            <div className="lg:col-span-7 bg-white dark:bg-[#070d1e] text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 rounded-sm p-6 sm:p-8 relative overflow-hidden shadow-2xl flex flex-col justify-between min-h-[440px] transition-colors">
               
               {/* Subtle Ambient Light */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#f59e0b]/10 rounded-full blur-3xl pointer-events-none" />
 
               <div>
                 {/* Header Badge Row */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+                <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-slate-900 text-[#f59e0b] border border-slate-800">
+                    <div className="p-2 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800">
                       <ActiveIcon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-bold text-[#f59e0b] uppercase tracking-wider">{current.badgeTag}</span>
+                    <span className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider">{current.badgeTag}</span>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
+                  <span className="px-3 py-1 rounded-sm bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold">
                     {current.statusLabel}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white mb-3 leading-snug">
+                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-white mb-3 leading-snug">
                   {current.title}
                 </h3>
 
-                <p className="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed mb-6">
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed mb-6">
                   {current.summary}
                 </p>
 
                 {/* Protocols / Checklist */}
                 <div className="space-y-2.5 mb-6">
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Verified Operational Protocols:</div>
+                  <div className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Verified Operational Protocols:</div>
                   {current.protocols.map((protocol, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-200">
+                    <div key={pIdx} className="flex items-center gap-3 p-3 rounded-sm bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200 shadow-xs">
                       <Check className="w-4 h-4 text-[#f59e0b] shrink-0" />
                       <span>{protocol}</span>
                     </div>
@@ -203,10 +208,10 @@ export function Credentials() {
               </div>
 
               {/* Footer Trust Indicator */}
-              <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-mono">
                 <span>Saints Services Quality Standard</span>
-                <span className="text-emerald-400 font-bold flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400" />
                   Fully Audited & Verified
                 </span>
               </div>

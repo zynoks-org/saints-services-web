@@ -204,7 +204,7 @@ export function Footer() {
               <div className="p-3 rounded-xl bg-slate-900 border border-white/10 text-[11px] text-slate-400 space-y-1">
                 <div className="flex items-center gap-1.5 text-white font-bold">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#f59e0b]" />
-                  <span>SIA ACS Approved Standards</span>
+                  <span>SIA Approved Standards</span>
                 </div>
                 <p className="text-[10px] text-slate-400">
                   BS7858 Vetted Operatives • Fully Insured Public & Employee Liability

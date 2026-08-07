@@ -47,7 +47,7 @@ export function ComprehensiveSolutions() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-slate-100 dark:bg-[#080f22] text-slate-900 dark:text-white border-b border-slate-200 dark:border-white/10 relative overflow-hidden font-sans select-none transition-colors duration-300">
+    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden font-sans select-none transition-colors duration-300">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f59e0b]/5 rounded-full blur-[140px] pointer-events-none" />
@@ -59,21 +59,21 @@ export function ComprehensiveSolutions() {
           {/* LEFT COLUMN: EXECUTIVE COPY (7 COLS) */}
           <div className="lg:col-span-7 space-y-6">
             
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-lg bg-slate-900/10 dark:bg-[#040914]/70 border border-slate-900/10 dark:border-white/15 backdrop-blur-md shadow-md transition-colors">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs transition-colors">
               <ShieldCheck className="w-4 h-4 text-[#f59e0b]" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-slate-800 dark:text-slate-200">
+              <span className="text-[11px] font-bold font-mono uppercase tracking-widest text-[#f59e0b]">
                 COMPREHENSIVE SECURITY // ENTERPRISE PROTECTION
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.08] transition-colors">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.08] transition-colors uppercase">
               Enterprise Security Solutions Built for <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] via-amber-500 to-amber-700 dark:via-amber-200 dark:to-white">
+              <span className="text-[#f59e0b]">
                 UK Businesses.
               </span>
             </h2>
 
-            <div className="space-y-4 text-slate-700 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed transition-colors">
+            <div className="space-y-4 text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed transition-colors">
               <p>
                 Modern commercial operations face persistent security threats that compromise workforce safety, physical assets, and daily continuity. Lax guarding, unvetted personnel, and poorly structured defense protocols leave properties vulnerable to intrusion, vandalism, theft, and operational disruption—carrying severe financial and reputational fallout.
               </p>
@@ -86,7 +86,7 @@ export function ComprehensiveSolutions() {
                 Backed by extensive industry experience, we handle every layer of operational defense—including access control management, active CCTV surveillance, rapid mobile response, and emergency escalation protocols. Whether safeguarding a single flagship facility or coordinating multi-site enterprise portfolios, we act as a dedicated partner focused on total peace of mind.
               </p>
 
-              <p className="text-slate-900 dark:text-slate-200 font-bold pt-2 transition-colors">
+              <p className="text-slate-900 dark:text-slate-100 font-bold pt-2 transition-colors">
                 We set the benchmark for commercial guarding standards across the United Kingdom. Our officers do far more than monitor boundaries—they proactively deter threats, eliminate risk factors, and maintain a commanding yet professional presence so your enterprise can operate without disruption.
               </p>
             </div>
@@ -97,74 +97,74 @@ export function ComprehensiveSolutions() {
           <div className="lg:col-span-5 relative px-2">
             
             {/* Tactical Corner Brackets matching design tone */}
-            <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-16 h-16 border-t-2 border-l-2 border-[#f59e0b] rounded-tl-lg z-20 pointer-events-none" />
-            <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-16 h-16 border-b-2 border-r-2 border-[#f59e0b] rounded-br-lg z-20 pointer-events-none" />
+            <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-12 h-12 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
+            <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-12 h-12 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 
-            <div className="bg-white/95 dark:bg-[#040914]/90 backdrop-blur-xl text-slate-900 dark:text-white p-6 sm:p-8 rounded-lg border border-slate-200 dark:border-white/10 shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative z-10 transition-colors">
+            <div className="bg-white dark:bg-[#0b1329] backdrop-blur-xl text-slate-900 dark:text-white p-6 sm:p-8 rounded-sm border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 transition-colors">
               
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-white/10 mb-6">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                 <div>
                   <span className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-widest block">QUICK_ENQUIRY</span>
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">Request a Quote</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight uppercase">Request a Quote</h3>
                 </div>
-                <div className="p-2.5 rounded-lg bg-slate-100 dark:bg-white/5 text-[#f59e0b] border border-slate-200 dark:border-white/10">
+                <div className="p-2.5 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800">
                   <Lock className="w-4 h-4" />
                 </div>
               </div>
 
               {submitted ? (
-                <div className="bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white p-8 rounded-lg text-center border border-slate-200 dark:border-white/10 my-6 backdrop-blur-md">
-                  <CheckCircle2 className="w-12 h-12 text-[#f59e0b] mx-auto mb-3 animate-bounce" />
+                <div className="bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white p-8 rounded-sm text-center border border-slate-200 dark:border-slate-800 my-6 backdrop-blur-md">
+                  <CheckCircle2 className="w-12 h-12 text-[#f59e0b] mx-auto mb-3" />
                   <h4 className="text-xl font-black mb-1 uppercase tracking-tight">Request Dispatched</h4>
                   <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium">Our dispatch manager will review your specs and contact you within 2 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5">
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">First Name *</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">First Name *</label>
                     <input 
                       type="text" 
                       name="firstName"
                       required 
                       placeholder="e.g. John" 
-                      className="w-full bg-slate-50 dark:bg-[#040914]/80 border border-slate-300 dark:border-white/15 rounded-lg px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Phone Number *</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Phone Number *</label>
                     <input 
                       type="tel" 
                       name="phone"
                       required 
                       placeholder="e.g. 07123 456789" 
-                      className="w-full bg-slate-50 dark:bg-[#040914]/80 border border-slate-300 dark:border-white/15 rounded-lg px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Email Address *</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Email Address *</label>
                     <input 
                       type="email" 
                       name="email"
                       required 
                       placeholder="john@company.co.uk" 
-                      className="w-full bg-slate-50 dark:bg-[#040914]/80 border border-slate-300 dark:border-white/15 rounded-lg px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Company / Venue Name</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Company / Venue Name</label>
                     <input 
                       type="text" 
                       name="company"
                       placeholder="e.g. Grand Commercial Ltd" 
-                      className="w-full bg-slate-50 dark:bg-[#040914]/80 border border-slate-300 dark:border-white/15 rounded-lg px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Service Required *</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Service Required *</label>
                     <CustomServiceSelect 
                       value={selectedService} 
                       onChange={setSelectedService} 
@@ -172,28 +172,24 @@ export function ComprehensiveSolutions() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Enquiry Details</label>
+                    <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Enquiry Details</label>
                     <textarea 
                       name="enquiry"
                       rows={3} 
                       placeholder="Venue location, dates, shift hours..." 
-                      className="w-full bg-slate-50 dark:bg-[#040914]/80 border border-slate-300 dark:border-white/15 rounded-lg px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] resize-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
+                      className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] resize-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors" 
                     />
                   </div>
 
-                  {/* Matching Left-to-Right Gold Sweep Button */}
+                  {/* Standard Gold Sweep Button */}
                   <button 
                     type="submit" 
                     disabled={loading}
-                    className="group relative w-full inline-flex items-center justify-center gap-3 bg-slate-900 dark:bg-[#040914]/80 text-white font-black py-4 rounded-lg text-xs sm:text-sm transition-all duration-300 border border-slate-800 dark:border-white/15 backdrop-blur-md overflow-hidden shadow-xl active:scale-95 uppercase tracking-wider cursor-pointer mt-2"
+                    className="group relative overflow-hidden flex items-center justify-center gap-2 w-full bg-[#f59e0b] text-slate-950 font-black py-4 rounded-sm text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer mt-2"
                   >
-                    {/* Gold Fill Layer from Left to Right */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-amber-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
-
-                    <span className="relative z-10 transition-colors duration-300 group-hover:text-[#040914]">
-                      {loading ? "Submitting Request..." : "Submit Request"}
-                    </span>
-                    <ArrowRight className="relative z-10 w-4 h-4 text-[#f59e0b] transition-all duration-300 group-hover:text-[#040914] group-hover:translate-x-1" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                    <span className="relative z-10">{loading ? "Submitting Request..." : "Submit Request"}</span>
+                    <ArrowRight className="relative z-10 w-4 h-4" />
                   </button>
                 </form>
               )}

@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#f8fafc] flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 flex flex-col justify-between transition-colors duration-300">
       {/* 1. Global Navigation */}
       <Header />
 
@@ -23,7 +23,7 @@ export default function ServicesPage() {
         <div className="mb-2">
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#0b1329] transition-colors py-2 px-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300"
+            className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors py-2 px-3.5 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-2xs hover:border-[#f59e0b]"
           >
             <ArrowLeft className="w-3.5 h-3.5 text-[#f59e0b]" />
             <span>Back to Home</span>
