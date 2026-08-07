@@ -9,6 +9,15 @@ import { ArrowLeft } from 'lucide-react';
 export const metadata = {
   title: 'Our Services | Saints Services Ltd',
   description: 'Explore our full range of SIA-licensed security and facility management solutions across the UK.',
+  keywords: 'UK Security Services, SIA Manned Guarding, Keyholding, Door Supervision, Event Security, Saints Services',
+  openGraph: {
+    title: 'Our Services | Saints Services Ltd',
+    description: 'Explore our full range of SIA-licensed security and facility management solutions across the UK.',
+    url: 'https://saintsservices.co.uk/services',
+    siteName: 'Saints Services Ltd',
+    locale: 'en_GB',
+    type: 'website',
+  },
 };
 
 export default function ServicesPage() {

@@ -6,6 +6,15 @@ import { Footer } from '@/components/Footer';
 export const metadata = {
   title: 'Privacy Policy | Saints Services Ltd',
   description: 'Privacy Policy and UK GDPR data processing compliance for Saints Services Ltd.',
+  keywords: 'Privacy Policy, UK GDPR, Data Protection, Saints Services Ltd',
+  openGraph: {
+    title: 'Privacy Policy | Saints Services Ltd',
+    description: 'Privacy Policy and UK GDPR data processing compliance for Saints Services Ltd.',
+    url: 'https://saintsservices.co.uk/privacy-policy',
+    siteName: 'Saints Services Ltd',
+    locale: 'en_GB',
+    type: 'website',
+  },
 };
 
 export default function PrivacyPolicyPage() {

@@ -6,6 +6,15 @@ import { Footer } from '@/components/Footer';
 export const metadata = {
   title: 'Terms & Conditions | Saints Services Ltd',
   description: 'Terms of Service and Operational Conditions for Saints Services Ltd.',
+  keywords: 'Terms and Conditions, Terms of Service, Legal, Saints Services Ltd',
+  openGraph: {
+    title: 'Terms & Conditions | Saints Services Ltd',
+    description: 'Terms of Service and Operational Conditions for Saints Services Ltd.',
+    url: 'https://saintsservices.co.uk/terms',
+    siteName: 'Saints Services Ltd',
+    locale: 'en_GB',
+    type: 'website',
+  },
 };
 
 export default function TermsPage() {

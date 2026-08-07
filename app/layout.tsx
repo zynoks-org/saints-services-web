@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://saintsservices.co.uk"),
   title: {
     default: "Saints Services Ltd | SIA Security & Facilities Management UK",
     template: "%s | Saints Services Ltd",
