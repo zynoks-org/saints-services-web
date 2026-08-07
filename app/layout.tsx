@@ -4,6 +4,7 @@ import "./globals.css";
 import { CookieBanner } from "@/components/CookieBanner";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"; // 1. Import Speed Insights
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -106,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <CookieBanner />
           <Analytics />
+          <SpeedInsights /> {/* 2. Add component */}
         </ThemeProvider>
       </body>
     </html>
