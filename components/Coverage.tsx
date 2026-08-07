@@ -164,7 +164,7 @@ export function Coverage() {
         { name: "Newry", slug: "belfast" },
         { name: "Antrim", slug: "belfast" }
       ],
-      description: "Vetted SIA guarding for commercial properties, logistics centers, and retail networks operating in Northern Ireland."
+      description: "Vetted SIA-Licensed guarding for commercial properties, logistics centers, and retail networks operating in Northern Ireland."
     }
   ];
 

@@ -240,7 +240,7 @@ export default function CareersPage() {
                         <div>
                           <h3 className="text-xs sm:text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight">Join the UK&apos;s Premier Team</h3>
                           <p className="text-[10px] sm:text-[11px] font-mono font-bold text-[#f59e0b] tracking-wider uppercase mt-0.5">
-                            Professional Environment • Flexible Rotas • SIA Support
+                            Professional Environment • Flexible Rotas • Vetting Assistance
                           </p>
                         </div>
                       </div>

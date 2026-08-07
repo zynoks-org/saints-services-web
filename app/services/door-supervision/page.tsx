@@ -72,16 +72,16 @@ export default function DoorSupervisionPage() {
       <title>Door Supervision & Venue Security | Saints Services Ltd</title>
       <meta 
         name="description" 
-        content="Hire SIA-licensed door supervisors for hospitality venues, corporate events, and licensed premises across the UK. Professional crowd management & entry screening." 
+        content="Hire licensed door supervisors for hospitality venues, corporate events, and licensed premises across the UK. Professional crowd management & entry screening." 
       />
       <meta 
         name="keywords" 
-        content="Door Supervisors UK, SIA Door Security, Venue Door Guards, Licensed Premises Protection, Saints Services Door Supervision" 
+        content="Door Supervisors UK, Licensed Door Security, Venue Door Guards, Licensed Premises Protection, Saints Services Door Supervision." 
       />
       <meta property="og:title" content="Door Supervision & Venue Security | Saints Services Ltd" />
       <meta 
         property="og:description" 
-        content="Professional SIA-licensed door supervision services for high-capacity venues and hospitality events across the UK." 
+        content="Professional licensed door supervision services for high-capacity venues and hospitality events across the UK." 
       />
       <meta property="og:url" content="https://saintsservices.co.uk/services/door-supervision" />
       <meta property="og:type" content="website" />
@@ -140,7 +140,7 @@ export default function DoorSupervisionPage() {
                   </h1>
 
                   <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl transition-colors">
-                    Saints Services Ltd provides SIA-licensed door supervisors to commercial venues and licensed premises across the UK. With a 98% client retention rate, our trained security personnel maintain strict safety standards while acting as a welcoming, professional face for your brand.
+                    Saints Services Ltd provides licensed door supervisors to commercial venues and licensed premises across the UK. With a 98% client retention rate, our trained security personnel maintain strict safety standards while acting as a welcoming, professional face for your brand.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
@@ -236,15 +236,15 @@ export default function DoorSupervisionPage() {
                   </div>
 
                   <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase leading-tight">
-                    Professional SIA Door Supervision for Licensed Premises
+                    Professional Licensed Door Supervision for Licensed Premises
                   </h2>
 
                   <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-                    High-capacity licensed venues require security expertise beyond standard perimeter watching. When managing busy hospitality operations, corporate galas, or premium leisure establishments, your venue needs SIA-licensed door supervisors who excel in complex, high-footfall environments.
+                    High-capacity licensed venues require security expertise beyond standard perimeter watching. When managing busy hospitality operations, corporate galas, or premium leisure establishments, your venue needs licensed door supervisors who excel in complex, high-footfall environments.
                   </p>
 
                   <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-                    Saints Services Ltd specializes in door supervision for businesses operating critical hospitality venues. We deploy SIA-licensed Door Supervisors trained in crowd management, conflict de-escalation, entry screening, and regulatory compliance to protect your premises across England, Scotland, and Wales.
+                    Saints Services Ltd specializes in door supervision for businesses operating critical hospitality venues. We deploy licensed Door Supervisors trained in crowd management, conflict de-escalation, entry screening, and regulatory compliance to protect your premises across England, Scotland, and Wales.
                   </p>
 
                   <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">

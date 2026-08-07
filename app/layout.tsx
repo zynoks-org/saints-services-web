@@ -21,13 +21,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.saintsservices.co.uk"),
   title: {
-    default: "Saints Services Ltd | SIA Manned Guarding & Security Solutions UK",
+    default: "Saints Services Ltd | SIA-Licensed Manned Guarding & Security Solutions UK",
     template: "%s | Saints Services Ltd",
   },
   description:
     "Nationwide SIA-licensed security operations across the UK. Specialist manned guarding, door supervision, event safety management, keyholding, and 24/7 mobile alarm response.",
   keywords: [
-    "SIA Security UK",
+    "Professional Security Services UK",
     "Manned Guarding London",
     "Door Supervision & Venues",
     "Event Security Services",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Saints Services Ltd" }],
   creator: "Saints Services Ltd",
   openGraph: {
-    title: "Saints Services Ltd | SIA Security Solutions UK",
+    title: "Saints Services Ltd | SIA-Licensed Security Solutions UK",
     description:
       "24/7 SIA-licensed manned guarding, door supervision, event security, keyholding, and rapid alarm response across the UK.",
     url: "https://www.saintsservices.co.uk",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saints Services Ltd | SIA Security Solutions UK",
+    title: "Saints Services Ltd | SIA-Licensed Security Solutions UK",
     description:
       "24/7 SIA-licensed manned guarding, door supervision, event security, keyholding, and rapid alarm response across the UK.",
     images: ["/images/why-us.png"],
@@ -122,18 +122,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           enableSystem={false}
           storageKey="saints-theme"
         >
-          {/* Global Header */}
-          <Header />
+          {/* Header disabled during maintenance */}
+          {/* <Header /> */}
 
           {/* Page Content Container */}
           <div className="flex-1">
             {children}
           </div>
 
-          {/* Global Footer */}
-          <Footer />
+          {/* Footer & Banner disabled during maintenance */}
+          {/* <Footer /> */}
+          {/* <CookieBanner /> */}
 
-          <CookieBanner />
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

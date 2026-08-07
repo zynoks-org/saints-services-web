@@ -76,8 +76,8 @@ export default function AboutPage() {
       desc: "Every officer undergoes a rigorous 5-year background, credit, and employment check prior to stepping onto any client site."
     },
     {
-      title: "SIA Approved Standards",
-      desc: "Our management and field operations strictly adhere to Security Industry Authority codes of conduct and security protocols."
+      title: "Licensed Personnel Standards",
+      desc: "Our management and field operations strictly adhere to Security Industry Authority codes of practice and industry-leading security protocols."
     },
     {
       title: "Transparent Digital Patrol Logs",
@@ -129,7 +129,7 @@ export default function AboutPage() {
                   </h1>
 
                   <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl transition-colors">
-                    Saints Services Ltd was founded to give UK commercial property owners, event organizers, and retail brands dependable, SIA-licensed protection and high-level facilities management.
+                    Saints Services Ltd was founded to give UK commercial property owners, event organizers, and retail brands dependable protection using fully qualified, SIA-badged security personnel and high-level facilities management.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">

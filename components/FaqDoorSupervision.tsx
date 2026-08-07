@@ -87,8 +87,7 @@ export function FaqDoorSupervision() {
             Frequently Asked Questions
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium max-w-xl mx-auto leading-relaxed">
-            Quick answers regarding our SIA licensing standards, nationwide dispatch, and venue security solutions.
-          </p>
+            Saints Services Ltd delivers high-calibre, fully vetted security deployments tailored to protect commercial interests across the UK. Our specialized teams manage site security, front-of-house concierge management, and mobile patrol units for clients across commercial real estate, active construction sites, high-street retail, educational campuses, and large-scale event venues.          </p>
         </div>
 
         {/* ACCORDION LIST */}
