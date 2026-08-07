@@ -10,7 +10,8 @@ import {
   ChevronRight, 
   ArrowRight,
   Clock,
-  CheckCircle2
+  CheckCircle2,
+  FileText
 } from 'lucide-react';
 
 export function Footer() {
@@ -36,6 +37,13 @@ export function Footer() {
     { name: "Festivals, Concerts & Galas", href: "/services/event-security#festivals" },
     { name: "Vacant Property Inspections", href: "/services/keyholding#inspections" },
     { name: "Gatehouse Access Control", href: "/services/security-guards#gatehouse" },
+  ];
+
+  const popularArticles = [
+    { name: "London Crime Rates by Borough (2026)", href: "/blog/london-crime-rates-by-borough-2026" },
+    { name: "Martyn's Law Event Safety Guide", href: "/blog/martyns-law-event-safety-compliance" },
+    { name: "Retail Loss Prevention UK Guide", href: "/blog/retail-loss-prevention-uk-guide" },
+    { name: "Construction Site Security & Plant Theft", href: "/blog/construction-site-security-loss-prevention" },
   ];
 
   const locations = [
@@ -106,7 +114,7 @@ export function Footer() {
         {/* MAIN NAVIGATION GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
-          {/* COLUMN 1: CORE SERVICES */}
+          {/* COLUMN 1: CORE SERVICES & FEATURED BLOGS */}
           <div className="lg:col-span-4 space-y-4">
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#f59e0b] pb-2 border-b border-white/10">
               Core Security Services
@@ -132,6 +140,27 @@ export function Footer() {
                 {industrySolutions.map((item, i) => (
                   <Link key={i} href={item.href} onClick={scrollToTop} className="hover:text-white transition-colors truncate">
                     • {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* FEATURED BLOG ARTICLES SUB-SECTION */}
+            <div className="pt-3 border-t border-white/10">
+              <div className="flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase text-[#f59e0b] mb-2">
+                <FileText className="w-3.5 h-3.5" />
+                <span>Popular Security Insights</span>
+              </div>
+              <div className="space-y-1.5 text-[11px] text-slate-400">
+                {popularArticles.map((article, i) => (
+                  <Link 
+                    key={i} 
+                    href={article.href} 
+                    onClick={scrollToTop} 
+                    className="hover:text-white transition-colors truncate block group flex items-center gap-1.5"
+                  >
+                    <span className="text-[#f59e0b]">•</span>
+                    <span className="group-hover:translate-x-0.5 transition-transform">{article.name}</span>
                   </Link>
                 ))}
               </div>
@@ -169,6 +198,17 @@ export function Footer() {
               <div><Link href="/" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Home</Link></div>
               <div><Link href="/services" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Services Overview</Link></div>
               <div><Link href="/about" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">About Saints Services</Link></div>
+              
+              {/* INSIGHTS & BLOG LINK */}
+              <div className="flex items-center gap-1.5">
+                <Link href="/blog" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">
+                  Insights & Blog
+                </Link>
+                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/30 uppercase font-bold">
+                  New
+                </span>
+              </div>
+
               <div><Link href="/careers" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Careers & Recruitment</Link></div>
               <div><Link href="/contact" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Contact & Quotes</Link></div>
             </div>

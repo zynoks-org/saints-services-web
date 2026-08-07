@@ -264,7 +264,7 @@ export default function CareersPage() {
                 {[
                   { title: "Structured Development", desc: "Clear career pathways with ongoing training and skill development programs.", icon: ShieldCheck },
                   { title: "Flexible Shift Rotas", desc: "Day, night, weekend, or event-based shifts designed to fit your schedule.", icon: Clock },
-                  { title: "SIA Support", desc: "Career guidance and assistance with SIA licensing renewals and certifications.", icon: ShieldCheck },
+                  { title: "Vetting Assistance & Candidate Care", desc: "Career guidance and assistance with individual licensing renewals, screening, and professional certifications.", icon: ShieldCheck },
                   { title: "Dedicated HR Desk", desc: "Direct communication with responsive HR and operational managers.", icon: CheckCircle2 }
                 ].map((perk, idx) => {
                   const PerkIcon = perk.icon;

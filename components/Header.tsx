@@ -181,6 +181,10 @@ export function Header() {
               <span>About</span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
             </Link>
+            <Link href="/blog" className="hover:text-[#f59e0b] transition-colors relative py-2 group">
+              <span>Blog</span>
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
+            </Link>
             <Link href="/careers" className="hover:text-[#f59e0b] transition-colors relative py-2 group">
               <span>Careers</span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
@@ -272,6 +276,13 @@ export function Header() {
                 className="block px-4 py-3 rounded-sm text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 uppercase tracking-wider"
               >
                 About & Compliance
+              </Link>
+              <Link 
+                href="/blog" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="block px-4 py-3 rounded-sm text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 uppercase tracking-wider"
+              >
+                Blog & Insights
               </Link>
               <Link 
                 href="/careers" 
