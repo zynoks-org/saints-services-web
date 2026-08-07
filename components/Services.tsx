@@ -15,13 +15,13 @@ export function Services() {
 
   const servicesList = [
     {
-      id: "door-supervision",
+      id: "security-guards",
       num: "01",
       total: "04",
-      title: "Man Guarding & Patrols",
+      title: "Manned Guarding & Patrols",
       badge: "SIA APPROVED",
       img: "/images/manned-guarding.png",
-      description: "Our highly trained security personnel offer man guarding services, ensuring constant protection and surveillance for your premises, events, and properties.",
+      description: "Our highly trained security personnel offer professional manned guarding services, ensuring continuous protection, access monitoring, and deterrence for your premises.",
       highlights: [
         "Static Guarding & Mobile Patrol Units",
         "Gatehouse & Access Control Management",
@@ -35,7 +35,7 @@ export function Services() {
       title: "Event Security & Safety",
       badge: "RAPID DEPLOYMENT",
       img: "/images/event-security.png",
-      description: "We provide top-notch event security services, managing all aspects of safety for your events and gatherings, ensuring a secure environment for all attendees.",
+      description: "We provide comprehensive event security solutions, managing guest flow, entry control, and emergency response to guarantee a safe environment for all attendees.",
       highlights: [
         "Crowd Control & Queue Management",
         "VIP & Speaker Protection Services",
@@ -43,31 +43,31 @@ export function Services() {
       ]
     },
     {
-      id: "retail-security",
+      id: "door-supervision",
       num: "03",
       total: "04",
-      title: "Retail Loss Prevention",
-      badge: "STORE PROTECTION",
+      title: "Door Supervision & Venue Security",
+      badge: "LICENSED OFFICERS",
       img: "/images/retail-security.png",
-      description: "Our retail security solutions include manned personnel and surveillance systems aimed at preventing theft and ensuring the safety of customers and staff.",
+      description: "SIA-licensed door supervisors dedicated to maintaining order, managing guest entry, and resolving conflicts professionally at venues, clubs, and high-profile premises.",
       highlights: [
-        "Front-of-House Loss Deterrence",
-        "Conflict De-escalation Officers",
-        "CCTV Monitoring & Surveillance"
+        "Professional ID & Search Verification",
+        "Conflict De-escalation Specialists",
+        "Venue Capacity & Safety Compliance"
       ]
     },
     {
-      id: "commercial-cleaning",
+      id: "keyholding",
       num: "04",
       total: "04",
-      title: "Commercial Facilities Cleaning",
-      badge: "HYGIENE STANDARD",
+      title: "Keyholding & Alarm Response",
+      badge: "24/7 MOBILE RESPONSE",
       img: "/images/security-services.jpg",
-      description: "Comprehensive facilities maintenance and customized commercial cleaning rotas keeping offices, retail outlets, and venue spaces spotless.",
+      description: "Reliable, round-the-clock keyholding and rapid emergency alarm response services, eliminating staff risk and securing your business premises out of hours.",
       highlights: [
-        "Scheduled Commercial Cleaning Rotas",
-        "Post-Event & Deep Sanitization",
-        "Eco-Friendly Cleaning Solutions"
+        "Rapid Emergency Mobile Dispatch",
+        "Scheduled Site Lock & Unlock Services",
+        "Secure Off-Site Vault Key Storage"
       ]
     }
   ];

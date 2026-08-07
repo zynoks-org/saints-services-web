@@ -14,6 +14,12 @@ import {
 } from 'lucide-react';
 
 export function Footer() {
+  const scrollToTop = () => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const primaryServices = [
     { name: "Manned Security Guards", href: "/services/security-guards" },
     { name: "Door Supervision & Venues", href: "/services/door-supervision" },
@@ -22,14 +28,14 @@ export function Footer() {
   ];
 
   const industrySolutions = [
-    { name: "Construction Site Security", href: "/services/security-guards" },
-    { name: "Corporate & Reception Guarding", href: "/services/security-guards" },
-    { name: "Retail Loss Prevention", href: "/services/security-guards" },
-    { name: "Warehouse & Logistics Depots", href: "/services/security-guards" },
-    { name: "Pubs, Clubs & Bar Security", href: "/services/door-supervision" },
-    { name: "Festivals, Concerts & Galas", href: "/services/event-security" },
-    { name: "Vacant Property Inspections", href: "/services/keyholding" },
-    { name: "Gatehouse Access Control", href: "/services/security-guards" },
+    { name: "Construction Site Security", href: "/services/security-guards#construction" },
+    { name: "Corporate & Reception Guarding", href: "/services/security-guards#corporate" },
+    { name: "Retail Loss Prevention", href: "/services/door-supervision#retail-loss" },
+    { name: "Warehouse & Logistics Depots", href: "/services/security-guards#warehouse" },
+    { name: "Pubs, Clubs & Bar Security", href: "/services/door-supervision#venues" },
+    { name: "Festivals, Concerts & Galas", href: "/services/event-security#festivals" },
+    { name: "Vacant Property Inspections", href: "/services/keyholding#inspections" },
+    { name: "Gatehouse Access Control", href: "/services/security-guards#gatehouse" },
   ];
 
   const locations = [
@@ -68,9 +74,10 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-            {/* Primary Quote Button (Gold Sweep Matching Hero) */}
+            {/* Primary Quote Button */}
             <Link 
               href="/contact" 
+              onClick={scrollToTop}
               className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0b1329]/90 text-white font-black px-6 py-3 rounded-lg text-xs sm:text-sm transition-all duration-300 border border-white/15 backdrop-blur-md overflow-hidden shadow-xl active:scale-95 uppercase tracking-wider cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-amber-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
@@ -81,7 +88,7 @@ export function Footer() {
               <ArrowRight className="relative z-10 w-4 h-4 text-[#f59e0b] transition-all duration-300 group-hover:text-[#080f22] group-hover:translate-x-1" />
             </Link>
             
-            {/* Phone Button (Blue Sweep Matching Hero) */}
+            {/* Phone Button */}
             <a 
               href="tel:07412733920" 
               className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0b1329]/60 text-white font-bold px-6 py-3 rounded-lg text-xs sm:text-sm transition-all duration-300 border border-white/20 backdrop-blur-md overflow-hidden shadow-lg active:scale-95 uppercase tracking-wider cursor-pointer"
@@ -110,6 +117,7 @@ export function Footer() {
                 <Link 
                   key={i} 
                   href={service.href} 
+                  onClick={scrollToTop}
                   className="flex items-center gap-2 text-xs font-bold text-slate-200 hover:text-[#f59e0b] transition-all group"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#f59e0b] group-hover:translate-x-1 transition-transform" />
@@ -122,7 +130,7 @@ export function Footer() {
               <h5 className="text-[11px] font-mono font-bold uppercase text-slate-400 mb-2">Specialist Applications</h5>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-1.5 gap-x-2 text-[11px] text-slate-400">
                 {industrySolutions.map((item, i) => (
-                  <Link key={i} href={item.href} className="hover:text-white transition-colors truncate">
+                  <Link key={i} href={item.href} onClick={scrollToTop} className="hover:text-white transition-colors truncate">
                     • {item.name}
                   </Link>
                 ))}
@@ -130,7 +138,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* COLUMN 2: REGIONAL COVERAGE WITH ACTIVE LINKS */}
+          {/* COLUMN 2: REGIONAL COVERAGE */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#f59e0b] pb-2 border-b border-white/10">
               UK Regional Coverage
@@ -141,6 +149,7 @@ export function Footer() {
                 <Link 
                   key={i} 
                   href={loc.href} 
+                  onClick={scrollToTop}
                   className="flex items-center gap-2 hover:text-[#f59e0b] transition-colors group"
                 >
                   <MapPin className="w-3 h-3 text-[#f59e0b] shrink-0" />
@@ -157,19 +166,19 @@ export function Footer() {
             </h4>
             
             <div className="space-y-2 text-xs font-bold text-slate-300">
-              <div><Link href="/" className="hover:text-[#f59e0b] transition-colors">Home</Link></div>
-              <div><Link href="/services" className="hover:text-[#f59e0b] transition-colors">Services Overview</Link></div>
-              <div><Link href="/about" className="hover:text-[#f59e0b] transition-colors">About Saints Services</Link></div>
-              <div><Link href="/careers" className="hover:text-[#f59e0b] transition-colors">Careers & Recruitment</Link></div>
-              <div><Link href="/contact" className="hover:text-[#f59e0b] transition-colors">Contact & Quotes</Link></div>
+              <div><Link href="/" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Home</Link></div>
+              <div><Link href="/services" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Services Overview</Link></div>
+              <div><Link href="/about" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">About Saints Services</Link></div>
+              <div><Link href="/careers" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Careers & Recruitment</Link></div>
+              <div><Link href="/contact" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Contact & Quotes</Link></div>
             </div>
 
             <h5 className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#f59e0b] pt-2 border-t border-white/10">
               Legal Compliance
             </h5>
             <div className="space-y-1.5 text-xs text-slate-400">
-              <div><Link href="/privacy-policy" className="hover:text-[#f59e0b] transition-colors">Privacy Policy</Link></div>
-              <div><Link href="/terms" className="hover:text-[#f59e0b] transition-colors">Terms & Conditions</Link></div>
+              <div><Link href="/privacy-policy" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Privacy Policy</Link></div>
+              <div><Link href="/terms" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Terms & Conditions</Link></div>
             </div>
           </div>
 
@@ -223,9 +232,9 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-4 text-[11px]">
-            <Link href="/privacy-policy" className="hover:text-[#f59e0b] transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Privacy Policy</Link>
             <span className="text-slate-700">•</span>
-            <Link href="/terms" className="hover:text-[#f59e0b] transition-colors">Terms & Conditions</Link>
+            <Link href="/terms" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Terms & Conditions</Link>
           </div>
 
           <div className="text-center md:text-right text-[11px]">

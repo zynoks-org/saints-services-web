@@ -8,17 +8,20 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, phone, email, company, service, details } = body;
 
+    const recipientEmail = 'SaintsServicesLTD@gmail.com';
+
     const data = await resend.emails.send({
       from: 'Saints Services Dispatch <onboarding@resend.dev>',
-      to: ['ashrafaholic@gmail.com'],
-      subject: `⚡ New Lead: ${service || 'Quote Request'} — ${name}`,
+      to: [recipientEmail],
+      replyTo: email || undefined,
+      subject: `⚡ New Lead: ${service || 'Operational Quote Request'} — ${name || 'Inquiry'}`,
       html: `
         <!DOCTYPE html>
         <html>
           <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>New Submission</title>
+            <title>New Dispatch Lead</title>
           </head>
           <body style="margin: 0; padding: 0; background-color: #070d1e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
             
@@ -35,10 +38,10 @@ export async function POST(request: Request) {
                         <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
                             <td>
-                              <span style="display: inline-block; background-color: #1e293b; color: #f59e0b; border: 1px solid #334155; font-family: monospace; font-size: 11px; font-weight: 700; padding: 4px 10px; rounded-md: 6px; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
+                              <span style="display: inline-block; background-color: #1e293b; color: #f59e0b; border: 1px solid #334155; font-family: monospace; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
                                 ⚡ DISPATCH_ALERT // NEW_INQUIRY
                               </span>
-                              <h1 style="margin: 0; color: #ffffff; font-size: 22px; font-weight: 900; tracking-tight: -0.5px; text-transform: uppercase;">
+                              <h1 style="margin: 0; color: #ffffff; font-size: 22px; font-weight: 900; letter-spacing: -0.5px; text-transform: uppercase;">
                                 Saints Services Ltd
                               </h1>
                               <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 13px; font-weight: 500;">
@@ -62,7 +65,7 @@ export async function POST(request: Request) {
                                 Requested Service Scope
                               </div>
                               <div style="font-size: 18px; font-weight: 800; color: #f59e0b;">
-                                ${service || 'General Quote Enquiry'}
+                                ${service || 'General Operational Enquiry'}
                               </div>
                             </td>
                           </tr>
@@ -153,7 +156,10 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error('Resend error:', error);
-    return NextResponse.json({ success: false, error: (error as Error).message }, { status: 500 });
+    console.error('Resend API error:', error);
+    return NextResponse.json(
+      { success: false, error: (error as Error).message }, 
+      { status: 500 }
+    );
   }
 }

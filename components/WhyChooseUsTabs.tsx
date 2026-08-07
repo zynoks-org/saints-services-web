@@ -144,12 +144,13 @@ export function WhyChooseUsTabs() {
                 ))}
 
                 <div className="pt-4">
+                  {/* Updated Link to target /contact page */}
                   <Link 
-                    href="#quote-form" 
-                    className="inline-flex items-center gap-2 bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-extrabold px-7 py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md active:scale-95 uppercase tracking-wider"
+                    href="/contact" 
+                    className="group relative inline-flex items-center justify-center gap-2 bg-[#f59e0b] hover:bg-amber-500 text-[#0b1329] font-extrabold px-7 py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md active:scale-95 uppercase tracking-wider cursor-pointer"
                   >
                     <span>Request Operational Quote</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -160,6 +161,7 @@ export function WhyChooseUsTabs() {
                   src={current.imageSrc} 
                   alt={current.title} 
                   fill 
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-center opacity-90 hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b1329] via-transparent to-transparent opacity-80" />
