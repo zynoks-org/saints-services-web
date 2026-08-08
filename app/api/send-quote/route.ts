@@ -8,9 +8,10 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, phone, email, company, service, details } = body;
 
-    const recipientEmail = 'SaintsServicesLTD@gmail.com';
+    // Resend requires lowercase matching for onboarding@resend.dev testing
+    const recipientEmail = 'saintsservicesltd@gmail.com';
 
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: 'Saints Services Dispatch <onboarding@resend.dev>',
       to: [recipientEmail],
       replyTo: email || undefined,
@@ -153,6 +154,11 @@ export async function POST(request: Request) {
         </html>
       `,
     });
+
+    if (error) {
+      console.error('Resend delivery error:', error);
+      return NextResponse.json({ success: false, error }, { status: 400 });
+    }
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
