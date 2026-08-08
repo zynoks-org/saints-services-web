@@ -95,7 +95,7 @@ export function Header() {
               <div className="flex items-center gap-1.5 mt-1">
                 <span className="w-1.5 h-1.5 bg-emerald-500 animate-pulse" />
                 <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase block">
-                  SIA Approved • 24/7 Operations
+                  SIA TRAINED SECURITY GUARDS • 24/7 Operations
                 </span>
               </div>
             </div>
