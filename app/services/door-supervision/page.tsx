@@ -131,7 +131,7 @@ export default function DoorSupervisionPage() {
                 <div className="lg:col-span-7">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
                     <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                    <span>SIA APPROVED // DOOR SUPERVISORS</span>
+                    <span>SIA-LICENSED // DOOR SUPERVISORS</span>
                   </div>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4 sm:mb-6 uppercase transition-colors">

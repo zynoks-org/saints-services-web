@@ -233,7 +233,7 @@ export default function ContactPage() {
                         <Lock className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="text-xs font-mono font-bold uppercase text-slate-900 dark:text-white mb-1">SIA Approved Personnel</h3>
+                        <h3 className="text-xs font-mono font-bold uppercase text-slate-900 dark:text-white mb-1">SIA-Licensed Security Officers</h3>
                         <p className="text-xs text-slate-500 dark:text-slate-400 leading-normal">
                           Fully vetted, insured, and licensed security officers equipped for immediate assignment.
                         </p>

@@ -84,7 +84,7 @@ export function JoinUs() {
             </div>
 
             <h2 className="text-2xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4 sm:mb-6 leading-tight uppercase">
-              Join the UK&apos;s Premier Security Team
+              Join Our Security Personnel Team
             </h2>
 
             {/* MOBILE DEDICATED IMAGE CARD */}

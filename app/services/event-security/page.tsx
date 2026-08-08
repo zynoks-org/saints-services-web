@@ -128,7 +128,7 @@ export default function EventSecurityPage() {
                 <div className="lg:col-span-7">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
                     <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                    <span>SIA APPROVED // EVENT GUARDS & STEWARDS</span>
+                    <span>SIA-LICENSED // EVENT GUARDS & STEWARDS</span>
                   </div>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4 sm:mb-6 uppercase transition-colors">
@@ -239,7 +239,7 @@ export default function EventSecurityPage() {
                   </p>
 
                   <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
-                    Saints Services specialises in security services for events in the UK for organisations running business-critical functions. We provide trained security personnel, including event security guards, event stewards, and security operatives, for a range of events, including corporate gatherings, festivals, concerts, weddings, sports events, and private parties.
+                    Saints Services specialises in security services for events in the UK for organisations running business-critical functions. We provide trained security personnel, including SIA-licensed security guards, event stewards, and security operatives, for a range of events, including corporate gatherings, festivals, concerts, weddings, sports events, and private parties.
                   </p>
 
                   <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">

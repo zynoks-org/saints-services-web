@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Credentials } from '@/components/Credentials';
@@ -91,7 +90,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <title>About Us | Saints Services Ltd UK Security & Facilities</title>
+      <title>About Us | Saints Services Ltd UK Security &amp; Facilities</title>
       <meta name="description" content="Learn about Saints Services Ltd, delivering BS7858 vetted, SIA-licensed manned guarding and commercial facilities management across the UK." />
 
       <div className="min-h-screen bg-slate-50 dark:bg-[#070d1e] font-sans text-slate-800 dark:text-slate-300 flex flex-col justify-between transition-colors duration-300">
@@ -125,7 +124,7 @@ export default function AboutPage() {
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-4 sm:mb-6 uppercase transition-colors">
                     Setting the Standard in <br className="hidden sm:inline" />
-                    <span className="text-[#f59e0b]">UK Security & Facilities</span>
+                    <span className="text-[#f59e0b]">UK Security &amp; Facilities</span>
                   </h1>
 
                   <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl transition-colors">
@@ -226,10 +225,10 @@ export default function AboutPage() {
               <div className="max-w-3xl mb-10 sm:mb-14">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-3">
                   <FileText className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-                  <span>VETTING_&_COMPLIANCE</span>
+                  <span>VETTING_&amp;_COMPLIANCE</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-3 sm:mb-4 uppercase">
-                  Built on Transparency & Security Assurance
+                  Built on Transparency &amp; Security Assurance
                 </h2>
                 <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium leading-relaxed">
                   We understand that deploying personnel onto your premises requires absolute trust. Here is how we maintain service quality across every shift.

@@ -69,7 +69,7 @@ export function Footer() {
               Ready to secure your site or venue?
             </h3>
             <p className="text-slate-400 text-xs sm:text-sm font-medium">
-              SIA approved personnel ready for rapid nationwide deployment within 2 hours.
+              SIA-licensed personnel ready for rapid nationwide deployment within 2 hours.
             </p>
           </div>
 
@@ -213,7 +213,7 @@ export function Footer() {
               <div className="p-3 rounded-xl bg-slate-900 border border-white/10 text-[11px] text-slate-400 space-y-1">
                 <div className="flex items-center gap-1.5 text-white font-bold">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#f59e0b]" />
-                  <span>SIA Approved Standards</span>
+                  <span>Licensed Security Operations</span>
                 </div>
                 <p className="text-[10px] text-slate-400">
                   BS7858 Vetted Operatives • Fully Insured Public & Employee Liability

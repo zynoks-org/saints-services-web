@@ -128,7 +128,7 @@ export default function KeyHoldingPage() {
                 <div className="lg:col-span-7">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
                     <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                    <span>SIA APPROVED // ALARM RESPONSE 24/7</span>
+                    <span>SIA-LICENSED // ALARM RESPONSE 24/7</span>
                   </div>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4 sm:mb-6 uppercase transition-colors">
@@ -137,7 +137,7 @@ export default function KeyHoldingPage() {
                   </h1>
 
                   <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-6 sm:mb-8 max-w-2xl transition-colors">
-                    Saints Services Ltd provides expert Key Holding and Alarm Response services to businesses and households across the UK. Our SIA-approved mobile patrols deliver a 24-hour, 365-day emergency response when your alarm activates, ensuring absolute security and peace of mind.
+                    Saints Services Ltd provides expert Key Holding and Alarm Response services to businesses and households across the UK. Our SIA-licensed mobile patrols deliver a 24-hour, 365-day emergency response when your alarm activates, ensuring absolute security and peace of mind.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
@@ -265,7 +265,7 @@ export default function KeyHoldingPage() {
                   <div className="space-y-3.5 text-xs font-bold text-slate-800 dark:text-slate-200">
                     {[
                       "Bespoke Keyholding Solutions Tailored to You",
-                      "SIA Approved Key Holders & Licensed Personnel",
+                      "SIA-Licensed Key Holders & Security Personnel",
                       "98% Customer Retention Rate",
                       "Guaranteed Rapid Response to Alarms",
                       "Competitive Rates for Professional Service"

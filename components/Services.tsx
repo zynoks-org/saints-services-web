@@ -19,7 +19,7 @@ export function Services() {
       num: "01",
       total: "04",
       title: "Manned Guarding & Patrols",
-      badge: "SIA APPROVED",
+      badge: "SIA LICENSED OFFICERS",
       img: "/images/manned-guarding.png",
       description: "Our highly trained security personnel offer professional manned guarding services, ensuring continuous protection, access monitoring, and deterrence for your premises.",
       highlights: [
@@ -47,7 +47,7 @@ export function Services() {
       num: "03",
       total: "04",
       title: "Door Supervision & Venue Security",
-      badge: "LICENSED OFFICERS",
+      badge: "SIA LICENSED",
       img: "/images/retail-security.png",
       description: "SIA-licensed door supervisors dedicated to maintaining order, managing guest entry, and resolving conflicts professionally at venues, clubs, and high-profile premises.",
       highlights: [

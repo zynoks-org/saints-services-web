@@ -14,11 +14,11 @@ import { SecurityBenefitsGrid } from '@/components/SecurityBenefitsGrid';
 import { ServicesGrid } from '@/components/ServicesGrid';
 
 export const metadata = {
-  title: 'Saints Services Ltd | SIA Licensed UK Security & Facilities Management',
+  title: 'Saints Services Ltd | SIA-Licensed Security Guards & Facilities Management UK',
   description: 'Leading provider of SIA-licensed security guards, keyholding, 24/7 alarm response, door supervision, and facility management services across the UK.',
   keywords: 'UK Security Company, SIA Licensed Guards, Manned Guarding, Keyholding UK, Event Security, Door Supervision, Facility Management London',
   openGraph: {
-    title: 'Saints Services Ltd | SIA Licensed UK Security & Facilities',
+    title: 'Saints Services Ltd | SIA-Licensed Security Guards & Facilities UK',
     description: 'Trusted SIA-licensed security guarding, rapid alarm response, and facility management across major UK regions.',
     url: 'https://saintsservices.co.uk',
     siteName: 'Saints Services Ltd',

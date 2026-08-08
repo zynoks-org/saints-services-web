@@ -19,13 +19,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://saintsservices.co.uk"),
   title: {
-    default: "Saints Services Ltd | SIA Security & Facilities Management UK",
+    default: "Saints Services Ltd | SIA-Licensed Security Guards & Facilities Management UK",
     template: "%s | Saints Services Ltd",
   },
   description:
-    "Nationwide SIA-licensed manned guarding, event safety stewards, retail loss prevention, and commercial facilities cleaning operations across the UK.",
+    "Nationwide SIA-licensed security guards, event safety stewards, retail loss prevention, and commercial facilities operations across the UK.",
   keywords: [
-    "SIA Security UK",
+    "SIA Security Guards UK",
     "Manned Guarding",
     "Event Safety Stewards",
     "Retail Loss Prevention",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Saints Services Ltd | Security & Facilities Management",
     description:
-      "24/7 SIA-licensed manned guarding and commercial facilities management in the UK.",
+      "24/7 SIA-licensed security guard deployments and commercial facilities management in the UK.",
     url: "https://saintsservices.co.uk",
     siteName: "Saints Services Ltd",
     locale: "en_GB",

@@ -164,7 +164,7 @@ export default function LocationDetailPage() {
                   </p>
 
                   <p className="text-sm sm:text-base font-medium leading-relaxed max-w-2xl text-slate-600 dark:text-slate-300">
-                    As one of the UK&apos;s top-performing security companies with an exceptional 98% client retention rate, we deploy SIA-licensed officers to protect your premises, staff, and assets with bespoke {location.name} security solutions.
+                    As one of the UK&apos;s top-performing security companies with an exceptional 98% client retention rate, we deploy SIA-licensed security officers to protect your premises, staff, and assets with bespoke {location.name} security solutions.
                   </p>
 
                   <div className="flex items-center gap-4 pt-2">
@@ -269,7 +269,7 @@ export default function LocationDetailPage() {
                   <div className="space-y-4 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 leading-relaxed">
                     <p>{location.introText}</p>
                     <p>All aspects of site protection are managed by Saints Services&apos; security teams, including static guarding, gatehouse clearance, event crowd safety, and emergency alarm response.</p>
-                    <p>In addition to continuous perimeter monitoring, our SIA officers act as a highly visible deterrent against unauthorized intrusion, vandalism, and theft across {location.name}.</p>
+                    <p>In addition to continuous perimeter monitoring, our SIA-licensed security officers act as a highly visible deterrent against unauthorized intrusion, vandalism, and theft across {location.name}.</p>
                   </div>
                 </div>
 

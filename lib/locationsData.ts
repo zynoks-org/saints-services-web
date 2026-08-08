@@ -2750,7 +2750,7 @@ export const locationsData: Record<string, LocationData> = {
         answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
       },
       {
-        question: "Are your security officers in Southwark fully SIA-licensed, vetted, and trained to industry standards?",
+        question: "Are your security officers in Southwark fully SIA licensed, vetted, and trained to industry standards?",
         answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
       },
       {
@@ -3809,6 +3809,5 @@ export const locationsData: Record<string, LocationData> = {
         answer: "You can complete our online quote form or call our central dispatch team directly to arrange a full risk assessment with a security specialist."
       }
     ]
-  },
-
+  }
 };

@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { Phone, MapPin, Menu, X, Briefcase, ChevronRight, Mail, ChevronDown, Compass, ShieldCheck, Sun, Moon } from 'lucide-react';
+import { Phone, MapPin, Menu, X, Briefcase, ChevronRight, Mail, ChevronDown, Compass, ShieldCheck, Sun, Moon, Newspaper } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
 
 export function Header() {
@@ -95,7 +95,7 @@ export function Header() {
               <div className="flex items-center gap-1.5 mt-1">
                 <span className="w-1.5 h-1.5 bg-emerald-500 animate-pulse" />
                 <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase block">
-                  SIA TRAINED SECURITY GUARDS • 24/7 Operations
+                  SIA-Licensed Security Guards • 24/7 Operations
                 </span>
               </div>
             </div>
@@ -177,6 +177,10 @@ export function Header() {
               )}
             </div>
 
+            <Link href="/blog" className="hover:text-[#f59e0b] transition-colors relative py-2 group">
+              <span>Blog</span>
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
+            </Link>
             <Link href="/about" className="hover:text-[#f59e0b] transition-colors relative py-2 group">
               <span>About</span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
@@ -266,6 +270,13 @@ export function Header() {
                 </div>
               </div>
 
+              <Link 
+                href="/blog" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="block px-4 py-3 rounded-sm text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 uppercase tracking-wider"
+              >
+                Blog & Insights
+              </Link>
               <Link 
                 href="/about" 
                 onClick={() => setMobileMenuOpen(false)} 

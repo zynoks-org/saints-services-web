@@ -6,15 +6,10 @@ import Image from 'next/image';
 import { 
   Smartphone, 
   ShieldCheck, 
-  Clock, 
   Award, 
   ArrowRight,
-  Radio,
-  MapPin,
   CheckCircle2,
-  Users,
-  Briefcase,
-  ShieldAlert
+  Briefcase
 } from 'lucide-react';
 
 export function TechFeatures() {

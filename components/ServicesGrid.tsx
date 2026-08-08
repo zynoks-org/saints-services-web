@@ -18,7 +18,7 @@ export function ServicesGrid() {
   const services: ServiceCard[] = [
     {
       title: "Door Supervision",
-      description: "Professional SIA door supervisors for secure venue management. Saints Services ensures controlled access and a safe environment with our licensed experts.",
+      description: "Professional SIA-licensed door supervisors for secure venue management. Saints Services ensures controlled access and a safe environment with our licensed experts.",
       href: "/services/door-supervision",
       imageSrc: "/images/security1.png",
       imageAlt: "Saints Services Door Supervision Operations",
@@ -42,7 +42,7 @@ export function ServicesGrid() {
     },
     {
       title: "Security Guards",
-      description: "Vigilant SIA security guards for comprehensive asset protection. Skilled guards tailored to your specific security needs, from retail to construction sites.",
+      description: "Vigilant SIA-licensed security guards for comprehensive asset protection. Skilled guards tailored to your specific security needs, from retail to construction sites.",
       href: "/services/security-guards",
       imageSrc: "/images/manned-guarding.png",
       imageAlt: "Saints Services Manned Guarding",

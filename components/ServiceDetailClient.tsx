@@ -81,7 +81,7 @@ const servicesData: Record<string, {
   },
   "door-supervision": {
     title: "Door Supervision & Venue Security",
-    badge: "SIA APPROVED // DOOR SUPERVISORS",
+    badge: "SIA LICENSED // DOOR SUPERVISORS",
     subtitle: "Licensed door supervisors for hospitality venues, corporate events, and licensed premises across the UK.",
     overview: "High-capacity licensed venues require security expertise beyond standard perimeter watching. Saints Services deploys SIA door supervisors trained in crowd management, entry screening, and conflict de-escalation to protect your visitors and brand image.",
     keySpecs: [
