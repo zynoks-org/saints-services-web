@@ -8,11 +8,10 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, phone, email, company, service, details } = body;
 
-    // Resend requires lowercase matching for onboarding@resend.dev testing
     const recipientEmail = 'saintsservicesltd@gmail.com';
 
     const { data, error } = await resend.emails.send({
-      from: 'Saints Services Dispatch <onboarding@resend.dev>',
+      from: 'Saints Services Dispatch <dispatch@mail.saintsservices.co.uk>',
       to: [recipientEmail],
       replyTo: email || undefined,
       subject: `⚡ New Lead: ${service || 'Operational Quote Request'} — ${name || 'Inquiry'}`,
@@ -102,7 +101,7 @@ export async function POST(request: Request) {
                                 Email Address
                               </div>
                               <div>
-                                <a href="mailto:${email}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                <a href="${email ? `mailto:${email}` : '#'}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
                                   ${email || 'N/A'}
                                 </a>
                               </div>
@@ -112,7 +111,7 @@ export async function POST(request: Request) {
                                 Direct Phone
                               </div>
                               <div>
-                                <a href="tel:${phone}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                <a href="${phone ? `tel:${phone}` : '#'}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
                                   ${phone || 'N/A'}
                                 </a>
                               </div>
