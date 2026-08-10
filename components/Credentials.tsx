@@ -5,11 +5,9 @@ import {
   ShieldCheck, 
   Award, 
   FileCheck, 
-  CheckCircle2, 
   BookOpen, 
   BadgeCheck, 
   ChevronRight,
-  Building,
   Check
 } from 'lucide-react';
 
@@ -96,7 +94,6 @@ export function Credentials() {
   return (
     <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden font-sans transition-colors duration-300">
       
-      {/* Light Clean Grid Pattern */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20 z-0"
         style={{
@@ -107,7 +104,6 @@ export function Credentials() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs backdrop-blur-md transition-colors">
             <BadgeCheck className="w-4 h-4 text-[#f59e0b]" />
@@ -121,16 +117,13 @@ export function Credentials() {
           </p>
         </div>
 
-        {/* INTERACTIVE COMPLIANCE CONSOLE */}
         <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 lg:p-10 shadow-2xl relative transition-colors">
           
-          {/* Tactical Corner Brackets */}
           <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-[#f59e0b] pointer-events-none" />
           <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-[#f59e0b] pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* LEFT COLUMN: NAVIGATION TABS (5 COLS) */}
             <div className="lg:col-span-5 space-y-3">
               <div className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
                 Select Compliance Standard:
@@ -167,14 +160,11 @@ export function Credentials() {
               })}
             </div>
 
-            {/* RIGHT COLUMN: DETAIL CARD (7 COLS) */}
             <div className="lg:col-span-7 bg-white dark:bg-[#070d1e] text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 rounded-sm p-6 sm:p-8 relative overflow-hidden shadow-2xl flex flex-col justify-between min-h-[440px] transition-colors">
               
-              {/* Subtle Ambient Light */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#f59e0b]/10 rounded-full blur-3xl pointer-events-none" />
 
               <div>
-                {/* Header Badge Row */}
                 <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                   <div className="flex items-center gap-2.5">
                     <div className="p-2 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800">
@@ -195,7 +185,6 @@ export function Credentials() {
                   {current.summary}
                 </p>
 
-                {/* Protocols / Checklist */}
                 <div className="space-y-2.5 mb-6">
                   <div className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Verified Operational Protocols:</div>
                   {current.protocols.map((protocol, pIdx) => (
@@ -207,7 +196,6 @@ export function Credentials() {
                 </div>
               </div>
 
-              {/* Footer Trust Indicator */}
               <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-mono">
                 <span>Saints Services Quality Standard</span>
                 <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1.5">

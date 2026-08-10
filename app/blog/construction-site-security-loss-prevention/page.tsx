@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { 
-  Shield, 
   Clock, 
   Calendar, 
   ArrowRight, 
@@ -25,26 +24,6 @@ import {
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-
-/* 
-================================================================================
-SEO & KEYWORD METADATA STRATEGY
-================================================================================
-Topic: Construction Site Security & Plant Theft Loss Prevention UK
-Target Keywords: 
-  - Construction site security guards UK
-  - Plant and machinery theft prevention 2026
-  - SIA gatehouse security officer construction
-  - Construction site fuel theft deterrence
-  - Building site loss prevention London
-Secondary Keywords:
-  - Wireless CCTV perimeter detection UK
-  - Contractor RAMS verification gatehouse
-  - Out of hours construction mobile patrol
-  - Copper wire and tool theft prevention site
-Target Audience: Project directors, main contractors, site managers, commercial quantity surveyors, and development heads across the UK.
-Search Intent: Informational & Commercial Investigation (Preventing equipment theft, verifying contractor site access, and procuring BS7858 vetted SIA site security guards).
-*/
 
 export const metadata: Metadata = {
   title: "Construction Site Security: Plant & Tool Loss Prevention (2026 Guide)",
@@ -133,12 +112,10 @@ export default function ConstructionSiteSecurityArticle() {
       <article className="flex-grow py-12 sm:py-20 relative overflow-hidden">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-        {/* Ambient Radial Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#f59e0b]/10 dark:bg-[#f59e0b]/5 rounded-full blur-[180px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* BREADCRUMBS */}
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400 mb-8 uppercase tracking-wider">
             <Link href="/" className="hover:text-[#f59e0b] transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 text-slate-400 dark:text-slate-600" />
@@ -147,7 +124,6 @@ export default function ConstructionSiteSecurityArticle() {
             <span className="text-[#f59e0b] truncate">Construction Site Security</span>
           </nav>
 
-          {/* HEADER SECTION */}
           <header className="space-y-4 mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-slate-200/80 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-widest shadow-sm transition-colors">
               <HardHat className="w-3.5 h-3.5 text-[#f59e0b]" />
@@ -178,7 +154,6 @@ export default function ConstructionSiteSecurityArticle() {
             </div>
           </header>
 
-          {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
               src="/images/why-us.png" 
@@ -191,7 +166,6 @@ export default function ConstructionSiteSecurityArticle() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
 
-          {/* QUICK NAVIGATION BOX */}
           <div className="p-6 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 mb-10 shadow-lg transition-colors">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-3">
               <BarChart3 className="w-4 h-4" />
@@ -208,14 +182,12 @@ export default function ConstructionSiteSecurityArticle() {
             </ul>
           </div>
 
-          {/* MAIN EDITORIAL CONTENT */}
           <div className="space-y-8 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-normal transition-colors">
             
             <p className="text-lg font-medium text-slate-800 dark:text-slate-200 border-l-2 border-[#f59e0b] pl-4 leading-relaxed transition-colors">
               Construction sites are prime targets for organized criminal gangs. Unsecured building developments face severe financial losses, costly project delays, and crippling insurance premium increases.
             </p>
 
-            {/* SECTION 1 */}
             <section id="crime-crisis" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <AlertTriangle className="w-5 h-5 text-[#f59e0b]" />
@@ -249,7 +221,6 @@ export default function ConstructionSiteSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 2 */}
             <section id="threat-vectors" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Building2 className="w-5 h-5 text-[#f59e0b]" />
@@ -279,7 +250,6 @@ export default function ConstructionSiteSecurityArticle() {
               </div>
             </section>
 
-            {/* SECTION 3 */}
             <section id="core-duties" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Award className="w-5 h-5 text-[#f59e0b]" />
@@ -309,7 +279,6 @@ export default function ConstructionSiteSecurityArticle() {
               </div>
             </section>
 
-            {/* IN-ARTICLE MID-POINT CONVERSION CTA */}
             <div className="my-10 p-6 sm:p-8 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 transition-colors">
               <div className="space-y-1.5 text-center sm:text-left">
                 <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#f59e0b] uppercase">
@@ -331,7 +300,6 @@ export default function ConstructionSiteSecurityArticle() {
               </Link>
             </div>
 
-            {/* SECTION 4 */}
             <section id="gatehouse-control" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 transition-colors">
                 4. Gatehouse Delivery Screening &amp; Contractor RAMS
@@ -344,7 +312,6 @@ export default function ConstructionSiteSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 5 */}
             <section id="wireless-detection" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Radio className="w-5 h-5 text-[#f59e0b]" />
@@ -358,7 +325,6 @@ export default function ConstructionSiteSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 6 */}
             <section id="procuring-guards" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Lock className="w-5 h-5 text-[#f59e0b]" />
@@ -372,7 +338,6 @@ export default function ConstructionSiteSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 7: FAQ */}
             <section id="faq-section" className="pt-8 border-t border-slate-200 dark:border-slate-800 my-10 transition-colors">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-6">
                 <HelpCircle className="w-4 h-4" />
@@ -401,7 +366,6 @@ export default function ConstructionSiteSecurityArticle() {
               </div>
             </section>
 
-            {/* EXTERNAL SOURCES CITATION */}
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">
               <div className="font-mono font-bold text-slate-800 dark:text-slate-300 uppercase">Verified Industry Sources:</div>
               <ul className="list-disc pl-4 space-y-1">
@@ -413,7 +377,6 @@ export default function ConstructionSiteSecurityArticle() {
 
           </div>
 
-          {/* RELATED ARTICLES CAROUSEL */}
           <div className="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800 transition-colors">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-6">
               <FileText className="w-4 h-4" />
@@ -443,7 +406,6 @@ export default function ConstructionSiteSecurityArticle() {
             </div>
           </div>
 
-          {/* AUTHOR & FOOTER NAVIGATION */}
           <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6 transition-colors">
             <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
               Published by <span className="text-slate-900 dark:text-white font-bold">Saints Services Construction Security Group</span>

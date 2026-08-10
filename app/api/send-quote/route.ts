@@ -1,20 +1,61 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { z } from 'zod';
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// 1. Upstash Redis Rate Limiter Configuration (5 requests per 10 minutes per IP)
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(5, '10 m'),
+  analytics: true,
+});
+
+// 2. Zod Schema Validation for Form Payload
+const quoteSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters').max(100),
+  phone: z.string().min(6, 'Please provide a valid phone number').max(30),
+  email: z.string().email('Please enter a valid email address'),
+  company: z.string().max(100).optional().nullable(),
+  service: z.string().min(1, 'Service selection is required'),
+  details: z.string().max(3000, 'Details exceed maximum allowed character limit').optional().nullable(),
+});
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, phone, email, company, service, details } = body;
+    // 3. Rate Limit Check by IP
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
+    const { success: rateLimitSuccess } = await ratelimit.limit(`ratelimit_${ip}`);
 
+    if (!rateLimitSuccess) {
+      return NextResponse.json(
+        { success: false, error: 'Too many quote requests submitted. Please wait a few minutes and try again.' },
+        { status: 429 }
+      );
+    }
+
+    // 4. Validate Request Body
+    const body = await request.json();
+    const parseResult = quoteSchema.safeParse(body);
+
+    if (!parseResult.success) {
+      return NextResponse.json(
+        { success: false, error: parseResult.error.issues[0].message },
+        { status: 400 }
+      );
+    }
+
+    const { name, phone, email, company, service, details } = parseResult.data;
     const recipientEmail = 'saintsservicesltd@gmail.com';
 
+    // 5. Dispatch Email via Resend
     const { data, error } = await resend.emails.send({
       from: 'Saints Services Dispatch <dispatch@mail.saintsservices.co.uk>',
       to: [recipientEmail],
-      replyTo: email || undefined,
-      subject: `⚡ New Lead: ${service || 'Operational Quote Request'} — ${name || 'Inquiry'}`,
+      replyTo: email,
+      subject: `⚡ New Lead: ${service} — ${name}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -65,7 +106,7 @@ export async function POST(request: Request) {
                                 Requested Service Scope
                               </div>
                               <div style="font-size: 18px; font-weight: 800; color: #f59e0b;">
-                                ${service || 'General Operational Enquiry'}
+                                ${service}
                               </div>
                             </td>
                           </tr>
@@ -81,7 +122,7 @@ export async function POST(request: Request) {
                                 Client Name
                               </div>
                               <div style="font-size: 15px; font-weight: 700; color: #ffffff;">
-                                ${name || 'N/A'}
+                                ${name}
                               </div>
                             </td>
                             <td width="50%" style="padding-bottom: 20px; padding-left: 10px; vertical-align: top;">
@@ -101,8 +142,8 @@ export async function POST(request: Request) {
                                 Email Address
                               </div>
                               <div>
-                                <a href="${email ? `mailto:${email}` : '#'}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
-                                  ${email || 'N/A'}
+                                <a href="mailto:${email}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                  ${email}
                                 </a>
                               </div>
                             </td>
@@ -111,8 +152,8 @@ export async function POST(request: Request) {
                                 Direct Phone
                               </div>
                               <div>
-                                <a href="${phone ? `tel:${phone}` : '#'}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
-                                  ${phone || 'N/A'}
+                                <a href="tel:${phone}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                  ${phone}
                                 </a>
                               </div>
                             </td>
@@ -161,9 +202,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error('Resend API error:', error);
+    console.error('API Error:', error);
     return NextResponse.json(
-      { success: false, error: (error as Error).message }, 
+      { success: false, error: (error as Error).message },
       { status: 500 }
     );
   }

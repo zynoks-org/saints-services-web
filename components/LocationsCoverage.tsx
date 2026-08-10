@@ -18,12 +18,10 @@ import {
   X,
   Plus,
   Minus,
-  Radio,
-  Activity
+  Radio
 } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
 
-// CartoDB Dark Matter tile provider (Untouched Original Map Setup)
 const darkTileProvider = (x: number, y: number, z: number, dpr?: number) => {
   return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}${dpr && dpr >= 2 ? '@2x' : ''}.png`;
 };
@@ -34,11 +32,9 @@ export function LocationsCoverage() {
   const [hoveredLocation, setHoveredLocation] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  // Map view controls
-  const [center, setCenter] = useState<[number, number]>([52.5, -1.5]); // Central UK
+  const [center, setCenter] = useState<[number, number]>([52.5, -1.5]);
   const [zoom, setZoom] = useState<number>(6.5);
 
-  // Prevent Next.js SSR hydration mismatch for pigeon-maps cleanly
   useEffect(() => {
     const timer = setTimeout(() => setHasMounted(true), 0);
     return () => clearTimeout(timer);
@@ -47,7 +43,6 @@ export function LocationsCoverage() {
   const allLocations = Object.values(locationsData);
   const regions = ["All UK", ...Array.from(new Set(allLocations.map(loc => loc.region)))];
 
-  // Filter locations by selected region AND search input query
   const filteredLocations = allLocations.filter(loc => {
     const matchesRegion = selectedRegion === "All UK" || loc.region === selectedRegion;
     const matchesSearch = searchQuery.trim() === "" || 
@@ -60,7 +55,6 @@ export function LocationsCoverage() {
 
   const activeHoveredLoc = allLocations.find(loc => loc.slug === hoveredLocation);
 
-  // Handle region filter change & re-center map
   const handleRegionChange = (region: string) => {
     setSelectedRegion(region);
     if (region === "All UK") {
@@ -214,7 +208,6 @@ export function LocationsCoverage() {
   return (
     <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 font-sans relative overflow-hidden transition-colors duration-300">
       
-      {/* TACTICAL BACKGROUND: GRID OVERLAY & SCANLINES */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.07] z-0"
         style={{
@@ -226,12 +219,10 @@ export function LocationsCoverage() {
         }}
       />
 
-      {/* Background Ambient Gold Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-[#f59e0b]/10 dark:bg-[#f59e0b]/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* TOP BANNER / HEADER */}
         <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-8 sm:p-12 mb-12 shadow-2xl relative overflow-hidden transition-colors duration-300">
           
           <div className="absolute top-0 right-0 hidden sm:flex gap-1.5 opacity-80 pointer-events-none transform translate-x-4 -translate-y-2">
@@ -273,31 +264,25 @@ export function LocationsCoverage() {
 
         </div>
 
-        {/* INTERACTIVE PIGEON-MAPS CARD (TACTICAL HUD STYLE) */}
         <div className="relative mb-12 bg-white dark:bg-[#0b1329] rounded-md shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 p-3 sm:p-4 flex flex-col lg:flex-row gap-4 transition-colors duration-300">
           
-          {/* Corner Aim Reticle Brackets */}
           <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
           <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
           <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
           <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#f59e0b]/80 z-40 pointer-events-none" />
 
-          {/* LEFT: Live Interactive Map (UNTOUCHED ORIGINAL MAP SETUP) */}
           <div className="relative w-full lg:w-7/12 min-h-[480px] lg:min-h-[620px] bg-[#090f1d] rounded-sm border-2 border-amber-500/60 shadow-[0_0_15px_rgba(245,158,11,0.15)] overflow-hidden">
             
-            {/* Header Badge */}
             <div className="absolute top-4 left-4 z-30 flex items-center gap-2 text-[#f59e0b] font-mono text-[11px] font-bold tracking-widest uppercase bg-[#0b1329]/95 px-3.5 py-1.5 rounded-sm border border-amber-500/40 shadow-xl backdrop-blur-md pointer-events-none">
               <Crosshair className="w-4 h-4 animate-pulse text-[#f59e0b]" />
               Tactical Deployment Grid
             </div>
 
-            {/* Status indicator pill */}
             <div className="absolute top-4 right-4 z-30 hidden sm:flex items-center gap-2 bg-[#0b1329]/90 border border-slate-800 px-3 py-1.5 rounded-sm text-[10px] font-mono font-bold text-slate-300 backdrop-blur-md">
               <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
               <span>DISPATCH_HUB_ONLINE</span>
             </div>
 
-            {/* Custom + / - Zoom Controls */}
             <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-1.5 bg-[#0b1329]/95 border border-amber-500/40 p-1.5 rounded-sm shadow-2xl backdrop-blur-md">
               <button
                 onClick={handleZoomIn}
@@ -315,7 +300,6 @@ export function LocationsCoverage() {
               </button>
             </div>
 
-            {/* Map Canvas */}
             <div 
               className="w-full h-full [&_.pigeon-tiles]:filter [&_.pigeon-tiles]:brightness-150 [&_.pigeon-tiles]:contrast-125"
               onWheelCapture={(e) => {
@@ -335,7 +319,6 @@ export function LocationsCoverage() {
                     setCenter(center);
                   }}
                 >
-                  {/* 1. Render all standard pins first */}
                   {allLocations.map((loc) => {
                     const isHovered = hoveredLocation === loc.slug;
                     const matchesFilter = filteredLocations.some(item => item.slug === loc.slug);
@@ -353,7 +336,6 @@ export function LocationsCoverage() {
                           onMouseEnter={() => setHoveredLocation(loc.slug)}
                           onMouseLeave={() => setHoveredLocation(null)}
                         >
-                          {/* Glowing Marker Pin */}
                           <div className={`rounded-full border-2 border-[#0b1329] transition-all duration-200 ${
                             isHovered 
                               ? 'w-6 h-6 bg-white shadow-[0_0_20px_#fff] scale-125' 
@@ -368,7 +350,6 @@ export function LocationsCoverage() {
                     );
                   })}
 
-                  {/* 2. Render active tooltip OVERLAY LAST so it sits on top of all pins */}
                   {activeHoveredLoc && (
                     <Overlay 
                       anchor={[activeHoveredLoc.coordinates.lat, activeHoveredLoc.coordinates.lng]}
@@ -391,11 +372,9 @@ export function LocationsCoverage() {
             </div>
           </div>
 
-          {/* RIGHT: Region Controls & Location List Panel */}
           <div className="w-full lg:w-5/12 flex flex-col max-h-[620px] bg-white dark:bg-[#0b1329] rounded-sm border border-slate-200 dark:border-slate-800 transition-colors">
             <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 shrink-0 space-y-3.5">
               
-              {/* Location Search Input */}
               <div className="relative">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
@@ -415,7 +394,6 @@ export function LocationsCoverage() {
                 )}
               </div>
 
-              {/* Region Filter Buttons */}
               <div>
                 <h2 className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1.5 uppercase tracking-wider font-mono">
                   <MapIcon className="w-3.5 h-3.5 text-[#f59e0b]" />
@@ -440,7 +418,6 @@ export function LocationsCoverage() {
 
             </div>
 
-            {/* Scrollable Location List */}
             <div className="flex-1 overflow-y-auto overscroll-contain p-4 sm:p-5 space-y-2.5 custom-scrollbar">
               {filteredLocations.map((loc) => (
                 <Link 
@@ -488,7 +465,6 @@ export function LocationsCoverage() {
           </div>
         </div>
 
-        {/* INTRO CARD */}
         <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-10 mb-8 shadow-xl transition-colors">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
@@ -519,7 +495,6 @@ export function LocationsCoverage() {
           </div>
         </div>
 
-        {/* REGIONAL LOCATIONS GRID */}
         <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 mb-8 shadow-xl transition-colors">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
             {mainRegions.map((item, index) => (
@@ -550,7 +525,6 @@ export function LocationsCoverage() {
           </div>
         </div>
 
-        {/* LONDON BOROUGHS GRID */}
         <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 mb-8 shadow-xl transition-colors">
           <div className="mb-6">
             <h3 className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
@@ -590,7 +564,6 @@ export function LocationsCoverage() {
           </div>
         </div>
 
-        {/* SCOTLAND & WALES COVERAGE GRID */}
         <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 shadow-xl transition-colors">
           <div className="mb-6">
             <h3 className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
@@ -626,7 +599,6 @@ export function LocationsCoverage() {
           </div>
         </div>
 
-        {/* BOTTOM CALLOUT */}
         <div className="mt-12 bg-white dark:bg-gradient-to-r dark:from-slate-900 dark:via-[#0b1329] dark:to-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-md text-center shadow-xl relative overflow-hidden transition-colors">
           <ShieldCheck className="w-8 h-8 text-[#f59e0b] mx-auto mb-2" />
           <h3 className="text-lg font-extrabold text-slate-900 dark:text-white uppercase tracking-tight mb-1">
@@ -658,7 +630,6 @@ export function LocationsCoverage() {
 
       </div>
 
-      {/* Embedded CSS for custom scrollbar */}
       <style dangerouslySetInnerHTML={{__html: `
         .custom-scrollbar::-webkit-scrollbar {
           width: 5px;

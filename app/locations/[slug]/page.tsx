@@ -26,13 +26,8 @@ import {
   Lock
 } from 'lucide-react';
 
-// CartoDB Tile Providers for Light and Dark Modes
 const lightMapProvider = (x: number, y: number, z: number, dpr?: number) => {
   return `https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/${z}/${x}/${y}${dpr && dpr >= 2 ? '@2x' : ''}.png`;
-};
-
-const darkMapProvider = (x: number, y: number, z: number, dpr?: number) => {
-  return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}${dpr && dpr >= 2 ? '@2x' : ''}.png`;
 };
 
 export default function LocationDetailPage() {
@@ -108,12 +103,8 @@ export default function LocationDetailPage() {
         <Header />
 
         <main className="grow">
-          {/* ========================================== */}
-          {/* 1. HERO SECTION & QUOTE FORM               */}
-          {/* ========================================== */}
           <section className="relative bg-slate-100 dark:bg-[#0b1329] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800/80 overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24 transition-colors duration-300">
             
-            {/* Hero Background Image Overlay */}
             <div className="absolute inset-y-0 right-0 w-full lg:w-3/5 pointer-events-none z-0 opacity-20 dark:opacity-30">
               <Image 
                 src="/images/security-services.jpg" 
@@ -128,7 +119,6 @@ export default function LocationDetailPage() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               
-              {/* Top Stat Pills */}
               <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs font-mono font-bold text-slate-600 dark:text-slate-400 mb-8 pb-4 border-b border-slate-300 dark:border-slate-800/60">
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-[#f59e0b]"/> UK Wide Coverage</div>
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-[#f59e0b]"/> 98% Client Retention Rate</div>
@@ -137,10 +127,8 @@ export default function LocationDetailPage() {
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                {/* Left Column Text Content */}
                 <div className="lg:col-span-7 space-y-6">
                   
-                  {/* Breadcrumb */}
                   <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
                     <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
                     <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
@@ -198,7 +186,6 @@ export default function LocationDetailPage() {
                   </div>
                 </div>
 
-                {/* Form Card */}
                 <div id="quote-form" className="lg:col-span-5 bg-white dark:bg-[#070d1e] border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 shadow-2xl relative z-10 text-slate-900 dark:text-white transition-colors duration-300">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
                     <Lock className="w-3 h-3 text-[#f59e0b]" /> 
@@ -250,9 +237,6 @@ export default function LocationDetailPage() {
             </div>
           </section>
 
-          {/* ========================================== */}
-          {/* 2. INTRODUCTION & REACT MAP SECTION       */}
-          {/* ========================================== */}
           <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -273,7 +257,6 @@ export default function LocationDetailPage() {
                   </div>
                 </div>
 
-                {/* REACT PIGEON MAP CONTAINER */}
                 <div className="lg:col-span-6 h-[380px] sm:h-[420px] rounded-md overflow-hidden border border-slate-300 dark:border-slate-800 shadow-xl relative bg-slate-100 dark:bg-slate-900 [&_.pigeon-attribution]:hidden transition-colors">
                   <Map 
                     defaultCenter={[location.coordinates.lat, location.coordinates.lng]} 
@@ -297,7 +280,6 @@ export default function LocationDetailPage() {
                     </Marker>
                   </Map>
 
-                  {/* Map Overlay Badge */}
                   <div className="absolute top-4 left-4 bg-white/90 dark:bg-[#0b1329]/90 text-slate-900 dark:text-white backdrop-blur-md border border-slate-200 dark:border-slate-800 px-4 py-2.5 rounded-sm shadow-lg flex items-center gap-3 z-30 pointer-events-none transition-colors">
                     <div className="p-2 bg-[#f59e0b] rounded-sm text-[#0b1329]">
                       <MapPin className="w-4 h-4 font-black" />
@@ -312,7 +294,6 @@ export default function LocationDetailPage() {
                     </div>
                   </div>
 
-                  {/* Status indicator */}
                   <div className="absolute bottom-4 right-4 bg-white/95 dark:bg-[#0b1329]/95 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 px-3.5 py-2 rounded-sm text-[11px] font-mono font-bold flex items-center gap-2 shadow-md z-30 pointer-events-none transition-colors">
                     <Radio className="w-3.5 h-3.5 text-green-500 animate-pulse" />
                     <span>24/7 PATROL DISPATCH ACTIVE</span>
@@ -323,9 +304,6 @@ export default function LocationDetailPage() {
             </div>
           </section>
 
-          {/* ========================================== */}
-          {/* 3. AREAS COVERED                          */}
-          {/* ========================================== */}
           <section className="py-16 bg-slate-100 dark:bg-[#0b1329] border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-900 dark:text-white">
               <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-8">
@@ -342,9 +320,6 @@ export default function LocationDetailPage() {
             </div>
           </section>
 
-          {/* ========================================== */}
-          {/* 4. CREDENTIALS & COMPLIANCE               */}
-          {/* ========================================== */}
           <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-2xl mx-auto mb-12">
@@ -391,9 +366,6 @@ export default function LocationDetailPage() {
             </div>
           </section>
 
-          {/* ========================================== */}
-          {/* 5. KEY CRIME STATS BANNER                  */}
-          {/* ========================================== */}
           <section className="bg-[#f59e0b] text-slate-950 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 items-center">
@@ -427,9 +399,6 @@ export default function LocationDetailPage() {
             </div>
           </section>
 
-          {/* ========================================== */}
-          {/* 6. CLIENT TESTIMONIALS                     */}
-          {/* ========================================== */}
           <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-12">
@@ -456,9 +425,6 @@ export default function LocationDetailPage() {
             </div>
           </section>
 
-          {/* ========================================== */}
-          {/* 7. FREQUENTLY ASKED QUESTIONS              */}
-          {/* ========================================== */}
           <section className="py-16 sm:py-24 bg-slate-100 dark:bg-[#0b1329] border-t border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white transition-colors duration-300">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">

@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { Phone, MapPin, Menu, X, Briefcase, ChevronRight, Mail, ChevronDown, Compass, ShieldCheck, Sun, Moon, Newspaper } from 'lucide-react';
+import { Phone, MapPin, Menu, X, Briefcase, ChevronRight, Mail, ChevronDown, Compass, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
 
 export function Header() {
@@ -43,7 +43,6 @@ export function Header() {
 
   return (
     <div className="sticky top-0 z-50 w-full font-sans shadow-xl">
-      {/* 1. TACTICAL TOP ANNOUNCEMENT BAR */}
       <div className="bg-slate-100 dark:bg-[#050811] text-[11px] py-1.5 px-4 text-slate-600 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800/80 font-mono transition-colors duration-300">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4 sm:gap-6">
@@ -78,11 +77,9 @@ export function Header() {
         </div>
       </div>
 
-      {/* 2. COMMAND MAIN NAVIGATION */}
       <header className="relative bg-white/95 dark:bg-[#080f22]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 text-slate-900 dark:text-white transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
           
-          {/* Logo Container */}
           <Link 
             href="/" 
             onClick={handleLogoClick}
@@ -101,7 +98,6 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-xs lg:text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
             <Link 
               href="/services" 
@@ -111,7 +107,6 @@ export function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
             </Link>
             
-            {/* LOCATIONS MEGA DROPDOWN */}
             <div 
               className="relative py-6"
               onMouseEnter={handleMouseEnter}
@@ -125,7 +120,6 @@ export function Header() {
                 <ChevronDown className={`w-3.5 h-3.5 text-[#f59e0b] transition-transform duration-200 ${locationsDropdownOpen ? 'rotate-180' : ''}`} />
               </Link>
 
-              {/* Floating Mega Dropdown Box */}
               {locationsDropdownOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-[720px] lg:w-[800px] bg-white dark:bg-[#080f22]/95 border border-slate-200 dark:border-white/15 rounded-md shadow-2xl p-5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 backdrop-blur-2xl text-slate-900 dark:text-white transition-colors">
                   
@@ -195,7 +189,6 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* Controls */}
           <div className="flex items-center gap-3">
             {mounted ? (
               <button
@@ -234,7 +227,6 @@ export function Header() {
           </div>
         </div>
 
-        {/* MOBILE MENU */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-[#0b1329] space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto">
             <nav className="space-y-1 font-mono">

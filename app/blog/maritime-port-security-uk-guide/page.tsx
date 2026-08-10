@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { 
-  Shield, 
   Clock, 
   Calendar, 
   ArrowRight, 
@@ -25,26 +24,6 @@ import {
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-
-/* 
-================================================================================
-SEO & KEYWORD METADATA STRATEGY
-================================================================================
-Topic: UK Maritime & Port Security Guide: Landside SIA Guarding & ISPS Code
-Target Keywords: 
-  - UK maritime port security guide 2026
-  - SIA security guard duties UK ports
-  - Landside port protection ISPS code
-  - Cargo terminal access control UK
-  - Port security officers England
-Secondary Keywords:
-  - ISPS Code Port Facility Security Officer (PFSO)
-  - Quayside manned guarding standards
-  - Container terminal theft prevention UK
-  - Dockside security screening SIA licensed
-Target Audience: Port facility operators, maritime terminal managers, logistics operations directors, cargo handling heads, and maritime compliance officers across the UK.
-Search Intent: Informational & Commercial Investigation (Understanding landside port security regulations, ISPS Code compliance, and procuring SIA-licensed maritime guarding).
-*/
 
 export const metadata: Metadata = {
   title: "UK Maritime & Port Security Guide: Landside SIA Guarding & ISPS Code",
@@ -133,12 +112,10 @@ export default function MaritimePortSecurityArticle() {
       <article className="flex-grow py-12 sm:py-20 relative overflow-hidden">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-        {/* Ambient Radial Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#f59e0b]/10 dark:bg-[#f59e0b]/5 rounded-full blur-[180px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* BREADCRUMBS */}
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400 mb-8 uppercase tracking-wider">
             <Link href="/" className="hover:text-[#f59e0b] transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 text-slate-400 dark:text-slate-600" />
@@ -147,7 +124,6 @@ export default function MaritimePortSecurityArticle() {
             <span className="text-[#f59e0b] truncate">Maritime Port Security Guide</span>
           </nav>
 
-          {/* HEADER SECTION */}
           <header className="space-y-4 mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-slate-200/80 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-widest shadow-sm transition-colors">
               <Anchor className="w-3.5 h-3.5 text-[#f59e0b]" />
@@ -178,7 +154,6 @@ export default function MaritimePortSecurityArticle() {
             </div>
           </header>
 
-          {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
               src="/images/security-services.jpg" 
@@ -191,7 +166,6 @@ export default function MaritimePortSecurityArticle() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
 
-          {/* QUICK NAVIGATION BOX */}
           <div className="p-6 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 mb-10 shadow-lg transition-colors">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-3">
               <BarChart3 className="w-4 h-4" />
@@ -208,14 +182,12 @@ export default function MaritimePortSecurityArticle() {
             </ul>
           </div>
 
-          {/* MAIN EDITORIAL CONTENT */}
           <div className="space-y-8 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-normal transition-colors">
             
             <p className="text-lg font-medium text-slate-800 dark:text-slate-200 border-l-2 border-[#f59e0b] pl-4 leading-relaxed transition-colors">
               Over 95% of the UK&apos;s international trade passes through its maritime ports. Securing landside cargo hubs, passenger ferries, and container terminals requires rigorous access control and specialized SIA-licensed guarding.
             </p>
 
-            {/* SECTION 1 */}
             <section id="maritime-landscape" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Ship className="w-5 h-5 text-[#f59e0b]" />
@@ -229,7 +201,6 @@ export default function MaritimePortSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 2 */}
             <section id="isps-code" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Compass className="w-5 h-5 text-[#f59e0b]" />
@@ -261,7 +232,6 @@ export default function MaritimePortSecurityArticle() {
               </div>
             </section>
 
-            {/* SECTION 3 */}
             <section id="core-duties" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Award className="w-5 h-5 text-[#f59e0b]" />
@@ -291,7 +261,6 @@ export default function MaritimePortSecurityArticle() {
               </div>
             </section>
 
-            {/* IN-ARTICLE MID-POINT CONVERSION CTA */}
             <div className="my-10 p-6 sm:p-8 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 transition-colors">
               <div className="space-y-1.5 text-center sm:text-left">
                 <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#f59e0b] uppercase">
@@ -313,7 +282,6 @@ export default function MaritimePortSecurityArticle() {
               </Link>
             </div>
 
-            {/* SECTION 4 */}
             <section id="marsec-levels" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 transition-colors">
                 4. Responding to MARSEC Threat Level Escalations
@@ -326,7 +294,6 @@ export default function MaritimePortSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 5 */}
             <section id="cargo-theft" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 transition-colors">
                 5. Combating Cargo Shrinkage &amp; Illegal Entry Attempts
@@ -339,7 +306,6 @@ export default function MaritimePortSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 6 */}
             <section id="procuring-guards" className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
                 <Building2 className="w-5 h-5 text-[#f59e0b]" />
@@ -356,7 +322,6 @@ export default function MaritimePortSecurityArticle() {
               </p>
             </section>
 
-            {/* SECTION 7: FAQ */}
             <section id="faq-section" className="pt-8 border-t border-slate-200 dark:border-slate-800 my-10 transition-colors">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-6">
                 <HelpCircle className="w-4 h-4" />
@@ -385,7 +350,6 @@ export default function MaritimePortSecurityArticle() {
               </div>
             </section>
 
-            {/* EXTERNAL SOURCES CITATION */}
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">
               <div className="font-mono font-bold text-slate-800 dark:text-slate-300 uppercase">Verified Industry &amp; Regulatory Sources:</div>
               <ul className="list-disc pl-4 space-y-1">
@@ -397,7 +361,6 @@ export default function MaritimePortSecurityArticle() {
 
           </div>
 
-          {/* RELATED ARTICLES CAROUSEL */}
           <div className="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800 transition-colors">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-6">
               <FileText className="w-4 h-4" />
@@ -427,7 +390,6 @@ export default function MaritimePortSecurityArticle() {
             </div>
           </div>
 
-          {/* AUTHOR & FOOTER NAVIGATION */}
           <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6 transition-colors">
             <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
               Published by <span className="text-slate-900 dark:text-white font-bold">Saints Services Intelligence Desk</span>

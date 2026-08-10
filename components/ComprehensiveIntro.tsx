@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { SERVICES_LIST } from '@/lib/servicesData';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 import { 
   ShieldCheck, 
@@ -9,8 +8,7 @@ import {
   BrainCircuit, 
   BadgePercent, 
   Send, 
-  CheckCircle2,
-  PhoneCall
+  CheckCircle2
 } from 'lucide-react';
 
 export function ComprehensiveIntro() {
@@ -82,10 +80,8 @@ export function ComprehensiveIntro() {
     <section className="py-12 sm:py-20 bg-white dark:bg-[#0b1329] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* TOP INTRO COPY + QUICK FORM ROW */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
           
-          {/* LEFT: SEO BRAND COPY */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-4 transition-colors">
               <ShieldCheck className="w-3.5 h-3.5 text-[#f59e0b]" /> 
@@ -109,7 +105,6 @@ export function ComprehensiveIntro() {
             </div>
           </div>
 
-          {/* RIGHT: INLINE QUICK QUOTE CARD */}
           <div className="lg:col-span-5 bg-slate-50 dark:bg-[#070d1e] border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-md shadow-md transition-colors">
             <h3 className="text-xl font-black text-slate-900 dark:text-white mb-1 uppercase tracking-tight">Request an Immediate Quote</h3>
             <p className="text-slate-500 dark:text-slate-400 text-xs font-medium mb-6">
@@ -154,7 +149,6 @@ export function ComprehensiveIntro() {
 
         </div>
 
-        {/* 4 VALUE PROPOSITION BLOCKS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-10 border-t border-slate-200 dark:border-slate-800">
           {valueProps.map((item, idx) => {
             const IconComp = item.icon;

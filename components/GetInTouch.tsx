@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { SERVICES_LIST } from '@/lib/servicesData';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 import { 
   PhoneCall, 
@@ -59,7 +58,6 @@ export function GetInTouch() {
   return (
     <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden font-sans transition-colors duration-300">
       
-      {/* Light Clean Grid Pattern */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20 z-0"
         style={{
@@ -72,7 +70,6 @@ export function GetInTouch() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* LEFT COLUMN: COPY, TRUST BADGES & CONTACT INFO */}
           <div className="lg:col-span-6 space-y-8">
             
             <div className="space-y-4">
@@ -94,7 +91,6 @@ export function GetInTouch() {
               </p>
             </div>
 
-            {/* TRUST BADGES ROW */}
             <div className="grid grid-cols-3 gap-3 pt-2">
               <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-sm p-4 rounded-sm text-center flex flex-col items-center justify-center transition-colors">
                 <ShieldCheck className="w-6 h-6 text-[#f59e0b] mb-1.5" />
@@ -115,7 +111,6 @@ export function GetInTouch() {
               </div>
             </div>
 
-            {/* DIRECT CONTACT TELEMETRY */}
             <div className="space-y-3 pt-2">
               <a 
                 href="tel:07412733920" 
@@ -146,10 +141,8 @@ export function GetInTouch() {
 
           </div>
 
-          {/* RIGHT COLUMN: QUOTE CARD */}
           <div className="lg:col-span-6 relative px-2">
             
-            {/* Tactical Corner Brackets */}
             <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-12 h-12 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
             <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-12 h-12 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 

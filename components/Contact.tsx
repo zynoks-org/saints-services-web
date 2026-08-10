@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, ShieldCheck, Send, Clock, ArrowRight } from 'lucide-react';
-import { SERVICES_LIST } from '@/lib/servicesData';
+import { Phone, Mail, MapPin, ShieldCheck, Send, Clock } from 'lucide-react';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 
 export function Contact() {
@@ -50,12 +49,9 @@ export function Contact() {
   return (
     <section id="contact" className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden font-sans select-none transition-colors duration-300">
       
-      {/* INDUSTRIAL SVG CORNER RETICLES & DOT MATRIX BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Background Ambient Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#f59e0b]/5 rounded-full blur-[160px]" />
         
-        {/* Engineering Dot Matrix Pattern */}
         <div 
           className="absolute inset-0 opacity-[0.15] dark:opacity-[0.10]"
           style={{
@@ -64,7 +60,6 @@ export function Contact() {
           }}
         />
 
-        {/* SVG Tactical Reticle / Crosshair Markers in Corners */}
         <svg className="absolute top-6 left-6 w-8 h-8 text-slate-400/30 dark:text-slate-600/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
         </svg>
@@ -83,7 +78,6 @@ export function Contact() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* Left: Dispatch Info */}
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs backdrop-blur-md transition-colors">
               <Clock className="w-3.5 h-3.5 text-[#f59e0b]" /> 
@@ -137,10 +131,8 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Right: Quote Form */}
           <div className="lg:col-span-7 relative px-2">
             
-            {/* Tactical Corner Brackets */}
             <div className="absolute -top-3 -left-1 sm:-top-3 sm:-left-3 w-12 h-12 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
             <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-12 h-12 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 
@@ -191,7 +183,6 @@ export function Contact() {
                     <textarea name="details" rows={3} required placeholder="Specify site postcode, shift hours, or special requirements..." className="w-full bg-slate-50 dark:bg-[#070d1e] border border-slate-300 dark:border-slate-800 rounded-sm px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] resize-none placeholder:text-slate-400 transition-colors" />
                   </div>
 
-                  {/* UNIFIED GOLD SWEEP BUTTON */}
                   <button 
                     type="submit" 
                     disabled={loading}
