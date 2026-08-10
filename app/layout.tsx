@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://saintsservices.co.uk"),
+  metadataBase: new URL("https://www.saintsservices.co.uk"),
   title: {
     default: "Saints Services Ltd | SIA-Licensed Security Guards & Facilities Management UK",
     template: "%s | Saints Services Ltd",
@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     "Commercial Facilities Cleaning",
   ],
   authors: [{ name: "Saints Services Ltd" }],
-  // Explicit Icon Definitions for Search Engines & Browsers
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
     title: "Saints Services Ltd | Security & Facilities Management",
     description:
       "24/7 SIA-licensed security guard deployments and commercial facilities management in the UK.",
-    url: "https://saintsservices.co.uk",
+    url: "https://www.saintsservices.co.uk",
     siteName: "Saints Services Ltd",
     locale: "en_GB",
     type: "website",
@@ -59,12 +58,11 @@ export const metadata: Metadata = {
   },
 };
 
-// Structured Data (Schema.org / JSON-LD for Search Engines)
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SecurityService",
   "name": "Saints Services Ltd",
-  "url": "https://saintsservices.co.uk",
+  "url": "https://www.saintsservices.co.uk",
   "telephone": "07412733920",
   "email": "info@saintsservices.co.uk",
   "address": {

@@ -5,8 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      // disallow: ['/private/'], // Add any private admin routes if applicable
     },
-    sitemap: 'https://saintsservices.co.uk/sitemap.xml',
+    sitemap: 'https://www.saintsservices.co.uk/sitemap.xml',
   };
 }

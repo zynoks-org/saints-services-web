@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { locationsData } from '@/lib/locationsData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://saintsservices.co.uk';
+  const baseUrl = 'https://www.saintsservices.co.uk';
 
   // 1. Static Pages
   const staticPages = [
@@ -55,7 +55,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // 4. Dynamic Location Pages (Auto-extracted from locationsData keys)
+  // 4. Dynamic Location Pages
   const locationRoutes = Object.keys(locationsData).map((key) => ({
     url: `${baseUrl}/locations/${locationsData[key].slug || key}`,
     lastModified: new Date(),
