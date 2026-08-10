@@ -4,7 +4,7 @@ import "./globals.css";
 import { CookieBanner } from "@/components/CookieBanner";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next"; // 1. Import Speed Insights
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +32,15 @@ export const metadata: Metadata = {
     "Commercial Facilities Cleaning",
   ],
   authors: [{ name: "Saints Services Ltd" }],
+  // Explicit Icon Definitions for Search Engines & Browsers
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Saints Services Ltd | Security & Facilities Management",
     description:
@@ -107,7 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <CookieBanner />
           <Analytics />
-          <SpeedInsights /> {/* 2. Add component */}
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
