@@ -6,14 +6,12 @@ import { Redis } from '@upstash/redis';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// 1. Upstash Redis Rate Limiter Configuration (5 requests per 10 minutes per IP)
 const ratelimit = new Ratelimit({
   redis: Redis.fromEnv(),
   limiter: Ratelimit.slidingWindow(5, '10 m'),
   analytics: true,
 });
 
-// 2. Zod Schema Validation for Form Payload
 const quoteSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
   phone: z.string().min(6, 'Please provide a valid phone number').max(30),
@@ -23,34 +21,47 @@ const quoteSchema = z.object({
   details: z.string().max(3000, 'Details exceed maximum allowed character limit').optional().nullable(),
 });
 
+// Common security headers for API responses
+const apiHeaders = {
+  'Cache-Control': 'no-store, max-age=0, must-revalidate',
+  'Pragma': 'no-cache',
+  'Access-Control-Allow-Origin': 'https://www.saintsservices.co.uk',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: apiHeaders,
+  });
+}
+
 export async function POST(request: Request) {
   try {
-    // 3. Rate Limit Check by IP
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
     const { success: rateLimitSuccess } = await ratelimit.limit(`ratelimit_${ip}`);
 
     if (!rateLimitSuccess) {
       return NextResponse.json(
         { success: false, error: 'Too many quote requests submitted. Please wait a few minutes and try again.' },
-        { status: 429 }
+        { status: 429, headers: apiHeaders }
       );
     }
 
-    // 4. Validate Request Body
     const body = await request.json();
     const parseResult = quoteSchema.safeParse(body);
 
     if (!parseResult.success) {
       return NextResponse.json(
         { success: false, error: parseResult.error.issues[0].message },
-        { status: 400 }
+        { status: 400, headers: apiHeaders }
       );
     }
 
     const { name, phone, email, company, service, details } = parseResult.data;
     const recipientEmail = 'saintsservicesltd@gmail.com';
 
-    // 5. Dispatch Email via Resend
     const { data, error } = await resend.emails.send({
       from: 'Saints Services Dispatch <dispatch@mail.saintsservices.co.uk>',
       to: [recipientEmail],
@@ -70,10 +81,8 @@ export async function POST(request: Request) {
               <tr>
                 <td align="center">
                   
-                  <!-- Main Email Container -->
                   <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #0b1329; border-radius: 20px; border: 1px solid #1e293b; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);">
                     
-                    <!-- Header Section -->
                     <tr>
                       <td style="padding: 32px 32px 24px 32px; background-color: #0b1329; border-bottom: 3px solid #f59e0b;">
                         <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -94,11 +103,9 @@ export async function POST(request: Request) {
                       </td>
                     </tr>
 
-                    <!-- Body Content -->
                     <tr>
                       <td style="padding: 32px;">
                         
-                        <!-- Service Scope Badge Box -->
                         <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #162038; border: 1px solid #1e293b; border-radius: 12px; margin-bottom: 24px;">
                           <tr>
                             <td style="padding: 16px 20px;">
@@ -112,10 +119,8 @@ export async function POST(request: Request) {
                           </tr>
                         </table>
 
-                        <!-- Client Specs Grid -->
                         <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                           
-                          <!-- Row 1: Name & Company -->
                           <tr>
                             <td width="50%" style="padding-bottom: 20px; padding-right: 10px; vertical-align: top;">
                               <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
@@ -135,7 +140,6 @@ export async function POST(request: Request) {
                             </td>
                           </tr>
 
-                          <!-- Row 2: Email & Phone -->
                           <tr>
                             <td width="50%" style="padding-bottom: 20px; padding-right: 10px; vertical-align: top;">
                               <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
@@ -161,7 +165,6 @@ export async function POST(request: Request) {
 
                         </table>
 
-                        <!-- Details & Requirements Box -->
                         <div style="margin-top: 10px;">
                           <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
                             Site Details / Postcode / Special Instructions
@@ -172,7 +175,6 @@ export async function POST(request: Request) {
                       </td>
                     </tr>
 
-                    <!-- Footer Section -->
                     <tr>
                       <td style="padding: 20px 32px; background-color: #070d1e; border-top: 1px solid #1e293b; text-align: center;">
                         <p style="margin: 0; font-size: 12px; color: #64748b; font-family: monospace; font-weight: 600;">
@@ -197,15 +199,15 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error('Resend delivery error:', error);
-      return NextResponse.json({ success: false, error }, { status: 400 });
+      return NextResponse.json({ success: false, error }, { status: 400, headers: apiHeaders });
     }
 
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: true, data }, { headers: apiHeaders });
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json(
       { success: false, error: (error as Error).message },
-      { status: 500 }
+      { status: 500, headers: apiHeaders }
     );
   }
 }
