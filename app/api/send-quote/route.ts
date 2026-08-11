@@ -21,7 +21,17 @@ const quoteSchema = z.object({
   details: z.string().max(3000, 'Details exceed maximum allowed character limit').optional().nullable(),
 });
 
-// Common security headers for API responses
+// Escape HTML characters to prevent XSS / formatting corruption in email clients
+function escapeHtml(str: string | null | undefined): string {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 const apiHeaders = {
   'Cache-Control': 'no-store, max-age=0, must-revalidate',
   'Pragma': 'no-cache',
@@ -39,7 +49,12 @@ export async function OPTIONS() {
 
 export async function POST(request: Request) {
   try {
-    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
+    // Rely on true Vercel real IP first to prevent X-Forwarded-For spoofing
+    const ip =
+      request.headers.get('x-real-ip') ||
+      request.headers.get('x-forwarded-for')?.split(',').slice(-1)[0]?.trim() ||
+      '127.0.0.1';
+
     const { success: rateLimitSuccess } = await ratelimit.limit(`ratelimit_${ip}`);
 
     if (!rateLimitSuccess) {
@@ -60,13 +75,22 @@ export async function POST(request: Request) {
     }
 
     const { name, phone, email, company, service, details } = parseResult.data;
+
+    // Sanitize values for safe HTML rendering
+    const safeName = escapeHtml(name);
+    const safePhone = escapeHtml(phone);
+    const safeEmail = escapeHtml(email);
+    const safeCompany = escapeHtml(company);
+    const safeService = escapeHtml(service);
+    const safeDetails = escapeHtml(details);
+
     const recipientEmail = 'saintsservicesltd@gmail.com';
 
     const { data, error } = await resend.emails.send({
       from: 'Saints Services Dispatch <dispatch@mail.saintsservices.co.uk>',
       to: [recipientEmail],
       replyTo: email,
-      subject: `⚡ New Lead: ${service} — ${name}`,
+      subject: `⚡ New Lead: ${safeService} — ${safeName}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -113,7 +137,7 @@ export async function POST(request: Request) {
                                 Requested Service Scope
                               </div>
                               <div style="font-size: 18px; font-weight: 800; color: #f59e0b;">
-                                ${service}
+                                ${safeService}
                               </div>
                             </td>
                           </tr>
@@ -127,7 +151,7 @@ export async function POST(request: Request) {
                                 Client Name
                               </div>
                               <div style="font-size: 15px; font-weight: 700; color: #ffffff;">
-                                ${name}
+                                ${safeName}
                               </div>
                             </td>
                             <td width="50%" style="padding-bottom: 20px; padding-left: 10px; vertical-align: top;">
@@ -135,7 +159,7 @@ export async function POST(request: Request) {
                                 Company / Venue
                               </div>
                               <div style="font-size: 15px; font-weight: 700; color: #ffffff;">
-                                ${company || 'N/A'}
+                                ${safeCompany || 'N/A'}
                               </div>
                             </td>
                           </tr>
@@ -146,8 +170,8 @@ export async function POST(request: Request) {
                                 Email Address
                               </div>
                               <div>
-                                <a href="mailto:${email}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
-                                  ${email}
+                                <a href="mailto:${safeEmail}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                  ${safeEmail}
                                 </a>
                               </div>
                             </td>
@@ -156,8 +180,8 @@ export async function POST(request: Request) {
                                 Direct Phone
                               </div>
                               <div>
-                                <a href="tel:${phone}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
-                                  ${phone}
+                                <a href="tel:${safePhone}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                  ${safePhone}
                                 </a>
                               </div>
                             </td>
@@ -169,7 +193,7 @@ export async function POST(request: Request) {
                           <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
                             Site Details / Postcode / Special Instructions
                           </div>
-                          <div style="background-color: #070d1e; border: 1px solid #1e293b; border-radius: 12px; padding: 18px; font-size: 14px; line-height: 1.6; color: #cbd5e1; font-weight: 500; white-space: pre-wrap;">${details || 'No additional site specifications provided.'}</div>
+                          <div style="background-color: #070d1e; border: 1px solid #1e293b; border-radius: 12px; padding: 18px; font-size: 14px; line-height: 1.6; color: #cbd5e1; font-weight: 500; white-space: pre-wrap;">${safeDetails || 'No additional site specifications provided.'}</div>
                         </div>
 
                       </td>
@@ -199,14 +223,14 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error('Resend delivery error:', error);
-      return NextResponse.json({ success: false, error }, { status: 400, headers: apiHeaders });
+      return NextResponse.json({ success: false, error: 'Failed to send inquiry.' }, { status: 400, headers: apiHeaders });
     }
 
     return NextResponse.json({ success: true, data }, { headers: apiHeaders });
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json(
-      { success: false, error: (error as Error).message },
+      { success: false, error: 'An unexpected error occurred. Please try again later.' },
       { status: 500, headers: apiHeaders }
     );
   }
