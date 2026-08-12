@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Map, Overlay } from 'pigeon-maps';
 import { 
   MapPin, 
@@ -483,12 +483,12 @@ export function LocationsCoverage() {
             </div>
 
             <div className="lg:col-span-5 relative h-56 sm:h-64 rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md">
-              <Image 
-                src="/images/security-services.jpg" 
+              <Image
+                src="https://i.ibb.co/ds5QzyWm/Saints-Services-UK-Locations.png" 
                 alt="Saints Services UK Locations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-center filter contrast-105"
+                className="object-cover object-center filter contrast-105 border"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 dark:from-[#0b1329]/80 via-transparent to-transparent" />
             </div>

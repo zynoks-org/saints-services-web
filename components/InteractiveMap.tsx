@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Shield, Crosshair, Map, ArrowRight } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';

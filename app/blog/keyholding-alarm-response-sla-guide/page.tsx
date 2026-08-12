@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ShareButtons } from '@/components/ShareButtons';
 import { 
   Shield, 
   Clock, 
@@ -62,13 +62,13 @@ export const metadata: Metadata = {
     description: "In-depth operational analysis of BS 7984-1 keyholding standards, ARC integration, SLA response times, and mobile patrol dispatch across UK sites.",
     url: 'https://www.saintsservices.co.uk/blog/keyholding-alarm-response-sla-guide',
     type: 'article',
-    images: [{ url: '/images/joinus.png', width: 1200, height: 630, alt: 'SIA Keyholding Security Officer Responding to Emergency Alarm' }],
+    images: [{ url: 'https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg', width: 1200, height: 630, alt: 'SIA Keyholding Security Officer Responding to Emergency Alarm' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "24/7 Keyholding & Mobile Alarm Response: 2026 UK SLA Guide",
     description: "BS 7984-1 keyholding compliance, employer duty of care, and guaranteed alarm response SLA windows across commercial UK properties.",
-    images: ['/images/joinus.png'],
+    images: ['https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg'],
   }
 };
 
@@ -77,7 +77,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "24/7 Keyholding & Mobile Alarm Response: SLA Standards for UK Landlords (2026)",
   "description": "An exhaustive guide detailing UK keyholding standards (BS 7984-1), Service Level Agreement (SLA) response windows, employer duty of care laws, and ARC mobile dispatch protocols.",
-  "image": "https://www.saintsservices.co.uk/images/joinus.png",
+  "image": "https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Control Room Directorate",
@@ -88,7 +88,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.saintsservices.co.uk/images/why-us.png"
+      "url": "https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg"
     }
   },
   "datePublished": "2026-04-04",
@@ -179,13 +179,13 @@ export default function KeyholdingSlaGuideArticle() {
 
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
-            <Image 
-              src="/images/joinus.png" 
+            <Image
+              src="https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg" 
               alt="SIA Mobile Security Response Officer Responding to Commercial Building Alarm" 
-              fill 
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
@@ -378,6 +378,9 @@ export default function KeyholdingSlaGuideArticle() {
                 </div>
               </div>
             </section>
+
+            {/* Social Share Buttons Component */}
+            <ShareButtons title="24/7 Keyholding & Mobile Alarm Response: 2026 UK SLA Guide" slug="keyholding-alarm-response-sla-guide" />
 
             {/* EXTERNAL SOURCES CITATION */}
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">

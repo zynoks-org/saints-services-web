@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import { Star, Quote, MessageSquareQuote } from 'lucide-react';
 
 export function Testimonials() {

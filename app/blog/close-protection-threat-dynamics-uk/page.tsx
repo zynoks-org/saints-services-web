@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ShareButtons } from '@/components/ShareButtons';
 import { 
   Shield, 
   Clock, 
@@ -62,13 +62,13 @@ export const metadata: Metadata = {
     description: "In-depth operational breakdown of SIA close protection standards, VIP threat profiling, advance security planning, and secure executive transport across London.",
     url: 'https://www.saintsservices.co.uk/blog/close-protection-threat-dynamics-uk',
     type: 'article',
-    images: [{ url: '/images/event-security.png', width: 1200, height: 630, alt: 'SIA Licensed Close Protection Officer on Duty in London' }],
+    images: [{ url: 'https://i.ibb.co/MDvfwBjF/close-protection-threat-dynamics-uk.jpg', width: 1200, height: 630, alt: 'SIA Licensed Close Protection Officer on Duty in London' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Close Protection UK: Threat Dynamics & Executive Protection Guide",
     description: "SIA close protection standards, HNWI threat assessment, and executive security escort protocols across Greater London.",
-    images: ['/images/event-security.png'],
+    images: ['https://i.ibb.co/MDvfwBjF/close-protection-threat-dynamics-uk.jpg'],
   }
 };
 
@@ -77,7 +77,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "Close Protection: Threat Dynamics, HNWIs & VIP Guarding Solutions (2026 Guide)",
   "description": "An exhaustive guide detailing UK close protection protocols, threat matrix evaluations, advance route reconnaissance, and SIA executive security operations.",
-  "image": "https://www.saintsservices.co.uk/images/event-security.png",
+  "image": "https://i.ibb.co/MDvfwBjF/close-protection-threat-dynamics-uk.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Services Close Protection Unit",
@@ -180,12 +180,12 @@ export default function CloseProtectionArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="/images/event-security.png" 
-              alt="SIA Licensed Close Protection Officers Executing Executive Protection Duties" 
-              fill 
+              src="https://i.ibb.co/MDvfwBjF/close-protection-threat-dynamics-uk.jpg" 
+              alt="SIA Licensed Close Protection Officers Executing Executive Protection Duties"  
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
@@ -382,6 +382,9 @@ export default function CloseProtectionArticle() {
                 </div>
               </div>
             </section>
+
+            {/* Social Share Buttons Component */}
+            <ShareButtons title="Close Protection UK: Threat Dynamics & Executive Protection Guide" slug="close-protection-threat-dynamics-uk" />
 
             {/* EXTERNAL SOURCES CITATION */}
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">

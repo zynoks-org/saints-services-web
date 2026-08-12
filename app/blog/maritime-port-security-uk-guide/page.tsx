@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ShareButtons } from '@/components/ShareButtons';
 import { 
   Clock, 
   Calendar, 
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     description: "In-depth breakdown of UK port facility protection, cargo screening, ISPS Code adherence, and SIA manned guarding for maritime terminals.",
     url: 'https://www.saintsservices.co.uk/blog/maritime-port-security-uk-guide',
     type: 'article',
-    images: [{ url: '/images/security-services.jpg', width: 1200, height: 630, alt: 'SIA Port Security Officer Stationed at UK Maritime Terminal' }],
+    images: [{ url: 'https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp', width: 1200, height: 630, alt: 'SIA Port Security Officer Stationed at UK Maritime Terminal' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "UK Maritime & Port Security Guide: Landside SIA Guarding & ISPS Code",
     description: "ISPS Code landside protocols, quayside perimeter security, and SIA cargo terminal guarding across UK maritime hubs.",
-    images: ['/images/security-services.jpg'],
+    images: ['https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp'],
   }
 };
 
@@ -57,7 +57,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "UK Maritime & Port Security: Where SIA Badge Holders Operate (2026 Guide)",
   "description": "An exhaustive guide detailing UK landside port security duties, ISPS Code compliance standards, cargo terminal access control, and SIA security officer deployment.",
-  "image": "https://www.saintsservices.co.uk/images/security-services.jpg",
+  "image": "https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Services Intelligence Desk",
@@ -68,7 +68,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.saintsservices.co.uk/images/why-us.png"
+      "url": "https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp"
     }
   },
   "datePublished": "2026-06-26",
@@ -156,12 +156,12 @@ export default function MaritimePortSecurityArticle() {
 
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="/images/security-services.jpg" 
+              src="https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp" 
               alt="SIA Security Officer Patrols Commercial Port and Cargo Terminal Facility" 
-              fill 
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
@@ -322,6 +322,7 @@ export default function MaritimePortSecurityArticle() {
               </p>
             </section>
 
+            {/* SECTION 7: FAQ */}
             <section id="faq-section" className="pt-8 border-t border-slate-200 dark:border-slate-800 my-10 transition-colors">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-6">
                 <HelpCircle className="w-4 h-4" />
@@ -349,6 +350,9 @@ export default function MaritimePortSecurityArticle() {
                 </div>
               </div>
             </section>
+
+            {/* Social Share Buttons Component */}
+            <ShareButtons title="UK Maritime & Port Security Guide: Landside SIA Guarding & ISPS Code" slug="maritime-port-security-uk-guide" />
 
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">
               <div className="font-mono font-bold text-slate-800 dark:text-slate-300 uppercase">Verified Industry &amp; Regulatory Sources:</div>

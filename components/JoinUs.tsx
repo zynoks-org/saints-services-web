@@ -54,10 +54,11 @@ export function JoinUs() {
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
         <div className="relative w-full h-full">
           <Image 
-            src="/images/joinus.png" 
+            src="https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png" 
             alt="Join Saints Services Recruitment" 
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center opacity-85 -scale-x-100 filter brightness-95"
           />
 
@@ -90,10 +91,11 @@ export function JoinUs() {
             {/* MOBILE DEDICATED IMAGE CARD */}
             <div className="block lg:hidden relative w-full h-44 sm:h-56 rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md my-4">
               <Image 
-                src="/images/joinus.png" 
+                src="https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png" 
                 alt="Join Saints Services Recruitment" 
                 fill
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center -scale-x-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />

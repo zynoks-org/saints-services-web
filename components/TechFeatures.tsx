@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -149,9 +149,10 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="/images/manned-guarding.png" 
+                  src="https://i.ibb.co/0yY2tvkg/Technology-Tracking-Operations.png" 
                   alt="Technology & Tracking Operations"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
@@ -206,9 +207,10 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="/images/security1.png" 
+                  src="https://i.ibb.co/jvv5LgWZ/Professional-Standards-Vetting.png" 
                   alt="Professional Standards & Vetting"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
@@ -263,9 +265,10 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="/images/event-security.png" 
+                  src="https://i.ibb.co/GvpHfzGn/Multi-Sector-Deployment-Expertise.png" 
                   alt="Multi-Sector Deployment Expertise"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
@@ -320,9 +323,10 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="/images/hero-van.png" 
+                  src="https://i.ibb.co/gbP01BnG/Guaranteed-Reliability-Rapid-Response.png" 
                   alt="Guaranteed Reliability & Rapid Response"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />

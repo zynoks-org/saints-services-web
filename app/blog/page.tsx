@@ -1,6 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { 
   Shield, 
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   description: 'Enterprise-grade UK security intelligence, SIA regulatory compliance frameworks, real-time threat telemetry, and tactical manned guarding doctrine.',
 };
 
-// Full Article Repository containing all 8 posts matching the slug routing dictionary
+// Full Article Repository containing all 8 posts matching the slug routing dictionary with exact ImgBB links
 const articlesData: Record<string, {
   title: string;
   category: string;
@@ -39,7 +38,7 @@ const articlesData: Record<string, {
     description: 'In-depth analysis on UK stadium security, Home Office disorder statistics, SIA compliance, and manned guarding strategies for high-risk venues.',
     date: '12 August 2026',
     readTime: '8 min read',
-    image: '/images/event-security.png',
+    image: 'https://i.ibb.co/h1hdchkS/uk-stadium-security-disorder-guide.jpg',
     clearanceLevel: 'LEVEL_04 // RESTRICTED',
     threatIndex: 'HIGH (8.4/10)',
   },
@@ -50,7 +49,7 @@ const articlesData: Record<string, {
     description: 'An analysis of Met Police crime statistics across London boroughs and how commercial site managers can mitigate localized threats.',
     date: '01 August 2026',
     readTime: '9 min read',
-    image: '/images/security-services.jpg',
+    image: 'https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png',
     clearanceLevel: 'LEVEL_03 // CONFIDENTIAL',
     threatIndex: 'CRITICAL (9.1/10)',
   },
@@ -61,7 +60,7 @@ const articlesData: Record<string, {
     description: 'How SIA-licensed retail security officers and deterrent protocols protect UK stores against the rising £4.2B retail theft crisis.',
     date: '20 July 2026',
     readTime: '7 min read',
-    image: '/images/why-us.png',
+    image: 'https://i.ibb.co/XGHFd3F/retail-loss-prevention-uk-guide.jpg',
     clearanceLevel: 'LEVEL_02 // INTERNAL',
     threatIndex: 'ELEVATED (7.2/10)',
   },
@@ -72,7 +71,7 @@ const articlesData: Record<string, {
     description: 'Understanding BS7858 vetting, incident logging protocols, and conflict de-escalation for commercial site protection.',
     date: '10 July 2026',
     readTime: '6 min read',
-    image: '/images/joinus.png',
+    image: 'https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png',
     clearanceLevel: 'LEVEL_01 // PUBLIC',
     threatIndex: 'MODERATE (5.5/10)',
   },
@@ -83,7 +82,7 @@ const articlesData: Record<string, {
     description: 'Strategic deployment of Close Protection Officers (CPOs) for corporate executives, high-net-worth individuals, and high-profile assets.',
     date: '05 July 2026',
     readTime: '7 min read',
-    image: '/images/event-security.png',
+    image: 'https://i.ibb.co/MDvfwBjF/close-protection-threat-dynamics-uk.jpg',
     clearanceLevel: 'LEVEL_05 // EYES_ONLY',
     threatIndex: 'SEVERE (9.6/10)',
   },
@@ -94,7 +93,7 @@ const articlesData: Record<string, {
     description: 'Protecting active construction zones, expensive machinery, and building materials from trespass, arson, and tool theft.',
     date: '28 June 2026',
     readTime: '6 min read',
-    image: '/images/security-services.jpg',
+    image: 'https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg',
     clearanceLevel: 'LEVEL_02 // INTERNAL',
     threatIndex: 'ELEVATED (6.8/10)',
   },
@@ -105,7 +104,7 @@ const articlesData: Record<string, {
     description: 'Why commercial properties rely on professional keyholding and rapid alarm response to satisfy UK business insurance mandates.',
     date: '15 June 2026',
     readTime: '5 min read',
-    image: '/images/why-us.png',
+    image: 'https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg',
     clearanceLevel: 'LEVEL_01 // PUBLIC',
     threatIndex: 'ROUTINE (4.2/10)',
   },
@@ -116,7 +115,7 @@ const articlesData: Record<string, {
     description: 'Compliance standards, ISPS code adherence, and physical cargo protection strategies for UK shipping terminals and logistics parks.',
     date: '02 June 2026',
     readTime: '8 min read',
-    image: '/images/joinus.png',
+    image: 'https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp',
     clearanceLevel: 'LEVEL_04 // RESTRICTED',
     threatIndex: 'HIGH (8.0/10)',
   }
@@ -144,7 +143,7 @@ export default function BlogListingPage() {
       <main className="flex-grow py-16 sm:py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* TOP TELEMETRY STATUS BAR (Kept Green Online Status, Removed Encryption & Clearance Text) */}
+          {/* TOP TELEMETRY STATUS BAR */}
           <div className="flex items-center justify-between mb-10 pb-4 border-b border-slate-300 dark:border-slate-800/80 font-mono text-xs">
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold uppercase tracking-wider">
@@ -170,7 +169,7 @@ export default function BlogListingPage() {
             </p>
           </div>
 
-          {/* FEATURED ARTICLE HERO CARD (HUD STYLE) */}
+          {/* FEATURED ARTICLE HERO CARD */}
           {featuredArticle && (
             <div className="mb-16 relative">
               <div className="flex items-center justify-between mb-4">
@@ -187,27 +186,24 @@ export default function BlogListingPage() {
                 href={`/blog/${featuredSlug}`}
                 className="group relative grid grid-cols-1 lg:grid-cols-12 bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 hover:border-[#f59e0b] rounded-sm overflow-hidden shadow-2xl transition-all duration-500 cursor-pointer backdrop-blur-xl"
               >
-                {/* Tech Corner Accents */}
                 <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
                 <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 
-                {/* Featured Image with Cyber Overlay */}
                 <div className="lg:col-span-7 relative h-80 sm:h-96 lg:h-auto min-h-[360px] bg-slate-900 dark:bg-slate-950 overflow-hidden">
                   <Image 
                     src={featuredArticle.image} 
                     alt={featuredArticle.title}
                     fill
+                    priority
                     sizes="(max-width: 1024px) 100vw, 58vw"
                     className="object-cover object-center group-hover:scale-105 group-hover:filter group-hover:contrast-110 dark:group-hover:contrast-125 transition-all duration-700 ease-out opacity-90"
-                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent lg:hidden" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/80 hidden lg:block" />
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(4,9,20,0.8)_100%)] pointer-events-none" />
                   
-                  {/* Floating Badge on Image */}
                   <div className="absolute top-4 left-4 z-10">
                     <span className="text-[10px] font-mono font-bold text-slate-950 bg-[#f59e0b] px-3 py-1 rounded-sm uppercase tracking-widest shadow-lg flex items-center gap-1.5">
                       <Zap className="w-3 h-3 fill-slate-950" />
@@ -216,7 +212,6 @@ export default function BlogListingPage() {
                   </div>
                 </div>
 
-                {/* Featured Content */}
                 <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between space-y-6 relative">
                   <div className="space-y-5">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
@@ -251,7 +246,7 @@ export default function BlogListingPage() {
             </div>
           )}
 
-          {/* SECTION DIVIDER WITH FILTER METRICS */}
+          {/* SECTION DIVIDER */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-300 dark:border-slate-800">
             <div className="flex items-center gap-3">
               <Cpu className="w-5 h-5 text-[#f59e0b]" />
@@ -265,7 +260,7 @@ export default function BlogListingPage() {
             </div>
           </div>
 
-          {/* REGULAR ARTICLES GRID (HUD CARD STYLE) */}
+          {/* REGULAR ARTICLES GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {regularArticles.map(([slug, article]) => (
               <Link 
@@ -273,11 +268,9 @@ export default function BlogListingPage() {
                 href={`/blog/${slug}`}
                 className="group relative flex flex-col justify-between bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 hover:border-[#f59e0b] rounded-sm overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1.5 cursor-pointer backdrop-blur-md"
               >
-                {/* Subtle Hover Glow Border */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[#f59e0b]/0 via-transparent to-[#f59e0b]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
                 <div>
-                  {/* Article Thumbnail with Cyber Framing */}
                   <div className="relative h-52 sm:h-56 bg-slate-900 dark:bg-slate-950 overflow-hidden border-b border-slate-200 dark:border-slate-800">
                     <Image 
                       src={article.image} 
@@ -288,14 +281,12 @@ export default function BlogListingPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                     
-                    {/* Category Badge */}
                     <div className="absolute top-3 left-3 z-10">
                       <span className="text-[10px] font-mono font-bold text-slate-950 bg-[#f59e0b] px-2.5 py-1 rounded-sm uppercase tracking-wider shadow-md">
                         {article.category}
                       </span>
                     </div>
 
-                    {/* Threat Index Tag */}
                     <div className="absolute top-3 right-3 z-10">
                       <span className="text-[9px] font-mono font-bold text-amber-700 dark:text-amber-400 bg-white/90 dark:bg-slate-950/90 px-2 py-0.5 rounded border border-amber-500/30 uppercase tracking-widest shadow-sm">
                         {article.threatIndex}
@@ -303,7 +294,6 @@ export default function BlogListingPage() {
                     </div>
                   </div>
 
-                  {/* Article Info */}
                   <div className="p-6 space-y-3 relative z-10">
                     <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
                       <span className="text-[#f59e0b] font-bold">{article.codeTag}</span>
@@ -320,7 +310,6 @@ export default function BlogListingPage() {
                   </div>
                 </div>
 
-                {/* Card Footer */}
                 <div className="px-6 py-4 bg-slate-50 dark:bg-slate-950/80 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-xs font-mono font-bold text-[#f59e0b] relative z-10">
                   <span className="uppercase tracking-wider group-hover:translate-x-1 transition-transform flex items-center gap-1.5">
                     Read Brief <ArrowRight className="w-3.5 h-3.5" />
@@ -365,7 +354,6 @@ export default function BlogListingPage() {
         </div>
       </main>
 
-      {/* Footer Included */}
       <div className="relative z-30">
         <Footer />
       </div>

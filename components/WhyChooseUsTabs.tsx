@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck, Terminal, Activity } from 'lucide-react';
@@ -27,7 +27,7 @@ export function WhyChooseUsTabs() {
         "Saints Services Ltd integrates modern workforce management software into every active deployment. Our live GPS checkpoint verification enables facility managers to track officer rotas, verify patrol completion, and review guard activity logs instantly.",
         "Equipped with HD body-worn cameras, two-way encrypted radios, and digital incident reporting tools, our field officers maintain full transparency. Every site interaction is logged automatically, offering undeniable proof of service."
       ],
-      imageSrc: '/images/security-services.jpg'
+      imageSrc: 'https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp'
     },
     professionalism: {
       id: 'professionalism',
@@ -38,7 +38,7 @@ export function WhyChooseUsTabs() {
         "Every member of our operational team undergoes rigorous BS7858 background screening, including 5-year employment history verification, credit checks, and criminal record clearance prior to site placement.",
         "We balance robust physical deterrence with exceptional customer care. Our officers act as polished brand ambassadors for your business—trained in conflict de-escalation, access clearance protocols, and emergency response."
       ],
-      imageSrc: '/images/why-us.png'
+      imageSrc: 'https://i.ibb.co/XZNsyGVL/why-us.jpg'
     },
     experience: {
       id: 'experience',
@@ -49,7 +49,7 @@ export function WhyChooseUsTabs() {
         "With extensive operational experience across the UK, Saints Services Ltd understands the nuanced security risks inherent to different commercial sectors.",
         "From corporate headquarters and high-footfall retail centers to active construction perimeters and high-capacity event venues, we design bespoke protection strategies tailored specifically to your risk assessment profile."
       ],
-      imageSrc: '/images/joinus.png'
+      imageSrc: 'https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png'
     },
     reliability: {
       id: 'reliability',
@@ -60,7 +60,7 @@ export function WhyChooseUsTabs() {
         "Security threats do not adhere to business hours. Our London control room operates 24/7/365 to oversee field operations, manage shift handovers, and coordinate rapid mobile response officers whenever emergency backup is required.",
         "Backed by a 98% client retention rate, we take pride in absolute punctuality and dependable service execution. When you contract Saints Services Ltd, your site remains protected without interruption."
       ],
-      imageSrc: '/images/security-services.jpg'
+      imageSrc: 'https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp'
     }
   };
 

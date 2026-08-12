@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -62,13 +61,13 @@ export const metadata: Metadata = {
     description: "In-depth operational guide on Martyn's Law compliance for UK venues, risk assessment duties, SIA regulatory oversight, and event security strategies.",
     url: 'https://www.saintsservices.co.uk/blog/martyns-law-event-safety-compliance',
     type: 'article',
-    images: [{ url: '/images/event-security.png', width: 1200, height: 630, alt: 'SIA Event Security Officers Managing Counter-Terrorism Protocols' }],
+    images: [{ url: 'https://i.ibb.co/QFzJxdnW/SIA-Event-Security-Officers-Implementing-Martyns-Law-Safety-Protocols.jpg', width: 1200, height: 630, alt: 'SIA Event Security Officers Managing Counter-Terrorism Protocols' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Martyn's Law & Event Safety Planning: 2026 UK Compliance Guide",
     description: "Terrorism (Protection of Premises) Act breakdown, capacity tiers, SIA compliance, and emergency event safety planning across the UK.",
-    images: ['/images/event-security.png'],
+    images: ['https://i.ibb.co/QFzJxdnW/SIA-Event-Security-Officers-Implementing-Martyns-Law-Safety-Protocols.jpg'],
   }
 };
 
@@ -77,7 +76,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "Martyn’s Law & Event Safety Planning: UK Regulatory Compliance Guide (2026)",
   "description": "An exhaustive operational guide analyzing the Terrorism (Protection of Premises) Act, Standard and Enhanced tier venue duties, SIA regulatory enforcement, and event safety protocols.",
-  "image": "https://www.saintsservices.co.uk/images/event-security.png",
+  "image": "https://i.ibb.co/QFzJxdnW/SIA-Event-Security-Officers-Implementing-Martyns-Law-Safety-Protocols.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Event Compliance Directorate",
@@ -180,7 +179,7 @@ export default function MartynsLawArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="/images/event-security.png" 
+              src="https://i.ibb.co/QFzJxdnW/SIA-Event-Security-Officers-Implementing-Martyns-Law-Safety-Protocols.jpg" 
               alt="SIA Event Security Officers Implementing Martyn's Law Safety Protocols" 
               fill 
               sizes="(max-width: 1024px) 100vw, 896px"

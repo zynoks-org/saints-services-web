@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ShareButtons } from '@/components/ShareButtons';
 import { 
   Shield, 
   Clock, 
@@ -62,13 +62,13 @@ export const metadata: Metadata = {
     description: "Official breakdown of Met Police crime data, ranking high-risk London boroughs and outlining physical security strategies for commercial properties.",
     url: 'https://www.saintsservices.co.uk/blog/london-crime-rates-by-borough-2026',
     type: 'article',
-    images: [{ url: '/images/security-services.jpg', width: 1200, height: 630, alt: 'SIA Licensed Security Guard Stationed in London Commercial Property' }],
+    images: [{ url: 'https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png', width: 1200, height: 630, alt: 'SIA Licensed Security Guard Stationed in London Commercial Property' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Most Dangerous Areas in London: Crime Rates by Borough (2026)",
     description: "Metropolitan Police crime data analysis, high-risk borough rankings, and manned guarding strategies across Greater London.",
-    images: ['/images/security-services.jpg'],
+    images: ['https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png'],
   }
 };
 
@@ -77,7 +77,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "Most Dangerous Areas in London: Crime Rates by Borough (2026 Update)",
   "description": "An exhaustive guide detailing Metropolitan Police crime statistics, high-risk commercial property zones across London boroughs, and SIA security guarding protocols.",
-  "image": "https://www.saintsservices.co.uk/images/security-services.jpg",
+  "image": "https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Services Intelligence Desk",
@@ -88,7 +88,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.saintsservices.co.uk/images/why-us.png"
+      "url": "https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png"
     }
   },
   "datePublished": "2026-08-01",
@@ -219,12 +219,12 @@ export default function LondonCrimeRatesArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="/images/security-services.jpg" 
-              alt="SIA Security Officer Patrols Commercial Premises in London" 
-              fill 
+              src="https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png" 
+              alt="SIA Security Officer Patrols Commercial Premises in London"  
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
@@ -450,6 +450,9 @@ export default function LondonCrimeRatesArticle() {
                 </div>
               </div>
             </section>
+
+            {/* Social Share Buttons Component */}
+            <ShareButtons title="Most Dangerous Areas in London: Crime Rates by Borough (2026)" slug="london-crime-rates-by-borough-2026" />
 
             {/* EXTERNAL SOURCES CITATION */}
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">

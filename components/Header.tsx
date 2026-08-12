@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Phone, MapPin, Menu, X, Briefcase, ChevronRight, Mail, ChevronDown, Compass, ShieldCheck, Sun, Moon } from 'lucide-react';

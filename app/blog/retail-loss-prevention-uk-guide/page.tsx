@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ShareButtons } from '@/components/ShareButtons';
 import { 
   Shield, 
   Clock, 
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
     description: "In-depth breakdown of UK retail loss prevention strategies, store theft data, SIA loss prevention guard duties, and EAS tag management.",
     url: 'https://www.saintsservices.co.uk/blog/retail-loss-prevention-uk-guide',
     type: 'article',
-    images: [{ url: '/images/why-us.png', width: 1200, height: 630, alt: 'SIA Retail Security Guard Stationed in Store' }],
+    images: [{ url: 'https://i.ibb.co/XGHFd3F/retail-loss-prevention-uk-guide.jpg', width: 1200, height: 630, alt: 'SIA Retail Security Guard Stationed in Store' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Loss Prevention & Retail Asset Protection: 2026 UK Guide",
     description: "Combating the £4.2B retail theft crisis in the UK with SIA loss prevention officers and proactive store guarding.",
-    images: ['/images/why-us.png'],
+    images: ['https://i.ibb.co/XGHFd3F/retail-loss-prevention-uk-guide.jpg'],
   }
 };
 
@@ -81,7 +81,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "Loss Prevention: Retail and Asset Protection UK Guide 2026",
   "description": "An exhaustive guide detailing UK retail crime statistics, loss prevention strategies, EAS gate alarm protocols, PACE Act detentions, and SIA store guard deployments.",
-  "image": "https://www.saintsservices.co.uk/images/why-us.png",
+  "image": "https://i.ibb.co/XGHFd3F/retail-loss-prevention-uk-guide.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Retail Security Group",
@@ -92,7 +92,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.saintsservices.co.uk/images/why-us.png"
+      "url": "https://i.ibb.co/XGHFd3F/retail-loss-prevention-uk-guide.jpg"
     }
   },
   "datePublished": "2026-07-20",
@@ -184,12 +184,12 @@ export default function RetailLossPreventionArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="/images/why-us.png" 
-              alt="SIA Retail Security Guard Stationed at Store Entrance for Loss Prevention" 
-              fill 
+              src="https://i.ibb.co/XGHFd3F/retail-loss-prevention-uk-guide.jpg" 
+              alt="SIA Retail Security Guard Stationed at Store Entrance for Loss Prevention"  
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
@@ -430,6 +430,9 @@ export default function RetailLossPreventionArticle() {
                 </div>
               </div>
             </section>
+
+            {/* Social Share Buttons Component */}
+            <ShareButtons title="Loss Prevention & Retail Asset Protection: 2026 UK Retail Guide" slug="retail-loss-prevention-uk-guide" />
 
             {/* EXTERNAL SOURCES CITATION */}
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">

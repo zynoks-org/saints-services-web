@@ -221,11 +221,11 @@ export default function CareersPage() {
 
                   <div className="relative z-10 w-full h-64 sm:h-80 lg:h-[420px] rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-100 dark:bg-[#0b1329]">
                     <Image 
-                      src="/images/joinus.png" 
+                      src="https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png" 
                       alt="Saints Services Recruitment Team" 
                       fill
-                      priority
-                      className="object-cover object-center -scale-x-100 filter brightness-95"
+                      sizes="(max-width: 1024px) 100vw, 420px"
+                      className="object-cover object-center filter brightness-95"
                     />
                     
                     {/* Gradient Overlay */}

@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Shield, 
@@ -37,10 +37,11 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-100/80 via-transparent to-slate-100/50 dark:from-[#080f22] dark:via-transparent dark:to-[#080f22]/50 z-10 transition-colors duration-300" />
         
         <Image 
-          src="/images/security-services.jpg" 
+          src="https://i.ibb.co/60pj5vqm/security-services.jpg" 
           alt="Saints Services Security Operations"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-[75%_center] opacity-100 transition-opacity duration-300"
         />
       </div>

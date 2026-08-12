@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ShareButtons } from '@/components/ShareButtons';
 import { 
   Clock, 
   Calendar, 
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     description: "In-depth breakdown of UK construction site threat vectors, plant theft deterrence, gatehouse access control, and SIA manned guarding solutions.",
     url: 'https://www.saintsservices.co.uk/blog/construction-site-security-loss-prevention',
     type: 'article',
-    images: [{ url: '/images/why-us.png', width: 1200, height: 630, alt: 'SIA Construction Site Security Guard Stationed at Gatehouse' }],
+    images: [{ url: 'https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg', width: 1200, height: 630, alt: 'SIA Construction Site Security Guard Stationed at Gatehouse' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Construction Site Security: Plant & Tool Loss Prevention (2026 Guide)",
     description: "Plant machinery security, gatehouse contractor management, and wireless perimeter detection for UK construction sites.",
-    images: ['/images/why-us.png'],
+    images: ['https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg'],
   }
 };
 
@@ -57,7 +57,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "Construction Site Security: Preventing Tool, Plant & Fuel Theft in 2026",
   "description": "An exhaustive guide detailing UK construction crime statistics, gatehouse contractor screening, plant machinery asset protection, wireless perimeter detection, and SIA site guarding.",
-  "image": "https://www.saintsservices.co.uk/images/why-us.png",
+  "image": "https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Construction Security Group",
@@ -68,7 +68,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.saintsservices.co.uk/images/why-us.png"
+      "url": "https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg"
     }
   },
   "datePublished": "2026-04-18",
@@ -156,12 +156,12 @@ export default function ConstructionSiteSecurityArticle() {
 
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="/images/why-us.png" 
+              src="https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg" 
               alt="SIA Security Officer Conducting Gatehouse Inspection at UK Construction Site" 
-              fill 
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
@@ -326,7 +326,7 @@ export default function ConstructionSiteSecurityArticle() {
             </section>
 
             <section id="procuring-guards" className="space-y-4">
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 flex items-center gap-2 transition-colors">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight pt-4 border-b border-slate-200 dark:border-slate-800/60 pb-2 transition-colors">
                 <Lock className="w-5 h-5 text-[#f59e0b]" />
                 6. Procuring BS7858 Vetted Construction Guarding
               </h2>
@@ -365,6 +365,9 @@ export default function ConstructionSiteSecurityArticle() {
                 </div>
               </div>
             </section>
+
+            {/* Social Share Buttons Component */}
+            <ShareButtons title="Construction Site Security: Plant & Tool Loss Prevention (2026 Guide)" slug="construction-site-security-loss-prevention" />
 
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">
               <div className="font-mono font-bold text-slate-800 dark:text-slate-300 uppercase">Verified Industry Sources:</div>

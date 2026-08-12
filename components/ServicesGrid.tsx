@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
@@ -20,7 +19,7 @@ export function ServicesGrid() {
       title: "Door Supervision",
       description: "Professional SIA-licensed door supervisors for secure venue management. Saints Services ensures controlled access and a safe environment with our licensed experts.",
       href: "/services/door-supervision",
-      imageSrc: "/images/security1.png",
+      imageSrc: "https://i.ibb.co/hJc6P9kd/door-supervision.jpg",
       imageAlt: "Saints Services Door Supervision Operations",
       tag: "VENUE_SECURITY"
     },
@@ -28,7 +27,7 @@ export function ServicesGrid() {
       title: "Event Security",
       description: "Tailored security for events of all sizes. Our team ensures a secure, smooth experience for every attendee, from corporate galas to outdoor festivals.",
       href: "/services/event-security",
-      imageSrc: "/images/event-security.png",
+      imageSrc: "https://i.ibb.co/XxWf5ZRg/event-security.png",
       imageAlt: "Saints Services Event Security",
       tag: "CROWD_SAFETY"
     },
@@ -36,7 +35,7 @@ export function ServicesGrid() {
       title: "Key Holding",
       description: "Reliable key holding and swift 24/7 alarm response. Saints Services offers peace of mind with secure key management and rapid incident handling.",
       href: "/services/keyholding",
-      imageSrc: "/images/hero-van.png",
+      imageSrc: "https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg",
       imageAlt: "Saints Services Mobile Response Van",
       tag: "RAPID_RESPONSE"
     },
@@ -44,7 +43,7 @@ export function ServicesGrid() {
       title: "Security Guards",
       description: "Vigilant SIA-licensed security guards for comprehensive asset protection. Skilled guards tailored to your specific security needs, from retail to construction sites.",
       href: "/services/security-guards",
-      imageSrc: "/images/manned-guarding.png",
+      imageSrc: "https://i.ibb.co/VY0pj6Mn/manned-guarding.png",
       imageAlt: "Saints Services Manned Guarding",
       tag: "MANNED_GUARDING"
     }
@@ -137,13 +136,12 @@ export function ServicesGrid() {
                   {service.description}
                 </p>
 
-                {/* UNIFIED BUTTON (MATCHING HERO & HEADER BUTTON STYLES) */}
+                {/* UNIFIED BUTTON */}
                 <div className="pt-2">
                   <Link 
                     href={service.href}
                     className="group/btn relative inline-flex items-center justify-center gap-2.5 bg-slate-900 dark:bg-[#0b1329] text-white font-black px-6 py-3 rounded-lg text-xs sm:text-sm transition-all duration-300 border border-slate-800 dark:border-white/20 backdrop-blur-md overflow-hidden shadow-xl active:scale-95 uppercase tracking-wider cursor-pointer"
                   >
-                    {/* Gold Fill Layer from Left to Right */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-amber-400 translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-out z-0" />
 
                     <span className="relative z-10 transition-colors duration-300 group-hover/btn:text-[#080f22]">

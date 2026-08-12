@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ShareButtons } from '@/components/ShareButtons';
 import { 
   Shield, 
   Clock, 
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
     description: "In-depth operational breakdown of SIA manned guarding standards, BS7858 vetting procedures, real-time patrol logging, and incident response duties across UK sites.",
     url: 'https://www.saintsservices.co.uk/blog/sia-security-guard-responsibilities',
     type: 'article',
-    images: [{ url: '/images/joinus.png', width: 1200, height: 630, alt: 'BS7858 SIA Licensed Security Officer on Duty' }],
+    images: [{ url: 'https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png', width: 1200, height: 630, alt: 'BS7858 SIA Licensed Security Officer on Duty' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "SIA Security Guard Roles & Responsibilities: 2026 Operational Guide",
     description: "BS7858 vetting, SIA compliance, emergency response, and access control protocols for UK security personnel.",
-    images: ['/images/joinus.png'],
+    images: ['https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png'],
   }
 };
 
@@ -80,7 +80,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "SIA Security Guard Roles and Responsibilities: The 2026 Operational Compliance Guide",
   "description": "An exhaustive guide detailing the legal duties, BS7858 screening standards, emergency response protocols, and physical access control responsibilities of SIA security guards in the UK.",
-  "image": "https://www.saintsservices.co.uk/images/joinus.png",
+  "image": "https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Compliance Directorate",
@@ -91,7 +91,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.saintsservices.co.uk/images/why-us.png"
+      "url": "https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png"
     }
   },
   "datePublished": "2026-07-10",
@@ -183,12 +183,12 @@ export default function SecurityGuardResponsibilitiesArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="/images/joinus.png" 
-              alt="SIA Licensed Security Guard Performing Manned Guarding Inspection" 
-              fill 
+              src="https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png" 
+              alt="SIA Licensed Security Guard Performing Manned Guarding Inspection"  
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent dark:from-[#040914] dark:via-transparent dark:to-transparent opacity-80" />
           </div>
@@ -411,6 +411,9 @@ export default function SecurityGuardResponsibilitiesArticle() {
                 </div>
               </div>
             </section>
+
+            {/* Social Share Buttons Component */}
+            <ShareButtons title="SIA Security Guard Roles & Responsibilities: 2026 Operational Guide" slug="sia-security-guard-responsibilities" />
 
             {/* EXTERNAL SOURCES CITATION */}
             <div className="p-5 rounded-sm bg-slate-200/60 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400 space-y-2 transition-colors">

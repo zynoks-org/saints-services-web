@@ -1,17 +1,17 @@
-import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Shield, ArrowRight, Calendar, Clock, HelpCircle, CheckCircle2, User, ListOrdered, FileText, ChevronRight } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ShareButtons } from '@/components/ShareButtons';
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-// Full Article Repository including all 8 security intelligence briefs
+// Full Article Repository including all 8 security intelligence briefs with verified direct ImgBB links
 const articlesData: Record<string, {
   title: string;
   category: string;
@@ -37,7 +37,7 @@ const articlesData: Record<string, {
     description: 'In-depth analysis on UK stadium security, Home Office disorder statistics, SIA compliance, and manned guarding strategies for high-risk venues.',
     date: '12 August 2026',
     readTime: '8 min read',
-    image: '/images/event-security.png',
+    image: 'https://i.ibb.co/h1hdchkS/uk-stadium-security-disorder-guide.jpg',
     author: 'Saints Operational Control',
     intro: 'Managing large crowds at commercial venues and high-risk sports fixtures requires structured access control, trained SIA operatives, and proactive conflict de-escalation protocols.',
     section1Title: '1. High-Density Venue Security Risk Profile',
@@ -68,7 +68,7 @@ const articlesData: Record<string, {
     description: 'An analysis of Met Police crime statistics across London boroughs and how commercial site managers can mitigate localized threats.',
     date: '01 August 2026',
     readTime: '9 min read',
-    image: '/images/security-services.jpg',
+    image: 'https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png',
     author: 'Saints Intelligence Desk',
     intro: 'Metropolitan Police data highlights significant variations in commercial property risks across Greater London boroughs, demanding tailored security postures.',
     section1Title: '1. Evaluating High-Risk Commercial Corridors',
@@ -99,7 +99,7 @@ const articlesData: Record<string, {
     description: 'How SIA-licensed retail security officers and deterrent protocols protect UK stores against the rising £4.2B retail theft crisis.',
     date: '20 July 2026',
     readTime: '7 min read',
-    image: '/images/why-us.png',
+    image: 'https://i.ibb.co/XGHFd3F/retail-loss-prevention-uk-guide.jpg',
     author: 'Saints Retail Security Group',
     intro: 'With retail shrinkage reaching unprecedented levels across the UK, commercial store operators require disciplined loss prevention strategies.',
     section1Title: '1. Combatting Store Theft & Organized Retail Crime',
@@ -126,7 +126,7 @@ const articlesData: Record<string, {
     description: 'Understanding BS7858 vetting, incident logging protocols, and conflict de-escalation for commercial site protection.',
     date: '10 July 2026',
     readTime: '6 min read',
-    image: '/images/joinus.png',
+    image: 'https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png',
     author: 'Saints Compliance Directorate',
     intro: 'Modern manned guarding goes far beyond static observation—it requires certified screening, digital reporting, and regulatory SIA compliance.',
     section1Title: '1. The Standard of BS7858 Vetted Guarding',
@@ -153,7 +153,7 @@ const articlesData: Record<string, {
     description: 'Strategic deployment of Close Protection Officers (CPOs) for corporate executives, high-net-worth individuals, and high-profile assets.',
     date: '05 July 2026',
     readTime: '7 min read',
-    image: '/images/event-security.png',
+    image: 'https://i.ibb.co/MDvfwBjF/close-protection-threat-dynamics-uk.jpg',
     author: 'Saints Executive Protection',
     intro: 'Executive protection requires discrete intelligence, proactive route planning, and highly trained security operatives capable of neutralizing threats before escalation.',
     section1Title: '1. Threat Assessment & Advance Reconnaissance',
@@ -180,7 +180,7 @@ const articlesData: Record<string, {
     description: 'Protecting active construction zones, expensive machinery, and building materials from trespass, arson, and tool theft.',
     date: '28 June 2026',
     readTime: '6 min read',
-    image: '/images/security-services.jpg',
+    image: 'https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg',
     author: 'Saints Site Protection',
     intro: 'Active construction sites are prime targets for opportunistic thieves seeking copper cabling, power tools, and heavy plant machinery.',
     section1Title: '1. Securing Vulnerable Perimeter Boundaries',
@@ -207,7 +207,7 @@ const articlesData: Record<string, {
     description: 'Why commercial properties rely on professional keyholding and rapid alarm response to satisfy UK business insurance mandates.',
     date: '15 June 2026',
     readTime: '5 min read',
-    image: '/images/why-us.png',
+    image: 'https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg',
     author: 'Saints Operations Control',
     intro: 'Relying on internal staff to answer middle-of-the-night burglar alarms introduces severe safety risks and invalidates insurance compliance.',
     section1Title: '1. The Danger of Untrained Alarm Attendance',
@@ -234,7 +234,7 @@ const articlesData: Record<string, {
     description: 'Compliance standards, ISPS code adherence, and physical cargo protection strategies for UK shipping terminals and logistics parks.',
     date: '02 June 2026',
     readTime: '8 min read',
-    image: '/images/joinus.png',
+    image: 'https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp',
     author: 'Saints Logistics Division',
     intro: 'UK ports and supply chain distribution hubs require stringent access controls and cargo monitoring to prevent contraband smuggling and inventory theft.',
     section1Title: '1. ISPS Code & Supply Chain Compliance',
@@ -256,7 +256,6 @@ const articlesData: Record<string, {
   }
 };
 
-// 2. Dynamic SEO Metadata Generator
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
@@ -285,7 +284,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// 3. Dynamic Page Component
 export default async function ArticlePage({ params }: Props) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
@@ -301,17 +299,13 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 font-sans selection:bg-[#f59e0b] selection:text-slate-950 transition-colors duration-300">
-      {/* Navbar Included */}
       <Header />
 
       <article className="py-16 sm:py-24 relative overflow-hidden">
-        
-        {/* Background Ambient Glow matching site theme */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#f59e0b]/5 rounded-full blur-[160px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* BREADCRUMBS */}
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-8 uppercase tracking-wider">
             <Link href="/" className="hover:text-[#f59e0b] transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 text-slate-400 dark:text-slate-600" />
@@ -320,7 +314,6 @@ export default async function ArticlePage({ params }: Props) {
             <span className="text-[#f59e0b] truncate">{article.category}</span>
           </nav>
 
-          {/* ARTICLE HEADER */}
           <header className="space-y-4 mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-widest shadow-xs backdrop-blur-md">
               <Shield className="w-3.5 h-3.5 text-[#f59e0b]" />
@@ -347,20 +340,18 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </header>
 
-          {/* HERO IMAGE */}
           <div className="relative h-[300px] sm:h-[450px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-100 dark:bg-slate-900">
             <Image 
               src={article.image} 
-              alt={article.title} 
-              fill 
+              alt={article.title}  
+              fill
+              priority
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-80" />
           </div>
 
-          {/* QUICK NAV BOX */}
           <div className="p-6 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 mb-10 shadow-lg backdrop-blur-xl">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-3">
               <ListOrdered className="w-4 h-4" />
@@ -373,7 +364,6 @@ export default async function ArticlePage({ params }: Props) {
             </ul>
           </div>
 
-          {/* ARTICLE BODY */}
           <div className="space-y-6 text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">
             
             <p className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 leading-relaxed border-l-2 border-[#f59e0b] pl-4">
@@ -385,13 +375,11 @@ export default async function ArticlePage({ params }: Props) {
             </h2>
             <p>{article.section1Content}</p>
 
-            {/* CALLOUT STAT BOX */}
             <div className="p-6 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 my-6 flex flex-col sm:flex-row items-center gap-4">
               <div className="text-3xl font-black text-[#f59e0b] font-mono shrink-0">{article.statValue}</div>
               <div className="text-xs text-slate-600 dark:text-slate-300 font-medium">{article.statLabel}</div>
             </div>
 
-            {/* MID-ARTICLE CTA */}
             <div className="my-10 p-6 sm:p-8 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="space-y-1 text-center sm:text-left">
                 <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight">Need Licensed Site Security?</h3>
@@ -419,7 +407,6 @@ export default async function ArticlePage({ params }: Props) {
               ))}
             </ul>
 
-            {/* FAQ SECTION */}
             <section id="faq" className="pt-8 border-t border-slate-200 dark:border-slate-800 my-10">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-6">
                 <HelpCircle className="w-4 h-4" />
@@ -436,9 +423,11 @@ export default async function ArticlePage({ params }: Props) {
               </div>
             </section>
 
+            {/* Social Share Bar Component */}
+            <ShareButtons title={article.title} slug={slug} />
+
           </div>
 
-          {/* RELATED ARTICLES */}
           <div className="mt-16 pt-10 border-t border-slate-200 dark:border-slate-800">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-6">
               <FileText className="w-4 h-4" />
@@ -461,7 +450,6 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </div>
 
-          {/* FOOTER NAV */}
           <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
               Published by <span className="text-slate-800 dark:text-white font-bold">{article.author}</span>
@@ -477,7 +465,6 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </article>
 
-      {/* Footer Included */}
       <Footer />
     </div>
   );

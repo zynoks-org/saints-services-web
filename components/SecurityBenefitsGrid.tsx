@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ClipboardCheck, GraduationCap, BadgePercent, Award } from 'lucide-react';
 
 export function SecurityBenefitsGrid() {

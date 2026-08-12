@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Shield, ChevronLeft, ChevronRight, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -20,7 +20,7 @@ export function Services() {
       total: "04",
       title: "Manned Guarding & Patrols",
       badge: "SIA LICENSED OFFICERS",
-      img: "/images/manned-guarding.png",
+      img: "https://i.ibb.co/sJyFWjbV/manned-guarding.jpg",
       description: "Our highly trained security personnel offer professional manned guarding services, ensuring continuous protection, access monitoring, and deterrence for your premises.",
       highlights: [
         "Static Guarding & Mobile Patrol Units",
@@ -34,7 +34,7 @@ export function Services() {
       total: "04",
       title: "Event Security & Safety",
       badge: "RAPID DEPLOYMENT",
-      img: "/images/event-security.png",
+      img: "https://i.ibb.co/XxWf5ZRg/event-security.png",
       description: "We provide comprehensive event security solutions, managing guest flow, entry control, and emergency response to guarantee a safe environment for all attendees.",
       highlights: [
         "Crowd Control & Queue Management",
@@ -48,7 +48,7 @@ export function Services() {
       total: "04",
       title: "Door Supervision & Venue Security",
       badge: "SIA LICENSED",
-      img: "/images/retail-security.png",
+      img: "https://i.ibb.co/hJc6P9kd/door-supervision.jpg",
       description: "SIA-licensed door supervisors dedicated to maintaining order, managing guest entry, and resolving conflicts professionally at venues, clubs, and high-profile premises.",
       highlights: [
         "Professional ID & Search Verification",
@@ -62,7 +62,7 @@ export function Services() {
       total: "04",
       title: "Keyholding & Alarm Response",
       badge: "24/7 MOBILE RESPONSE",
-      img: "/images/security-services.jpg",
+      img: "https://i.ibb.co/6RLbd320/Keyholding-Alarm-Response.png",
       description: "Reliable, round-the-clock keyholding and rapid emergency alarm response services, eliminating staff risk and securing your business premises out of hours.",
       highlights: [
         "Rapid Emergency Mobile Dispatch",
@@ -188,13 +188,14 @@ export function Services() {
                       src={service.img} 
                       alt={service.title} 
                       fill
+                      sizes="(max-width: 1024px) 100vw, 420px"
                       className="object-cover object-center pointer-events-none opacity-90 transition-opacity"
                     />
                     
                     {/* Vignette Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
-                    <div className="absolute top-4 left-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1 rounded-sm text-[10px] sm:text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest shadow-md">
+                    <div className="absolute top-4 left-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1 rounded-sm text-[10px] sm:text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest shadow-md z-10">
                       {service.badge}
                     </div>
                   </div>

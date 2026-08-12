@@ -95,10 +95,11 @@ export default function DoorSupervisionPage() {
             <div className="hidden lg:block absolute inset-y-0 right-0 w-2/3 pointer-events-none z-0">
               <div className="relative w-full h-full">
                 <Image 
-                  src="/images/security-services.jpg" 
+                  src="https://i.ibb.co/hJc6P9kd/door-supervision.jpg" 
                   alt="Saints Services Door Supervision Operations"
                   fill
                   priority
+                  sizes="100vw"
                   className="object-cover object-[80%_center] opacity-15 dark:opacity-35 mix-blend-luminosity"
                 />
 
