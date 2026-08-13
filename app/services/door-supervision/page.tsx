@@ -95,7 +95,7 @@ export default function DoorSupervisionPage() {
             <div className="hidden lg:block absolute inset-y-0 right-0 w-2/3 pointer-events-none z-0">
               <div className="relative w-full h-full">
                 <Image 
-                  src="https://i.ibb.co/hJc6P9kd/door-supervision.jpg" 
+                  src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/door-supervision.jpg" 
                   alt="Saints Services Door Supervision Operations"
                   fill
                   priority

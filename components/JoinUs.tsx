@@ -54,7 +54,7 @@ export function JoinUs() {
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
         <div className="relative w-full h-full">
           <Image 
-            src="https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png" 
+            src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Saints-Services-Recruitment-Team.png" 
             alt="Join Saints Services Recruitment" 
             fill
             priority
@@ -91,7 +91,7 @@ export function JoinUs() {
             {/* MOBILE DEDICATED IMAGE CARD */}
             <div className="block lg:hidden relative w-full h-44 sm:h-56 rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md my-4">
               <Image 
-                src="https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png" 
+                src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Saints-Services-Recruitment-Team.png" 
                 alt="Join Saints Services Recruitment" 
                 fill
                 priority

@@ -95,7 +95,7 @@ export default function KeyHoldingPage() {
             <div className="hidden lg:block absolute inset-y-0 right-0 w-2/3 pointer-events-none z-0">
               <div className="relative w-full h-full">
                 <Image 
-                  src="https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg" 
+                  src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg" 
                   alt="Saints Services Key Holding Operations"
                   fill
                   priority

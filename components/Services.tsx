@@ -20,7 +20,7 @@ export function Services() {
       total: "04",
       title: "Manned Guarding & Patrols",
       badge: "SIA LICENSED OFFICERS",
-      img: "https://i.ibb.co/sJyFWjbV/manned-guarding.jpg",
+      img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/manned-guarding.jpg",
       description: "Our highly trained security personnel offer professional manned guarding services, ensuring continuous protection, access monitoring, and deterrence for your premises.",
       highlights: [
         "Static Guarding & Mobile Patrol Units",
@@ -34,7 +34,7 @@ export function Services() {
       total: "04",
       title: "Event Security & Safety",
       badge: "RAPID DEPLOYMENT",
-      img: "https://i.ibb.co/XxWf5ZRg/event-security.png",
+      img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/event-security.png",
       description: "We provide comprehensive event security solutions, managing guest flow, entry control, and emergency response to guarantee a safe environment for all attendees.",
       highlights: [
         "Crowd Control & Queue Management",
@@ -48,7 +48,7 @@ export function Services() {
       total: "04",
       title: "Door Supervision & Venue Security",
       badge: "SIA LICENSED",
-      img: "https://i.ibb.co/hJc6P9kd/door-supervision.jpg",
+      img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/door-supervision.jpg",
       description: "SIA-licensed door supervisors dedicated to maintaining order, managing guest entry, and resolving conflicts professionally at venues, clubs, and high-profile premises.",
       highlights: [
         "Professional ID & Search Verification",
@@ -62,7 +62,7 @@ export function Services() {
       total: "04",
       title: "Keyholding & Alarm Response",
       badge: "24/7 MOBILE RESPONSE",
-      img: "https://i.ibb.co/6RLbd320/Keyholding-Alarm-Response.png",
+      img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Keyholding-%26-Alarm-Response.png",
       description: "Reliable, round-the-clock keyholding and rapid emergency alarm response services, eliminating staff risk and securing your business premises out of hours.",
       highlights: [
         "Rapid Emergency Mobile Dispatch",

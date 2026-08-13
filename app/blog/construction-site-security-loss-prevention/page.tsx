@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     description: "In-depth breakdown of UK construction site threat vectors, plant theft deterrence, gatehouse access control, and SIA manned guarding solutions.",
     url: 'https://www.saintsservices.co.uk/blog/construction-site-security-loss-prevention',
     type: 'article',
-    images: [{ url: 'https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg', width: 1200, height: 630, alt: 'SIA Construction Site Security Guard Stationed at Gatehouse' }],
+    images: [{ url: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/construction-site-security-loss-prevention.jpg', width: 1200, height: 630, alt: 'SIA Construction Site Security Guard Stationed at Gatehouse' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Construction Site Security: Plant & Tool Loss Prevention (2026 Guide)",
     description: "Plant machinery security, gatehouse contractor management, and wireless perimeter detection for UK construction sites.",
-    images: ['https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg'],
+    images: ['https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/construction-site-security-loss-prevention.jpg'],
   }
 };
 
@@ -57,7 +57,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "Construction Site Security: Preventing Tool, Plant & Fuel Theft in 2026",
   "description": "An exhaustive guide detailing UK construction crime statistics, gatehouse contractor screening, plant machinery asset protection, wireless perimeter detection, and SIA site guarding.",
-  "image": "https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg",
+  "image": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/construction-site-security-loss-prevention.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Construction Security Group",
@@ -68,7 +68,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg"
+      "url": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/construction-site-security-loss-prevention.jpg"
     }
   },
   "datePublished": "2026-04-18",
@@ -156,7 +156,7 @@ export default function ConstructionSiteSecurityArticle() {
 
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="https://i.ibb.co/mVdf1rR5/construction-site-security-loss-prevention.jpg" 
+              src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/construction-site-security-loss-prevention.jpg" 
               alt="SIA Security Officer Conducting Gatehouse Inspection at UK Construction Site" 
               fill
               priority

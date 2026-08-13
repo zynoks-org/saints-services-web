@@ -37,7 +37,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-100/80 via-transparent to-slate-100/50 dark:from-[#080f22] dark:via-transparent dark:to-[#080f22]/50 z-10 transition-colors duration-300" />
         
         <Image 
-          src="https://i.ibb.co/60pj5vqm/security-services.jpg" 
+          src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/security-services.jpg" 
           alt="Saints Services Security Operations"
           fill
           priority

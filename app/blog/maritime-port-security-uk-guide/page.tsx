@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     description: "In-depth breakdown of UK port facility protection, cargo screening, ISPS Code adherence, and SIA manned guarding for maritime terminals.",
     url: 'https://www.saintsservices.co.uk/blog/maritime-port-security-uk-guide',
     type: 'article',
-    images: [{ url: 'https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp', width: 1200, height: 630, alt: 'SIA Port Security Officer Stationed at UK Maritime Terminal' }],
+    images: [{ url: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg', width: 1200, height: 630, alt: 'SIA Port Security Officer Stationed at UK Maritime Terminal' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "UK Maritime & Port Security Guide: Landside SIA Guarding & ISPS Code",
     description: "ISPS Code landside protocols, quayside perimeter security, and SIA cargo terminal guarding across UK maritime hubs.",
-    images: ['https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp'],
+    images: ['https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg'],
   }
 };
 
@@ -57,7 +57,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "UK Maritime & Port Security: Where SIA Badge Holders Operate (2026 Guide)",
   "description": "An exhaustive guide detailing UK landside port security duties, ISPS Code compliance standards, cargo terminal access control, and SIA security officer deployment.",
-  "image": "https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp",
+  "image": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Services Intelligence Desk",
@@ -68,7 +68,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp"
+      "url": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg"
     }
   },
   "datePublished": "2026-06-26",
@@ -156,7 +156,7 @@ export default function MaritimePortSecurityArticle() {
 
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="https://i.ibb.co/ZRNnzgGQ/maritime-port-security-uk-guide.webp" 
+              src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg" 
               alt="SIA Security Officer Patrols Commercial Port and Cargo Terminal Facility" 
               fill
               priority

@@ -4,7 +4,7 @@ const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
-  img-src 'self' data: blob: https: https://i.ibb.co;
+  img-src 'self' data: blob: https: *.public.blob.vercel-storage.com;
   font-src 'self' data: https://fonts.gstatic.com;
   connect-src 'self' https://*.upstash.io https://api.resend.com https://va.vercel-scripts.com https://*.tile.openstreetmap.org;
   object-src 'none';
@@ -17,14 +17,11 @@ const cspHeader = `
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
-    // Allows Next.js Image Optimization when DNS resolves via NAT64 / IPv6 translation
     dangerouslyAllowLocalIP: true,
-    // Set 'unoptimized: true' instead if you want clients to fetch directly from ImgBB without server proxying:
-    // unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.ibb.co',
+        hostname: '*.public.blob.vercel-storage.com',
         pathname: '/**',
       },
     ],

@@ -95,7 +95,7 @@ export default function EventSecurityPage() {
             <div className="hidden lg:block absolute inset-y-0 right-0 w-2/3 pointer-events-none z-0">
               <div className="relative w-full h-full">
                 <Image 
-                  src="https://i.ibb.co/XxWf5ZRg/event-security.png" 
+                  src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/event-security.png" 
                   alt="Saints Services Event Security Operations"
                   fill
                   priority

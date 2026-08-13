@@ -62,13 +62,13 @@ export const metadata: Metadata = {
     description: "In-depth operational analysis of BS 7984-1 keyholding standards, ARC integration, SLA response times, and mobile patrol dispatch across UK sites.",
     url: 'https://www.saintsservices.co.uk/blog/keyholding-alarm-response-sla-guide',
     type: 'article',
-    images: [{ url: 'https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg', width: 1200, height: 630, alt: 'SIA Keyholding Security Officer Responding to Emergency Alarm' }],
+    images: [{ url: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg', width: 1200, height: 630, alt: 'SIA Keyholding Security Officer Responding to Emergency Alarm' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "24/7 Keyholding & Mobile Alarm Response: 2026 UK SLA Guide",
     description: "BS 7984-1 keyholding compliance, employer duty of care, and guaranteed alarm response SLA windows across commercial UK properties.",
-    images: ['https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg'],
+    images: ['https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg'],
   }
 };
 
@@ -77,7 +77,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "24/7 Keyholding & Mobile Alarm Response: SLA Standards for UK Landlords (2026)",
   "description": "An exhaustive guide detailing UK keyholding standards (BS 7984-1), Service Level Agreement (SLA) response windows, employer duty of care laws, and ARC mobile dispatch protocols.",
-  "image": "https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg",
+  "image": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Control Room Directorate",
@@ -88,7 +88,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg"
+      "url": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg"
     }
   },
   "datePublished": "2026-04-04",
@@ -180,7 +180,7 @@ export default function KeyholdingSlaGuideArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image
-              src="https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg" 
+              src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg" 
               alt="SIA Mobile Security Response Officer Responding to Commercial Building Alarm" 
               fill
               priority

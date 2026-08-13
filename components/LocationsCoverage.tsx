@@ -484,7 +484,7 @@ export function LocationsCoverage() {
 
             <div className="lg:col-span-5 relative h-56 sm:h-64 rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md">
               <Image
-                src="https://i.ibb.co/ds5QzyWm/Saints-Services-UK-Locations.png" 
+                src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Saints-Services-UK-Locations.png" 
                 alt="Saints Services UK Locations"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

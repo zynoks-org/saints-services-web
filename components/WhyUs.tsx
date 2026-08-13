@@ -32,7 +32,7 @@ export function WhyUs() {
       <div className="hidden lg:block absolute inset-y-0 right-0 w-2/3 pointer-events-none z-0">
         <div className="relative w-full h-full">
           <Image 
-            src="https://i.ibb.co/XZNsyGVL/why-us.jpg" 
+            src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/why-us.jpg" 
             alt="Saints Services Operational Security" 
             fill
             priority
@@ -71,7 +71,7 @@ export function WhyUs() {
             {/* MOBILE DEDICATED IMAGE CARD */}
             <div className="block lg:hidden relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-md my-4">
               <Image 
-                src="https://i.ibb.co/XZNsyGVL/why-us.jpg" 
+                src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/why-us.jpg" 
                 alt="Saints Services Operational Security" 
                 fill
                 priority

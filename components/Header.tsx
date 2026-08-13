@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { Phone, MapPin, Menu, X, Briefcase, ChevronRight, Mail, ChevronDown, Compass, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
@@ -44,8 +45,8 @@ export function Header() {
   return (
     <div className="sticky top-0 z-50 w-full font-sans shadow-xl">
       <div className="bg-slate-100 dark:bg-[#050811] text-[11px] py-1.5 px-4 text-slate-600 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800/80 font-mono transition-colors duration-300">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-4 sm:gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a 
               href="tel:07412733920" 
               className="flex items-center gap-2 text-[#f59e0b] font-bold hover:text-amber-500 transition-colors tracking-wider"
@@ -60,6 +61,15 @@ export function Header() {
               <Mail className="w-3 h-3 text-[#f59e0b]" /> 
               <span>info@saintsservices.co.uk</span>
             </a>
+            
+            <span className="hidden lg:inline-block h-3 w-[1px] bg-slate-300 dark:bg-slate-800" />
+            
+            <div className="hidden lg:flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+              <span className="w-1.5 h-1.5 bg-emerald-500 animate-pulse shrink-0" />
+              <span className="text-[10px] font-mono font-bold tracking-widest uppercase">
+                SIA-Licensed Security Guards • 24/7 Operations
+              </span>
+            </div>
           </div>
 
           <div className="hidden sm:flex items-center gap-6 text-slate-600 dark:text-slate-400">
@@ -85,16 +95,19 @@ export function Header() {
             onClick={handleLogoClick}
             className="flex items-center gap-3.5 group cursor-pointer"
           >
+            <div className="relative w-10 sm:w-12 h-10 sm:h-12 shrink-0">
+              <Image 
+                src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/saintsserviceslogo.png"
+                alt="Saints Services Icon"
+                fill
+                className="object-contain dark:filter-none filter brightness-0" 
+                priority
+              />
+            </div>
             <div>
               <span className="text-lg sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white block leading-none font-sans uppercase">
                 Saints <span className="text-[#f59e0b]">Services</span>
               </span>
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="w-1.5 h-1.5 bg-emerald-500 animate-pulse" />
-                <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase block">
-                  SIA-Licensed Security Guards • 24/7 Operations
-                </span>
-              </div>
             </div>
           </Link>
 

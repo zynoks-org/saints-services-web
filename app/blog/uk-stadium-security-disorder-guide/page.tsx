@@ -62,13 +62,13 @@ export const metadata: Metadata = {
     description: "In-depth breakdown of official Home Office football arrest statistics, SIA event security deployment, turnstile search operations, and pitch protection.",
     url: 'https://www.saintsservices.co.uk/blog/uk-stadium-security-disorder-guide',
     type: 'article',
-    images: [{ url: 'https://i.ibb.co/h1hdchkS/uk-stadium-security-disorder-guide.jpg', width: 1200, height: 630, alt: 'SIA Event Security Guards Stationed at UK Football Stadium' }],
+    images: [{ url: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/uk-stadium-security-disorder-guide.jpg', width: 1200, height: 630, alt: 'SIA Event Security Guards Stationed at UK Football Stadium' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "UK Manned Guarding & Stadium Disorder: 2026 Operational Insights",
     description: "Home Office football arrest data, crowd safety management, and SIA event security standards across UK sports stadiums.",
-    images: ['https://i.ibb.co/h1hdchkS/uk-stadium-security-disorder-guide.jpg'],
+    images: ['https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/uk-stadium-security-disorder-guide.jpg'],
   }
 };
 
@@ -77,7 +77,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "UK Manned Guarding & Stadium Disorder: 2026 Operational Insights",
   "description": "An exhaustive operational guide analyzing Home Office football arrest statistics, pyrotechnic deterrence, pitch invasion mitigation, and SIA event security deployment.",
-  "image": "https://i.ibb.co/h1hdchkS/uk-stadium-security-disorder-guide.jpg",
+  "image": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/uk-stadium-security-disorder-guide.jpg",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Event Operations Desk",
@@ -88,7 +88,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://i.ibb.co/h1hdchkS/uk-stadium-security-disorder-guide.jpg"
+      "url": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/uk-stadium-security-disorder-guide.jpg"
     }
   },
   "datePublished": "2026-08-12",
@@ -180,7 +180,7 @@ export default function UkStadiumSecurityArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="https://i.ibb.co/h1hdchkS/uk-stadium-security-disorder-guide.jpg" 
+              src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/uk-stadium-security-disorder-guide.jpg" 
               alt="SIA Licensed Event Security Officers Performing Crowd Safety Patrols at Stadium"  
               fill
               priority

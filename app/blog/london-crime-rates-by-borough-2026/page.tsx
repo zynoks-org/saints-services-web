@@ -62,13 +62,13 @@ export const metadata: Metadata = {
     description: "Official breakdown of Met Police crime data, ranking high-risk London boroughs and outlining physical security strategies for commercial properties.",
     url: 'https://www.saintsservices.co.uk/blog/london-crime-rates-by-borough-2026',
     type: 'article',
-    images: [{ url: 'https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png', width: 1200, height: 630, alt: 'SIA Licensed Security Guard Stationed in London Commercial Property' }],
+    images: [{ url: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/london-crime-rates-by-borough-2026.png', width: 1200, height: 630, alt: 'SIA Licensed Security Guard Stationed in London Commercial Property' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Most Dangerous Areas in London: Crime Rates by Borough (2026)",
     description: "Metropolitan Police crime data analysis, high-risk borough rankings, and manned guarding strategies across Greater London.",
-    images: ['https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png'],
+    images: ['https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/london-crime-rates-by-borough-2026.png'],
   }
 };
 
@@ -77,7 +77,7 @@ const jsonLd = {
   "@type": "BlogPosting",
   "headline": "Most Dangerous Areas in London: Crime Rates by Borough (2026 Update)",
   "description": "An exhaustive guide detailing Metropolitan Police crime statistics, high-risk commercial property zones across London boroughs, and SIA security guarding protocols.",
-  "image": "https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png",
+  "image": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/london-crime-rates-by-borough-2026.png",
   "author": { 
     "@type": "Organization", 
     "name": "Saints Services Intelligence Desk",
@@ -88,7 +88,7 @@ const jsonLd = {
     "name": "Saints Services Ltd",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png"
+      "url": "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/london-crime-rates-by-borough-2026.png"
     }
   },
   "datePublished": "2026-08-01",
@@ -219,7 +219,7 @@ export default function LondonCrimeRatesArticle() {
           {/* FEATURED HERO IMAGE */}
           <div className="relative h-[320px] sm:h-[460px] rounded-sm overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl mb-12 bg-slate-900 transition-colors">
             <Image 
-              src="https://i.ibb.co/vvdP3b67/london-crime-rates-by-borough-2026.png" 
+              src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/london-crime-rates-by-borough-2026.png" 
               alt="SIA Security Officer Patrols Commercial Premises in London"  
               fill
               priority

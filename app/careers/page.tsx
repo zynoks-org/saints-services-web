@@ -221,7 +221,7 @@ export default function CareersPage() {
 
                   <div className="relative z-10 w-full h-64 sm:h-80 lg:h-[420px] rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-100 dark:bg-[#0b1329]">
                     <Image 
-                      src="https://i.ibb.co/h1yTXxGY/Saints-Services-Recruitment-Team.png" 
+                      src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Saints-Services-Recruitment-Team.png" 
                       alt="Saints Services Recruitment Team" 
                       fill
                       sizes="(max-width: 1024px) 100vw, 420px"

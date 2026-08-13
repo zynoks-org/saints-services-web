@@ -107,7 +107,7 @@ export default function LocationDetailPage() {
             
             <div className="absolute inset-y-0 right-0 w-full lg:w-3/5 pointer-events-none z-0 opacity-20 dark:opacity-30">
               <Image 
-                src="https://i.ibb.co/60pj5vqm/security-services.jpg" 
+                src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/security-services.jpg" 
                 alt={`${location.name} Security Services`}
                 fill
                 priority
@@ -389,7 +389,7 @@ export default function LocationDetailPage() {
                 <div className="relative h-64 md:h-full min-h-[400px] w-full hidden md:block">
                   <div className="absolute inset-0 bg-slate-950 skew-x-12 transform origin-bottom-right translate-x-16 overflow-hidden border-l-8 border-white/20">
                     <Image 
-                      src="https://i.ibb.co/60pj5vqm/security-services.jpg" 
+                      src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/security-services.jpg" 
                       alt="Security Guard Patrol"
                       fill
                       sizes="50vw"

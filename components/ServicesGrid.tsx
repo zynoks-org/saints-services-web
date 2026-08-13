@@ -19,7 +19,7 @@ export function ServicesGrid() {
       title: "Door Supervision",
       description: "Professional SIA-licensed door supervisors for secure venue management. Saints Services ensures controlled access and a safe environment with our licensed experts.",
       href: "/services/door-supervision",
-      imageSrc: "https://i.ibb.co/hJc6P9kd/door-supervision.jpg",
+      imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/door-supervision.jpg",
       imageAlt: "Saints Services Door Supervision Operations",
       tag: "VENUE_SECURITY"
     },
@@ -27,7 +27,7 @@ export function ServicesGrid() {
       title: "Event Security",
       description: "Tailored security for events of all sizes. Our team ensures a secure, smooth experience for every attendee, from corporate galas to outdoor festivals.",
       href: "/services/event-security",
-      imageSrc: "https://i.ibb.co/XxWf5ZRg/event-security.png",
+      imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/event-security.png",
       imageAlt: "Saints Services Event Security",
       tag: "CROWD_SAFETY"
     },
@@ -35,7 +35,7 @@ export function ServicesGrid() {
       title: "Key Holding",
       description: "Reliable key holding and swift 24/7 alarm response. Saints Services offers peace of mind with secure key management and rapid incident handling.",
       href: "/services/keyholding",
-      imageSrc: "https://i.ibb.co/TBKL1mK0/keyholding-alarm-response-sla-guide.jpg",
+      imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg",
       imageAlt: "Saints Services Mobile Response Van",
       tag: "RAPID_RESPONSE"
     },
@@ -43,7 +43,7 @@ export function ServicesGrid() {
       title: "Security Guards",
       description: "Vigilant SIA-licensed security guards for comprehensive asset protection. Skilled guards tailored to your specific security needs, from retail to construction sites.",
       href: "/services/security-guards",
-      imageSrc: "https://i.ibb.co/VY0pj6Mn/manned-guarding.png",
+      imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/manned-guarding.jpg",
       imageAlt: "Saints Services Manned Guarding",
       tag: "MANNED_GUARDING"
     }

@@ -65,12 +65,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide in Derbyshire?",
-        answer: "We provide comprehensive SIA-licensed services including manned guarding, door supervision, event security, keyholding, and alarm response across the entire county."
+        question: "What specific security solutions are available in Derbyshire?",
+        answer: "We deliver a broad range of services including manned guarding, mobile patrols, and CCTV monitoring to protect commercial and residential properties throughout Derbyshire."
       },
       {
-        question: "Are your security officers in Derbyshire fully SIA licensed and vetted?",
-        answer: "Yes, 100% of our security personnel are SIA licensed and undergo rigorous BS7858 5-year background and employment vetting before deployment."
+        question: "Are your guards SIA licensed?",
+        answer: "Yes, every member of our security team operating in Derbyshire holds a valid SIA licence and undergoes strict background vetting."
+      },
+      {
+        question: "Do you offer out-of-hours alarm response?",
+        answer: "Absolutely. Our mobile response units can attend alarm activations quickly across Derbyshire 24/7."
+      },
+      {
+        question: "Can you evaluate our premises before starting?",
+        answer: "Yes, we provide comprehensive site surveys and risk assessments to pinpoint vulnerabilities and tailor our services accordingly."
       }
     ]
   },
@@ -120,44 +128,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Derby?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Derby businesses."
+        question: "How quickly can you deploy a security team in Derby?",
+        answer: "Depending on the requirements, our local Derby teams can often be deployed within a few hours for emergency cover."
       },
       {
-        question: "Are your security officers in Derby fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
+        question: "Do you cover event security in Derby?",
+        answer: "Yes, we manage crowd control, access management, and VIP protection for events of all sizes across Derby."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Derby?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Derby, with emergency coverage often mobilised within minutes."
+        question: "What reporting tools do your guards use?",
+        answer: "Our officers use digital guard tour systems and real-time reporting to ensure full transparency for our Derby clients."
       },
       {
-        question: "Do you offer 24/7 security coverage for premises located in Derby?",
-        answer: "Yes, our operations operate continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "What technology do you use to support and monitor your security operations in Derby?",
-        answer: "We utilize real-time guard tour tracking, rapid-deployment CCTV towers, automated check-in systems, and digital incident reporting tools."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Derby?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Derby?",
-        answer: "Yes, our mobile patrol units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Derby areas."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Derby?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Derby?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "How can businesses in Derby request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you conduct initial security reviews?",
+        answer: "We carry out detailed threat evaluations and site surveys to design a bespoke protection plan for your property."
       }
     ]
   },
@@ -207,44 +191,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Leicestershire?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Leicestershire businesses."
+        question: "Can Saints Services handle retail loss prevention in Leicestershire?",
+        answer: "Yes, we deploy both uniformed officers and plain-clothes retail security specialists to reduce shrinkage in Leicestershire stores."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Leicestershire?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Leicestershire, with emergency coverage often mobilised within minutes."
+        question: "Is your keyholding service available 24/7?",
+        answer: "Our secure keyholding and rapid response teams are on standby 365 days a year to protect your Leicestershire premises."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Leicestershire?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What training do your Leicestershire officers receive?",
+        answer: "Beyond their SIA qualifications, our guards receive ongoing training in conflict management, first aid, and customer service."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Leicestershire?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Leicestershire sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Leicestershire?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Leicestershire?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Leicestershire?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Leicestershire?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Leicestershire request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you assess site vulnerabilities?",
+        answer: "We conduct detailed risk assessments and site surveys to identify potential security gaps prior to deployment."
       }
     ]
   },
@@ -294,44 +254,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Leicester?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Leicester businesses."
+        question: "Do you provide construction site security across Leicester?",
+        answer: "Yes, our CSCS-qualified guards and rapid-deployment CCTV towers are ideal for securing building sites in Leicester."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Leicester?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Leicester, with emergency coverage often mobilised within minutes."
+        question: "What is your approach to corporate security?",
+        answer: "We provide smart, professional concierge and front-of-house security staff who understand the corporate environment in Leicester."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Leicester?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Can you tailor a security package to our budget?",
+        answer: "Yes, we work closely with Leicester businesses to create scalable security plans that maximize protection without unnecessary costs."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Leicester?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Leicester sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Leicester?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Leicester fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Leicester?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Leicester?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Leicester?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Leicester request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you onboard a new client?",
+        answer: "We start with a comprehensive site survey and risk assessment to ensure all operational requirements are met from day one."
       }
     ]
   },
@@ -381,44 +317,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Nottinghamshire?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Nottinghamshire businesses."
+        question: "What makes your Nottinghamshire security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in Nottinghamshire."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Nottinghamshire?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Nottinghamshire, with emergency coverage often mobilised within minutes."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in Nottinghamshire."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Nottinghamshire?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across Nottinghamshire campuses."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Nottinghamshire?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Nottinghamshire sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Nottinghamshire?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Nottinghamshire?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Nottinghamshire?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Nottinghamshire?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Nottinghamshire request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -468,44 +380,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Nottingham?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Nottingham businesses."
+        question: "Can you cover multiple sites across Nottingham?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout Nottingham."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Nottingham?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Nottingham, with emergency coverage often mobilised within minutes."
+        question: "What types of businesses do you protect in Nottingham?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Nottingham?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our Nottingham clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Nottingham?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Nottingham sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Nottingham?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Nottingham fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Nottingham?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Nottingham?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Nottingham?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Nottingham request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   },
@@ -555,44 +443,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Birmingham?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Birmingham businesses."
+        question: "What specific security solutions are available in Birmingham?",
+        answer: "We deliver a broad range of services including manned guarding, mobile patrols, and CCTV monitoring to protect commercial and residential properties throughout Birmingham."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Birmingham?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Birmingham, with emergency coverage often mobilised within minutes."
+        question: "Are your guards SIA licensed?",
+        answer: "Yes, every member of our security team operating in Birmingham holds a valid SIA licence and undergoes strict background vetting."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Birmingham?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Do you offer out-of-hours alarm response?",
+        answer: "Absolutely. Our mobile response units can attend alarm activations quickly across Birmingham 24/7."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Birmingham?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Birmingham sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Birmingham?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Birmingham fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Birmingham?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Birmingham?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Birmingham?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Birmingham request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Can you evaluate our premises before starting?",
+        answer: "Yes, we provide comprehensive site surveys and risk assessments to pinpoint vulnerabilities and tailor our services accordingly."
       }
     ]
   },
@@ -642,44 +506,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Coventry?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Coventry businesses."
+        question: "How quickly can you deploy a security team in Coventry?",
+        answer: "Depending on the requirements, our local Coventry teams can often be deployed within a few hours for emergency cover."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Coventry?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Coventry, with emergency coverage often mobilised within minutes."
+        question: "Do you cover event security in Coventry?",
+        answer: "Yes, we manage crowd control, access management, and VIP protection for events of all sizes across Coventry."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Coventry?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What reporting tools do your guards use?",
+        answer: "Our officers use digital guard tour systems and real-time reporting to ensure full transparency for our Coventry clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Coventry?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Coventry sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Coventry?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Coventry fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Coventry?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Coventry?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Coventry?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Coventry request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you conduct initial security reviews?",
+        answer: "We carry out detailed threat evaluations and site surveys to design a bespoke protection plan for your property."
       }
     ]
   },
@@ -729,44 +569,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Walsall?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Walsall businesses."
+        question: "Can Saints Services handle retail loss prevention in Walsall?",
+        answer: "Yes, we deploy both uniformed officers and plain-clothes retail security specialists to reduce shrinkage in Walsall stores."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Walsall?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Walsall, with emergency coverage often mobilised within minutes."
+        question: "Is your keyholding service available 24/7?",
+        answer: "Our secure keyholding and rapid response teams are on standby 365 days a year to protect your Walsall premises."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Walsall?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What training do your Walsall officers receive?",
+        answer: "Beyond their SIA qualifications, our guards receive ongoing training in conflict management, first aid, and customer service."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Walsall?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Walsall sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Walsall?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Walsall fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Walsall?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Walsall?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Walsall?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Walsall request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you assess site vulnerabilities?",
+        answer: "We conduct detailed risk assessments and site surveys to identify potential security gaps prior to deployment."
       }
     ]
   },
@@ -816,44 +632,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Wolverhampton?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Wolverhampton businesses."
+        question: "Do you provide construction site security across Wolverhampton?",
+        answer: "Yes, our CSCS-qualified guards and rapid-deployment CCTV towers are ideal for securing building sites in Wolverhampton."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Wolverhampton?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Wolverhampton, with emergency coverage often mobilised within minutes."
+        question: "What is your approach to corporate security?",
+        answer: "We provide smart, professional concierge and front-of-house security staff who understand the corporate environment in Wolverhampton."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Wolverhampton?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Can you tailor a security package to our budget?",
+        answer: "Yes, we work closely with Wolverhampton businesses to create scalable security plans that maximize protection without unnecessary costs."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Wolverhampton?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Wolverhampton sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Wolverhampton?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Wolverhampton fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Wolverhampton?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Wolverhampton?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Wolverhampton?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Wolverhampton request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you onboard a new client?",
+        answer: "We start with a comprehensive site survey and risk assessment to ensure all operational requirements are met from day one."
       }
     ]
   },
@@ -903,44 +695,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Berkshire?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Berkshire businesses."
+        question: "What makes your Berkshire security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in Berkshire."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Berkshire?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Berkshire, with emergency coverage often mobilised within minutes."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in Berkshire."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Berkshire?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across Berkshire campuses."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Berkshire?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Berkshire sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Berkshire?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Berkshire fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Berkshire?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Berkshire?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Berkshire?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Berkshire request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -990,44 +758,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Reading?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Reading businesses."
+        question: "Can you cover multiple sites across Reading?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout Reading."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Reading?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Reading, with emergency coverage often mobilised within minutes."
+        question: "What types of businesses do you protect in Reading?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Reading?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our Reading clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Reading?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Reading sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Reading?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Reading fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Reading?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Reading?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Reading?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Reading request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   },
@@ -1077,44 +821,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Hampshire?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Hampshire businesses."
+        question: "What specific security solutions are available in Hampshire?",
+        answer: "We deliver a broad range of services including manned guarding, mobile patrols, and CCTV monitoring to protect commercial and residential properties throughout Hampshire."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Hampshire?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Hampshire, with emergency coverage often mobilised within minutes."
+        question: "Are your guards SIA licensed?",
+        answer: "Yes, every member of our security team operating in Hampshire holds a valid SIA licence and undergoes strict background vetting."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Hampshire?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Do you offer out-of-hours alarm response?",
+        answer: "Absolutely. Our mobile response units can attend alarm activations quickly across Hampshire 24/7."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Hampshire?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Hampshire sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Hampshire?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Hampshire fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Hampshire?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Hampshire?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Hampshire?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Hampshire request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Can you evaluate our premises before starting?",
+        answer: "Yes, we provide comprehensive site surveys and risk assessments to pinpoint vulnerabilities and tailor our services accordingly."
       }
     ]
   },
@@ -1164,44 +884,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Portsmouth?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Portsmouth businesses."
+        question: "How quickly can you deploy a security team in Portsmouth?",
+        answer: "Depending on the requirements, our local Portsmouth teams can often be deployed within a few hours for emergency cover."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Portsmouth?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Portsmouth, with emergency coverage often mobilised within minutes."
+        question: "Do you cover event security in Portsmouth?",
+        answer: "Yes, we manage crowd control, access management, and VIP protection for events of all sizes across Portsmouth."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Portsmouth?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What reporting tools do your guards use?",
+        answer: "Our officers use digital guard tour systems and real-time reporting to ensure full transparency for our Portsmouth clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Portsmouth?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Portsmouth sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Portsmouth?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Portsmouth fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Portsmouth?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Portsmouth?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Portsmouth?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Portsmouth request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you conduct initial security reviews?",
+        answer: "We carry out detailed threat evaluations and site surveys to design a bespoke protection plan for your property."
       }
     ]
   },
@@ -1251,44 +947,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Southampton?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Southampton businesses."
+        question: "Can Saints Services handle retail loss prevention in Southampton?",
+        answer: "Yes, we deploy both uniformed officers and plain-clothes retail security specialists to reduce shrinkage in Southampton stores."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Southampton?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Southampton, with emergency coverage often mobilised within minutes."
+        question: "Is your keyholding service available 24/7?",
+        answer: "Our secure keyholding and rapid response teams are on standby 365 days a year to protect your Southampton premises."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Southampton?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What training do your Southampton officers receive?",
+        answer: "Beyond their SIA qualifications, our guards receive ongoing training in conflict management, first aid, and customer service."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Southampton?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Southampton sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Southampton?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Southampton fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Southampton?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Southampton?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Southampton?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Southampton request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you assess site vulnerabilities?",
+        answer: "We conduct detailed risk assessments and site surveys to identify potential security gaps prior to deployment."
       }
     ]
   },
@@ -1338,44 +1010,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Oxfordshire?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Oxfordshire businesses."
+        question: "Do you provide construction site security across Oxfordshire?",
+        answer: "Yes, our CSCS-qualified guards and rapid-deployment CCTV towers are ideal for securing building sites in Oxfordshire."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Oxfordshire?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Oxfordshire, with emergency coverage often mobilised within minutes."
+        question: "What is your approach to corporate security?",
+        answer: "We provide smart, professional concierge and front-of-house security staff who understand the corporate environment in Oxfordshire."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Oxfordshire?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Can you tailor a security package to our budget?",
+        answer: "Yes, we work closely with Oxfordshire businesses to create scalable security plans that maximize protection without unnecessary costs."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Oxfordshire?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Oxfordshire sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Oxfordshire?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Oxfordshire fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Oxfordshire?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Oxfordshire?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Oxfordshire?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Oxfordshire request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you onboard a new client?",
+        answer: "We start with a comprehensive site survey and risk assessment to ensure all operational requirements are met from day one."
       }
     ]
   },
@@ -1425,44 +1073,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Oxford?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Oxford businesses."
+        question: "What makes your Oxford security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in Oxford."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Oxford?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Oxford, with emergency coverage often mobilised within minutes."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in Oxford."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Oxford?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across Oxford campuses."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Oxford?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Oxford sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Oxford?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Oxford fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Oxford?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Oxford?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Oxford?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Oxford request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -1512,44 +1136,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Sussex?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Sussex businesses."
+        question: "Can you cover multiple sites across Sussex?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout Sussex."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Sussex?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Sussex, with emergency coverage often mobilised within minutes."
+        question: "What types of businesses do you protect in Sussex?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Sussex?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our Sussex clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Sussex?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Sussex sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Sussex?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Sussex fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Sussex?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Sussex?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Sussex?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Sussex request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   },
@@ -1599,44 +1199,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security guard services do you provide for businesses across Brighton?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Brighton businesses."
+        question: "What makes your Brighton security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in Brighton."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Brighton?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Brighton, with emergency coverage often mobilised within minutes."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in Brighton."
       },
       {
-        question: "What technology do you use to support and monitor your security guard operations in Brighton?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across Brighton campuses."
       },
       {
-        question: "Do you provide mobile patrol security guards, alarm response, and key holding services throughout Brighton?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Brighton sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Brighton?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security guards in Brighton fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security guard coverage for premises located in Brighton?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security guard services be tailored to the specific needs of businesses in Brighton?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent security guard service quality across multiple sites in Brighton?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Brighton request a security guard quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -1686,44 +1262,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security guard services do you provide for businesses across Worthing?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Worthing businesses."
+        question: "Can you cover multiple sites across Worthing?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout Worthing."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Worthing?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Worthing, with emergency coverage often mobilised within minutes."
+        question: "What types of businesses do you protect in Worthing?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security guard operations in Worthing?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our Worthing clients."
       },
       {
-        question: "Do you provide mobile patrol security guards, alarm response, and key holding services throughout Worthing?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Worthing sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Worthing?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security guards in Worthing fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security guard coverage for premises located in Worthing?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security guard services be tailored to the specific needs of businesses in Worthing?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent security guard service quality across multiple sites in Worthing?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Worthing request a security guard quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   },
@@ -1773,44 +1325,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Dorset?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Dorset businesses."
+        question: "What specific security solutions are available in Dorset?",
+        answer: "We deliver a broad range of services including manned guarding, mobile patrols, and CCTV monitoring to protect commercial and residential properties throughout Dorset."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Dorset?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Dorset, with emergency coverage often mobilised within minutes."
+        question: "Are your guards SIA licensed?",
+        answer: "Yes, every member of our security team operating in Dorset holds a valid SIA licence and undergoes strict background vetting."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Dorset?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Do you offer out-of-hours alarm response?",
+        answer: "Absolutely. Our mobile response units can attend alarm activations quickly across Dorset 24/7."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Dorset?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Dorset sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Dorset?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Dorset fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Dorset?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Dorset?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Dorset?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Dorset request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Can you evaluate our premises before starting?",
+        answer: "Yes, we provide comprehensive site surveys and risk assessments to pinpoint vulnerabilities and tailor our services accordingly."
       }
     ]
   },
@@ -1860,44 +1388,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Bournemouth?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Bournemouth businesses."
+        question: "How quickly can you deploy a security team in Bournemouth?",
+        answer: "Depending on the requirements, our local Bournemouth teams can often be deployed within a few hours for emergency cover."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Bournemouth?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Bournemouth, with emergency coverage often mobilised within minutes."
+        question: "Do you cover event security in Bournemouth?",
+        answer: "Yes, we manage crowd control, access management, and VIP protection for events of all sizes across Bournemouth."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Bournemouth?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What reporting tools do your guards use?",
+        answer: "Our officers use digital guard tour systems and real-time reporting to ensure full transparency for our Bournemouth clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Bournemouth?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Bournemouth sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Bournemouth?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Bournemouth fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Bournemouth?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Bournemouth?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Bournemouth?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Bournemouth request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you conduct initial security reviews?",
+        answer: "We carry out detailed threat evaluations and site surveys to design a bespoke protection plan for your property."
       }
     ]
   },
@@ -1947,44 +1451,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Poole?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Poole businesses."
+        question: "Can Saints Services handle retail loss prevention in Poole?",
+        answer: "Yes, we deploy both uniformed officers and plain-clothes retail security specialists to reduce shrinkage in Poole stores."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Poole?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Poole, with emergency coverage often mobilised within minutes."
+        question: "Is your keyholding service available 24/7?",
+        answer: "Our secure keyholding and rapid response teams are on standby 365 days a year to protect your Poole premises."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Poole?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What training do your Poole officers receive?",
+        answer: "Beyond their SIA qualifications, our guards receive ongoing training in conflict management, first aid, and customer service."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Poole?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Poole sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Poole?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Poole fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Poole?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Poole?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Poole?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Poole request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you assess site vulnerabilities?",
+        answer: "We conduct detailed risk assessments and site surveys to identify potential security gaps prior to deployment."
       }
     ]
   },
@@ -2034,44 +1514,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across North London?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for North London businesses."
+        question: "Do you provide construction site security across North London?",
+        answer: "Yes, our CSCS-qualified guards and rapid-deployment CCTV towers are ideal for securing building sites in North London."
       },
       {
-        question: "How quickly can you deploy security guards to sites within North London?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across North London, with emergency coverage often mobilised within minutes."
+        question: "What is your approach to corporate security?",
+        answer: "We provide smart, professional concierge and front-of-house security staff who understand the corporate environment in North London."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in North London?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Can you tailor a security package to our budget?",
+        answer: "Yes, we work closely with North London businesses to create scalable security plans that maximize protection without unnecessary costs."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout North London?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all North London sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in North London?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in North London fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in North London?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in North London?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in North London?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in North London request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you onboard a new client?",
+        answer: "We start with a comprehensive site survey and risk assessment to ensure all operational requirements are met from day one."
       }
     ]
   },
@@ -2121,44 +1577,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across East London?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for East London businesses."
+        question: "What specific security solutions are available in East London?",
+        answer: "We deliver a broad range of services including manned guarding, mobile patrols, and CCTV monitoring to protect commercial and residential properties throughout East London."
       },
       {
-        question: "How quickly can you deploy security guards to sites within East London?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across East London, with emergency coverage often mobilised within minutes."
+        question: "Are your guards SIA licensed?",
+        answer: "Yes, every member of our security team operating in East London holds a valid SIA licence and undergoes strict background vetting."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in East London?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Do you offer out-of-hours alarm response?",
+        answer: "Absolutely. Our mobile response units can attend alarm activations quickly across East London 24/7."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout East London?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all East London sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in East London?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in East London fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in East London?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in East London?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in East London?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in East London request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Can you evaluate our premises before starting?",
+        answer: "Yes, we provide comprehensive site surveys and risk assessments to pinpoint vulnerabilities and tailor our services accordingly."
       }
     ]
   },
@@ -2208,44 +1640,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across West London?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for West London businesses."
+        question: "How quickly can you deploy a security team in West London?",
+        answer: "Depending on the requirements, our local West London teams can often be deployed within a few hours for emergency cover."
       },
       {
-        question: "How quickly can you deploy security guards to sites within West London?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across West London, with emergency coverage often mobilised within minutes."
+        question: "Do you cover event security in West London?",
+        answer: "Yes, we manage crowd control, access management, and VIP protection for events of all sizes across West London."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in West London?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What reporting tools do your guards use?",
+        answer: "Our officers use digital guard tour systems and real-time reporting to ensure full transparency for our West London clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout West London?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all West London sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in West London?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in West London fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in West London?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in West London?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in West London?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in West London request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you conduct initial security reviews?",
+        answer: "We carry out detailed threat evaluations and site surveys to design a bespoke protection plan for your property."
       }
     ]
   },
@@ -2295,44 +1703,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across South London?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for South London businesses."
+        question: "Can Saints Services handle retail loss prevention in South London?",
+        answer: "Yes, we deploy both uniformed officers and plain-clothes retail security specialists to reduce shrinkage in South London stores."
       },
       {
-        question: "How quickly can you deploy security guards to sites within South London?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across South London, with emergency coverage often mobilised within minutes."
+        question: "Is your keyholding service available 24/7?",
+        answer: "Our secure keyholding and rapid response teams are on standby 365 days a year to protect your South London premises."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in South London?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What training do your South London officers receive?",
+        answer: "Beyond their SIA qualifications, our guards receive ongoing training in conflict management, first aid, and customer service."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout South London?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all South London sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in South London?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in South London fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in South London?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in South London?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in South London?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in South London request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you assess site vulnerabilities?",
+        answer: "We conduct detailed risk assessments and site surveys to identify potential security gaps prior to deployment."
       }
     ]
   },
@@ -2382,44 +1766,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Barnet?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Barnet businesses."
+        question: "Do you provide construction site security across Barnet?",
+        answer: "Yes, our CSCS-qualified guards and rapid-deployment CCTV towers are ideal for securing building sites in Barnet."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Barnet?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Barnet, with emergency coverage often mobilised within minutes."
+        question: "What is your approach to corporate security?",
+        answer: "We provide smart, professional concierge and front-of-house security staff who understand the corporate environment in Barnet."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Barnet?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Can you tailor a security package to our budget?",
+        answer: "Yes, we work closely with Barnet businesses to create scalable security plans that maximize protection without unnecessary costs."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Barnet?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Barnet sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Barnet?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Barnet fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Barnet?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Barnet?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Barnet?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Barnet request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you onboard a new client?",
+        answer: "We start with a comprehensive site survey and risk assessment to ensure all operational requirements are met from day one."
       }
     ]
   },
@@ -2469,44 +1829,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Brent?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Brent businesses."
+        question: "What makes your Brent security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in Brent."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Brent?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Brent, with emergency coverage often mobilised within minutes."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in Brent."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Brent?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across Brent campuses."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Brent?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Brent sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Brent?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Brent fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Brent?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Brent?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Brent?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Brent request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -2556,44 +1892,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Enfield?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Enfield businesses."
+        question: "Can you cover multiple sites across Enfield?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout Enfield."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Enfield?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Enfield, with emergency coverage often mobilised within minutes."
+        question: "What types of businesses do you protect in Enfield?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Enfield?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our Enfield clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Enfield?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Enfield sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Enfield?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Enfield fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Enfield?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Enfield?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Enfield?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Enfield request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   },
@@ -2643,44 +1955,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Newham?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Newham businesses."
+        question: "What specific security solutions are available in Newham?",
+        answer: "We deliver a broad range of services including manned guarding, mobile patrols, and CCTV monitoring to protect commercial and residential properties throughout Newham."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Newham?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Newham, with emergency coverage often mobilised within minutes."
+        question: "Are your guards SIA licensed?",
+        answer: "Yes, every member of our security team operating in Newham holds a valid SIA licence and undergoes strict background vetting."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Newham?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Do you offer out-of-hours alarm response?",
+        answer: "Absolutely. Our mobile response units can attend alarm activations quickly across Newham 24/7."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Newham?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Newham sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Newham?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Newham fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Newham?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Newham?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Newham?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Newham request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Can you evaluate our premises before starting?",
+        answer: "Yes, we provide comprehensive site surveys and risk assessments to pinpoint vulnerabilities and tailor our services accordingly."
       }
     ]
   },
@@ -2730,44 +2018,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Southwark?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Southwark businesses."
+        question: "How quickly can you deploy a security team in Southwark?",
+        answer: "Depending on the requirements, our local Southwark teams can often be deployed within a few hours for emergency cover."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Southwark?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Southwark, with emergency coverage often mobilised within minutes."
+        question: "Do you cover event security in Southwark?",
+        answer: "Yes, we manage crowd control, access management, and VIP protection for events of all sizes across Southwark."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Southwark?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What reporting tools do your guards use?",
+        answer: "Our officers use digital guard tour systems and real-time reporting to ensure full transparency for our Southwark clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Southwark?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Southwark sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Southwark?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Southwark fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Southwark?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Southwark?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Southwark?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Southwark request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you conduct initial security reviews?",
+        answer: "We carry out detailed threat evaluations and site surveys to design a bespoke protection plan for your property."
       }
     ]
   },
@@ -2817,44 +2081,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Ealing?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Ealing businesses."
+        question: "Can Saints Services handle retail loss prevention in Ealing?",
+        answer: "Yes, we deploy both uniformed officers and plain-clothes retail security specialists to reduce shrinkage in Ealing stores."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Ealing?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Ealing, with emergency coverage often mobilised within minutes."
+        question: "Is your keyholding service available 24/7?",
+        answer: "Our secure keyholding and rapid response teams are on standby 365 days a year to protect your Ealing premises."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Ealing?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What training do your Ealing officers receive?",
+        answer: "Beyond their SIA qualifications, our guards receive ongoing training in conflict management, first aid, and customer service."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Ealing?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Ealing sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Ealing?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Ealing fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Ealing?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Ealing?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Ealing?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Ealing request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you assess site vulnerabilities?",
+        answer: "We conduct detailed risk assessments and site surveys to identify potential security gaps prior to deployment."
       }
     ]
   },
@@ -2904,44 +2144,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Wandsworth?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Wandsworth businesses."
+        question: "Do you provide construction site security across Wandsworth?",
+        answer: "Yes, our CSCS-qualified guards and rapid-deployment CCTV towers are ideal for securing building sites in Wandsworth."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Wandsworth?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Wandsworth, with emergency coverage often mobilised within minutes."
+        question: "What is your approach to corporate security?",
+        answer: "We provide smart, professional concierge and front-of-house security staff who understand the corporate environment in Wandsworth."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Wandsworth?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Can you tailor a security package to our budget?",
+        answer: "Yes, we work closely with Wandsworth businesses to create scalable security plans that maximize protection without unnecessary costs."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Wandsworth?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Wandsworth sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Wandsworth?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Wandsworth fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Wandsworth?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Wandsworth?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Wandsworth?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Wandsworth request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you onboard a new client?",
+        answer: "We start with a comprehensive site survey and risk assessment to ensure all operational requirements are met from day one."
       }
     ]
   },
@@ -2991,44 +2207,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security guard services do you provide for businesses across Bromley?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Bromley businesses."
+        question: "What makes your Bromley security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in Bromley."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Bromley?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Bromley, with emergency coverage often mobilised within minutes."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in Bromley."
       },
       {
-        question: "What technology do you use to support and monitor your security guard operations in Bromley?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across Bromley campuses."
       },
       {
-        question: "Do you provide mobile patrol security guards, alarm response, and key holding services throughout Bromley?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Bromley sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Bromley?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security guards in Bromley fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security guard coverage for premises located in Bromley?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security guard services be tailored to the specific needs of businesses in Bromley?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent security guard service quality across multiple sites in Bromley?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Bromley request a security guard quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -3078,44 +2270,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security guard services do you provide for businesses across Croydon?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Croydon businesses."
+        question: "What specific security solutions are available in Croydon?",
+        answer: "We deliver a broad range of services including manned guarding, mobile patrols, and CCTV monitoring to protect commercial and residential properties throughout Croydon."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Croydon?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Croydon, with emergency coverage often mobilised within minutes."
+        question: "Are your guards SIA licensed?",
+        answer: "Yes, every member of our security team operating in Croydon holds a valid SIA licence and undergoes strict background vetting."
       },
       {
-        question: "What technology do you use to support and monitor your security guard operations in Croydon?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Do you offer out-of-hours alarm response?",
+        answer: "Absolutely. Our mobile response units can attend alarm activations quickly across Croydon 24/7."
       },
       {
-        question: "Do you provide mobile patrol security guards, alarm response, and key holding services throughout Croydon?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Croydon sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Croydon?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security guards in Croydon fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security guard coverage for premises located in Croydon?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security guard services be tailored to the specific needs of businesses in Croydon?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent security guard service quality across multiple sites in Croydon?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Croydon request a security guard quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Can you evaluate our premises before starting?",
+        answer: "Yes, we provide comprehensive site surveys and risk assessments to pinpoint vulnerabilities and tailor our services accordingly."
       }
     ]
   },
@@ -3165,44 +2333,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Lambeth?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Lambeth businesses."
+        question: "How quickly can you deploy a security team in Lambeth?",
+        answer: "Depending on the requirements, our local Lambeth teams can often be deployed within a few hours for emergency cover."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Lambeth?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Lambeth, with emergency coverage often mobilised within minutes."
+        question: "Do you cover event security in Lambeth?",
+        answer: "Yes, we manage crowd control, access management, and VIP protection for events of all sizes across Lambeth."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Lambeth?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What reporting tools do your guards use?",
+        answer: "Our officers use digital guard tour systems and real-time reporting to ensure full transparency for our Lambeth clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Lambeth?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all Lambeth sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Lambeth?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in Lambeth fully SIA-licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Lambeth?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Lambeth?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Lambeth?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in Lambeth request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you conduct initial security reviews?",
+        answer: "We carry out detailed threat evaluations and site surveys to design a bespoke protection plan for your property."
       }
     ]
   },
@@ -3251,44 +2395,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across the East Midlands?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for East Midlands businesses."
+        question: "Can Saints Services handle retail loss prevention in the East Midlands?",
+        answer: "Yes, we deploy both uniformed officers and plain-clothes retail security specialists to reduce shrinkage in East Midlands stores."
       },
       {
-        question: "How quickly can you deploy security guards to sites within the East Midlands?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across the East Midlands, with emergency coverage often mobilised within minutes."
+        question: "Is your keyholding service available 24/7?",
+        answer: "Our secure keyholding and rapid response teams are on standby 365 days a year to protect your East Midlands premises."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in the East Midlands?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "What training do your East Midlands officers receive?",
+        answer: "Beyond their SIA qualifications, our guards receive ongoing training in conflict management, first aid, and customer service."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout the East Midlands?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all East Midlands sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in the East Midlands?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in the East Midlands fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in the East Midlands?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in the East Midlands?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in the East Midlands?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in the East Midlands request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you assess site vulnerabilities?",
+        answer: "We conduct detailed risk assessments and site surveys to identify potential security gaps prior to deployment."
       }
     ]
   },
@@ -3334,44 +2454,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across the West Midlands?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for West Midlands businesses."
+        question: "Do you provide construction site security across the West Midlands?",
+        answer: "Yes, our CSCS-qualified guards and rapid-deployment CCTV towers are ideal for securing building sites in the West Midlands."
       },
       {
-        question: "How quickly can you deploy security guards to sites within the West Midlands?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across the West Midlands, with emergency coverage often mobilised within minutes."
+        question: "What is your approach to corporate security?",
+        answer: "We provide smart, professional concierge and front-of-house security staff who understand the corporate environment in the West Midlands."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in the West Midlands?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Can you tailor a security package to our budget?",
+        answer: "Yes, we work closely with West Midlands businesses to create scalable security plans that maximize protection without unnecessary costs."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout the West Midlands?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all West Midlands sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in the West Midlands?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in the West Midlands fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in the West Midlands?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in the West Midlands?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in the West Midlands?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in the West Midlands request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "How do you onboard a new client?",
+        answer: "We start with a comprehensive site survey and risk assessment to ensure all operational requirements are met from day one."
       }
     ]
   },
@@ -3421,44 +2517,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across the South East?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for South East businesses."
+        question: "What makes your South East security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in the South East."
       },
       {
-        question: "How quickly can you deploy security guards to sites within the South East?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across the South East, with emergency coverage often mobilised within minutes."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in the South East."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in the South East?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across South East campuses."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout the South East?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all South East sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in the South East?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in the South East fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in the South East?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in the South East?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in the South East?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in the South East request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -3508,44 +2580,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across the South West?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for South West businesses."
+        question: "Can you cover multiple sites across the South West?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout the South West."
       },
       {
-        question: "How quickly can you deploy security guards to sites within the South West?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across the South West, with emergency coverage often mobilised within minutes."
+        question: "What types of businesses do you protect in the South West?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in the South West?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our South West clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout the South West?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all South West sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in the South West?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in the South West fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in the South West?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in the South West?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in the South West?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in the South West request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   },
@@ -3595,44 +2643,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across London?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for London businesses."
+        question: "Can you cover multiple sites across London?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout London."
       },
       {
-        question: "How quickly can you deploy security guards to sites within London?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across London, with emergency coverage often mobilised within minutes."
+        question: "What types of businesses do you protect in London?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in London?",
-        answer: "We utilise real-time guard tour tracking, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrols."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our London clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout London?",
-        answer: "Yes, our mobile units conduct randomized site checks, fast alarm responses, and professional keyholding interventions across all London sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in London?",
-        answer: "Yes, our security consultants provide detailed site surveys and threat evaluations to identify potential weaknesses before incidents occur."
-      },
-      {
-        question: "Are your security officers in London fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel are 100% SIA licensed, undergo rigorous background checks including 5-year employment verification, and complete advanced training modules."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in London?",
-        answer: "Yes, our operations run continuously around the clock, 365 days a year, ensuring uninterrupted protection for your assets and personnel."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in London?",
-        answer: "Yes, every security package is completely bespoke, designed after a thorough risk assessment of your specific site layout and operational vulnerabilities."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in London?",
-        answer: "Through regular site audits, dedicated account managers, supervisor spot-checks, and continuous performance analytics."
-      },
-      {
-        question: "How can businesses in London request a quotation or arrange a site consultation?",
-        answer: "You can reach out via our quote request form on the website or call our control room directly to speak with an expert security consultant."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   },
@@ -3682,44 +2706,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Scotland?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Scottish businesses."
+        question: "What makes your Scotland security services different?",
+        answer: "We pride ourselves on our 98% client retention rate, rigorous staff vetting, and highly responsive local management team in Scotland."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Scotland?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across Scotland, with emergency coverage often mobilised within short notice."
+        question: "Do you monitor CCTV remotely?",
+        answer: "Yes, we offer 24/7 remote CCTV monitoring alongside our physical manned guarding services in Scotland."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Scotland?",
-        answer: "We utilize real-time guard tracking software, body-worn cameras, two-way radios, mobile reporting devices, and GPS-verified patrol systems to maintain full operational accountability."
+        question: "Are your services suitable for schools and universities?",
+        answer: "Yes, we provide education security focused on access control, student welfare, and safeguarding across Scotland campuses."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Scotland?",
-        answer: "Yes, our mobile units conduct randomized site checks, rapid alarm responses, and professional keyholding interventions across all Scottish sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Scotland?",
-        answer: "Yes, our security consultants conduct thorough site audits and risk evaluations to identify operational vulnerabilities and recommend bespoke protection strategies."
-      },
-      {
-        question: "Are your security officers in Scotland fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel deployed across Scotland are 100% SIA licensed, fully background checked with 5-year employment verification, and trained in conflict management and emergency response."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Scotland?",
-        answer: "Yes, our control room and guard deployments operate continuously around the clock, 365 days a year, providing total coverage."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Scotland?",
-        answer: "Yes, every security contract is customized following a detailed risk assessment of your location, asset requirements, and operational risk profile."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Scotland?",
-        answer: "We maintain high standards through regular supervisor spot-checks, clear SLA reporting, real-time duty tracking software, and dedicated account managers."
-      },
-      {
-        question: "How can businesses in Scotland request a quotation or arrange a site consultation?",
-        answer: "You can complete our online quote form or call our central dispatch team directly to arrange a full risk assessment with a security specialist."
+        question: "Do you perform security evaluations?",
+        answer: "We carry out extensive risk assessments and site surveys to ensure your bespoke security plan covers all bases."
       }
     ]
   },
@@ -3769,44 +2769,20 @@ export const locationsData: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: "What security services do you provide for businesses across Wales?",
-        answer: "We provide comprehensive security solutions including manned guarding, door supervision, mobile patrols, keyholding, event security, and electronic surveillance tailored for Welsh businesses."
+        question: "Can you cover multiple sites across Wales?",
+        answer: "Yes, we have the infrastructure to manage security for multi-site operations seamlessly throughout Wales."
       },
       {
-        question: "How quickly can you deploy security guards to sites within Wales?",
-        answer: "Our local mobile response units and central dispatch enable rapid deployment across South and North Wales, with emergency coverage often mobilised on short notice."
+        question: "What types of businesses do you protect in Wales?",
+        answer: "We secure everything from corporate offices and retail parks to logistics hubs and large-scale public events across the region."
       },
       {
-        question: "What technology do you use to support and monitor your security operations in Wales?",
-        answer: "We utilize real-time guard tracking software, Body Worn Video (BWV) cameras, two-way radios, mobile reporting devices, and GPS-verified patrol monitoring."
+        question: "How do you maintain quality control?",
+        answer: "We ensure high standards through regular supervisor inspections, transparent reporting, and dedicated account managers for our Wales clients."
       },
       {
-        question: "Do you provide mobile patrols, alarm response, and key holding services throughout Wales?",
-        answer: "Yes, our mobile units conduct randomized site checks, rapid alarm responses, and professional keyholding interventions across all Welsh sectors."
-      },
-      {
-        question: "Do you offer professional risk assessments or security audits for organisations in Wales?",
-        answer: "Yes, our security consultants conduct thorough site audits and risk evaluations to identify operational vulnerabilities and recommend bespoke protection strategies."
-      },
-      {
-        question: "Are your security officers in Wales fully SIA licensed, vetted, and trained to industry standards?",
-        answer: "Yes, all security personnel deployed across Wales are 100% SIA licensed, fully background checked with 5-year employment verification, and trained to SIA standards."
-      },
-      {
-        question: "Do you offer 24/7 security coverage for premises located in Wales?",
-        answer: "Yes, our control room and guard deployments operate continuously around the clock, 365 days a year, providing total coverage."
-      },
-      {
-        question: "Can your security services be tailored to the specific needs of businesses in Wales?",
-        answer: "Yes, every security contract is customized following a detailed risk assessment of your location, asset requirements, and operational risk profile."
-      },
-      {
-        question: "How do you ensure consistent service quality across multiple sites in Wales?",
-        answer: "We maintain high standards through regular supervisor spot-checks, clear SLA reporting, real-time duty tracking software, and dedicated account managers."
-      },
-      {
-        question: "How can businesses in Wales request a quotation or arrange a site consultation?",
-        answer: "You can complete our online quote form or call our central dispatch team directly to arrange a full risk assessment with a security specialist."
+        question: "Do you evaluate premises before deploying guards?",
+        answer: "We always conduct thorough risk assessments and site surveys to understand your exact security requirements."
       }
     ]
   }

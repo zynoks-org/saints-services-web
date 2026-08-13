@@ -140,7 +140,7 @@ export function TechFeatures() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-amber-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
                   <span className="relative z-10 transition-colors duration-300 group-hover:text-[#040914]">
-                    Request Site Audit
+                    Request Quote
                   </span>
                   <ArrowRight className="relative z-10 w-4 h-4 text-[#f59e0b] transition-all duration-300 group-hover:text-[#040914] group-hover:translate-x-1" />
                 </Link>
@@ -149,7 +149,7 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="https://i.ibb.co/0yY2tvkg/Technology-Tracking-Operations.png" 
+                  src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Technology-Tracking-Operations.png" 
                   alt="Technology & Tracking Operations"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"
@@ -207,7 +207,7 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="https://i.ibb.co/jvv5LgWZ/Professional-Standards-Vetting.png" 
+                  src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Professional-Standards-Vetting.png" 
                   alt="Professional Standards & Vetting"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"
@@ -265,7 +265,7 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="https://i.ibb.co/GvpHfzGn/Multi-Sector-Deployment-Expertise.png" 
+                  src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Multi-Sector-Deployment-Expertise.jpg" 
                   alt="Multi-Sector Deployment Expertise"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"
@@ -323,7 +323,7 @@ export function TechFeatures() {
               {/* RIGHT SIDE IMAGE BOX */}
               <div className="lg:col-span-5 relative h-64 sm:h-80 rounded-xl overflow-hidden border border-slate-300 dark:border-white/15 shadow-xl">
                 <Image 
-                  src="https://i.ibb.co/gbP01BnG/Guaranteed-Reliability-Rapid-Response.png" 
+                  src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Guaranteed-Reliability-Rapid-Response.png" 
                   alt="Guaranteed Reliability & Rapid Response"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"
