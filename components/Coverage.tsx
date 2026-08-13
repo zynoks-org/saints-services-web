@@ -52,119 +52,111 @@ export function Coverage() {
     return () => clearTimeout(timer);
   }, []);
 
+  // UPDATED: Now matches your exact locationsData slugs to prevent 404s
   const regions: RegionData[] = [
     {
       id: "london",
-      name: "Greater London & Home Counties",
+      name: "Greater London Area",
       regionTag: "Headquarters & Primary Hub",
       coordinates: [51.5074, -0.1278],
       dispatchSla: "< 30 Min Deployment",
       activeGuards: "200+ SIA Officers",
       keyHubs: [
-        { name: "London", slug: "london" },
-        { name: "Canary Wharf", slug: "london" },
-        { name: "Croydon", slug: "london" },
-        { name: "Heathrow Corridor", slug: "london" },
-        { name: "Watford", slug: "london" },
-        { name: "Greenwich", slug: "london" }
+        { name: "Central London", slug: "london" },
+        { name: "Croydon", slug: "croydon" },
+        { name: "Southwark", slug: "southwark" },
+        { name: "Newham", slug: "newham" },
+        { name: "Lambeth", slug: "lambeth" },
+        { name: "Wandsworth", slug: "wandsworth" }
       ],
-      description: "Our main operational command center coordinates rapid static guarding, front-of-house concierge, and emergency response across all 32 London boroughs and Home Counties."
+      description: "Our main operational command center coordinates rapid static guarding, front-of-house concierge, and emergency response across all London boroughs."
     },
     {
-      id: "midlands",
-      name: "Birmingham & West Midlands",
-      regionTag: "Midlands Division",
-      coordinates: [52.4862, -1.8904],
-      dispatchSla: "< 45 Min Deployment",
-      activeGuards: "140+ SIA Officers",
-      keyHubs: [
-        { name: "Birmingham", slug: "birmingham" },
-        { name: "Coventry", slug: "birmingham" },
-        { name: "Wolverhampton", slug: "birmingham" },
-        { name: "Leicester", slug: "birmingham" },
-        { name: "Nottingham", slug: "birmingham" }
-      ],
-      description: "Mobile patrol units and manned guards protecting commercial hubs, retail centers, and manufacturing parks across the West and East Midlands."
-    },
-    {
-      id: "northwest",
-      name: "Manchester & Merseyside",
-      regionTag: "North West Command",
-      coordinates: [53.4808, -2.2426],
+      id: "southeast",
+      name: "South East England",
+      regionTag: "Southern Division",
+      coordinates: [51.2787, -0.5377],
       dispatchSla: "< 45 Min Deployment",
       activeGuards: "155+ SIA Officers",
       keyHubs: [
-        { name: "Manchester", slug: "manchester" },
-        { name: "Salford MediaCity", slug: "manchester" },
-        { name: "Liverpool", slug: "liverpool" },
-        { name: "Chester", slug: "manchester" },
-        { name: "Preston", slug: "manchester" }
+        { name: "South East Overview", slug: "south-east" },
+        { name: "Reading", slug: "reading" },
+        { name: "Portsmouth", slug: "portsmouth" },
+        { name: "Southampton", slug: "southampton" },
+        { name: "Oxford", slug: "oxford" },
+        { name: "Brighton", slug: "brighton" }
       ],
-      description: "Delivering 24/7 key holding, event stewarding, and construction perimeter defense across Greater Manchester and Merseyside."
-    },
-    {
-      id: "yorkshire",
-      name: "Leeds & Yorkshire Region",
-      regionTag: "Northern Sector",
-      coordinates: [53.8008, -1.5491],
-      dispatchSla: "< 60 Min Deployment",
-      activeGuards: "110+ SIA Officers",
-      keyHubs: [
-        { name: "Leeds", slug: "leeds" },
-        { name: "Sheffield", slug: "sheffield" },
-        { name: "Bradford", slug: "leeds" },
-        { name: "York", slug: "leeds" },
-        { name: "Hull", slug: "leeds" }
-      ],
-      description: "Tailored door supervision for hospitality venues and corporate office security for enterprise accounts throughout Yorkshire."
-    },
-    {
-      id: "scotland",
-      name: "Central Belt Scotland",
-      regionTag: "Scottish Operations",
-      coordinates: [55.8642, -4.2518],
-      dispatchSla: "< 60 Min Deployment",
-      activeGuards: "95+ SIA Officers",
-      keyHubs: [
-        { name: "Glasgow", slug: "glasgow" },
-        { name: "Edinburgh", slug: "edinburgh" },
-        { name: "Aberdeen", slug: "glasgow" },
-        { name: "Dundee", slug: "glasgow" },
-        { name: "Stirling", slug: "glasgow" }
-      ],
-      description: "Static protection, event safety, and loss prevention teams deployed across Scotland's commercial corridor."
+      description: "Delivering 24/7 key holding, event stewarding, and commercial defense across Kent, Surrey, Sussex, Hampshire, and Berkshire."
     },
     {
       id: "southwest",
-      name: "Bristol & South Wales",
-      regionTag: "South West & Wales Division",
-      coordinates: [51.4815, -3.1790],
+      name: "South West England",
+      regionTag: "South West Command",
+      coordinates: [50.7202, -1.8794],
       dispatchSla: "< 60 Min Deployment",
-      activeGuards: "85+ SIA Officers",
+      activeGuards: "110+ SIA Officers",
       keyHubs: [
-        { name: "Bristol", slug: "bristol" },
-        { name: "Cardiff", slug: "cardiff" },
-        { name: "Swansea", slug: "cardiff" },
-        { name: "Bath", slug: "bristol" },
-        { name: "Gloucester", slug: "bristol" }
+        { name: "South West Overview", slug: "south-west" },
+        { name: "Bournemouth", slug: "bournemouth" },
+        { name: "Poole", slug: "poole" },
+        { name: "Dorset Region", slug: "dorset" }
       ],
       description: "Specialized venue security stewards and gatehouse personnel serving regional infrastructure and leisure hubs."
     },
     {
-      id: "ni",
-      name: "Belfast & Northern Ireland",
-      regionTag: "Northern Ireland Command",
-      coordinates: [54.5973, -5.9301],
-      dispatchSla: "< 90 Min Deployment",
-      activeGuards: "65+ SIA Officers",
+      id: "west-midlands",
+      name: "Birmingham & West Midlands",
+      regionTag: "West Midlands Sector",
+      coordinates: [52.4862, -1.8904],
+      dispatchSla: "< 45 Min Deployment",
+      activeGuards: "140+ SIA Officers",
       keyHubs: [
-        { name: "Belfast", slug: "belfast" },
-        { name: "Derry / Londonderry", slug: "belfast" },
-        { name: "Lisburn", slug: "belfast" },
-        { name: "Newry", slug: "belfast" },
-        { name: "Antrim", slug: "belfast" }
+        { name: "West Midlands", slug: "west-midlands" },
+        { name: "Birmingham", slug: "birmingham" },
+        { name: "Coventry", slug: "coventry" },
+        { name: "Wolverhampton", slug: "wolverhampton" },
+        { name: "Walsall", slug: "walsall" }
       ],
-      description: "Vetted SIA-licensed guarding for commercial properties, logistics centers, and retail networks operating in Northern Ireland."
+      description: "Mobile patrol units and manned guards protecting commercial hubs, retail centers, and manufacturing parks across the West Midlands."
+    },
+    {
+      id: "east-midlands",
+      name: "Nottingham & East Midlands",
+      regionTag: "East Midlands Sector",
+      coordinates: [52.9548, -1.1581],
+      dispatchSla: "< 45 Min Deployment",
+      activeGuards: "125+ SIA Officers",
+      keyHubs: [
+        { name: "East Midlands", slug: "east-midlands" },
+        { name: "Nottingham", slug: "nottingham" },
+        { name: "Leicester", slug: "leicester" },
+        { name: "Derby", slug: "derby" }
+      ],
+      description: "Tailored door supervision for hospitality venues and corporate office security for enterprise accounts throughout the East Midlands."
+    },
+    {
+      id: "scotland",
+      name: "Scotland",
+      regionTag: "Scottish Operations",
+      coordinates: [55.9533, -3.1883],
+      dispatchSla: "< 60 Min Deployment",
+      activeGuards: "95+ SIA Officers",
+      keyHubs: [
+        { name: "Scotland National Hub", slug: "scotland" }
+      ],
+      description: "Static protection, event safety, and loss prevention teams deployed across Scotland's commercial corridor."
+    },
+    {
+      id: "wales",
+      name: "Wales",
+      regionTag: "Welsh Division",
+      coordinates: [51.4815, -3.1790],
+      dispatchSla: "< 60 Min Deployment",
+      activeGuards: "85+ SIA Officers",
+      keyHubs: [
+        { name: "Wales National Hub", slug: "wales" }
+      ],
+      description: "Specialized venue security stewards and gatehouse personnel serving regional infrastructure and leisure hubs across Wales."
     }
   ];
 
@@ -314,7 +306,7 @@ export function Coverage() {
 
               <div className="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 z-20 relative bg-slate-50 dark:bg-[#070d1e] transition-colors font-mono">
                 <span>Real-Time Geographic Dispatch</span>
-                <span className="text-[#f59e0b] font-bold">7 Active Hubs</span>
+                <span className="text-[#f59e0b] font-bold">{regions.length} Active Hubs</span>
               </div>
 
             </div>

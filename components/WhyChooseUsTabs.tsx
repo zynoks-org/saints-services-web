@@ -27,7 +27,7 @@ export function WhyChooseUsTabs() {
         "Saints Services Ltd integrates modern workforce management software into every active deployment. Our live GPS checkpoint verification enables facility managers to track officer rotas, verify patrol completion, and review guard activity logs instantly.",
         "Equipped with HD body-worn cameras, two-way encrypted radios, and digital incident reporting tools, our field officers maintain full transparency. Every site interaction is logged automatically, offering undeniable proof of service."
       ],
-      imageSrc: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg'
+      imageSrc: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Technology-Tracking-Operations.png'
     },
     professionalism: {
       id: 'professionalism',
@@ -60,7 +60,7 @@ export function WhyChooseUsTabs() {
         "Security threats do not adhere to business hours. Our London control room operates 24/7/365 to oversee field operations, manage shift handovers, and coordinate rapid mobile response officers whenever emergency backup is required.",
         "Backed by a 98% client retention rate, we take pride in absolute punctuality and dependable service execution. When you contract Saints Services Ltd, your site remains protected without interruption."
       ],
-      imageSrc: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg'
+      imageSrc: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Guaranteed-Reliability-Rapid-Response.png'
     }
   };
 
