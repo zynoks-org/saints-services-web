@@ -29,7 +29,7 @@ export function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-8 sm:max-w-lg bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white p-6 sm:p-7 rounded-md shadow-2xl z-50 animate-in fade-in slide-in-from-bottom-8 duration-300 relative overflow-hidden font-sans transition-colors duration-300">
+    <div className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-8 sm:max-w-lg bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white p-6 sm:p-7 rounded-md shadow-2xl z-50 animate-in fade-in slide-in-from-bottom-8 duration-300 overflow-hidden font-sans transition-colors duration-300">
       
       {/* Tactical Corner Brackets */}
       <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-[#f59e0b] pointer-events-none" />

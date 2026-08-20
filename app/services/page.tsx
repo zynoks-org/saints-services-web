@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata = {
-  title: 'Our Services | Saints Services Ltd',
+  title: 'Our Services',
   description: 'Explore our full range of SIA-licensed security and facility management solutions across the UK.',
   keywords: 'UK Security Services, SIA Manned Guarding, Keyholding, Door Supervision, Event Security, Saints Services',
   openGraph: {

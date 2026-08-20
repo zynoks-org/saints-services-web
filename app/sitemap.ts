@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { locationsData } from '@/lib/locationsData';
+import { getPublishedPosts } from '@/lib/posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.saintsservices.co.uk';
@@ -36,21 +37,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  // 3. Blog Articles
-  const blogSlugs = [
-    'close-protection-threat-dynamics-uk',
-    'construction-site-security-loss-prevention',
-    'keyholding-alarm-response-sla-guide',
-    'london-crime-rates-by-borough-2026',
-    'maritime-port-security-uk-guide',
-    'martyns-law-event-safety-compliance',
-    'retail-loss-prevention-uk-guide',
-    'sia-security-guard-responsibilities',
-    'uk-stadium-security-disorder-guide',
-  ];
-  const blogRoutes = blogSlugs.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
+  // 3. Blog Articles (DB-backed - every published post, old and new alike)
+  const posts = await getPublishedPosts();
+  const blogRoutes = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updated_at),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));

@@ -9,6 +9,7 @@ export function JoinUs() {
   const [submitted, setSubmitted] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [loading, setLoading] = useState(false);
+  const [formRenderedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,7 +22,9 @@ export function JoinUs() {
       email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
       company: 'Careers Application',
       service: selectedService || 'Security Officer / General Application',
-      details: (form.elements.namedItem('siaDetails') as HTMLTextAreaElement)?.value || 'N/A'
+      details: (form.elements.namedItem('siaDetails') as HTMLTextAreaElement)?.value || 'N/A',
+      website: (form.elements.namedItem('website') as HTMLInputElement)?.value || '',
+      formRenderedAt,
     };
 
     try {
@@ -139,6 +142,14 @@ export function JoinUs() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute -left-[9999px] w-px h-px opacity-0 overflow-hidden"
+                  />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
                       <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Full Name *</label>

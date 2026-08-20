@@ -19,7 +19,15 @@ const quoteSchema = z.object({
   company: z.string().max(100).optional().nullable(),
   service: z.string().min(1, 'Service selection is required'),
   details: z.string().max(3000, 'Details exceed maximum allowed character limit').optional().nullable(),
+  // Honeypot: real users never see or fill this field (hidden via CSS). Bots that
+  // auto-fill every input in a form will populate it, which flags them below.
+  website: z.string().max(200).optional().nullable(),
+  // Timestamp (ms) the form was rendered client-side, used to reject submissions
+  // that complete faster than a human could plausibly fill the form.
+  formRenderedAt: z.number().optional().nullable(),
 });
+
+const MIN_HUMAN_FILL_TIME_MS = 2000;
 
 // Escape HTML characters to prevent XSS / formatting corruption in email clients
 function escapeHtml(str: string | null | undefined): string {
@@ -74,7 +82,18 @@ export async function POST(request: Request) {
       );
     }
 
-    const { name, phone, email, company, service, details } = parseResult.data;
+    const { name, phone, email, company, service, details, website, formRenderedAt } = parseResult.data;
+
+    // Bot signals: a filled honeypot or an implausibly fast submission both
+    // indicate a script, not a person. Return a fake success instead of an
+    // error so scripts don't learn what tripped the check and adapt.
+    const honeypotTripped = !!website && website.trim().length > 0;
+    const submittedTooFast =
+      typeof formRenderedAt === 'number' && Date.now() - formRenderedAt < MIN_HUMAN_FILL_TIME_MS;
+
+    if (honeypotTripped || submittedTooFast) {
+      return NextResponse.json({ success: true }, { headers: apiHeaders });
+    }
 
     // Sanitize values for safe HTML rendering
     const safeName = escapeHtml(name);
@@ -226,7 +245,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: 'Failed to send inquiry.' }, { status: 400, headers: apiHeaders });
     }
 
-    return NextResponse.json({ success: true, data }, { headers: apiHeaders });
+    return NextResponse.json({ success: true, data: { id: data?.id } }, { headers: apiHeaders });
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json(

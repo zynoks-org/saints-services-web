@@ -1,131 +1,54 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Metadata } from 'next';
-import { 
-  Shield, 
-  ArrowRight, 
-  Calendar, 
-  Clock, 
-  Sparkles, 
-  Radio, 
-  Cpu, 
-  Zap 
+import {
+  Shield,
+  ArrowRight,
+  Calendar,
+  Clock,
+  Sparkles,
+  Radio,
+  Cpu,
+  Zap
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { getPublishedPosts, computeReadTime, htmlToPlainText } from '@/lib/posts';
 
 export const metadata: Metadata = {
-  title: 'Security Intelligence Desk & Operational Archive // Saints Services Ltd',
+  title: 'Security Intelligence Desk & Operational Archive',
   description: 'Enterprise-grade UK security intelligence, SIA regulatory compliance frameworks, real-time threat telemetry, and tactical manned guarding doctrine.',
 };
 
-// Full Article Repository containing all 8 posts matching the slug routing dictionary with exact ImgBB links
-const articlesData: Record<string, {
+interface ArticleCard {
+  slug: string;
   title: string;
   category: string;
   codeTag: string;
   description: string;
   date: string;
+  dateValue: number;
   readTime: string;
   image: string;
-  clearanceLevel: string;
-  threatIndex: string;
-}> = {
-  'uk-stadium-security-disorder-guide': {
-    title: 'UK Manned Guarding & Stadium Disorder: 2026 Operational Insights',
-    category: 'EVENT SECURITY',
-    codeTag: 'OPS // EVENT_SECURITY',
-    description: 'In-depth analysis on UK stadium security, Home Office disorder statistics, SIA compliance, and manned guarding strategies for high-risk venues.',
-    date: '12 August 2026',
-    readTime: '8 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/uk-stadium-security-disorder-guide.jpg',
-    clearanceLevel: 'LEVEL_04 // RESTRICTED',
-    threatIndex: 'HIGH (8.4/10)',
-  },
-  'london-crime-rates-by-borough-2026': {
-    title: 'Most Dangerous Areas in London: Crime Rates by Borough (2026 Update)',
-    category: 'MANNED GUARDING',
-    codeTag: 'SEC // LONDON_RISK',
-    description: 'An analysis of Met Police crime statistics across London boroughs and how commercial site managers can mitigate localized threats.',
-    date: '01 August 2026',
-    readTime: '9 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/london-crime-rates-by-borough-2026.png',
-    clearanceLevel: 'LEVEL_03 // CONFIDENTIAL',
-    threatIndex: 'CRITICAL (9.1/10)',
-  },
-  'retail-loss-prevention-uk-guide': {
-    title: 'Loss Prevention: Retail and Asset Protection UK Guide',
-    category: 'RETAIL SECURITY',
-    codeTag: 'CTRL // LOSS_PREVENTION',
-    description: 'How SIA-licensed retail security officers and deterrent protocols protect UK stores against the rising £4.2B retail theft crisis.',
-    date: '20 July 2026',
-    readTime: '7 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/retail-loss-prevention-uk-guide.jpg',
-    clearanceLevel: 'LEVEL_02 // INTERNAL',
-    threatIndex: 'ELEVATED (7.2/10)',
-  },
-  'sia-security-guard-responsibilities': {
-    title: 'Security Guard Roles and Responsibilities: A Guide to Modern Guarding',
-    category: 'COMPLIANCE',
-    codeTag: 'SEC // BS7858_VETTED',
-    description: 'Understanding BS7858 vetting, incident logging protocols, and conflict de-escalation for commercial site protection.',
-    date: '10 July 2026',
-    readTime: '6 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Saints-Services-Recruitment-Team.png',
-    clearanceLevel: 'LEVEL_01 // PUBLIC',
-    threatIndex: 'MODERATE (5.5/10)',
-  },
-  'close-protection-threat-dynamics-uk': {
-    title: 'Close Protection & Executive Security Threat Dynamics in the UK',
-    category: 'VIP PROTECTION',
-    codeTag: 'OPS // EXECUTIVE_SEC',
-    description: 'Strategic deployment of Close Protection Officers (CPOs) for corporate executives, high-net-worth individuals, and high-profile assets.',
-    date: '05 July 2026',
-    readTime: '7 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/close-protection-threat-dynamics-uk.jpg',
-    clearanceLevel: 'LEVEL_05 // EYES_ONLY',
-    threatIndex: 'SEVERE (9.6/10)',
-  },
-  'construction-site-security-loss-prevention': {
-    title: 'Construction Site Security: Preventing Theft & Plant Vandalism',
-    category: 'SITE SECURITY',
-    codeTag: 'SEC // CONSTRUCTION',
-    description: 'Protecting active construction zones, expensive machinery, and building materials from trespass, arson, and tool theft.',
-    date: '28 June 2026',
-    readTime: '6 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/construction-site-security-loss-prevention.jpg',
-    clearanceLevel: 'LEVEL_02 // INTERNAL',
-    threatIndex: 'ELEVATED (6.8/10)',
-  },
-  'keyholding-alarm-response-sla-guide': {
-    title: 'Keyholding & Alarm Response: Understanding Emergency SLAs',
-    category: 'MOBILE PATROLS',
-    codeTag: 'CTRL // KEYHOLDING',
-    description: 'Why commercial properties rely on professional keyholding and rapid alarm response to satisfy UK business insurance mandates.',
-    date: '15 June 2026',
-    readTime: '5 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg',
-    clearanceLevel: 'LEVEL_01 // PUBLIC',
-    threatIndex: 'ROUTINE (4.2/10)',
-  },
-  'maritime-port-security-uk-guide': {
-    title: 'Maritime & Port Security: Securing UK Logistics Hubs',
-    category: 'LOGISTICS',
-    codeTag: 'OPS // MARITIME',
-    description: 'Compliance standards, ISPS code adherence, and physical cargo protection strategies for UK shipping terminals and logistics parks.',
-    date: '02 June 2026',
-    readTime: '8 min read',
-    image: 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/maritime-port-security-uk-guide.jpg',
-    clearanceLevel: 'LEVEL_04 // RESTRICTED',
-    threatIndex: 'HIGH (8.0/10)',
-  }
-};
+}
 
-export default function BlogListingPage() {
-  const articleEntries = Object.entries(articlesData);
-  const featuredSlug = 'uk-stadium-security-disorder-guide';
-  const featuredArticle = articlesData[featuredSlug];
-  const regularArticles = articleEntries.filter(([slug]) => slug !== featuredSlug);
+export default async function BlogListingPage() {
+  const dbPosts = await getPublishedPosts();
+  const allCards: ArticleCard[] = dbPosts.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    category: post.category || 'GENERAL',
+    codeTag: `CMS // ${(post.category || 'GENERAL').toUpperCase().replace(/\s+/g, '_')}`,
+    description: post.excerpt || htmlToPlainText(post.content).slice(0, 180),
+    date: post.published_at
+      ? new Date(post.published_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })
+      : '',
+    dateValue: post.published_at ? new Date(post.published_at).getTime() : Date.parse(post.created_at),
+    readTime: computeReadTime(post.content),
+    image: post.cover_image || 'https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Saints-Services-Recruitment-Team.png',
+  })).sort((a, b) => b.dateValue - a.dateValue);
+
+  const [featuredArticle, ...regularCards] = allCards;
+  const regularArticles = regularCards.map((card) => [card.slug, card] as const);
 
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-[#040914] text-slate-900 dark:text-slate-100 font-sans selection:bg-[#f59e0b] selection:text-slate-950 transition-colors duration-300 flex flex-col relative overflow-x-hidden select-none">
@@ -177,13 +100,10 @@ export default function BlogListingPage() {
                   <Sparkles className="w-4 h-4 animate-spin text-[#f59e0b]" />
                   <span>[ PRIORITY_TARGET // FEATURED BRIEF ]</span>
                 </div>
-                <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-                  THREAT INDEX: <span className="text-amber-700 dark:text-amber-400 font-bold">{featuredArticle.threatIndex}</span>
-                </div>
               </div>
 
-              <Link 
-                href={`/blog/${featuredSlug}`}
+              <Link
+                href={`/blog/${featuredArticle.slug}`}
                 className="group relative grid grid-cols-1 lg:grid-cols-12 bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 hover:border-[#f59e0b] rounded-sm overflow-hidden shadow-2xl transition-all duration-500 cursor-pointer backdrop-blur-xl"
               >
                 <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#f59e0b] z-20 pointer-events-none" />
@@ -192,13 +112,13 @@ export default function BlogListingPage() {
                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 
                 <div className="lg:col-span-7 relative h-80 sm:h-96 lg:h-auto min-h-[360px] bg-slate-900 dark:bg-slate-950 overflow-hidden">
-                  <Image 
-                    src={featuredArticle.image} 
+                  {/* Cover images can come from any admin-provided URL, so next/image's
+                     fixed remote allowlist doesn't fit here - a plain <img> does. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={featuredArticle.image}
                     alt={featuredArticle.title}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                    className="object-cover object-center group-hover:scale-105 group-hover:filter group-hover:contrast-110 dark:group-hover:contrast-125 transition-all duration-700 ease-out opacity-90"
+                    className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 group-hover:filter group-hover:contrast-110 dark:group-hover:contrast-125 transition-all duration-700 ease-out opacity-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent lg:hidden" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/80 hidden lg:block" />
@@ -237,9 +157,6 @@ export default function BlogListingPage() {
                     <span className="uppercase tracking-widest group-hover:translate-x-1 transition-transform flex items-center gap-2">
                       Access Full Telemetry <ArrowRight className="w-4 h-4" />
                     </span>
-                    <span className="text-[10px] text-slate-500 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded border border-slate-200 dark:border-slate-800">
-                      {featuredArticle.clearanceLevel}
-                    </span>
                   </div>
                 </div>
               </Link>
@@ -272,24 +189,17 @@ export default function BlogListingPage() {
 
                 <div>
                   <div className="relative h-52 sm:h-56 bg-slate-900 dark:bg-slate-950 overflow-hidden border-b border-slate-200 dark:border-slate-800">
-                    <Image 
-                      src={article.image} 
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={article.image}
                       alt={article.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-110 group-hover:contrast-105 dark:group-hover:contrast-110 transition-transform duration-700 ease-out opacity-90"
+                      className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 group-hover:contrast-105 dark:group-hover:contrast-110 transition-transform duration-700 ease-out opacity-90"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-                    
+
                     <div className="absolute top-3 left-3 z-10">
                       <span className="text-[10px] font-mono font-bold text-slate-950 bg-[#f59e0b] px-2.5 py-1 rounded-sm uppercase tracking-wider shadow-md">
                         {article.category}
-                      </span>
-                    </div>
-
-                    <div className="absolute top-3 right-3 z-10">
-                      <span className="text-[9px] font-mono font-bold text-amber-700 dark:text-amber-400 bg-white/90 dark:bg-slate-950/90 px-2 py-0.5 rounded border border-amber-500/30 uppercase tracking-widest shadow-sm">
-                        {article.threatIndex}
                       </span>
                     </div>
                   </div>

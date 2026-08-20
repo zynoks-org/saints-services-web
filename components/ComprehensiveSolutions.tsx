@@ -8,6 +8,7 @@ export function ComprehensiveSolutions() {
   const [submitted, setSubmitted] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [loading, setLoading] = useState(false);
+  const [formRenderedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,7 +21,9 @@ export function ComprehensiveSolutions() {
       email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
       company: (form.elements.namedItem('company') as HTMLInputElement)?.value || 'N/A',
       service: selectedService || 'Enterprise Security Solution',
-      details: (form.elements.namedItem('enquiry') as HTMLTextAreaElement)?.value || 'N/A'
+      details: (form.elements.namedItem('enquiry') as HTMLTextAreaElement)?.value || 'N/A',
+      website: (form.elements.namedItem('website') as HTMLInputElement)?.value || '',
+      formRenderedAt,
     };
 
     try {
@@ -120,6 +123,14 @@ export function ComprehensiveSolutions() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5">
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute -left-[9999px] w-px h-px opacity-0 overflow-hidden"
+                  />
                   <div>
                     <label className="block text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">First Name *</label>
                     <input 

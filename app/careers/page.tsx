@@ -25,6 +25,7 @@ import {
 
 export default function CareersPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [formRenderedAt] = useState(() => Date.now());
   const [selectedJob, setSelectedJob] = useState("Security Officer / Manned Guard");
   const [fileName, setFileName] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -86,7 +87,9 @@ export default function CareersPage() {
       email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
       company: `Region: ${(form.elements.namedItem('region') as HTMLInputElement)?.value || 'N/A'}`,
       service: `CAREERS: ${selectedJob}`,
-      details: `SIA License: ${(form.elements.namedItem('siaLicense') as HTMLInputElement)?.value || 'N/A'} | Attachment: ${fileName || 'None'} | Cover Note: ${(form.elements.namedItem('coverNote') as HTMLTextAreaElement)?.value || 'N/A'}`
+      details: `SIA License: ${(form.elements.namedItem('siaLicense') as HTMLInputElement)?.value || 'N/A'} | Attachment: ${fileName || 'None'} | Cover Note: ${(form.elements.namedItem('coverNote') as HTMLTextAreaElement)?.value || 'N/A'}`,
+      website: (form.elements.namedItem('website') as HTMLInputElement)?.value || '',
+      formRenderedAt,
     };
 
     try {
@@ -424,6 +427,14 @@ export default function CareersPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="absolute -left-[9999px] w-px h-px opacity-0 overflow-hidden"
+                    />
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>

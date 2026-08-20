@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { jsonLdScript } from "@/lib/jsonLd";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CookieBanner } from "@/components/CookieBanner";
@@ -99,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(jsonLd) }}
         />
       </head>
       <body

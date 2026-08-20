@@ -30,6 +30,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [selectedService, setSelectedService] = useState('Security Guards');
+  const [formRenderedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,7 +43,9 @@ export default function ContactPage() {
       email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
       phone: (form.elements.namedItem('phone') as HTMLInputElement)?.value || '',
       service: selectedService,
-      details: (form.elements.namedItem('details') as HTMLTextAreaElement)?.value || 'N/A'
+      details: (form.elements.namedItem('details') as HTMLTextAreaElement)?.value || 'N/A',
+      website: (form.elements.namedItem('website') as HTMLInputElement)?.value || '',
+      formRenderedAt,
     };
 
     try {
@@ -280,6 +283,14 @@ export default function ContactPage() {
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-4">
+                        <input
+                          type="text"
+                          name="website"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          aria-hidden="true"
+                          className="absolute -left-[9999px] w-px h-px opacity-0 overflow-hidden"
+                        />
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>

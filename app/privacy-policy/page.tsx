@@ -2,7 +2,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 export const metadata = {
-  title: 'Privacy Policy | Saints Services Ltd',
+  title: 'Privacy Policy',
   description: 'Privacy Policy and UK GDPR data processing compliance for Saints Services Ltd.',
   keywords: 'Privacy Policy, UK GDPR, Data Protection, Saints Services Ltd',
   openGraph: {

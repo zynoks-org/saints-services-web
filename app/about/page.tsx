@@ -24,6 +24,7 @@ export default function AboutPage() {
   const [submitted, setSubmitted] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [loading, setLoading] = useState(false);
+  const [formRenderedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,7 +37,9 @@ export default function AboutPage() {
       email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
       company: (form.elements.namedItem('company') as HTMLInputElement)?.value || 'N/A',
       service: selectedService || 'Corporate Enquiry (About Page)',
-      details: (form.elements.namedItem('enquiry') as HTMLTextAreaElement)?.value || 'N/A'
+      details: (form.elements.namedItem('enquiry') as HTMLTextAreaElement)?.value || 'N/A',
+      website: (form.elements.namedItem('website') as HTMLInputElement)?.value || '',
+      formRenderedAt,
     };
 
     try {
@@ -172,6 +175,14 @@ export default function AboutPage() {
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-3.5">
+                        <input
+                          type="text"
+                          name="website"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          aria-hidden="true"
+                          className="absolute -left-[9999px] w-px h-px opacity-0 overflow-hidden"
+                        />
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <input type="text" name="firstName" required placeholder="First name *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />
                           <input type="tel" name="phone" required placeholder="Phone number *" className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-3.5 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] transition-colors" />

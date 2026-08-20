@@ -2,7 +2,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 export const metadata = {
-  title: 'Terms & Conditions | Saints Services Ltd',
+  title: 'Terms & Conditions',
   description: 'Terms of Service and Operational Conditions for Saints Services Ltd.',
   keywords: 'Terms and Conditions, Terms of Service, Legal, Saints Services Ltd',
   openGraph: {
