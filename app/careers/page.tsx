@@ -27,7 +27,7 @@ export default function CareersPage() {
   const [submitted, setSubmitted] = useState(false);
   const [formRenderedAt] = useState(() => Date.now());
   const [selectedJob, setSelectedJob] = useState("Security Officer / Manned Guard");
-  const [fileName, setFileName] = useState<string | null>(null);
+  const [cvFile, setCvFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
 
   const openPositions = [
@@ -81,22 +81,23 @@ export default function CareersPage() {
     setLoading(true);
 
     const form = e.currentTarget;
-    const formData = {
-      name: (form.elements.namedItem('fullName') as HTMLInputElement)?.value || '',
-      phone: (form.elements.namedItem('phone') as HTMLInputElement)?.value || '',
-      email: (form.elements.namedItem('email') as HTMLInputElement)?.value || '',
-      company: `Region: ${(form.elements.namedItem('region') as HTMLInputElement)?.value || 'N/A'}`,
-      service: `CAREERS: ${selectedJob}`,
-      details: `SIA License: ${(form.elements.namedItem('siaLicense') as HTMLInputElement)?.value || 'N/A'} | Attachment: ${fileName || 'None'} | Cover Note: ${(form.elements.namedItem('coverNote') as HTMLTextAreaElement)?.value || 'N/A'}`,
-      website: (form.elements.namedItem('website') as HTMLInputElement)?.value || '',
-      formRenderedAt,
-    };
+    const requestData = new FormData();
+    requestData.set('name', (form.elements.namedItem('fullName') as HTMLInputElement)?.value || '');
+    requestData.set('phone', (form.elements.namedItem('phone') as HTMLInputElement)?.value || '');
+    requestData.set('email', (form.elements.namedItem('email') as HTMLInputElement)?.value || '');
+    requestData.set('company', `Region: ${(form.elements.namedItem('region') as HTMLInputElement)?.value || 'N/A'}`);
+    requestData.set('service', `CAREERS: ${selectedJob}`);
+    requestData.set('details', `SIA License: ${(form.elements.namedItem('siaLicense') as HTMLInputElement)?.value || 'N/A'} | Attachment: ${cvFile?.name || 'None'} | Cover Note: ${(form.elements.namedItem('coverNote') as HTMLTextAreaElement)?.value || 'N/A'}`);
+    requestData.set('website', (form.elements.namedItem('website') as HTMLInputElement)?.value || '');
+    requestData.set('formRenderedAt', String(formRenderedAt));
+    if (cvFile) {
+      requestData.set('cvFile', cvFile);
+    }
 
     try {
       const response = await fetch('/api/send-quote', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: requestData,
       });
 
       const result = await response.json();
@@ -117,7 +118,7 @@ export default function CareersPage() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFileName(e.target.files[0].name);
+      setCvFile(e.target.files[0]);
     }
   };
 
@@ -479,7 +480,7 @@ export default function CareersPage() {
                       <div className="border border-dashed border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-[#0b1329] rounded-sm p-6 text-center hover:border-[#f59e0b] transition-colors cursor-pointer relative">
                         <Upload className="w-7 h-7 text-[#f59e0b] mx-auto mb-2" />
                         <span className="text-xs font-bold text-slate-900 dark:text-white block mb-1">
-                          {fileName ? `Attached: ${fileName}` : "Click to select CV or drag file here"}
+                          {cvFile ? `Attached: ${cvFile.name}` : "Click to select CV or drag file here"}
                         </span>
                         <span className="text-[10px] text-slate-500 font-mono">PDF, DOC, DOCX (Max 10MB)</span>
                         <input 

@@ -3,6 +3,7 @@ import { Resend } from 'resend';
 import { z } from 'zod';
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
+import { put } from '@vercel/blob';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -28,6 +29,12 @@ const quoteSchema = z.object({
 });
 
 const MIN_HUMAN_FILL_TIME_MS = 2000;
+const MAX_CV_FILE_SIZE = 10 * 1024 * 1024;
+const ALLOWED_CV_TYPES = [
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+];
 
 // Escape HTML characters to prevent XSS / formatting corruption in email clients
 function escapeHtml(str: string | null | undefined): string {
@@ -72,17 +79,62 @@ export async function POST(request: Request) {
       );
     }
 
-    const body = await request.json();
-    const parseResult = quoteSchema.safeParse(body);
+    const contentType = request.headers.get('content-type') || '';
+    let cvFile: File | null = null;
+    let parsedBody: z.infer<typeof quoteSchema>;
 
-    if (!parseResult.success) {
-      return NextResponse.json(
-        { success: false, error: parseResult.error.issues[0].message },
-        { status: 400, headers: apiHeaders }
-      );
+    if (contentType.includes('multipart/form-data')) {
+      const form = await request.formData();
+      const raw = {
+        name: form.get('name')?.toString() || '',
+        phone: form.get('phone')?.toString() || '',
+        email: form.get('email')?.toString() || '',
+        company: form.get('company')?.toString() || '',
+        service: form.get('service')?.toString() || '',
+        details: form.get('details')?.toString() || '',
+        website: form.get('website')?.toString() || '',
+        formRenderedAt: form.get('formRenderedAt') ? Number(form.get('formRenderedAt')) : undefined,
+      };
+
+      const parseResult = quoteSchema.safeParse(raw);
+      if (!parseResult.success) {
+        return NextResponse.json(
+          { success: false, error: parseResult.error.issues[0].message },
+          { status: 400, headers: apiHeaders }
+        );
+      }
+      parsedBody = parseResult.data;
+
+      const uploaded = form.get('cvFile');
+      if (uploaded instanceof File && uploaded.size > 0) {
+        if (uploaded.size > MAX_CV_FILE_SIZE) {
+          return NextResponse.json(
+            { success: false, error: 'CV file exceeds the 10MB size limit.' },
+            { status: 400, headers: apiHeaders }
+          );
+        }
+        if (!ALLOWED_CV_TYPES.includes(uploaded.type)) {
+          return NextResponse.json(
+            { success: false, error: 'CV must be a PDF, DOC, or DOCX file.' },
+            { status: 400, headers: apiHeaders }
+          );
+        }
+        cvFile = uploaded;
+      }
+    } else {
+      const body = await request.json();
+      const parseResult = quoteSchema.safeParse(body);
+
+      if (!parseResult.success) {
+        return NextResponse.json(
+          { success: false, error: parseResult.error.issues[0].message },
+          { status: 400, headers: apiHeaders }
+        );
+      }
+      parsedBody = parseResult.data;
     }
 
-    const { name, phone, email, company, service, details, website, formRenderedAt } = parseResult.data;
+    const { name, phone, email, company, service, details, website, formRenderedAt } = parsedBody;
 
     // Bot signals: a filled honeypot or an implausibly fast submission both
     // indicate a script, not a person. Return a fake success instead of an
@@ -105,11 +157,24 @@ export async function POST(request: Request) {
 
     const recipientEmail = 'saintsservicesltd@gmail.com';
 
+    let cvBuffer: Buffer | null = null;
+    if (cvFile) {
+      cvBuffer = Buffer.from(await cvFile.arrayBuffer());
+      // Private, token-gated archival copy — not linked from the email since a
+      // private-store URL 403s for the recipient. The real MIME attachment below
+      // is what the recipient actually opens.
+      await put(`careers-cvs/${Date.now()}-${cvFile.name}`, cvBuffer, {
+        access: 'private',
+        contentType: cvFile.type,
+      });
+    }
+
     const { data, error } = await resend.emails.send({
       from: 'Saints Services Dispatch <dispatch@mail.saintsservices.co.uk>',
       to: [recipientEmail],
       replyTo: email,
       subject: `⚡ New Lead: ${safeService} — ${safeName}`,
+      attachments: cvFile && cvBuffer ? [{ filename: cvFile.name, content: cvBuffer }] : undefined,
       html: `
         <!DOCTYPE html>
         <html>
@@ -214,6 +279,12 @@ export async function POST(request: Request) {
                           </div>
                           <div style="background-color: #070d1e; border: 1px solid #1e293b; border-radius: 12px; padding: 18px; font-size: 14px; line-height: 1.6; color: #cbd5e1; font-weight: 500; white-space: pre-wrap;">${safeDetails || 'No additional site specifications provided.'}</div>
                         </div>
+
+                        ${cvFile ? `
+                        <div style="margin-top: 16px; font-size: 12px; color: #94a3b8; font-weight: 600;">
+                          📎 CV attached to this email — see attachments.
+                        </div>
+                        ` : ''}
 
                       </td>
                     </tr>
