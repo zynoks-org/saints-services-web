@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
+import { CertificationsBanner } from '@/components/CertificationsBanner';
 import { 
   Briefcase, 
   ShieldCheck, 
@@ -515,6 +516,7 @@ export default function CareersPage() {
           </section>
         </main>
 
+        <CertificationsBanner />
         <Footer />
       </div>
     </>

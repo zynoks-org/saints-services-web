@@ -9,6 +9,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { locationsData } from '@/lib/locationsData';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
+import { CertificationsBanner } from '@/components/CertificationsBanner';
 import { 
   MapPin, 
   ChevronRight, 
@@ -26,8 +27,9 @@ import {
   Lock
 } from 'lucide-react';
 
-const lightMapProvider = (x: number, y: number, z: number, dpr?: number) => {
-  return `https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/${z}/${x}/${y}${dpr && dpr >= 2 ? '@2x' : ''}.png`;
+// Esri "World Light Gray Base" — free, no API key required (CartoDB's light_all tiles now require a paid account and return a watermarked placeholder without one)
+const lightMapProvider = (x: number, y: number, z: number) => {
+  return `https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/${z}/${y}/${x}`;
 };
 
 export default function LocationDetailPage() {
@@ -269,13 +271,15 @@ export default function LocationDetailPage() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-6 h-[380px] sm:h-[420px] rounded-md overflow-hidden border border-slate-300 dark:border-slate-800 shadow-xl relative bg-slate-100 dark:bg-slate-900 [&_.pigeon-attribution]:hidden transition-colors">
-                  <Map 
-                    defaultCenter={[location.coordinates.lat, location.coordinates.lng]} 
+                <div className="lg:col-span-6 h-[380px] sm:h-[420px] rounded-md overflow-hidden border border-slate-300 dark:border-slate-800 shadow-xl relative bg-slate-100 dark:bg-slate-900 [&_.pigeon-attribution]:text-[9px] [&_.pigeon-attribution]:opacity-70 transition-colors">
+                  <Map
+                    defaultCenter={[location.coordinates.lat, location.coordinates.lng]}
                     defaultZoom={10}
                     provider={lightMapProvider}
                     mouseEvents={false}
                     touchEvents={false}
+                    attribution={<span>Tiles &copy; Esri</span>}
+                    attributionPrefix={false}
                   >
                     <Marker 
                       width={40} 
@@ -468,6 +472,7 @@ export default function LocationDetailPage() {
           </section>
         </main>
 
+        <CertificationsBanner />
         <Footer />
       </div>
     </>

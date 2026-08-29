@@ -3,6 +3,7 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { LocationsCoverage } from '@/components/LocationsCoverage';
+import { CertificationsBanner } from '@/components/CertificationsBanner';
 
 export default function LocationsPage() {
   return (
@@ -31,6 +32,7 @@ export default function LocationsPage() {
           <LocationsCoverage />
         </main>
 
+        <CertificationsBanner />
         <Footer />
       </div>
     </>

@@ -280,7 +280,7 @@ export const locationsData: Record<string, LocationData> = {
       lat: 53.1224,
       lng: -1.0378
     },
-    heroText: "Saints Services provides professional security services to all commercial sectors, residential property owners and organisations in Nottinghamshire. As an SIA-licensed provider of manned guarding, event security, residential security, and corporate security services, we achieve a 98% client retention rate by protecting premises, people, and property with tailored solutions.",
+    heroText: "Saints Services provides professional security services to all commercial sectors, residential property owners and organisations in Nottinghamshire. Backed by SIA-licensed officers across manned guarding, event security, residential security, and corporate security services, we achieve a 98% client retention rate by protecting premises, people, and property with tailored solutions.",
     introText: "Commercial and industrial properties throughout Nottinghamshire face a wide range of security risks, as the county is one of the most economically active in the East Midlands. Many security services fail to meet local business owners' requirements; security personnel may be untrustworthy and/or poorly trained. Saints Services provides high-quality security services to businesses in Nottinghamshire requiring highly qualified, reliable security personnel.",
     areasCovered: [
       "Nottingham", "Mansfield", "Beeston", "Arnold", 
@@ -973,7 +973,7 @@ export const locationsData: Record<string, LocationData> = {
       lat: 51.7520,
       lng: -1.2577
     },
-    heroText: "Saints Services provides professional security services in Oxfordshire to businesses, property owners & organisations that require high-quality, trusted protection. As an SIA-approved company, we deliver a full range of security solutions in Oxfordshire, including manned guarding, door supervisors, domestic/residential security, and commercial/corporate security services.",
+    heroText: "Saints Services provides professional security services in Oxfordshire to businesses, property owners & organisations that require high-quality, trusted protection. Backed by SIA-licensed officers, we deliver a full range of security solutions in Oxfordshire, including manned guarding, door supervisors, domestic/residential security, and commercial/corporate security services.",
     introText: "Oxfordshire offers a range of contrasting environments, with some of the world's leading scientific & academic institutions, cutting-edge technology & innovation parks, historic market towns & villages, including those in the Cotswolds, and it hosts many international events that attract an international audience.",
     areasCovered: [
       "Oxford", "Banbury", "Bicester", "Abingdon", 

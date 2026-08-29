@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FAQ } from '@/components/FAQ';
 import { Testimonials } from '@/components/Testimonials';
+import { CertificationsBanner } from '@/components/CertificationsBanner';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 import { 
   Phone, 
@@ -404,6 +405,8 @@ export default function ContactPage() {
           {/* 4. SOCIAL PROOF & TESTIMONIALS             */}
           {/* ========================================== */}
           <Testimonials />
+
+          <CertificationsBanner />
 
           {/* ========================================== */}
           {/* 5. FAQ SECTION                             */}

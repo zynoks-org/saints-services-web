@@ -35,7 +35,7 @@ const servicesData: Record<string, {
 }> = {
   "security-guards": {
     title: "Manned Guarding & Security Guards",
-    badge: "SIA LICENSED // 24/7 OPERATIONS",
+    badge: "SIA-LICENSED OFFICERS // 24/7 OPERATIONS",
     subtitle: "Static guarding, gatehouse controls, and mobile perimeter patrols engineered for corporate, industrial, and high-value UK assets.",
     overview: "Saints Services Ltd delivers fully vetted, SIA-licensed manned guarding personnel trained to handle access authorization, emergency response protocols, and continuous physical patrols. Our officers serve as a formidable visible deterrent against unauthorized entry, vandalism, and asset loss.",
     keySpecs: [

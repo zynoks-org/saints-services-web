@@ -172,7 +172,7 @@ export function TechFeatures() {
                   <span>Strict Regulatory Vetting</span>
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight transition-colors">
-                  100% SIA Licensed & BS7858 Vetted
+                  100% SIA-Licensed Guards & BS7858 Vetted
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed mb-6 transition-colors">
                   Every member of our guarding team is fully vetted to British Standard BS7858 requirements, encompassing 5-year employment history checks, criminal record clearances, right-to-work verification, and ongoing supervisory spot audits.
@@ -215,7 +215,7 @@ export function TechFeatures() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between font-mono text-[11px] text-white">
-                  <span>SIA_ACCREDITED // BS7858</span>
+                  <span>SIA-LICENSED OFFICERS // BS7858</span>
                   <span className="text-emerald-400">VERIFIED</span>
                 </div>
               </div>

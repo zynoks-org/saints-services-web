@@ -9,12 +9,12 @@ import { WhyChooseUsTabs } from '@/components/WhyChooseUsTabs';
 import { Testimonials } from '@/components/Testimonials';
 import { Coverage } from '@/components/Coverage';
 import { Credentials } from '@/components/Credentials';
+import { CertificationsBanner } from '@/components/CertificationsBanner';
 import { FrequentlyQuestions } from '@/components/FaqDoorSupervision';
 import { GetInTouch } from '@/components/GetInTouch';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 import { 
   ShieldCheck, 
-  ChevronRight, 
   Star, 
   ArrowRight, 
   PhoneCall, 
@@ -123,14 +123,6 @@ export default function DoorSupervisionPage() {
             <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#f59e0b]/15 rounded-full blur-[120px] pointer-events-none z-0" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
-                <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
-                <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
-                <Link href="/services" className="hover:text-[#f59e0b] transition-colors">SERVICES</Link>
-                <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
-                <span className="text-[#f59e0b]">DOOR_SUPERVISION</span>
-              </div>
-
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-7">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
@@ -304,6 +296,7 @@ export default function DoorSupervisionPage() {
 
           <WhyChooseUsTabs />
           <Credentials />
+          <CertificationsBanner />
           <Testimonials />
           <Coverage />
           <FrequentlyQuestions />

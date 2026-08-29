@@ -16,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/services',
     '/blog',
     '/locations',
+    '/certifications',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -29,6 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'keyholding',
     'door-supervision',
     'event-security',
+    'subcontracting',
   ];
   const serviceRoutes = serviceSlugs.map((slug) => ({
     url: `${baseUrl}/services/${slug}`,

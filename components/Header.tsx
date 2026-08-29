@@ -10,9 +10,14 @@ import { locationsData } from '@/lib/locationsData';
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [locationsDropdownOpen, setLocationsDropdownOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const aboutDropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const servicesDropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 0);
@@ -35,6 +40,36 @@ export function Header() {
       setLocationsDropdownOpen(false);
     }, 150);
   };
+
+  const handleAboutMouseEnter = () => {
+    if (aboutDropdownTimeoutRef.current) clearTimeout(aboutDropdownTimeoutRef.current);
+    setAboutDropdownOpen(true);
+  };
+
+  const handleAboutMouseLeave = () => {
+    aboutDropdownTimeoutRef.current = setTimeout(() => {
+      setAboutDropdownOpen(false);
+    }, 150);
+  };
+
+  const handleServicesMouseEnter = () => {
+    if (servicesDropdownTimeoutRef.current) clearTimeout(servicesDropdownTimeoutRef.current);
+    setServicesDropdownOpen(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    servicesDropdownTimeoutRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 150);
+  };
+
+  const serviceLinks = [
+    { name: "Manned Guarding & Patrols", slug: "security-guards" },
+    { name: "Door Supervision & Venue Security", slug: "door-supervision" },
+    { name: "Event Security & Safety", slug: "event-security" },
+    { name: "Keyholding & Alarm Response", slug: "keyholding" },
+    { name: "Security Subcontracting", slug: "subcontracting" },
+  ];
 
   const handleLogoClick = () => {
     if (typeof window !== 'undefined' && window.location.pathname === '/') {
@@ -112,15 +147,53 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-xs lg:text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
-            <Link 
-              href="/services" 
-              className="hover:text-[#f59e0b] transition-colors relative py-2 group"
+            <div
+              className="relative py-6"
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
             >
-              <span>Services</span>
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
-            </Link>
-            
-            <div 
+              <Link
+                href="/services"
+                className="flex items-center gap-1.5 hover:text-[#f59e0b] transition-colors py-2 group"
+              >
+                <span>Services</span>
+                <ChevronDown className={`w-3.5 h-3.5 text-[#f59e0b] transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+              </Link>
+
+              {servicesDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-72 bg-white dark:bg-[#080f22]/95 border border-slate-200 dark:border-white/15 rounded-md shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 backdrop-blur-2xl text-slate-900 dark:text-white transition-colors">
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#f59e0b] shadow-[0_0_12px_#f59e0b]" />
+
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      onClick={() => setServicesDropdownOpen(false)}
+                      className="flex items-center justify-between px-3 py-2.5 rounded-sm text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 border border-transparent hover:border-slate-200 dark:hover:border-white/10 transition-all group"
+                    >
+                      <span>{service.name}</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 group-hover:text-[#f59e0b] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
+                    </Link>
+                  ))}
+
+                  <div className="pt-2 mt-1 border-t border-slate-200 dark:border-white/10">
+                    <Link
+                      href="/services"
+                      onClick={() => setServicesDropdownOpen(false)}
+                      className="group relative overflow-hidden flex items-center justify-center gap-2 py-2.5 text-xs font-mono font-bold text-slate-900 dark:text-white bg-slate-100 dark:bg-[#0b1329] rounded-sm border border-slate-300 dark:border-white/20 transition-all shadow-md uppercase tracking-wider"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-amber-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+                      <span className="relative z-10 transition-colors duration-300 group-hover:text-[#080f22]">
+                        View All Services
+                      </span>
+                      <ChevronRight className="relative z-10 w-3.5 h-3.5 text-[#f59e0b] group-hover:text-[#080f22] group-hover:translate-x-1 transition-all" />
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div
               className="relative py-6"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -188,10 +261,42 @@ export function Header() {
               <span>Blog</span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
             </Link>
-            <Link href="/about" className="hover:text-[#f59e0b] transition-colors relative py-2 group">
-              <span>About</span>
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
-            </Link>
+            <div
+              className="relative py-6"
+              onMouseEnter={handleAboutMouseEnter}
+              onMouseLeave={handleAboutMouseLeave}
+            >
+              <Link
+                href="/about"
+                className="flex items-center gap-1.5 hover:text-[#f59e0b] transition-colors py-2 group"
+              >
+                <span>About</span>
+                <ChevronDown className={`w-3.5 h-3.5 text-[#f59e0b] transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+              </Link>
+
+              {aboutDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white dark:bg-[#080f22]/95 border border-slate-200 dark:border-white/15 rounded-md shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 backdrop-blur-2xl text-slate-900 dark:text-white transition-colors">
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#f59e0b] shadow-[0_0_12px_#f59e0b]" />
+
+                  <Link
+                    href="/about"
+                    onClick={() => setAboutDropdownOpen(false)}
+                    className="flex items-center justify-between px-3 py-2.5 rounded-sm text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 border border-transparent hover:border-slate-200 dark:hover:border-white/10 transition-all group"
+                  >
+                    <span>About Us</span>
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 group-hover:text-[#f59e0b] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
+                  </Link>
+                  <Link
+                    href="/certifications"
+                    onClick={() => setAboutDropdownOpen(false)}
+                    className="flex items-center justify-between px-3 py-2.5 rounded-sm text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 border border-transparent hover:border-slate-200 dark:hover:border-white/10 transition-all group"
+                  >
+                    <span>Certifications</span>
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 group-hover:text-[#f59e0b] group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link href="/careers" className="hover:text-[#f59e0b] transition-colors relative py-2 group">
               <span>Careers</span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f59e0b] transition-all group-hover:w-full" />
@@ -243,18 +348,44 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-[#0b1329] space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto">
             <nav className="space-y-1 font-mono">
-              <Link 
-                href="/services" 
-                onClick={() => setMobileMenuOpen(false)} 
-                className="block px-4 py-3 rounded-sm text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 uppercase tracking-wider"
-              >
-                Services & Operations
-              </Link>
+              <div className="px-4 py-3 rounded-sm bg-slate-50 dark:bg-[#080f22] border border-slate-200 dark:border-slate-800 space-y-2">
+                <div className="flex items-center justify-between">
+                  <Link
+                    href="/services"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs font-bold text-[#f59e0b] uppercase tracking-wider"
+                  >
+                    Services & Operations
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    aria-label="Toggle Services List"
+                    className="p-1"
+                  >
+                    <ChevronDown className={`w-3.5 h-3.5 text-[#f59e0b] transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
+                {mobileServicesOpen && (
+                  <div className="pl-3 border-l-2 border-[#f59e0b] space-y-1.5 pt-1 font-sans">
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block py-1.5 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                      >
+                        • {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <div className="px-4 py-3 rounded-sm bg-slate-50 dark:bg-[#080f22] border border-slate-200 dark:border-slate-800 space-y-2">
                 <div className="flex items-center justify-between">
-                  <Link 
-                    href="/locations" 
+                  <Link
+                    href="/locations"
                     onClick={() => setMobileMenuOpen(false)} 
                     className="text-xs font-bold text-[#f59e0b] uppercase tracking-wider"
                   >
@@ -282,15 +413,26 @@ export function Header() {
               >
                 Blog & Insights
               </Link>
-              <Link 
-                href="/about" 
-                onClick={() => setMobileMenuOpen(false)} 
-                className="block px-4 py-3 rounded-sm text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 uppercase tracking-wider"
-              >
-                About & Compliance
-              </Link>
-              <Link 
-                href="/careers" 
+              <div className="px-4 py-3 rounded-sm bg-slate-50 dark:bg-[#080f22] border border-slate-200 dark:border-slate-800 space-y-2">
+                <Link
+                  href="/about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-xs font-bold text-[#f59e0b] uppercase tracking-wider"
+                >
+                  About & Compliance
+                </Link>
+                <div className="pl-3 border-l-2 border-[#f59e0b] space-y-1.5 pt-1 font-sans">
+                  <Link
+                    href="/certifications"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-1.5 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                  >
+                    • Certifications
+                  </Link>
+                </div>
+              </div>
+              <Link
+                href="/careers"
                 onClick={() => setMobileMenuOpen(false)} 
                 className="block px-4 py-3 rounded-sm text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 uppercase tracking-wider"
               >

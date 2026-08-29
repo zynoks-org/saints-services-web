@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Credentials } from '@/components/Credentials';
+import { CertificationsBanner } from '@/components/CertificationsBanner';
 import { Testimonials } from '@/components/Testimonials';
 import { Coverage } from '@/components/Coverage';
 import { GetInTouch } from '@/components/GetInTouch';
@@ -78,7 +79,7 @@ export default function AboutPage() {
       desc: "Every officer undergoes a rigorous 5-year background, credit, and employment check prior to stepping onto any client site."
     },
     {
-      title: "SIA Approved Standards",
+      title: "SIA Code of Conduct Compliance",
       desc: "Our management and field operations strictly adhere to Security Industry Authority codes of conduct and security protocols."
     },
     {
@@ -265,6 +266,7 @@ export default function AboutPage() {
           </section>
 
           <Credentials />
+          <CertificationsBanner />
           <Coverage />
           <Testimonials />
           <GetInTouch />

@@ -30,9 +30,9 @@ interface RegionData {
   description: string;
 }
 
-// Custom Dark Mode Map Tiles (CartoDB Dark Matter)
-const darkMapProvider = (x: number, y: number, z: number, dpr?: number) => {
-  return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}${dpr && dpr >= 2 ? '@2x' : ''}.png`;
+// Esri "World Dark Gray Base" — free, no API key required (CartoDB's dark_all tiles now require a paid account and return a watermarked placeholder without one)
+const darkMapProvider = (x: number, y: number, z: number) => {
+  return `https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/${z}/${y}/${x}`;
 };
 
 // Helper to convert hub names to valid URL slugs if explicit slug isn't provided
@@ -254,14 +254,16 @@ export function Coverage() {
               </div>
 
               {/* Map Container with Gold Accent Border */}
-              <div className="relative w-full h-[320px] sm:h-[450px] my-4 rounded-sm overflow-hidden border border-[#f59e0b]/50 bg-slate-900 z-10 [&_.pigeon-attribution]:hidden">
+              <div className="relative w-full h-[320px] sm:h-[450px] my-4 rounded-sm overflow-hidden border border-[#f59e0b]/50 bg-slate-900 z-10 [&_.pigeon-attribution]:text-[9px] [&_.pigeon-attribution]:opacity-70">
                 {mounted ? (
-                  <Map 
-                    defaultCenter={[54.8, -2.5]} 
+                  <Map
+                    defaultCenter={[54.8, -2.5]}
                     defaultZoom={5.7}
                     provider={darkMapProvider}
                     mouseEvents={false}
                     touchEvents={false}
+                    attribution={<span>Tiles &copy; Esri</span>}
+                    attributionPrefix={false}
                   >
                     {regions.map((reg) => {
                       const isSelected = reg.id === activeRegionId;
@@ -377,17 +379,17 @@ export function Coverage() {
 
               {/* CALL TO ACTION (WITH GOLD SWEEP ANIMATION) */}
               <div className="pt-6">
-                <a
-                  href="#quote-form"
+                <Link
+                  href={`/locations/${currentRegion.keyHubs[0].slug || slugify(currentRegion.keyHubs[0].name)}`}
                   className="group relative overflow-hidden flex items-center justify-center gap-2 w-full bg-[#f59e0b] text-slate-950 font-black py-4 rounded-sm text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-[#f59e0b] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
-                  
+
                   <span className="relative z-10">
                     Request Deployment in {currentRegion.name.split("&")[0].trim()}
                   </span>
                   <ArrowRight className="relative z-10 w-4 h-4" />
-                </a>
+                </Link>
               </div>
 
             </div>

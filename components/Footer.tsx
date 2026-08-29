@@ -24,6 +24,7 @@ export function Footer() {
     { name: "Door Supervision & Venues", href: "/services/door-supervision" },
     { name: "Event Security & Crowd Control", href: "/services/event-security" },
     { name: "Keyholding & Alarm Response", href: "/services/keyholding" },
+    { name: "Security Subcontracting", href: "/services/subcontracting" },
   ];
 
   const industrySolutions = [
@@ -168,6 +169,7 @@ export function Footer() {
               <div><Link href="/" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Home</Link></div>
               <div><Link href="/services" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Services Overview</Link></div>
               <div><Link href="/about" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">About Saints Services</Link></div>
+              <div><Link href="/certifications" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Certifications</Link></div>
               <div><Link href="/careers" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Careers & Recruitment</Link></div>
               <div><Link href="/contact" onClick={scrollToTop} className="hover:text-[#f59e0b] transition-colors">Contact & Quotes</Link></div>
             </div>

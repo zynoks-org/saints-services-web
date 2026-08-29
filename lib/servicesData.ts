@@ -5,6 +5,7 @@ export const SERVICES_LIST = [
   "Event Security",
   "Key Holding & Alarm Response",
   "Security Guards",
+  "Subcontracting",
   "Pubs & Clubs Security",
   "Corporate Event Security",
   "Festivals & Concert Security",

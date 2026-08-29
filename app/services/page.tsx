@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Services } from '@/components/Services';
+import { CertificationsBanner } from '@/components/CertificationsBanner';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
@@ -43,6 +44,7 @@ export default function ServicesPage() {
 
       {/* 3. Bottom Sections */}
       <div>
+        <CertificationsBanner />
         <Contact />
         <Footer />
       </div>

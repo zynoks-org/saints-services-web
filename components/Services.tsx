@@ -17,7 +17,7 @@ export function Services() {
     {
       id: "security-guards",
       num: "01",
-      total: "04",
+      total: "05",
       title: "Manned Guarding & Patrols",
       badge: "SIA LICENSED OFFICERS",
       img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/manned-guarding.jpg",
@@ -31,7 +31,7 @@ export function Services() {
     {
       id: "event-security",
       num: "02",
-      total: "04",
+      total: "05",
       title: "Event Security & Safety",
       badge: "RAPID DEPLOYMENT",
       img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/event-security.png",
@@ -45,9 +45,9 @@ export function Services() {
     {
       id: "door-supervision",
       num: "03",
-      total: "04",
+      total: "05",
       title: "Door Supervision & Venue Security",
-      badge: "SIA LICENSED",
+      badge: "SIA LICENSED SUPERVISORS",
       img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/door-supervision.jpg",
       description: "SIA-licensed door supervisors dedicated to maintaining order, managing guest entry, and resolving conflicts professionally at venues, clubs, and high-profile premises.",
       highlights: [
@@ -59,7 +59,7 @@ export function Services() {
     {
       id: "keyholding",
       num: "04",
-      total: "04",
+      total: "05",
       title: "Keyholding & Alarm Response",
       badge: "24/7 MOBILE RESPONSE",
       img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/Keyholding-%26-Alarm-Response.png",
@@ -68,6 +68,20 @@ export function Services() {
         "Rapid Emergency Mobile Dispatch",
         "Scheduled Site Lock & Unlock Services",
         "Secure Off-Site Vault Key Storage"
+      ]
+    },
+    {
+      id: "subcontracting",
+      num: "05",
+      total: "05",
+      title: "Security Subcontracting",
+      badge: "STAFFING PARTNER",
+      img: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/manned-guarding.jpg",
+      description: "We supply trained, SIA-licensed security officers to other security companies and principal contractors who need extra manpower for sites, contracts, or events, on fair, transparent terms.",
+      highlights: [
+        "Flexible Manpower You Can Scale Up or Down",
+        "Confidential, Fair-Contract Terms as Standard",
+        "Rapid Cover for Shortfalls & Cancellations"
       ]
     }
   ];

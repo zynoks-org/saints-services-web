@@ -22,8 +22,9 @@ import {
 } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
 
-const darkTileProvider = (x: number, y: number, z: number, dpr?: number) => {
-  return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}${dpr && dpr >= 2 ? '@2x' : ''}.png`;
+// Esri "World Dark Gray Base" — free, no API key required (CartoDB's dark_all tiles now require a paid account and return a watermarked placeholder without one)
+const darkTileProvider = (x: number, y: number, z: number) => {
+  return `https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/${z}/${y}/${x}`;
 };
 
 export function LocationsCoverage() {
@@ -312,7 +313,7 @@ export function LocationsCoverage() {
                   center={center}
                   zoom={zoom}
                   provider={darkTileProvider}
-                  attribution={false}
+                  attribution={<span>Tiles &copy; Esri</span>}
                   attributionPrefix={false}
                   metaWheelZoom={false}
                   onBoundsChanged={({ center }) => {
