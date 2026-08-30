@@ -21,6 +21,8 @@ import {
   Radio
 } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
+import { Badge } from '@/components/Badge';
+import { DirectionalLightBackdrop } from '@/components/DirectionalLightBackdrop';
 
 // Esri "World Dark Gray Base" — free, no API key required (CartoDB's dark_all tiles now require a paid account and return a watermarked placeholder without one)
 const darkTileProvider = (x: number, y: number, z: number) => {
@@ -207,35 +209,31 @@ export function LocationsCoverage() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 font-sans relative overflow-hidden transition-colors duration-300">
-      
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.07] z-0"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, currentColor 1px, transparent 1px),
-            linear-gradient(to bottom, currentColor 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px'
-        }}
-      />
+    <>
+      {/* HERO */}
+      <section className="relative bg-slate-100 dark:bg-[#0b1329] text-slate-900 dark:text-white py-12 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800/80 overflow-hidden font-sans transition-colors duration-300">
 
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-[#f59e0b]/10 dark:bg-[#f59e0b]/5 rounded-full blur-[160px] pointer-events-none" />
+        <DirectionalLightBackdrop />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-8 sm:p-12 mb-12 shadow-2xl relative overflow-hidden transition-colors duration-300">
-          
-          <div className="absolute top-0 right-0 hidden sm:flex gap-1.5 opacity-80 pointer-events-none transform translate-x-4 -translate-y-2">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="w-6 h-16 bg-[#f59e0b] -skew-x-12" />
-            ))}
-          </div>
+        <div className="absolute top-6 right-6 hidden sm:flex gap-1.5 opacity-80 pointer-events-none">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="w-6 h-16 bg-[#f59e0b] -skew-x-12" />
+          ))}
+        </div>
 
-          <div className="absolute bottom-0 left-0 hidden sm:flex gap-1.5 opacity-80 pointer-events-none transform -translate-x-4 translate-y-2">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="w-6 h-16 bg-[#f59e0b] -skew-x-12" />
-            ))}
+        <div className="absolute bottom-6 left-6 hidden sm:flex gap-1.5 opacity-80 pointer-events-none">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="w-6 h-16 bg-[#f59e0b] -skew-x-12" />
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
+            <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
+            <span className="text-[#f59e0b]">LOCATIONS</span>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono font-bold text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 pb-6 mb-8 text-center">
@@ -264,6 +262,12 @@ export function LocationsCoverage() {
           </div>
 
         </div>
+      </section>
+
+      {/* COVERAGE MAP & REGIONS */}
+      <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] text-slate-800 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 font-sans relative overflow-hidden transition-colors duration-300">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div className="relative mb-12 bg-white dark:bg-[#0b1329] rounded-md shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 p-3 sm:p-4 flex flex-col lg:flex-row gap-4 transition-colors duration-300">
           
@@ -274,14 +278,12 @@ export function LocationsCoverage() {
 
           <div className="relative w-full lg:w-7/12 min-h-[480px] lg:min-h-[620px] bg-[#090f1d] rounded-sm border-2 border-amber-500/60 shadow-[0_0_15px_rgba(245,158,11,0.15)] overflow-hidden">
             
-            <div className="absolute top-4 left-4 z-30 flex items-center gap-2 text-[#f59e0b] font-mono text-[11px] font-bold tracking-widest uppercase bg-[#0b1329]/95 px-3.5 py-1.5 rounded-sm border border-amber-500/40 shadow-xl backdrop-blur-md pointer-events-none">
-              <Crosshair className="w-4 h-4 animate-pulse text-[#f59e0b]" />
-              Tactical Deployment Grid
+            <div className="absolute top-4 left-4 z-30 pointer-events-none">
+              <Badge icon={Crosshair} forceDark>Tactical Deployment Grid</Badge>
             </div>
 
-            <div className="absolute top-4 right-4 z-30 hidden sm:flex items-center gap-2 bg-[#0b1329]/90 border border-slate-800 px-3 py-1.5 rounded-sm text-[10px] font-mono font-bold text-slate-300 backdrop-blur-md">
-              <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-              <span>DISPATCH_HUB_ONLINE</span>
+            <div className="absolute top-4 right-4 z-30 hidden sm:flex">
+              <Badge icon={Radio} tone="emerald" forceDark>Dispatch Hub Online</Badge>
             </div>
 
             <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-1.5 bg-[#0b1329]/95 border border-amber-500/40 p-1.5 rounded-sm shadow-2xl backdrop-blur-md">
@@ -469,10 +471,7 @@ export function LocationsCoverage() {
         <div className="bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-10 mb-8 shadow-xl transition-colors">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-wider">
-                <MapPin className="w-3.5 h-3.5 text-[#f59e0b]" />
-                <span>NATIONWIDE_DISPATCH</span>
-              </div>
+              <Badge icon={MapPin}>Nationwide Dispatch</Badge>
 
               <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight uppercase">
                 Our Locations
@@ -529,7 +528,7 @@ export function LocationsCoverage() {
         <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 mb-8 shadow-xl transition-colors">
           <div className="mb-6">
             <h3 className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
-              GREATER_LONDON_COVERAGE
+              Greater London Coverage
             </h3>
             <h4 className="text-xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tight">
               London Borough Focus
@@ -568,7 +567,7 @@ export function LocationsCoverage() {
         <div className="bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 shadow-xl transition-colors">
           <div className="mb-6">
             <h3 className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
-              NATIONAL_DISPATCH_REGIONS
+              National Dispatch Regions
             </h3>
             <h4 className="text-xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tight">
               Scotland & Wales Coverage
@@ -652,6 +651,7 @@ export function LocationsCoverage() {
           background: #334155;
         }
       `}} />
-    </section>
+      </section>
+    </>
   );
 }

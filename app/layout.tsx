@@ -3,8 +3,9 @@ import { jsonLdScript } from "@/lib/jsonLd";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CookieBanner } from "@/components/CookieBanner";
+import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { getPublishedTestimonials } from "@/lib/testimonials";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -60,9 +61,12 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+const baseJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SecurityService",
+  // "SecurityService" isn't an official schema.org type, so it alone wouldn't
+  // qualify this entity for Google's review-snippet eligibility; kept for
+  // descriptiveness alongside the real "LocalBusiness" type.
+  "@type": ["LocalBusiness", "SecurityService"],
   "name": "Saints Services Ltd",
   "url": "https://www.saintsservices.co.uk",
   "telephone": "07412733920",
@@ -90,7 +94,43 @@ const jsonLd = {
   "priceRange": "££"
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const testimonials = await getPublishedTestimonials();
+
+  const jsonLd =
+    testimonials.length === 0
+      ? baseJsonLd
+      : {
+          ...baseJsonLd,
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: (
+              testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
+            ).toFixed(1),
+            reviewCount: testimonials.length,
+            bestRating: 5,
+            worstRating: 1,
+          },
+          review: testimonials.map((t) => ({
+            "@type": "Review",
+            author: {
+              "@type": "Person",
+              name: t.author_name,
+              ...(t.organization && {
+                worksFor: { "@type": "Organization", name: t.organization },
+              }),
+            },
+            datePublished: t.created_at,
+            reviewBody: t.quote,
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: t.rating,
+              bestRating: 5,
+              worstRating: 1,
+            },
+          })),
+        };
+
   return (
     <html
       lang="en"
@@ -113,8 +153,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           enableSystem={false}
           storageKey="saints-theme"
         >
-          <Breadcrumbs />
           {children}
+          <ScrollToTopButton />
           <CookieBanner />
           <Analytics />
           <SpeedInsights />

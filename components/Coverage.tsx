@@ -13,6 +13,7 @@ import {
   Radio,
   ExternalLink
 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 interface KeyHub {
   name: string;
@@ -198,10 +199,7 @@ export function Coverage() {
         
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs backdrop-blur-md transition-colors">
-            <MapPin className="w-3.5 h-3.5 text-[#f59e0b]" />
-            <span>Nationwide Dispatch Network</span>
-          </div>
+          <Badge icon={MapPin} className="mb-4">Nationwide Dispatch Network</Badge>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-4 transition-colors">
             Service Coverage Throughout the UK
           </h2>

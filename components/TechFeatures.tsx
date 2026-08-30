@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   Briefcase
 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 export function TechFeatures() {
   const [activeTab, setActiveTab] = useState('technology');
@@ -58,10 +59,7 @@ export function TechFeatures() {
         
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/10 dark:bg-[#080f22]/80 text-[#f59e0b] border border-slate-900/10 dark:border-white/15 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-widest mb-3 shadow-md backdrop-blur-md transition-colors">
-            <Smartphone className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-            <span className="text-slate-800 dark:text-[#f59e0b]">OPERATIONAL_ADVANTAGES // SYSTEM_METRICS</span>
-          </div>
+          <Badge icon={Smartphone} className="mb-3">Operational Advantages</Badge>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight uppercase mb-4 transition-colors">
             Why Partner with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] via-amber-500 to-amber-700 dark:via-amber-200 dark:to-white">Saints Services?</span>
           </h2>
@@ -110,9 +108,7 @@ export function TechFeatures() {
           {activeTab === 'technology' && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#f59e0b]/10 text-slate-900 dark:text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-wider mb-4 border border-[#f59e0b]/30">
-                  <span>GPS Guard Tour Verification</span>
-                </div>
+                <Badge className="mb-4">GPS Guard Tour Verification</Badge>
                 <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight transition-colors">
                   Innovative Real-Time Patrol Operations
                 </h3>
@@ -156,9 +152,9 @@ export function TechFeatures() {
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between font-mono text-[11px] text-white">
-                  <span>GPS_VERIFICATION_ACTIVE</span>
-                  <span className="text-[#f59e0b]">LIVE</span>
+                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between text-[11px] font-semibold text-white">
+                  <span>GPS Verification Active</span>
+                  <span className="text-[#f59e0b]">Live</span>
                 </div>
               </div>
             </div>
@@ -168,9 +164,7 @@ export function TechFeatures() {
           {activeTab === 'professionalism' && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#f59e0b]/10 text-slate-900 dark:text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-wider mb-4 border border-[#f59e0b]/30">
-                  <span>Strict Regulatory Vetting</span>
-                </div>
+                <Badge className="mb-4">Strict Regulatory Vetting</Badge>
                 <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight transition-colors">
                   100% SIA-Licensed Guards & BS7858 Vetted
                 </h3>
@@ -214,9 +208,9 @@ export function TechFeatures() {
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between font-mono text-[11px] text-white">
-                  <span>SIA-LICENSED OFFICERS // BS7858</span>
-                  <span className="text-emerald-400">VERIFIED</span>
+                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between text-[11px] font-semibold text-white">
+                  <span>SIA-Licensed Officers · BS7858</span>
+                  <span className="text-emerald-400">Verified</span>
                 </div>
               </div>
             </div>
@@ -226,9 +220,7 @@ export function TechFeatures() {
           {activeTab === 'experience' && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#f59e0b]/10 text-slate-900 dark:text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-wider mb-4 border border-[#f59e0b]/30">
-                  <span>Multi-Sector Deployment</span>
-                </div>
+                <Badge className="mb-4">Multi-Sector Deployment</Badge>
                 <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight transition-colors">
                   Proven Expertise Across UK Industries
                 </h3>
@@ -272,9 +264,9 @@ export function TechFeatures() {
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between font-mono text-[11px] text-white">
-                  <span>ACTIVE_DEPLOYMENTS</span>
-                  <span className="text-[#f59e0b]">150+ UNITS</span>
+                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between text-[11px] font-semibold text-white">
+                  <span>Active Deployments</span>
+                  <span className="text-[#f59e0b]">150+ Units</span>
                 </div>
               </div>
             </div>
@@ -284,9 +276,7 @@ export function TechFeatures() {
           {activeTab === 'reliability' && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#f59e0b]/10 text-slate-900 dark:text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-wider mb-4 border border-[#f59e0b]/30">
-                  <span>Unbroken Operational Uptime</span>
-                </div>
+                <Badge className="mb-4">Unbroken Operational Uptime</Badge>
                 <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4 uppercase tracking-tight transition-colors">
                   98%+ Client Retention Rate
                 </h3>
@@ -330,9 +320,9 @@ export function TechFeatures() {
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between font-mono text-[11px] text-white">
-                  <span>SLA_RESPONSE_TIME</span>
-                  <span className="text-emerald-400">&lt; 60 MINS</span>
+                <div className="absolute bottom-3 left-3 right-3 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between text-[11px] font-semibold text-white">
+                  <span>SLA Response Time</span>
+                  <span className="text-emerald-400">&lt; 60 Mins</span>
                 </div>
               </div>
             </div>

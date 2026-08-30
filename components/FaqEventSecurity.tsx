@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, HelpCircle, ShieldCheck, ArrowRight, PhoneCall } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 interface FaqItem {
   question: string;
@@ -79,10 +80,7 @@ export function FaqEventSecurity() {
         
         {/* HEADER */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-3 shadow-xs transition-colors">
-            <HelpCircle className="w-3.5 h-3.5 text-[#f59e0b]" />
-            <span>EVENT_SECURITY // F.A.Q.</span>
-          </div>
+          <Badge icon={HelpCircle} className="mb-3">Event Security FAQs</Badge>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight mb-2.5 uppercase">
             Frequently Asked Questions
           </h2>

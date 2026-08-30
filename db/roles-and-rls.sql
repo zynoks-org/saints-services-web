@@ -12,38 +12,46 @@
 -- app_public_password=... -f roles-and-rls.sql), or generate+substitute them
 -- programmatically. Never commit real values into this file.
 
+-- psql does not perform :'var' substitution inside a dollar-quoted ($$) body,
+-- so role creation and password-setting are split: the DO block only handles
+-- the "create if missing" part (no password literal inside $$), and the
+-- ALTER ROLE statements below - run unconditionally, outside any $$ block -
+-- apply the actual password via ordinary psql variable substitution.
 do $$
 begin
   if not exists (select from pg_roles where rolname = 'app_admin') then
-    create role app_admin with login password :'app_admin_password';
-  else
-    execute format('alter role app_admin with password %L', :'app_admin_password');
+    create role app_admin with login;
   end if;
 
   if not exists (select from pg_roles where rolname = 'app_public') then
-    create role app_public with login password :'app_public_password';
-  else
-    execute format('alter role app_public with password %L', :'app_public_password');
+    create role app_public with login;
   end if;
 end
 $$;
+
+alter role app_admin with password :'app_admin_password';
+alter role app_public with password :'app_public_password';
 
 -- Postgres grants some privileges to the implicit PUBLIC pseudo-role by
 -- default; strip those so access is only ever what's explicitly granted below.
 revoke all on schema public from public;
 grant usage on schema public to app_admin, app_public;
 
--- app_admin: full CRUD on both tables. Used only by authenticated server
+-- app_admin: full CRUD on all three tables. Used only by authenticated server
 -- actions and the admin dashboard's own data reads - never by public pages.
 grant select, insert, update, delete on posts to app_admin;
+grant select, insert, update, delete on testimonials to app_admin;
 grant select, insert, update, delete on admin_users to app_admin;
 
--- app_public: read-only, posts only. No grant at all on admin_users - a role
--- with zero table privileges can't be affected by what its RLS policies say,
--- so admin_users is unreachable from this role independent of RLS.
+-- app_public: read-only, posts and testimonials only. No grant at all on
+-- admin_users - a role with zero table privileges can't be affected by what
+-- its RLS policies say, so admin_users is unreachable from this role
+-- independent of RLS.
 grant select on posts to app_public;
+grant select on testimonials to app_public;
 
 alter table posts enable row level security;
+alter table testimonials enable row level security;
 alter table admin_users enable row level security;
 
 drop policy if exists posts_public_published_only on posts;
@@ -53,6 +61,17 @@ create policy posts_public_published_only on posts
 
 drop policy if exists posts_admin_full_access on posts;
 create policy posts_admin_full_access on posts
+  for all to app_admin
+  using (true)
+  with check (true);
+
+drop policy if exists testimonials_public_published_only on testimonials;
+create policy testimonials_public_published_only on testimonials
+  for select to app_public
+  using (published = true);
+
+drop policy if exists testimonials_admin_full_access on testimonials;
+create policy testimonials_admin_full_access on testimonials
   for all to app_admin
   using (true)
   with check (true);

@@ -16,6 +16,10 @@ const cspHeader = `
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Next.js 15+ blocks cross-origin requests to dev-server assets (_next/*)
+  // by default; without this, loading the site from another device on the
+  // LAN (e.g. a phone) gets the HTML but silently fails to load CSS/JS.
+  allowedDevOrigins: ['192.168.100.3'],
   images: {
     dangerouslyAllowLocalIP: true,
     remotePatterns: [

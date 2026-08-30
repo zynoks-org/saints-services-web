@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 export function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -34,10 +35,7 @@ export function FAQ() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider mb-3 shadow-xs transition-colors">
-            <HelpCircle className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-            <span>Common Questions</span>
-          </div>
+          <Badge icon={HelpCircle} className="mb-3">Common Questions</Badge>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase transition-colors">
             Frequently Asked Questions
           </h2>

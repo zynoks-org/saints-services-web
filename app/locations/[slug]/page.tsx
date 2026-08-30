@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useParams, notFound } from 'next/navigation';
 import { Map, Marker } from 'pigeon-maps';
 import { Header } from '@/components/Header';
+import { Badge } from '@/components/Badge';
 import { Footer } from '@/components/Footer';
 import { locationsData } from '@/lib/locationsData';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
@@ -143,10 +144,7 @@ export default function LocationDetailPage() {
                     <span className="text-[#f59e0b] uppercase">{location.name}</span>
                   </div>
 
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest shadow-xs backdrop-blur-md">
-                    <Clock className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                    <span>{location.name.toUpperCase()} REGIONAL CONTROL DESK</span>
-                  </div>
+                  <Badge icon={Clock}>{location.name} Regional Control Desk</Badge>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-[1.12]">
                     {location.name} Security Services <br/>
@@ -193,10 +191,7 @@ export default function LocationDetailPage() {
                 </div>
 
                 <div id="quote-form" className="lg:col-span-5 bg-white dark:bg-[#070d1e] border border-slate-200 dark:border-slate-800 rounded-md p-6 sm:p-8 shadow-2xl relative z-10 text-slate-900 dark:text-white transition-colors duration-300">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
-                    <Lock className="w-3 h-3 text-[#f59e0b]" /> 
-                    <span>FAST_DISPATCH // 2_HR_RESPONSE</span>
-                  </div>
+                  <Badge icon={Lock} className="mb-3">Fast Dispatch · 2-Hour Response</Badge>
 
                   <h3 className="text-2xl font-black uppercase tracking-tight mb-2 text-slate-900 dark:text-white">
                     Request a Quote
@@ -256,10 +251,7 @@ export default function LocationDetailPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <div className="lg:col-span-6 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest transition-colors">
-                    <MapPin className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-                    <span>LOCAL_OPERATIONS_ZONE</span>
-                  </div>
+                  <Badge icon={MapPin}>Local Operations Zone</Badge>
                   
                   <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-tight">
                     Professional Security Services Throughout {location.name}
@@ -339,10 +331,7 @@ export default function LocationDetailPage() {
           <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-2xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-                  <span>QUALIFIED_SECURITY_STANDARDS</span>
-                </div>
+                <Badge icon={ShieldCheck} className="mb-3">Qualified Security Standards</Badge>
                 <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-slate-900 dark:text-white">
                   Credentials & Compliance
                 </h2>

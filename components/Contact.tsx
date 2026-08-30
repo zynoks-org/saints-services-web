@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, ShieldCheck, Send, Clock } from 'lucide-react';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
+import { Badge } from '@/components/Badge';
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -82,10 +83,7 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs backdrop-blur-md transition-colors">
-              <Clock className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-              <span>24/7 Control Desk</span>
-            </div>
+            <Badge icon={Clock} className="mb-4">24/7 Control Desk</Badge>
 
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4 transition-colors uppercase">
               Request a Security & Facilities Quote

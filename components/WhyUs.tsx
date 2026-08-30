@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Award, ShieldCheck, Clock, MapPin, CheckCircle2 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 export function WhyUs() {
   const points = [
@@ -59,10 +60,7 @@ export function WhyUs() {
           {/* Left: Proof Copy */}
           <div className="lg:col-span-7">
             
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0b1329] dark:bg-[#040914]/80 text-[#f59e0b] border border-transparent dark:border-white/15 text-xs font-bold uppercase tracking-wider mb-4 sm:mb-6 shadow-md transition-colors">
-              <Award className="w-4 h-4 text-[#f59e0b]" /> 
-              <span>Compliance & Authority</span>
-            </div>
+            <Badge icon={Award} forceDark className="mb-4 sm:mb-6">Compliance & Authority</Badge>
 
             <h2 className="text-3xl sm:text-5xl font-black text-[#0b1329] dark:text-white tracking-tight mb-4 sm:mb-6 leading-tight transition-colors">
               Built for Total Operational Security

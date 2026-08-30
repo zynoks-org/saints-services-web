@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Header } from '@/components/Header';
+import { ShieldBackdrop } from '@/components/ShieldBackdrop';
+import { Badge } from '@/components/Badge';
 import { Footer } from '@/components/Footer';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 import { CertificationsBanner } from '@/components/CertificationsBanner';
@@ -158,19 +160,8 @@ export default function CareersPage() {
           {/* 1. CAREERS HERO WITH TACTICAL DARK STYLE    */}
           {/* ========================================== */}
           <section className="relative bg-slate-100 dark:bg-[#0b1329] text-slate-900 dark:text-white py-12 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800/80 overflow-hidden transition-colors duration-300">
-            
-            {/* Tactical Dot Grid Overlay */}
-            <div 
-              className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20"
-              style={{
-                backgroundImage: 'radial-gradient(currentColor 1.2px, transparent 1.2px)',
-                backgroundSize: '24px 24px'
-              }}
-            />
 
-            {/* Ambient Glows */}
-            <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#f59e0b]/15 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+            <ShieldBackdrop />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               
@@ -184,10 +175,7 @@ export default function CareersPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
                 <div className="lg:col-span-7">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
-                    <Briefcase className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                    <span>JOIN SAINTS SERVICES LTD // HR DISPATCH</span>
-                  </div>
+                  <Badge icon={Briefcase} className="mb-4 sm:mb-6">Join Saints Services Ltd</Badge>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-4 sm:mb-6 uppercase transition-colors">
                     Build Your Career in <br className="hidden sm:inline" />
@@ -295,10 +283,7 @@ export default function CareersPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               
               <div className="text-center max-w-3xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-3">
-                  <FileCheck className="w-3.5 h-3.5 text-[#f59e0b]" />
-                  <span>ONBOARDING_PROCESS</span>
-                </div>
+                <Badge icon={FileCheck} className="mb-3">Onboarding Process</Badge>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase">
                   4-Step Onboarding Pipeline
                 </h2>
@@ -337,10 +322,7 @@ export default function CareersPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               
               <div className="max-w-3xl mb-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-3">
-                  <Briefcase className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-                  <span>ACTIVE_VACANCIES</span>
-                </div>
+                <Badge icon={Briefcase} className="mb-3">Active Vacancies</Badge>
                 <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight uppercase">
                   Active Openings Across the UK
                 </h2>
@@ -407,10 +389,7 @@ export default function CareersPage() {
               <div className="bg-white dark:bg-[#070d1e] border border-slate-200 dark:border-slate-800 p-6 sm:p-12 rounded-md shadow-2xl relative">
                 
                 <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
-                    <Lock className="w-3 h-3 text-[#f59e0b]" />
-                    <span>SECURE_RECRUITMENT_PORTAL</span>
-                  </div>
+                  <Badge icon={Lock} className="mb-3">Secure Recruitment Portal</Badge>
                   <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-2">
                     Online Application Portal
                   </h2>

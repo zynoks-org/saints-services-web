@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Shield, ChevronLeft, ChevronRight, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 export function Services() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -139,10 +140,7 @@ export function Services() {
         {/* SECTION HEADER */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-widest mb-3 shadow-xs backdrop-blur-md transition-colors">
-              <Shield className="w-3.5 h-3.5" /> 
-              <span>CAPABILITIES // CORE_SERVICES</span>
-            </div>
+            <Badge icon={Shield} className="mb-3">Core Capabilities</Badge>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight uppercase transition-colors">
               Our <span className="text-[#f59e0b]">Services</span>
             </h2>

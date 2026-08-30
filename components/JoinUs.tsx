@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Briefcase, Send, CheckCircle2 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 
 export function JoinUs() {
@@ -82,10 +83,7 @@ export function JoinUs() {
           
           {/* Left Column Copy */}
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 sm:mb-6 shadow-xs">
-              <Briefcase className="w-4 h-4 text-[#f59e0b]" /> 
-              <span>Careers At Saints Services</span>
-            </div>
+            <Badge icon={Briefcase} className="mb-4 sm:mb-6">Careers At Saints Services</Badge>
 
             <h2 className="text-2xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4 sm:mb-6 leading-tight uppercase">
               Join Our Security Personnel Team

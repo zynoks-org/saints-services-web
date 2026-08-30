@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Lock
 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 export function GetInTouch() {
   const [submitted, setSubmitted] = useState(false);
@@ -76,10 +77,7 @@ export function GetInTouch() {
           <div className="lg:col-span-6 space-y-8">
             
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-widest shadow-xs transition-colors">
-                <ShieldCheck className="w-4 h-4 text-[#f59e0b]" />
-                <span>DIRECT_DISPATCH // 24_7_SUPPORT</span>
-              </div>
+              <Badge icon={ShieldCheck}>Direct Dispatch · 24/7 Support</Badge>
               
               <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight transition-colors">
                 Get in Touch Today
@@ -153,7 +151,7 @@ export function GetInTouch() {
               
               <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                 <div>
-                  <span className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-widest block">SECURE_DISPATCH_PORTAL</span>
+                  <span className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-widest block">Secure Dispatch Portal</span>
                   <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Request a Quote</h3>
                 </div>
                 <div className="p-2.5 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800">

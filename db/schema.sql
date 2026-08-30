@@ -42,6 +42,27 @@ create trigger posts_set_updated_at
   for each row
   execute function set_updated_at();
 
+create table if not exists testimonials (
+  id uuid primary key default gen_random_uuid(),
+  quote text not null,
+  author_name text not null,
+  organization text,
+  rating integer not null default 5,
+  published boolean not null default true,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  constraint testimonials_rating_range check (rating between 1 and 5)
+);
+
+create index if not exists testimonials_published_created_at_idx
+  on testimonials (published, created_at);
+
+drop trigger if exists testimonials_set_updated_at on testimonials;
+create trigger testimonials_set_updated_at
+  before update on testimonials
+  for each row
+  execute function set_updated_at();
+
 create table if not exists admin_users (
   id uuid primary key default gen_random_uuid(),
   username text not null unique,

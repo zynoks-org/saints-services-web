@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ShieldCheck, CheckCircle2, ArrowRight, Lock } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 import { CustomServiceSelect } from '@/components/CustomServiceSelect';
 
 export function ComprehensiveSolutions() {
@@ -62,12 +63,7 @@ export function ComprehensiveSolutions() {
           {/* LEFT COLUMN: EXECUTIVE COPY (7 COLS) */}
           <div className="lg:col-span-7 space-y-6">
             
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs transition-colors">
-              <ShieldCheck className="w-4 h-4 text-[#f59e0b]" />
-              <span className="text-[11px] font-bold font-mono uppercase tracking-widest text-[#f59e0b]">
-                COMPREHENSIVE SECURITY // ENTERPRISE PROTECTION
-              </span>
-            </div>
+            <Badge icon={ShieldCheck}>Comprehensive Security · Enterprise Protection</Badge>
 
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.08] transition-colors uppercase">
               Enterprise Security Solutions Built for <br />
@@ -107,7 +103,7 @@ export function ComprehensiveSolutions() {
               
               <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                 <div>
-                  <span className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-widest block">QUICK_ENQUIRY</span>
+                  <span className="text-[10px] font-mono font-bold text-[#f59e0b] uppercase tracking-widest block">Quick Enquiry</span>
                   <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight uppercase">Request a Quote</h3>
                 </div>
                 <div className="p-2.5 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800">

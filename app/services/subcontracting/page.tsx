@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Header } from '@/components/Header';
+import { Badge } from '@/components/Badge';
 import { Footer } from '@/components/Footer';
 import { Credentials } from '@/components/Credentials';
 import { Coverage } from '@/components/Coverage';
@@ -25,6 +27,7 @@ import {
   ClipboardCheck,
   TrendingUp,
   Zap,
+  ChevronRight,
 } from 'lucide-react';
 
 const jsonLd = {
@@ -167,12 +170,18 @@ export default function SubcontractingPage() {
             <div className="absolute -bottom-40 -left-40 w-[24rem] h-[24rem] bg-[#f59e0b]/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              {/* Breadcrumb */}
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-400 mb-6 sm:mb-8">
+                <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
+                <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+                <Link href="/services" className="hover:text-[#f59e0b] transition-colors">SERVICES</Link>
+                <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+                <span className="text-[#f59e0b]">SUBCONTRACTING</span>
+              </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
                 <div className="lg:col-span-7">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white/5 border border-white/15 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-6">
-                    <Users className="w-4 h-4 shrink-0" />
-                    <span>STAFFING PARTNER // SIA-LICENSED OFFICERS</span>
-                  </div>
+                  <Badge icon={Users} forceDark className="mb-6">Staffing Partner · SIA-Licensed Officers</Badge>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] mb-6 uppercase">
                     Manpower For Security Companies, <span className="text-[#f59e0b]">Not Competition</span>
@@ -226,10 +235,7 @@ export default function SubcontractingPage() {
           {/* WHAT IT MEANS */}
           <section className="py-16 sm:py-20 bg-white dark:bg-[#0b1329] border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4">
-                <Handshake className="w-3.5 h-3.5" />
-                <span>WHAT_IS_SUBCONTRACTING</span>
-              </div>
+              <Badge icon={Handshake} className="mb-4">What Is Subcontracting</Badge>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase leading-tight mb-5">
                 An Extension of Your Team, Not a Second Vendor
               </h2>
@@ -246,10 +252,7 @@ export default function SubcontractingPage() {
           <section className="py-16 sm:py-24 bg-slate-50 dark:bg-[#070d1e] border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="text-center max-w-2xl mx-auto mb-14">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4">
-                  <ClipboardCheck className="w-4 h-4" />
-                  <span>Process</span>
-                </div>
+                <Badge icon={ClipboardCheck} className="mb-4">Process</Badge>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase">
                   How Subcontracting Works
                 </h2>
@@ -282,10 +285,7 @@ export default function SubcontractingPage() {
           <section className="py-16 sm:py-24 bg-white dark:bg-[#0b1329] border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-2xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-slate-100 dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4">
-                  <Scale className="w-4 h-4" />
-                  <span>Equal Terms</span>
-                </div>
+                <Badge icon={Scale} className="mb-4">Equal Terms</Badge>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase mb-3">
                   Two Ways We Work With You
                 </h2>
@@ -349,10 +349,7 @@ export default function SubcontractingPage() {
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <div className="lg:col-span-5 space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white/5 border border-white/15 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest">
-                    <Lock className="w-3 h-3" />
-                    <span>CONFIDENTIAL // FAIR-TERMS STAFFING</span>
-                  </div>
+                  <Badge icon={Lock} forceDark>Confidential · Fair-Terms Staffing</Badge>
                   <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">
                     Ready to Add Subcontract Cover?
                   </h2>

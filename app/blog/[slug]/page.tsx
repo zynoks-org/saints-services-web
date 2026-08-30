@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, User, ChevronRight } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ShareButtons } from '@/components/ShareButtons';
@@ -73,6 +73,15 @@ export default async function BlogPostPage({ params }: Props) {
 
       <main className="grow py-16 sm:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
+            <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 shrink-0" />
+            <Link href="/blog" className="hover:text-[#f59e0b] transition-colors">BLOG</Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 shrink-0" />
+            <span className="text-[#f59e0b] truncate">{post.title.toUpperCase()}</span>
+          </div>
+
           <Link
             href="/blog"
             className="flex w-fit items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider mb-8 hover:translate-x-[-2px] transition-transform"

@@ -2,6 +2,7 @@
 
 import { useState, useSyncExternalStore } from 'react';
 import { Share2, Check, MessageCircle } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 interface ShareButtonsProps {
   title: string;
@@ -34,10 +35,7 @@ export function ShareButtons({ title, slug }: ShareButtonsProps) {
 
   return (
     <div className="my-10 p-6 rounded-sm bg-white dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors">
-      <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider">
-        <Share2 className="w-4 h-4" />
-        <span>Distribute Intelligence // Share Brief</span>
-      </div>
+      <Badge icon={Share2}>Share This Brief</Badge>
 
       <div className="flex items-center gap-2 flex-wrap justify-center">
         {/* X / Twitter */}

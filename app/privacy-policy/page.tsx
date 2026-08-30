@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
@@ -20,6 +22,13 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-[#070d1e] font-sans text-slate-300 flex flex-col justify-between">
       <Header />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-xs sm:text-sm leading-relaxed space-y-6">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-400 mb-2">
+          <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
+          <span className="text-[#f59e0b]">PRIVACY POLICY</span>
+        </div>
+
         <h1 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight mb-6">
           Privacy Policy
         </h1>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Cookie, Check, ShieldCheck, X } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 export function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
@@ -46,10 +47,7 @@ export function CookieBanner() {
               <Cookie className="w-6 h-6 text-[#f59e0b]" />
             </div>
             <div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-1">
-                <ShieldCheck className="w-3 h-3 text-[#f59e0b]" />
-                <span>DATA_PROTECTION // PECR</span>
-              </div>
+              <Badge icon={ShieldCheck} className="mb-1">Data Protection · PECR</Badge>
               <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white uppercase tracking-tight">
                 Cookie & Privacy Consent
               </h3>

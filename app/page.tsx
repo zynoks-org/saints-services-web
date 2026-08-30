@@ -11,6 +11,7 @@ import { Footer } from '@/components/Footer';
 import { ComprehensiveSolutions } from '@/components/ComprehensiveSolutions';
 import { SecurityBenefitsGrid } from '@/components/SecurityBenefitsGrid';
 import { ServicesGrid } from '@/components/ServicesGrid';
+import { getPublishedTestimonials } from '@/lib/testimonials';
 
 export const metadata = {
   title: 'Saints Services Ltd | SIA-Licensed Security Guards & Facilities Management UK',
@@ -26,7 +27,9 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const testimonials = await getPublishedTestimonials();
+
   return (
     <div className="min-h-screen bg-[#f8fafc]">
       <Header />
@@ -37,7 +40,7 @@ export default function Home() {
       <ServicesGrid />
       <WhyUs />
       <TechFeatures />
-      <Testimonials />
+      <Testimonials initialTestimonials={testimonials} />
       <Coverage />
       <FAQ />
       <Contact />

@@ -22,6 +22,7 @@ import {
   ShieldUser,
   KeyRound
 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 // Centralized Data Store with Exact Slug Matches
 const servicesData: Record<string, {
@@ -35,7 +36,7 @@ const servicesData: Record<string, {
 }> = {
   "security-guards": {
     title: "Manned Guarding & Security Guards",
-    badge: "SIA-LICENSED OFFICERS // 24/7 OPERATIONS",
+    badge: "SIA-Licensed Officers · 24/7 Operations",
     subtitle: "Static guarding, gatehouse controls, and mobile perimeter patrols engineered for corporate, industrial, and high-value UK assets.",
     overview: "Saints Services Ltd delivers fully vetted, SIA-licensed manned guarding personnel trained to handle access authorization, emergency response protocols, and continuous physical patrols. Our officers serve as a formidable visible deterrent against unauthorized entry, vandalism, and asset loss.",
     keySpecs: [
@@ -58,7 +59,7 @@ const servicesData: Record<string, {
   },
   "keyholding": {
     title: "Key Holding & Alarm Response",
-    badge: "24/7 ALARM RESPONSE // MOBILE PATROLS",
+    badge: "24/7 Alarm Response · Mobile Patrols",
     subtitle: "Rapid 24/7 mobile emergency response, secure key storage, and vacant property inspections across the UK.",
     overview: "Saints Services Ltd securely stores your site keys in audited electronic safes while our 24/7 Alarm Receiving Centre (ARC) monitors your premises. Upon alarm activation, mobile response guards dispatch immediately to inspect, resolve threats, and reset your systems.",
     keySpecs: [
@@ -81,7 +82,7 @@ const servicesData: Record<string, {
   },
   "door-supervision": {
     title: "Door Supervision & Venue Security",
-    badge: "SIA LICENSED // DOOR SUPERVISORS",
+    badge: "SIA-Licensed Door Supervisors",
     subtitle: "Licensed door supervisors for hospitality venues, corporate events, and licensed premises across the UK.",
     overview: "High-capacity licensed venues require security expertise beyond standard perimeter watching. Saints Services deploys SIA door supervisors trained in crowd management, entry screening, and conflict de-escalation to protect your visitors and brand image.",
     keySpecs: [
@@ -104,7 +105,7 @@ const servicesData: Record<string, {
   },
   "event-security": {
     title: "Event Security & Crowd Safety",
-    badge: "RAPID EVENT DEPLOYMENT // STEWARDING",
+    badge: "Rapid Event Deployment · Stewarding",
     subtitle: "Crowd control, entry queue management, and VIP protection for festivals, corporate galas, and venue events.",
     overview: "Managing public and private events requires high-visibility security paired with conflict de-escalation expertise. Saints Services provides trained event stewards and SIA door supervisors qualified to handle crowd flows, bag searches, and emergency evacuation protocols.",
     keySpecs: [
@@ -213,10 +214,7 @@ export default function ServiceDetailClient({ slug }: ServiceClientProps) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
-                  <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                  <span>{service.badge}</span>
-                </div>
+                <Badge icon={ShieldCheck} className="mb-4 sm:mb-6">{service.badge}</Badge>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-4 sm:mb-6 uppercase transition-colors">
                   {service.title}
@@ -259,10 +257,7 @@ export default function ServiceDetailClient({ slug }: ServiceClientProps) {
 
                 <div className="bg-white dark:bg-[#070d1e] text-slate-900 dark:text-white p-6 sm:p-8 rounded-sm border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 transition-colors">
                   
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
-                    <Lock className="w-3 h-3 text-[#f59e0b]" />
-                    <span>FAST_DISPATCH // 2_HR_RESPONSE</span>
-                  </div>
+                  <Badge icon={Lock} className="mb-3">Fast Dispatch · 2-Hour Response</Badge>
 
                   <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-1 uppercase tracking-tight">Request a Quote</h3>
                   <p className="text-slate-500 dark:text-slate-400 text-xs font-medium mb-6">
@@ -351,10 +346,7 @@ export default function ServiceDetailClient({ slug }: ServiceClientProps) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               
               <div className="lg:col-span-7 space-y-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest transition-colors">
-                  <FileBadge className="w-3.5 h-3.5 text-[#f59e0b]" />
-                  <span>OPERATIONAL_SCOPE</span>
-                </div>
+                <Badge icon={FileBadge}>Operational Scope</Badge>
 
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase leading-tight">
                   {service.title} Overview
@@ -382,9 +374,8 @@ export default function ServiceDetailClient({ slug }: ServiceClientProps) {
               {/* Key Deliverables Card */}
               <div className="lg:col-span-5 bg-white dark:bg-[#0b1329] text-slate-900 dark:text-white p-6 sm:p-8 rounded-sm border border-slate-200 dark:border-slate-800 shadow-xl transition-colors">
                 <div className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-sm mb-6 text-center">
-                  <div className="flex items-center justify-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
-                    <Radio className="w-3.5 h-3.5 animate-pulse" />
-                    <span>NATIONWIDE_DISPATCH</span>
+                  <div className="flex justify-center mb-1">
+                    <Badge icon={Radio}>Nationwide Dispatch</Badge>
                   </div>
                   <div className="text-lg font-black uppercase text-slate-900 dark:text-white">Key Deliverables</div>
                 </div>
@@ -409,10 +400,7 @@ export default function ServiceDetailClient({ slug }: ServiceClientProps) {
         <section className="py-16 sm:py-24 bg-slate-100 dark:bg-[#0b1329] text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
-                <Clock className="w-3.5 h-3.5 text-[#f59e0b]" />
-                <span>STRUCTURED_WORKFLOW</span>
-              </div>
+              <Badge icon={Clock} className="mb-3">Structured Workflow</Badge>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-2">
                 Deployment Process
               </h2>

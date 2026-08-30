@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Terminal, Activity } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Award, Activity } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 interface TabData {
   id: string;
@@ -21,7 +22,7 @@ export function WhyChooseUsTabs() {
     technology: {
       id: 'technology',
       label: 'TECHNOLOGY',
-      codeTag: 'SYS // LIVE_PATROL_GPS',
+      codeTag: 'Live Patrol GPS',
       title: 'Advanced Digital Tracking & Real-Time Monitoring',
       paragraphs: [
         "Saints Services Ltd integrates modern workforce management software into every active deployment. Our live GPS checkpoint verification enables facility managers to track officer rotas, verify patrol completion, and review guard activity logs instantly.",
@@ -32,7 +33,7 @@ export function WhyChooseUsTabs() {
     professionalism: {
       id: 'professionalism',
       label: 'PROFESSIONALISM',
-      codeTag: 'SEC // BS7858_VETTED',
+      codeTag: 'BS7858 Vetted',
       title: 'Uncompromising Standards & SIA-Licensed Officers',
       paragraphs: [
         "Every member of our operational team undergoes rigorous BS7858 background screening, including 5-year employment history verification, credit checks, and criminal record clearance prior to site placement.",
@@ -43,7 +44,7 @@ export function WhyChooseUsTabs() {
     experience: {
       id: 'experience',
       label: 'EXPERIENCE',
-      codeTag: 'OPS // MULTI_SECTOR_DEFENSE',
+      codeTag: 'Multi-Sector Defense',
       title: 'Proven Multi-Sector Defense & Operational Mastery',
       paragraphs: [
         "With extensive operational experience across the UK, Saints Services Ltd understands the nuanced security risks inherent to different commercial sectors.",
@@ -54,7 +55,7 @@ export function WhyChooseUsTabs() {
     reliability: {
       id: 'reliability',
       label: 'RELIABILITY',
-      codeTag: 'CTRL // 24_7_DISPATCH',
+      codeTag: '24/7 Dispatch',
       title: '24/7 Dispatch Control & Zero-Downtime Guarantee',
       paragraphs: [
         "Security threats do not adhere to business hours. Our London control room operates 24/7/365 to oversee field operations, manage shift handovers, and coordinate rapid mobile response officers whenever emergency backup is required.",
@@ -85,10 +86,7 @@ export function WhyChooseUsTabs() {
         
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-amber-600 dark:text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 shadow-sm">
-            <Terminal className="w-3.5 h-3.5 text-amber-600 dark:text-[#f59e0b]" />
-            <span>EXCELLENCE_METRICS // SAINTS</span>
-          </div>
+          <Badge icon={Award} className="mb-4">Excellence Metrics</Badge>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-4">
             Why Partner with Saints Services Ltd?
           </h2>
@@ -129,9 +127,7 @@ export function WhyChooseUsTabs() {
               
               {/* LEFT: TEXT CONTENT */}
               <div className="lg:col-span-7 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-amber-600 dark:text-[#f59e0b] text-[10px] font-mono font-bold tracking-widest uppercase">
-                  <span>{current.codeTag}</span>
-                </div>
+                <Badge>{current.codeTag}</Badge>
 
                 <h3 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-tight">
                   {current.title}

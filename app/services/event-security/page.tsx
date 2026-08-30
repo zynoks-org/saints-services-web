@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Header } from '@/components/Header';
+import { Badge } from '@/components/Badge';
 import { Footer } from '@/components/Footer';
 import { WhyChooseUsTabs } from '@/components/WhyChooseUsTabs';
 import { Testimonials } from '@/components/Testimonials';
@@ -122,10 +123,7 @@ export default function EventSecurityPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-7">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
-                    <ShieldCheck className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                    <span>SIA-LICENSED // EVENT GUARDS & STEWARDS</span>
-                  </div>
+                  <Badge icon={ShieldCheck} className="mb-4 sm:mb-6">SIA-Licensed Event Guards & Stewards</Badge>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-4 sm:mb-6 uppercase transition-colors">
                     Event Security <br className="hidden sm:inline" />
@@ -169,10 +167,7 @@ export default function EventSecurityPage() {
                   <div className="absolute -bottom-3 -right-1 sm:-bottom-3 sm:-right-3 w-12 h-12 border-b-2 border-r-2 border-[#f59e0b] z-20 pointer-events-none" />
 
                   <div className="bg-white dark:bg-[#070d1e] text-slate-900 dark:text-white p-6 sm:p-8 rounded-md border border-slate-200 dark:border-slate-800 shadow-2xl relative z-10 transition-colors duration-300">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
-                      <Lock className="w-3 h-3 text-[#f59e0b]" />
-                      <span>FAST_DISPATCH // 2_HR_RESPONSE</span>
-                    </div>
+                    <Badge icon={Lock} className="mb-3">Fast Dispatch · 2-Hour Response</Badge>
 
                     <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-1 uppercase tracking-tight">Request a Quote</h3>
                     <p className="text-slate-500 dark:text-slate-400 text-xs font-medium mb-6">Get an event security quotation within 2 hours.</p>
@@ -229,10 +224,7 @@ export default function EventSecurityPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 <div className="lg:col-span-7 space-y-5">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest">
-                    <FileBadge className="w-3.5 h-3.5 text-[#f59e0b]" />
-                    <span>PROFESSIONAL_EVENT_PROTECTION</span>
-                  </div>
+                  <Badge icon={FileBadge}>Professional Event Protection</Badge>
 
                   <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight uppercase leading-tight">
                     Professional Event Security Services Across the UK
@@ -255,9 +247,8 @@ export default function EventSecurityPage() {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#f59e0b]/10 blur-2xl rounded-full pointer-events-none" />
 
                   <div className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white p-5 rounded-md mb-6 text-center">
-                    <div className="flex items-center justify-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-widest mb-1">
-                      <Radio className="w-3.5 h-3.5 animate-pulse" />
-                      <span>STATUS // NATIONWIDE_DEPLOYMENT</span>
+                    <div className="flex justify-center mb-1">
+                      <Badge icon={Radio}>Nationwide Deployment</Badge>
                     </div>
                     <div className="text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-white">Security Business Benefits</div>
                   </div>

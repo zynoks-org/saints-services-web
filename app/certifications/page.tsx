@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Badge } from '@/components/Badge';
 import { CertificatesCarousel, type CertificateEntry } from '@/components/CertificatesCarousel';
-import { BadgeCheck } from 'lucide-react';
+import { BadgeCheck, ChevronRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Certifications',
@@ -74,11 +76,15 @@ export default function CertificationsPage() {
       />
       <Header />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
+          <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
+          <span className="text-[#f59e0b]">CERTIFICATIONS</span>
+        </div>
+
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs transition-colors">
-            <BadgeCheck className="w-4 h-4 text-[#f59e0b]" />
-            <span>Certifications</span>
-          </div>
+          <Badge icon={BadgeCheck} className="mb-4">Certifications</Badge>
           <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4 uppercase transition-colors">
             Our Accreditations
           </h1>

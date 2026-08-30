@@ -1,22 +1,26 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import {
-  Shield,
+  Newspaper,
+  CheckCircle2,
   ArrowRight,
   Calendar,
   Clock,
   Sparkles,
   Radio,
   Cpu,
-  Zap
+  Zap,
+  ChevronRight
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Badge } from '@/components/Badge';
+import { DirectionalLightBackdrop } from '@/components/DirectionalLightBackdrop';
 import { getPublishedPosts, computeReadTime, htmlToPlainText } from '@/lib/posts';
 
 export const metadata: Metadata = {
-  title: 'Security Intelligence Desk & Operational Archive',
-  description: 'Enterprise-grade UK security intelligence, SIA regulatory compliance frameworks, real-time threat telemetry, and tactical manned guarding doctrine.',
+  title: 'Security Insights & Industry News',
+  description: 'Practical guidance on SIA compliance, manned guarding best practice, and security industry trends from Saints Services Ltd.',
 };
 
 interface ArticleCard {
@@ -37,7 +41,7 @@ export default async function BlogListingPage() {
     slug: post.slug,
     title: post.title,
     category: post.category || 'GENERAL',
-    codeTag: `CMS // ${(post.category || 'GENERAL').toUpperCase().replace(/\s+/g, '_')}`,
+    codeTag: post.category || 'General',
     description: post.excerpt || htmlToPlainText(post.content).slice(0, 180),
     date: post.published_at
       ? new Date(post.published_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })
@@ -53,10 +57,7 @@ export default async function BlogListingPage() {
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-[#040914] text-slate-900 dark:text-slate-100 font-sans selection:bg-[#f59e0b] selection:text-slate-950 transition-colors duration-300 flex flex-col relative overflow-x-hidden select-none">
       
-      {/* Tactical Background Grid Overlay & Dual-Mode Ambient Lighting */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[#f59e0b]/5 dark:bg-[#f59e0b]/5 rounded-full blur-[200px] pointer-events-none z-0 animate-pulse" />
-      <div className="absolute bottom-1/4 left-[-10%] w-[600px] h-[600px] bg-blue-500/5 dark:bg-blue-600/5 rounded-full blur-[180px] pointer-events-none z-0" />
+      <DirectionalLightBackdrop />
 
       {/* Header Included */}
       <div className="relative z-30">
@@ -65,30 +66,38 @@ export default async function BlogListingPage() {
 
       <main className="flex-grow py-16 sm:py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* TOP TELEMETRY STATUS BAR */}
-          <div className="flex items-center justify-between mb-10 pb-4 border-b border-slate-300 dark:border-slate-800/80 font-mono text-xs">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                SYSTEM_ONLINE
-              </span>
+
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
+            <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
+            <span className="text-[#f59e0b]">BLOG</span>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono font-bold text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 pb-6 mb-8 text-center">
+            <div className="flex items-center gap-1.5 text-slate-900 dark:text-amber-400">
+              <Newspaper className="w-4 h-4 text-[#f59e0b]" />
+              <span>{allCards.length} ARTICLE{allCards.length === 1 ? '' : 'S'} PUBLISHED</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-slate-900 dark:text-amber-400">
+              <CheckCircle2 className="w-4 h-4 text-[#f59e0b]" />
+              <span>SIA COMPLIANCE INSIGHTS</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-slate-900 dark:text-amber-400">
+              <Clock className="w-4 h-4 text-[#f59e0b]" />
+              <span>UPDATED REGULARLY</span>
             </div>
           </div>
 
           {/* HEADER SECTION */}
-          <div className="max-w-3xl mb-16 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-widest shadow-md backdrop-blur-md">
-              <Shield className="w-3.5 h-3.5 text-[#f59e0b]" />
-              <span>TACTICAL INTELLIGENCE &amp; DOCTRINE REPOSITORY</span>
-            </div>
-            
-            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none">
-              Operational <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] via-amber-500 to-amber-700 dark:via-amber-200 dark:to-amber-500">Briefs &amp; Directives</span>
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none">
+              Saints Services <br />
+              <span className="text-[#f59e0b]">Insights</span>
             </h1>
-            
-            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base font-medium leading-relaxed max-w-2xl">
-              High-clearance security telemetry, SIA compliance audits, threat dynamics, and tactical manned guarding doctrine engineered for UK corporate estates and critical infrastructure.
+
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-medium leading-relaxed max-w-2xl mx-auto">
+              Practical guidance on SIA compliance, manned guarding best practice, and the latest security trends for UK estates and facilities.
             </p>
           </div>
 
@@ -96,10 +105,7 @@ export default async function BlogListingPage() {
           {featuredArticle && (
             <div className="mb-16 relative">
               <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider">
-                  <Sparkles className="w-4 h-4 animate-spin text-[#f59e0b]" />
-                  <span>[ PRIORITY_TARGET // FEATURED BRIEF ]</span>
-                </div>
+                <Badge icon={Sparkles}>Featured Article</Badge>
               </div>
 
               <Link
@@ -125,9 +131,9 @@ export default async function BlogListingPage() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(4,9,20,0.8)_100%)] pointer-events-none" />
                   
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="text-[10px] font-mono font-bold text-slate-950 bg-[#f59e0b] px-3 py-1 rounded-sm uppercase tracking-widest shadow-lg flex items-center gap-1.5">
+                    <span className="text-[11px] font-bold text-slate-950 bg-[#f59e0b] px-3 py-1 rounded-sm uppercase tracking-wide shadow-lg flex items-center gap-1.5">
                       <Zap className="w-3 h-3 fill-slate-950" />
-                      CRITICAL_DIRECTIVE
+                      Featured
                     </span>
                   </div>
                 </div>
@@ -135,7 +141,7 @@ export default async function BlogListingPage() {
                 <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between space-y-6 relative">
                   <div className="space-y-5">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <span className="text-[10px] font-mono font-bold text-[#f59e0b] bg-[#f59e0b]/10 px-3 py-1 rounded border border-[#f59e0b]/30 uppercase tracking-widest shadow-inner">
+                      <span className="text-[11px] font-semibold text-[#f59e0b] bg-[#f59e0b]/10 px-3 py-1 rounded-full">
                         {featuredArticle.codeTag}
                       </span>
                       <div className="flex items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
@@ -198,7 +204,7 @@ export default async function BlogListingPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
 
                     <div className="absolute top-3 left-3 z-10">
-                      <span className="text-[10px] font-mono font-bold text-slate-950 bg-[#f59e0b] px-2.5 py-1 rounded-sm uppercase tracking-wider shadow-md">
+                      <span className="text-[10px] font-bold text-slate-950 bg-[#f59e0b] px-2.5 py-1 rounded-sm uppercase tracking-wide shadow-md">
                         {article.category}
                       </span>
                     </div>
@@ -238,10 +244,7 @@ export default async function BlogListingPage() {
             
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
               <div className="space-y-3 max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#f59e0b]/10 text-[#f59e0b] border border-[#f59e0b]/30 font-mono text-xs font-bold uppercase tracking-widest">
-                  <Radio className="w-3.5 h-3.5 animate-pulse" />
-                  <span>SECURE ENTERPRISE INQUIRY</span>
-                </div>
+                <Badge icon={Radio}>Secure Enterprise Inquiry</Badge>
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
                   Need Custom Manned Guarding &amp; Compliance Protocols?
                 </h3>

@@ -11,6 +11,7 @@ import {
   Clock,
   CheckCircle2
 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -61,10 +62,7 @@ export function Footer() {
         {/* TOP CTA STRIP */}
         <div className="bg-[#080f22]/90 border border-white/10 p-6 sm:p-8 rounded-2xl mb-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl">
           <div className="space-y-1 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 text-[#f59e0b] text-xs font-mono font-bold uppercase tracking-wider mb-1">
-              <Clock className="w-3.5 h-3.5 animate-pulse" />
-              <span>24/7 Control Room Active</span>
-            </div>
+            <Badge icon={Clock} forceDark className="mb-1">24/7 Control Room Active</Badge>
             <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white">
               Ready to secure your site or venue?
             </h3>

@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
+import { SignalBackdrop } from '@/components/SignalBackdrop';
+import { Badge } from '@/components/Badge';
 import { Footer } from '@/components/Footer';
 import { FAQ } from '@/components/FAQ';
 import { Testimonials } from '@/components/Testimonials';
@@ -99,18 +101,8 @@ export default function ContactPage() {
           {/* 1. HERO HEADER                             */}
           {/* ========================================== */}
           <section className="relative bg-slate-100 dark:bg-[#0b1329] text-slate-900 dark:text-white py-12 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800/80 overflow-hidden transition-colors duration-300">
-            
-            {/* Tactical Dot Grid Overlay */}
-            <div 
-              className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20 z-0"
-              style={{
-                backgroundImage: 'radial-gradient(currentColor 1.2px, transparent 1.2px)',
-                backgroundSize: '24px 24px'
-              }}
-            />
 
-            {/* Ambient Amber Glow */}
-            <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#f59e0b]/15 rounded-full blur-[120px] pointer-events-none z-0" />
+            <SignalBackdrop />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               
@@ -118,14 +110,11 @@ export default function ContactPage() {
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 mb-6 sm:mb-8">
                 <Link href="/" className="hover:text-[#f59e0b] transition-colors">HOME</Link>
                 <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600" />
-                <span className="text-[#f59e0b]">CONTACT_&_DESK</span>
+                <span className="text-[#f59e0b]">CONTACT</span>
               </div>
 
               <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[11px] font-mono font-bold uppercase tracking-widest mb-4 sm:mb-6 shadow-xs backdrop-blur-md transition-colors">
-                  <Clock className="w-4 h-4 text-[#f59e0b] shrink-0" /> 
-                  <span>24/7 UK EMERGENCY CONTROL DESK</span>
-                </div>
+                <Badge icon={Clock} className="mb-4 sm:mb-6">24/7 UK Emergency Control Desk</Badge>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-4 sm:mb-6 uppercase transition-colors">
                   Get in Touch with <br className="hidden sm:inline" />
@@ -206,10 +195,7 @@ export default function ContactPage() {
                 {/* Left Column: Operational Guarantees */}
                 <div className="lg:col-span-5 space-y-6">
                   <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3 transition-colors">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#f59e0b]" /> 
-                      <span>RAPID_DISPATCH_GUARANTEE</span>
-                    </div>
+                    <Badge icon={ShieldCheck} className="mb-3">Rapid Dispatch Guarantee</Badge>
                     <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-3">
                       Fast Response <br />
                       <span className="text-[#f59e0b]">Guaranteed Service</span>
@@ -263,10 +249,7 @@ export default function ContactPage() {
                   
                   <div className="relative z-10 space-y-6">
                     <div>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[#f59e0b] text-[10px] font-mono font-bold uppercase tracking-widest mb-3">
-                        <Lock className="w-3 h-3 text-[#f59e0b]" /> 
-                        <span>DIRECT_OPERATIONS_PORTAL</span>
-                      </div>
+                      <Badge icon={Lock} className="mb-3">Direct Operations Portal</Badge>
 
                       <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-1">Official Quotation Request</h2>
                       <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm font-medium">

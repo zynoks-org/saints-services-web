@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Check
 } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 interface CredentialItem {
   id: string;
@@ -105,10 +106,7 @@ export function Credentials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white dark:bg-slate-900 text-[#f59e0b] border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-xs backdrop-blur-md transition-colors">
-            <BadgeCheck className="w-4 h-4 text-[#f59e0b]" />
-            <span>Credentials & Compliance</span>
-          </div>
+          <Badge icon={BadgeCheck} className="mb-4">Credentials & Compliance</Badge>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4 uppercase transition-colors">
             Standards & Regulatory Framework
           </h2>
@@ -172,9 +170,7 @@ export function Credentials() {
                     </div>
                     <span className="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider">{current.badgeTag}</span>
                   </div>
-                  <span className="px-3 py-1 rounded-sm bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold">
-                    {current.statusLabel}
-                  </span>
+                  <Badge tone="emerald">{current.statusLabel}</Badge>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-white mb-3 leading-snug">

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { Badge } from '@/components/Badge';
 
 interface ServiceCard {
   title: string;
@@ -21,7 +22,7 @@ export function ServicesGrid() {
       href: "/services/door-supervision",
       imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/door-supervision.jpg",
       imageAlt: "Saints Services Door Supervision Operations",
-      tag: "VENUE_SECURITY"
+      tag: "Venue Security"
     },
     {
       title: "Event Security",
@@ -29,7 +30,7 @@ export function ServicesGrid() {
       href: "/services/event-security",
       imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/event-security.png",
       imageAlt: "Saints Services Event Security",
-      tag: "CROWD_SAFETY"
+      tag: "Crowd Safety"
     },
     {
       title: "Key Holding",
@@ -37,7 +38,7 @@ export function ServicesGrid() {
       href: "/services/keyholding",
       imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/keyholding-alarm-response-sla-guide.jpg",
       imageAlt: "Saints Services Mobile Response Van",
-      tag: "RAPID_RESPONSE"
+      tag: "Rapid Response"
     },
     {
       title: "Security Guards",
@@ -45,7 +46,7 @@ export function ServicesGrid() {
       href: "/services/security-guards",
       imageSrc: "https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/manned-guarding.jpg",
       imageAlt: "Saints Services Manned Guarding",
-      tag: "MANNED_GUARDING"
+      tag: "Manned Guarding"
     }
   ];
 
@@ -114,10 +115,7 @@ export function ServicesGrid() {
               <div className="relative z-10 max-w-xs sm:max-w-sm space-y-4">
                 
                 {/* TAG BADGE */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100/90 dark:bg-[#040914]/90 border border-slate-300 dark:border-white/15 text-[#f59e0b] text-[10px] font-mono font-bold tracking-widest uppercase shadow-md backdrop-blur-md transition-colors">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#f59e0b]" />
-                  <span>{service.tag}</span>
-                </div>
+                <Badge icon={ShieldCheck}>{service.tag}</Badge>
 
                 {/* TITLE & DIVIDER */}
                 <div className="space-y-3">
