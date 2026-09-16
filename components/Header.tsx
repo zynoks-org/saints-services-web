@@ -8,6 +8,8 @@ import { useTheme } from 'next-themes';
 import { Phone, MapPin, Menu, X, Briefcase, ChevronRight, Mail, ChevronDown, Compass, ShieldCheck, Sun, MoonStar, Search, LocateFixed, Map as MapIcon, ShieldAlert, UserCheck, Calendar, KeyRound, Users, ArrowRight, CheckCircle2, Clock, Layers, Newspaper } from 'lucide-react';
 import { locationsData } from '@/lib/locationsData';
 import { CoverageMiniMap } from '@/components/CoverageMiniMap';
+import { SocialLinks } from '@/components/SocialLinks';
+import { WhatsAppIcon, WHATSAPP_URL } from '@/components/WhatsAppButton';
 
 const UNCOVERED_REGIONS = new Set(['Scotland', 'Wales']);
 const REGION_ORDER = ['London', 'South East', 'South West', 'West Midlands', 'East Midlands'];
@@ -260,12 +262,14 @@ export function Header() {
               <MapPin className="w-3 h-3 text-[#f59e0b]" /> 20 Wenlock Road, London, N1 7GU
             </span>
             <span className="h-3 w-[1px] bg-slate-300 dark:bg-slate-800" />
-            <Link 
-              href="/careers" 
+            <Link
+              href="/careers"
               className="hover:text-[#f59e0b] transition-colors flex items-center gap-1 font-semibold uppercase tracking-wider"
             >
               <Briefcase className="w-3 h-3 text-[#f59e0b]" /> Recruitment
             </Link>
+            <span className="h-3 w-[1px] bg-slate-300 dark:bg-slate-800" />
+            <SocialLinks variant="bar" />
           </div>
         </div>
       </div>
@@ -813,6 +817,20 @@ export function Header() {
                 <Phone className="w-4 h-4 text-[#f59e0b]" />
                 Call 07412 733920
               </a>
+
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full bg-slate-50 dark:bg-white/5 text-slate-700 dark:text-slate-200 font-bold py-3 rounded-lg text-sm active:scale-[0.98] transition-transform"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                WhatsApp Us
+              </a>
+
+              <div className="flex items-center justify-center pt-1">
+                <SocialLinks variant="bar" className="gap-7" iconClassName="w-6 h-6" />
+              </div>
             </div>
           </div>
         )}

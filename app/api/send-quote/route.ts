@@ -155,7 +155,19 @@ export async function POST(request: Request) {
     const safeService = escapeHtml(service);
     const safeDetails = escapeHtml(details);
 
-    const recipientEmail = 'saintsservicesltd@gmail.com';
+    // Careers submissions tag their `service` field with a "CAREERS:" prefix
+    // (see app/careers/page.tsx) — the only signal distinguishing a job
+    // application from a client quote request on this shared endpoint.
+    const isJobApplication = service.startsWith('CAREERS:');
+    const recipientEmail = isJobApplication
+      ? 'saintsservicesltd@gmail.com'
+      : 'info@saintsservices.co.uk';
+
+    const kindLabel = isJobApplication ? 'Job Application' : 'Client Enquiry';
+    const heading = isJobApplication ? 'New job application received' : 'New enquiry received';
+    const serviceFieldLabel = isJobApplication ? 'Position applied for' : 'Service requested';
+    const displayService = isJobApplication ? safeService.replace(/^CAREERS:\s*/, '') : safeService;
+    const nameFieldLabel = isJobApplication ? 'Applicant' : 'Name';
 
     let cvBuffer: Buffer | null = null;
     if (cvFile) {
@@ -173,7 +185,7 @@ export async function POST(request: Request) {
       from: 'Saints Services Dispatch <dispatch@mail.saintsservices.co.uk>',
       to: [recipientEmail],
       replyTo: email,
-      subject: `⚡ New Lead: ${safeService} — ${safeName}`,
+      subject: `New ${kindLabel}: ${displayService} — ${safeName}`,
       attachments: cvFile && cvBuffer ? [{ filename: cvFile.name, content: cvBuffer }] : undefined,
       html: `
         <!DOCTYPE html>
@@ -181,90 +193,99 @@ export async function POST(request: Request) {
           <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>New Dispatch Lead</title>
+            <title>New ${kindLabel}</title>
           </head>
-          <body style="margin: 0; padding: 0; background-color: #070d1e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
-            
-            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #070d1e; padding: 40px 10px;">
+          <body style="margin: 0; padding: 0; background-color: #eef0f4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #eef0f4; padding: 32px 12px;">
               <tr>
                 <td align="center">
-                  
-                  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #0b1329; border-radius: 20px; border: 1px solid #1e293b; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);">
-                    
+
+                  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; width: 100%; table-layout: fixed; background-color: #ffffff;">
+
                     <tr>
-                      <td style="padding: 32px 32px 24px 32px; background-color: #0b1329; border-bottom: 3px solid #f59e0b;">
+                      <td style="padding: 36px 40px 20px 40px;">
                         <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td>
-                              <span style="display: inline-block; background-color: #1e293b; color: #f59e0b; border: 1px solid #334155; font-family: monospace; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
-                                ⚡ DISPATCH_ALERT // NEW_INQUIRY
-                              </span>
-                              <h1 style="margin: 0; color: #ffffff; font-size: 22px; font-weight: 900; letter-spacing: -0.5px; text-transform: uppercase;">
-                                Saints Services Ltd
-                              </h1>
-                              <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 13px; font-weight: 500;">
-                                Operational Control Room & Client Lead Desk
-                              </p>
+                            <td style="vertical-align: middle;">
+                              <img src="https://snlwjfavn5e79gpo.public.blob.vercel-storage.com/Web/saintsserviceslogo.png" width="28" height="28" alt="Saints Services" style="display: inline-block; vertical-align: middle; border: 0;">
+                              <span style="font-size: 15px; font-weight: 800; color: #0b1329; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; margin-left: 10px;">Saints Services</span>
+                            </td>
+                            <td align="right" style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #8a92a3; text-transform: uppercase; vertical-align: middle;">
+                              ${kindLabel}
                             </td>
                           </tr>
                         </table>
                       </td>
                     </tr>
+                    <tr>
+                      <td style="padding: 0 40px;">
+                        <div style="height: 3px; background-color: #f59e0b; width: 48px;"></div>
+                      </td>
+                    </tr>
 
                     <tr>
-                      <td style="padding: 32px;">
-                        
-                        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #162038; border: 1px solid #1e293b; border-radius: 12px; margin-bottom: 24px;">
-                          <tr>
-                            <td style="padding: 16px 20px;">
-                              <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                                Requested Service Scope
-                              </div>
-                              <div style="font-size: 18px; font-weight: 800; color: #f59e0b;">
-                                ${safeService}
-                              </div>
-                            </td>
-                          </tr>
-                        </table>
+                      <td style="padding: 28px 40px 8px 40px;">
+                        <h1 style="margin: 0; font-size: 22px; font-weight: 800; color: #0b1329; letter-spacing: -0.3px;">
+                          ${heading}
+                        </h1>
+                        <p style="margin: 6px 0 0 0; font-size: 13px; color: #6b7385;">
+                          Submitted via saintsservices.co.uk
+                        </p>
+                      </td>
+                    </tr>
 
-                        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
-                          
+                    <tr>
+                      <td style="padding: 20px 40px 4px 40px;">
+                        <div style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a92a3; margin-bottom: 4px;">
+                          ${serviceFieldLabel}
+                        </div>
+                        <div style="font-size: 18px; font-weight: 800; color: #b45309; word-break: break-word; overflow-wrap: anywhere;">
+                          ${displayService}
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="padding: 24px 40px 0 40px;">
+                        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;">
+
                           <tr>
-                            <td width="50%" style="padding-bottom: 20px; padding-right: 10px; vertical-align: top;">
-                              <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
-                                Client Name
+                            <td width="50%" style="padding: 14px 0; border-top: 1px solid #e7e9ef; vertical-align: top; word-break: break-word; overflow-wrap: anywhere;">
+                              <div style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a92a3; margin-bottom: 4px;">
+                                ${nameFieldLabel}
                               </div>
-                              <div style="font-size: 15px; font-weight: 700; color: #ffffff;">
+                              <div style="font-size: 14px; font-weight: 700; color: #0b1329;">
                                 ${safeName}
                               </div>
                             </td>
-                            <td width="50%" style="padding-bottom: 20px; padding-left: 10px; vertical-align: top;">
-                              <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
+                            <td width="50%" style="padding: 14px 0 14px 24px; border-top: 1px solid #e7e9ef; vertical-align: top; word-break: break-word; overflow-wrap: anywhere;">
+                              <div style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a92a3; margin-bottom: 4px;">
                                 Company / Venue
                               </div>
-                              <div style="font-size: 15px; font-weight: 700; color: #ffffff;">
+                              <div style="font-size: 14px; font-weight: 700; color: #0b1329;">
                                 ${safeCompany || 'N/A'}
                               </div>
                             </td>
                           </tr>
 
                           <tr>
-                            <td width="50%" style="padding-bottom: 20px; padding-right: 10px; vertical-align: top;">
-                              <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
-                                Email Address
+                            <td width="50%" style="padding: 14px 0; border-top: 1px solid #e7e9ef; vertical-align: top; word-break: break-word; overflow-wrap: anywhere;">
+                              <div style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a92a3; margin-bottom: 4px;">
+                                Email
                               </div>
                               <div>
-                                <a href="mailto:${safeEmail}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                <a href="mailto:${safeEmail}" style="font-size: 14px; font-weight: 700; color: #0b6bcb; text-decoration: none;">
                                   ${safeEmail}
                                 </a>
                               </div>
                             </td>
-                            <td width="50%" style="padding-bottom: 20px; padding-left: 10px; vertical-align: top;">
-                              <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
-                                Direct Phone
+                            <td width="50%" style="padding: 14px 0 14px 24px; border-top: 1px solid #e7e9ef; vertical-align: top; word-break: break-word; overflow-wrap: anywhere;">
+                              <div style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a92a3; margin-bottom: 4px;">
+                                Phone
                               </div>
                               <div>
-                                <a href="tel:${safePhone}" style="font-size: 14px; font-weight: 700; color: #38bdf8; text-decoration: none;">
+                                <a href="tel:${safePhone}" style="font-size: 14px; font-weight: 700; color: #0b6bcb; text-decoration: none;">
                                   ${safePhone}
                                 </a>
                               </div>
@@ -272,30 +293,35 @@ export async function POST(request: Request) {
                           </tr>
 
                         </table>
-
-                        <div style="margin-top: 10px;">
-                          <div style="font-size: 11px; font-family: monospace; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">
-                            Site Details / Postcode / Special Instructions
-                          </div>
-                          <div style="background-color: #070d1e; border: 1px solid #1e293b; border-radius: 12px; padding: 18px; font-size: 14px; line-height: 1.6; color: #cbd5e1; font-weight: 500; white-space: pre-wrap;">${safeDetails || 'No additional site specifications provided.'}</div>
-                        </div>
-
-                        ${cvFile ? `
-                        <div style="margin-top: 16px; font-size: 12px; color: #94a3b8; font-weight: 600;">
-                          📎 CV attached to this email — see attachments.
-                        </div>
-                        ` : ''}
-
                       </td>
                     </tr>
 
                     <tr>
-                      <td style="padding: 20px 32px; background-color: #070d1e; border-top: 1px solid #1e293b; text-align: center;">
-                        <p style="margin: 0; font-size: 12px; color: #64748b; font-family: monospace; font-weight: 600;">
-                          Saints Services Ltd • 20 Wenlock Road, London, N1 7GU
+                      <td style="padding: 24px 40px 8px 40px;">
+                        <div style="font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a92a3; margin-bottom: 8px;">
+                          ${isJobApplication ? 'Application Details' : 'Enquiry Details'}
+                        </div>
+                        <div style="background-color: #f7f8fb; border: 1px solid #e7e9ef; padding: 16px 18px; font-size: 13.5px; line-height: 1.65; color: #3c4256; white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere;">${safeDetails || 'No additional details provided.'}</div>
+                      </td>
+                    </tr>
+
+                    ${cvFile ? `
+                    <tr>
+                      <td style="padding: 4px 40px 8px 40px;">
+                        <div style="font-size: 12px; color: #6b7385; font-weight: 600;">
+                          CV attached to this email — see attachments.
+                        </div>
+                      </td>
+                    </tr>
+                    ` : ''}
+
+                    <tr>
+                      <td style="padding: 32px 40px 36px 40px; border-top: 1px solid #e7e9ef;">
+                        <p style="margin: 0; font-size: 11px; color: #9aa1b1;">
+                          Saints Services Ltd &middot; 20 Wenlock Road, London, N1 7GU
                         </p>
-                        <p style="margin: 6px 0 0 0; font-size: 11px; color: #475569;">
-                          Automated submission captured via Next.js client portal.
+                        <p style="margin: 4px 0 0 0; font-size: 11px; color: #b7bcc8;">
+                          Automated notification &mdash; reply directly to respond to the ${isJobApplication ? 'applicant' : 'client'}.
                         </p>
                       </td>
                     </tr>

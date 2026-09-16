@@ -12,6 +12,8 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { Badge } from '@/components/Badge';
+import { SocialLinks } from '@/components/SocialLinks';
+import { WhatsAppIcon, WHATSAPP_URL } from '@/components/WhatsAppButton';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -96,6 +98,21 @@ export function Footer() {
               <Phone className="relative z-10 w-4 h-4 text-sky-400 transition-colors duration-300 group-hover:text-white" />
               <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                 07412 733920
+              </span>
+            </a>
+
+            {/* WhatsApp Button */}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0b1329]/60 text-white font-bold px-6 py-3 rounded-lg text-xs sm:text-sm transition-all duration-300 border border-white/20 backdrop-blur-md overflow-hidden shadow-lg active:scale-95 uppercase tracking-wider cursor-pointer"
+            >
+              <div className="absolute inset-0 bg-[#25D366] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+
+              <WhatsAppIcon className="relative z-10 w-4 h-4 text-[#25D366] transition-colors duration-300 group-hover:text-white" />
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                WhatsApp Us
               </span>
             </a>
           </div>
@@ -206,6 +223,11 @@ export function Footer() {
                   info@saintsservices.co.uk
                 </a>
               </div>
+            </div>
+
+            <div className="pt-2">
+              <h5 className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400 mb-2.5">Follow Us</h5>
+              <SocialLinks variant="buttons" />
             </div>
 
             <div className="pt-2">

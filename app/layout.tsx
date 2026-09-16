@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CookieBanner } from "@/components/CookieBanner";
 import { ScrollToTopButton } from "@/components/ScrollToTopButton";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { getPublishedTestimonials } from "@/lib/testimonials";
 import { Analytics } from "@vercel/analytics/next";
@@ -155,6 +156,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           {children}
           <ScrollToTopButton />
+          <WhatsAppButton />
           <CookieBanner />
           <Analytics />
           <SpeedInsights />
