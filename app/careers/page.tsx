@@ -394,7 +394,7 @@ export default function CareersPage() {
                     Online Application Portal
                   </h2>
                   <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm font-medium">
-                    Submit your details and CV to connect directly with our HR recruitment desk.
+                    Submit your details and CV to connect directly with our HR recruitment department. After 30 days your CV and details will be removed from the system if the application is unsuccessful.
                   </p>
                 </div>
 
@@ -477,8 +477,25 @@ export default function CareersPage() {
                       <textarea name="coverNote" rows={3} placeholder="Provide details regarding your previous security experience or preferred shift hours..." className="w-full bg-slate-50 dark:bg-[#0b1329] border border-slate-300 dark:border-slate-800 rounded-sm px-4 py-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#f59e0b] resize-none transition-colors" />
                     </div>
 
-                    <button 
-                      type="submit" 
+                    <div className="bg-slate-50 dark:bg-[#0b1329] border border-slate-200 dark:border-slate-800 rounded-sm p-4">
+                      <p className="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400 mb-3">
+                        The personal information provided as part of this application will be used solely for recruitment and employment purposes. If your application is unsuccessful, your personal data and application details will be securely deleted within 30 days of the application outcome, unless we are legally required to retain certain information.
+                      </p>
+                      <label className="flex items-start gap-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          name="dataConsent"
+                          required
+                          className="mt-0.5 w-4 h-4 accent-[#f59e0b] shrink-0 cursor-pointer"
+                        />
+                        <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300">
+                          I acknowledge and agree to the processing of my personal data for the purposes outlined above. *
+                        </span>
+                      </label>
+                    </div>
+
+                    <button
+                      type="submit"
                       disabled={loading}
                       className="group relative overflow-hidden flex items-center justify-center gap-2 w-full bg-[#f59e0b] text-slate-950 font-black py-4 rounded-sm text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer mt-2"
                     >
